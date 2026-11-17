@@ -12,6 +12,8 @@ permissions:
 jobs:
   seo-geo-report:
     runs-on: ubuntu-latest
+    env:
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v4
@@ -49,7 +51,7 @@ jobs:
           fi
 
       - name: Enviar resumen diario por Gmail
-        if: ${{ secrets.GMAIL_APP_PASSWORD != '' }}
+        if: env.GMAIL_APP_PASSWORD != ''
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
