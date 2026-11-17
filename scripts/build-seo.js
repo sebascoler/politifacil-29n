@@ -9,6 +9,15 @@ const ROOT_DIR = path.join(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 const INDEX_PATH = path.join(PUBLIC_DIR, 'index.html');
 const INDEXNOW_KEY = 'politifacil29nindexnow2026';
+const GTM_CONTAINER_ID = 'GTM-N2V3Q8RQ';
+const GTM_HEAD_SNIPPET = `  <!-- Google Tag Manager / GA4 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+  </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=${GTM_CONTAINER_ID}"></script>`;
 
 const rawUrl =
   process.env.SITE_URL ||
@@ -531,6 +540,7 @@ function buildHomeHeadBlock() {
   <meta name="twitter:description" content="6 Partidos Estatales · 8 Ejes Oficiales · 0 Opinión · Test de 10 Escenarios en el arco político de España (29-N)." />
   <meta name="twitter:image" content="${escapeHtml(ogImage)}" />
   <meta name="twitter:image:alt" content="PolitiFácil 29-N: arco parlamentario multicolor y comparador electoral neutral en España" />
+${GTM_HEAD_SNIPPET}
   <script type="application/ld+json">
 ${safeJsonLd(jsonLd)}
   </script>`;
@@ -1064,6 +1074,7 @@ function renderStaticPage(opts) {
   <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="${escapeHtml(ogImage)}" />
   <meta name="twitter:image:alt" content="${escapeHtml(title)}" />
+${GTM_HEAD_SNIPPET}
   <link rel="stylesheet" href="/styles.css" />
   <script>
     (function () {
