@@ -9,6 +9,18 @@
   }
 
   const STORAGE_KEY = 'politifacil_29n_state_v1';
+  const VALID_SECTIONS = ['arco-overview', 'comparador', 'entrevistas', 'test-afinidad'];
+  const SECTION_TITLES = {
+    'arco-overview': 'PolitiFácil 29-N | Comparador Electoral Neutral y Test de Afinidad en España',
+    comparador: 'Comparador de Propuestas a Ciegas 29-N | PolitiFácil',
+    entrevistas: 'Entrevistas a Candidatos 29-N (Sin Opinión) | PolitiFácil',
+    'test-afinidad': 'Test de Afinidad 29-N (10 Escenarios Sin Siglas) | PolitiFácil',
+  };
+
+  const urlControlledFlags = {
+    party: false,
+    blind: false,
+  };
 
   const state = {
     activeSection: 'arco-overview',
@@ -30,6 +42,7 @@
     quizAnswers: {}, // { [questionId]: { optionIndex: number, priority: boolean } }
     quizOptionOrders: {}, // { [questionId]: number[] }
     quizCompleted: false,
+    sharedResultPreview: null,
     theme: 'light',
   };
 
@@ -112,6 +125,79 @@
     return list.sort((a, b) => a.spectrumScore - b.spectrumScore);
   }
 
+  function getShareOrigin() {
+    if (window.location && window.location.origin && window.location.origin !== 'null') {
+      return window.location.origin;
+    }
+    return 'https://politifacil-29n.vercel.app';
+  }
+
+  async function copyTextToClipboard(text) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        // Fallback a execCommand
+      }
+    }
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      ta.style.top = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      const copied = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return Boolean(copied);
+    } catch {
+      return false;
+    }
+  }
+
+  function buildShareButtonsHtml(config) {
+    const {
+      shareUrl,
+      shareText,
+      copyBtnId,
+      downloadBtnId = '',
+      compact = false,
+    } = config;
+    const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`;
+    const telegramHref = `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+    const xHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+    const sizeClass = compact ? ' btn-sm' : '';
+    const rowClass = compact ? 'share-buttons-row share-buttons-row-compact' : 'share-buttons-row';
+
+    return `
+      <div class="${rowClass}">
+        <a class="btn${sizeClass} btn-whatsapp" href="${escapeHtml(whatsappHref)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="btn${sizeClass} btn-telegram" href="${escapeHtml(telegramHref)}" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a class="btn${sizeClass} btn-x" href="${escapeHtml(xHref)}" target="_blank" rel="noopener noreferrer">Compartir en X</a>
+        <button type="button" class="btn${sizeClass} btn-copy" id="${escapeHtml(copyBtnId)}">Copiar resumen</button>
+        ${downloadBtnId ? `<button type="button" class="btn${sizeClass} btn-download-img" id="${escapeHtml(downloadBtnId)}">Descargar imagen PNG de mi Arco</button>` : ''}
+      </div>
+    `;
+  }
+
+  function bindCopyShareButton(buttonId, feedbackId, textToCopy) {
+    const btn = document.getElementById(buttonId);
+    const feedback = document.getElementById(feedbackId);
+    if (!btn) return;
+    btn.addEventListener('click', async () => {
+      const ok = await copyTextToClipboard(textToCopy);
+      if (feedback) {
+        feedback.textContent = ok
+          ? '✓ Resumen copiado al portapapeles'
+          : 'No se pudo copiar automáticamente; selecciona el enlace de la barra.';
+      }
+    });
+  }
+
   /* ================= TEMA Y NAVEGACIÓN ================= */
   function applyTheme() {
     document.documentElement.setAttribute('data-theme', state.theme);
@@ -119,17 +205,137 @@
     if (icon) icon.textContent = state.theme === 'dark' ? '☀' : '◐';
   }
 
-  function switchSection(sectionId) {
-    state.activeSection = sectionId;
+  function parseUrlParams(isPopstate = false) {
+    const params = new URLSearchParams(window.location.search);
+    const hash = (window.location.hash || '').replace(/^#/, '').trim();
+    const rawSection = params.get('section');
+
+    let targetSection = 'arco-overview';
+    if (rawSection && VALID_SECTIONS.includes(rawSection)) {
+      targetSection = rawSection;
+    } else if (!rawSection && VALID_SECTIONS.includes(hash)) {
+      targetSection = hash;
+    }
+
+    const rawResult = params.get('resultado');
+    if (rawResult !== null && rawResult !== '' && !Number.isNaN(Number(rawResult))) {
+      const score = Math.max(0, Math.min(100, Math.round(Number(rawResult))));
+      const rawTop = params.get('top');
+      const partyId = rawTop && DATA.parties.some((p) => p.id === rawTop) ? rawTop : null;
+      const rawAffinity = params.get('afinidad');
+      const parsedAff = rawAffinity !== null && rawAffinity !== '' ? Number(rawAffinity) : NaN;
+      const affinity = !Number.isNaN(parsedAff)
+        ? Math.max(0, Math.min(100, Math.round(parsedAff)))
+        : null;
+      state.sharedResultPreview = { score, partyId, affinity };
+      targetSection = 'test-afinidad';
+    } else {
+      state.sharedResultPreview = null;
+    }
+
+    state.activeSection = targetSection;
+
+    const partyParam = params.get('party');
+    const interviewSelect = document.getElementById('interview-party-filter');
+    if (partyParam) {
+      const existsInParties = DATA.parties.some((p) => p.id === partyParam);
+      const hasInterviews = DATA.interviews.some((iv) => iv.partyId === partyParam);
+      if (existsInParties) {
+        state.selectedPartyId = partyParam;
+      }
+      if ((targetSection === 'entrevistas' && (existsInParties || hasInterviews)) || hasInterviews) {
+        state.interviewParty = partyParam;
+        urlControlledFlags.party = true;
+        if (interviewSelect && Array.from(interviewSelect.options).some((o) => o.value === partyParam)) {
+          interviewSelect.value = partyParam;
+        }
+      }
+    } else if (isPopstate && urlControlledFlags.party) {
+      state.interviewParty = 'all';
+      urlControlledFlags.party = false;
+      if (interviewSelect) interviewSelect.value = 'all';
+    }
+
+    const axisParam = params.get('axis');
+    if (axisParam && DATA.axes.some((a) => a.id === axisParam)) {
+      state.activeAxis = axisParam;
+    }
+
+    const leftParam = params.get('left');
+    if (leftParam && DATA.parties.some((p) => p.id === leftParam)) {
+      state.pairLeft = leftParam;
+    }
+    const rightParam = params.get('right');
+    if (rightParam && DATA.parties.some((p) => p.id === rightParam)) {
+      state.pairRight = rightParam;
+    }
+
+    if (params.get('blind') === '0') {
+      state.blindMode = false;
+      urlControlledFlags.blind = true;
+    } else if (isPopstate && urlControlledFlags.blind) {
+      state.blindMode = true;
+      urlControlledFlags.blind = false;
+    }
+
+    if (state.blindMode) {
+      ensureBlindOrderForAxis(state.activeAxis);
+    }
+  }
+
+  function switchSection(sectionId, options = {}) {
+    const { updateHistory = true, scroll = true } = options;
+    const resolvedSection = VALID_SECTIONS.includes(sectionId) ? sectionId : 'arco-overview';
+    state.activeSection = resolvedSection;
+
     document.querySelectorAll('.view-section').forEach((sec) => {
-      const isMatch = sec.id === sectionId;
+      const isMatch = sec.id === resolvedSection;
       sec.hidden = !isMatch;
       sec.classList.toggle('is-visible', isMatch);
     });
     document.querySelectorAll('.main-nav .nav-pill').forEach((btn) => {
-      btn.classList.toggle('is-active', btn.dataset.section === sectionId);
+      btn.classList.toggle('is-active', btn.dataset.section === resolvedSection);
     });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (SECTION_TITLES[resolvedSection]) {
+      document.title = SECTION_TITLES[resolvedSection];
+    }
+
+    if (updateHistory && window.history && typeof window.history.pushState === 'function') {
+      const pathname = window.location.pathname;
+      if (pathname === '/' || pathname === '/index.html') {
+        const params = new URLSearchParams(window.location.search);
+        if (resolvedSection !== 'test-afinidad') {
+          params.delete('resultado');
+          params.delete('top');
+          params.delete('afinidad');
+        }
+        if (resolvedSection !== 'comparador') {
+          params.delete('axis');
+          params.delete('left');
+          params.delete('right');
+          params.delete('blind');
+        }
+        if (resolvedSection !== 'arco-overview' && resolvedSection !== 'entrevistas') {
+          params.delete('party');
+        }
+        if (resolvedSection === 'arco-overview') {
+          params.delete('section');
+        } else {
+          params.set('section', resolvedSection);
+        }
+        const qs = params.toString();
+        const nextUrl = qs ? `/?${qs}` : '/';
+        const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+        if (nextUrl !== currentUrl) {
+          window.history.pushState({ section: resolvedSection }, '', nextUrl);
+        }
+      }
+    }
+
+    if (scroll) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   /* ================= SVG ARCO POLÍTICO ================= */
@@ -611,6 +817,10 @@
       }))
       .sort((a, b) => b.picks - a.picks);
 
+    const blindShareUrl = `${getShareOrigin()}/?section=comparador`;
+    const blindShareText = `He comparado las propuestas oficiales del 29-N SIN VER SIGLAS NI COLORES y mi mayor coincidencia fue con ${ranked[0].party.shortName} (${ranked[0].pct}% de ${totalPicks} selecciones). Haz la prueba a ciegas aquí:`;
+    const blindFullShareText = `${blindShareText} ${blindShareUrl}`;
+
     card.hidden = false;
     card.innerHTML = `
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
@@ -640,7 +850,19 @@
           )
           .join('')}
       </div>
+      <div class="blind-share-wrap">
+        <p class="muted-text" style="font-weight:700; font-size:0.84rem;">Comparte tu lectura a ciegas:</p>
+        ${buildShareButtonsHtml({
+          shareUrl: blindShareUrl,
+          shareText: blindShareText,
+          copyBtnId: 'blind-copy-share-btn',
+          compact: true,
+        })}
+        <p class="share-feedback" id="blind-share-feedback" aria-live="polite"></p>
+      </div>
     `;
+
+    bindCopyShareButton('blind-copy-share-btn', 'blind-share-feedback', blindFullShareText);
 
     const showCardsBtn = document.getElementById('reveal-show-cards-btn');
     if (showCardsBtn) {
@@ -735,6 +957,13 @@
       candidateParties
         .map((p) => `<option value="${escapeHtml(p.id)}">${escapeHtml(p.candidate)} (${escapeHtml(p.shortName)})</option>`)
         .join('');
+
+    if (Array.from(partySelect.options).some((opt) => opt.value === state.interviewParty)) {
+      partySelect.value = state.interviewParty;
+    } else {
+      state.interviewParty = 'all';
+      partySelect.value = 'all';
+    }
 
     const topics = Array.from(new Set(DATA.interviews.map((iv) => iv.topic))).sort((a, b) =>
       a.localeCompare(b, 'es')
@@ -934,13 +1163,346 @@
     return shuffled;
   }
 
+  function buildTextProgressBar(pct, length = 10) {
+    const clamped = Math.max(0, Math.min(100, Number(pct) || 0));
+    const filled = Math.round((clamped / 100) * length);
+    return '█'.repeat(filled) + '░'.repeat(length - filled);
+  }
+
+  function drawRoundedRect(ctx, x, y, width, height, radius) {
+    const r = Math.min(radius, width / 2, height / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + width - r, y);
+    ctx.arcTo(x + width, y, x + width, y + r, r);
+    ctx.lineTo(x + width, y + height - r);
+    ctx.arcTo(x + width, y + height, x + width - r, y + height, r);
+    ctx.lineTo(x + r, y + height);
+    ctx.arcTo(x, y + height, x, y + height - r, r);
+    ctx.lineTo(x, y + r);
+    ctx.arcTo(x, y, x + r, y, r);
+    ctx.closePath();
+  }
+
+  function triggerImageDownload(url, filename, revokeAfter) {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    if (revokeAfter) {
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+  }
+
+  function downloadQuizResultImage(res, zoneLabel) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1200;
+    canvas.height = 630;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const width = canvas.width;
+    const height = canvas.height;
+    const roundedScore = Math.round(res.userSpectrumScore);
+    const fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+
+    // 1. Fondo elegante oscuro con gradiente radial
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, width, height);
+    const bgGrad = ctx.createRadialGradient(420, 260, 40, 560, 315, 760);
+    bgGrad.addColorStop(0, '#1e293b');
+    bgGrad.addColorStop(1, '#0f172a');
+    ctx.fillStyle = bgGrad;
+    ctx.fillRect(0, 0, width, height);
+
+    // 2. Tarjeta interior limpia
+    drawRoundedRect(ctx, 34, 30, width - 68, height - 60, 24);
+    ctx.fillStyle = 'rgba(15, 23, 42, 0.88)';
+    ctx.fill();
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.25)';
+    ctx.stroke();
+
+    // 3. Cabecera y título principal
+    ctx.fillStyle = '#93c5fd';
+    ctx.font = `700 16px ${fontFamily}`;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText('PolitiFácil 29-N · Test a Ciegas (Sin siglas)', 66, 74);
+
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = `600 14px ${fontFamily}`;
+    ctx.textAlign = 'right';
+    ctx.fillText('Elecciones Generales · 29 de noviembre de 2026', width - 66, 74);
+
+    ctx.fillStyle = '#f8fafc';
+    ctx.font = `800 34px ${fontFamily}`;
+    ctx.textAlign = 'left';
+    ctx.fillText(`Tu posición en el arco: ${roundedScore}/100`, 66, 122, width - 132);
+
+    ctx.fillStyle = '#cbd5e1';
+    ctx.font = `600 19px ${fontFamily}`;
+    ctx.fillText(zoneLabel, 66, 154, width - 132);
+
+    // 4. Semicircunferencia del arco político a la izquierda
+    const cx = 335;
+    const cy = 466;
+    const rMain = 166;
+
+    // Pista base del arco
+    ctx.beginPath();
+    ctx.arc(cx, cy, rMain, Math.PI, Math.PI * 2, false);
+    ctx.lineWidth = 22;
+    ctx.lineCap = 'butt';
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.16)';
+    ctx.stroke();
+
+    // 4 tramos de color
+    const segments = [
+      { from: 0, to: 25, color: '#6d28d9' },
+      { from: 25, to: 48, color: '#dc2626' },
+      { from: 48, to: 75, color: '#0284c7' },
+      { from: 75, to: 100, color: '#16a34a' },
+    ];
+    ctx.save();
+    ctx.globalAlpha = 0.42;
+    segments.forEach((seg) => {
+      const startA = Math.PI + (seg.from / 100) * Math.PI;
+      const endA = Math.PI + (seg.to / 100) * Math.PI;
+      ctx.beginPath();
+      ctx.arc(cx, cy, rMain, startA, endA, false);
+      ctx.lineWidth = 20;
+      ctx.strokeStyle = seg.color;
+      ctx.stroke();
+    });
+    ctx.restore();
+
+    // Etiquetas de los extremos
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = `700 13px ${fontFamily}`;
+    ctx.textAlign = 'center';
+    ctx.fillText('← Izquierda (0)', cx - rMain, cy + 30);
+    ctx.fillText('Centro (50)', cx, cy + 30);
+    ctx.fillText('Derecha (100) →', cx + rMain, cy + 30);
+
+    // Nodos de los 6 partidos y etiquetas sin solaparse
+    const sortedParties = DATA.parties.slice().sort((a, b) => a.spectrumScore - b.spectrumScore);
+    const labelAngleAdjustDeg = {
+      vox: 5.5,
+      salf: -5.5,
+    };
+
+    sortedParties.forEach((party) => {
+      const pt = scoreToArcPoint(party.spectrumScore, cx, cy, rMain);
+      const adjRad = ((labelAngleAdjustDeg[party.id] || 0) * Math.PI) / 180;
+      const labelAngle = pt.angle + adjRad;
+      const labelRadius = rMain + 44;
+      const lx = cx + labelRadius * Math.cos(labelAngle);
+      const ly = cy - labelRadius * Math.sin(labelAngle);
+
+      ctx.beginPath();
+      ctx.moveTo(pt.x, pt.y);
+      ctx.lineTo(lx, ly);
+      ctx.lineWidth = 1.6;
+      ctx.strokeStyle = party.color;
+      ctx.globalAlpha = 0.65;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 10, 0, Math.PI * 2);
+      ctx.fillStyle = party.color;
+      ctx.fill();
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#ffffff';
+      ctx.stroke();
+
+      ctx.fillStyle = '#f1f5f9';
+      ctx.font = `700 13.5px ${fontFamily}`;
+      ctx.textBaseline = 'middle';
+      if (Math.cos(labelAngle) < -0.25) {
+        ctx.textAlign = 'right';
+        ctx.fillText(party.shortName, lx - 6, ly);
+      } else if (Math.cos(labelAngle) > 0.25) {
+        ctx.textAlign = 'left';
+        ctx.fillText(party.shortName, lx + 6, ly);
+      } else {
+        ctx.textAlign = 'center';
+        ctx.fillText(party.shortName, lx, ly - 8);
+      }
+    });
+
+    // Aguja dorada destacada del usuario
+    const uPt = scoreToArcPoint(res.userSpectrumScore, cx, cy, rMain);
+    const tagPt = scoreToArcPoint(res.userSpectrumScore, cx, cy, 92);
+    const tagY = Math.min(cy - 34, tagPt.y);
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(uPt.x, uPt.y);
+    ctx.lineWidth = 4.5;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#f59e0b';
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+    ctx.fillStyle = '#f59e0b';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(uPt.x, uPt.y, 12, 0, Math.PI * 2);
+    ctx.fillStyle = '#f59e0b';
+    ctx.fill();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#0f172a';
+    ctx.stroke();
+
+    const badgeW = 122;
+    const badgeH = 30;
+    drawRoundedRect(ctx, tagPt.x - badgeW / 2, tagY - badgeH / 2, badgeW, badgeH, 15);
+    ctx.fillStyle = '#0f172a';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#f59e0b';
+    ctx.stroke();
+
+    ctx.fillStyle = '#fef3c7';
+    ctx.font = `800 13px ${fontFamily}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(`TÚ: ${roundedScore}/100`, tagPt.x, tagY + 0.5);
+
+    // 5. Top 4 de partidos a la derecha
+    const rightX = 648;
+    const rightW = 482;
+
+    ctx.fillStyle = '#f8fafc';
+    ctx.font = `700 19px ${fontFamily}`;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText('Top 4 afinidad programática', rightX, 206);
+
+    const top4 = res.rankings.slice(0, 4);
+    top4.forEach((item, idx) => {
+      const rowY = 224 + idx * 78;
+      const rowH = 66;
+
+      drawRoundedRect(ctx, rightX, rowY, rightW, rowH, 12);
+      ctx.fillStyle = 'rgba(30, 41, 59, 0.72)';
+      ctx.fill();
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.2)';
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(rightX + 20, rowY + 23, 6, 0, Math.PI * 2);
+      ctx.fillStyle = item.party.color;
+      ctx.fill();
+
+      ctx.fillStyle = '#f8fafc';
+      ctx.font = `700 16px ${fontFamily}`;
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(`${item.party.shortName} · ${item.affinity}%`, rightX + 34, rowY + 23);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = `500 13px ${fontFamily}`;
+      ctx.textAlign = 'right';
+      ctx.fillText(item.party.candidate, rightX + rightW - 16, rowY + 23);
+
+      const barX = rightX + 16;
+      const barY = rowY + 42;
+      const barW = rightW - 32;
+      const barH = 10;
+
+      drawRoundedRect(ctx, barX, barY, barW, barH, 5);
+      ctx.fillStyle = 'rgba(148, 163, 184, 0.2)';
+      ctx.fill();
+
+      const fillW = Math.max(12, Math.round((item.affinity / 100) * barW));
+      drawRoundedRect(ctx, barX, barY, fillW, barH, 5);
+      ctx.fillStyle = item.party.color;
+      ctx.fill();
+    });
+
+    // 6. Pie inferior
+    ctx.beginPath();
+    ctx.moveTo(66, 548);
+    ctx.lineTo(width - 66, 548);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.18)';
+    ctx.stroke();
+
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = `600 14.5px ${fontFamily}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(
+      'Basado en programas oficiales · Haz tu test sin sesgos en politifacil-29n.vercel.app',
+      width / 2,
+      574
+    );
+
+    const feedbackEl = document.getElementById('quiz-share-feedback');
+    const notifyDone = () => {
+      if (feedbackEl) {
+        feedbackEl.textContent = '✓ Imagen descargada (mi-arco-politico-29n.png)';
+      }
+    };
+
+    if (typeof canvas.toBlob === 'function') {
+      canvas.toBlob((blob) => {
+        if (blob) {
+          const objectUrl = URL.createObjectURL(blob);
+          triggerImageDownload(objectUrl, 'mi-arco-politico-29n.png', true);
+          notifyDone();
+        } else {
+          triggerImageDownload(canvas.toDataURL('image/png'), 'mi-arco-politico-29n.png', false);
+          notifyDone();
+        }
+      }, 'image/png');
+    } else {
+      triggerImageDownload(canvas.toDataURL('image/png'), 'mi-arco-politico-29n.png', false);
+      notifyDone();
+    }
+  }
+
   function renderQuizSection() {
     const stage = document.getElementById('quiz-stage');
+    if (!stage) return;
     const questions = DATA.quizQuestions;
 
     if (state.quizCompleted) {
       renderQuizResults(stage);
       return;
+    }
+
+    let sharedBannerHtml = '';
+    if (state.sharedResultPreview && !state.quizCompleted) {
+      const preview = state.sharedResultPreview;
+      const previewParty = preview.partyId ? getParty(preview.partyId) : null;
+      let affinityText = '';
+      if (previewParty && preview.affinity !== null) {
+        affinityText = ` (mayor afinidad: <strong>${escapeHtml(previewParty.shortName)}</strong>, ${preview.affinity}%)`;
+      } else if (previewParty) {
+        affinityText = ` (mayor afinidad: <strong>${escapeHtml(previewParty.shortName)}</strong>)`;
+      }
+      sharedBannerHtml = `
+        <div class="shared-result-banner" role="region" aria-label="Resultado compartido de un contacto">
+          <div class="shared-result-banner-body">
+            <span class="shared-banner-badge">🧭 Resultado compartido</span>
+            <p>
+              Tu contacto se sitúa en el punto <strong>${preview.score}/100</strong> del arco político${affinityText}.
+              Responde estos 10 escenarios sin ver siglas y compara tu resultado.
+            </p>
+          </div>
+          <button type="button" class="shared-banner-close" id="shared-banner-close-btn" aria-label="Ocultar aviso de resultado compartido">✕</button>
+        </div>
+      `;
     }
 
     const q = questions[state.quizIndex] || questions[0];
@@ -952,6 +1514,8 @@
     const letters = ['A', 'B', 'C', 'D', 'E'];
 
     stage.innerHTML = `
+      ${sharedBannerHtml}
+
       <div class="quiz-progress-wrap">
         <div class="quiz-progress-meta">
           <span>Escenario ${state.quizIndex + 1} de ${questions.length} · ${escapeHtml(q.axisLabel)}</span>
@@ -998,6 +1562,14 @@
       </div>
     `;
 
+    const closeBannerBtn = document.getElementById('shared-banner-close-btn');
+    if (closeBannerBtn) {
+      closeBannerBtn.addEventListener('click', () => {
+        state.sharedResultPreview = null;
+        renderQuizSection();
+      });
+    }
+
     stage.querySelectorAll('[data-option-idx]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const idx = Number(btn.dataset.optionIdx);
@@ -1043,12 +1615,29 @@
     const top1 = res.rankings[0];
     const top2 = res.rankings[1];
     const zoneLabel = describeSpectrumZone(res.userSpectrumScore);
+    const roundedScore = Math.round(res.userSpectrumScore);
+
+    const shareUrl = `${getShareOrigin()}/?section=test-afinidad&resultado=${roundedScore}&top=${encodeURIComponent(top1.party.id)}&afinidad=${top1.affinity}`;
+    const shareText = `He hecho el Test a Ciegas del 29-N (sin ver siglas) en PolitiFácil: me sitúa en el punto ${roundedScore}/100 (${zoneLabel}). Mayor afinidad programática: ${top1.party.shortName} (${top1.affinity}%) y ${top2.party.shortName} (${top2.affinity}%). ¿Dónde te sitúa a ti? 👇`;
+    const barsLines = res.rankings
+      .map((item) => `${item.party.shortName.padEnd(14, ' ')} ${buildTextProgressBar(item.affinity)} ${item.affinity}%`)
+      .join('\n');
+    const copySummaryText = [
+      '🧭 Mi Brújula Electoral 29-N (Test a Ciegas en PolitiFácil)',
+      `Posición en el arco: ${roundedScore}/100 (${zoneLabel})`,
+      '',
+      'Afinidad programática (sin ver siglas):',
+      barsLines,
+      '',
+      'Haz tu test sin sesgos y compara tu resultado:',
+      shareUrl,
+    ].join('\n');
 
     stage.innerHTML = `
       <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
         <div>
           <span class="eyebrow">Resultado de tus 10 escenarios</span>
-          <h2>Tu posición en el arco: ${Math.round(res.userSpectrumScore)}/100 · ${escapeHtml(zoneLabel)}</h2>
+          <h2>Tu posición en el arco: ${roundedScore}/100 · ${escapeHtml(zoneLabel)}</h2>
           <p class="muted-text">Mayor afinidad programática con <strong>${escapeHtml(top1.party.shortName)} (${top1.affinity}%)</strong> y <strong>${escapeHtml(top2.party.shortName)} (${top2.affinity}%)</strong>.</p>
         </div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
@@ -1088,6 +1677,19 @@
         </div>
       </div>
 
+      <div class="viral-share-card">
+        <h3>Comparte tu brújula 29-N (y reta a otros sin sesgos)</h3>
+        <p class="muted-text">Envía tu enlace con tu puntuación en el arco para que tus contactos respondan los 10 escenarios sin ver siglas ni colores y comparen su posición contigo.</p>
+        ${buildShareButtonsHtml({
+          shareUrl,
+          shareText,
+          copyBtnId: 'quiz-copy-share-btn',
+          downloadBtnId: 'quiz-download-png-btn',
+          compact: false,
+        })}
+        <p class="share-feedback" id="quiz-share-feedback" aria-live="polite"></p>
+      </div>
+
       <div>
         <h3>Desglose escenario por escenario</h3>
         <p class="muted-text">Comprueba qué partidos defienden en su programa oficial la respuesta que elegiste en cada situación.</p>
@@ -1122,6 +1724,15 @@
         </div>
       </div>
     `;
+
+    bindCopyShareButton('quiz-copy-share-btn', 'quiz-share-feedback', copySummaryText);
+
+    const downloadPngBtn = document.getElementById('quiz-download-png-btn');
+    if (downloadPngBtn) {
+      downloadPngBtn.addEventListener('click', () => {
+        downloadQuizResultImage(res, zoneLabel);
+      });
+    }
 
     document.getElementById('quiz-restart-btn').addEventListener('click', () => {
       state.quizAnswers = {};
@@ -1173,6 +1784,15 @@
       applyTheme();
       saveState();
     });
+
+    window.addEventListener('popstate', () => {
+      parseUrlParams(true);
+      renderOverviewSection();
+      renderComparatorSection();
+      renderInterviewsSection();
+      renderQuizSection();
+      switchSection(state.activeSection, { updateHistory: false, scroll: false });
+    });
   }
 
   function updateCountdown() {
@@ -1192,6 +1812,7 @@
 
   function init() {
     loadSavedState();
+    parseUrlParams(false);
     applyTheme();
     updateCountdown();
     bindGlobalEvents();
@@ -1202,6 +1823,7 @@
     renderComparatorSection();
     renderInterviewsSection();
     renderQuizSection();
+    switchSection(state.activeSection, { updateHistory: false, scroll: false });
   }
 
   document.addEventListener('DOMContentLoaded', init);

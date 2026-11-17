@@ -1,0 +1,2213 @@
+{
+  "meta": {
+    "title": "PolitiFácil 29-N",
+    "electionDate": "2026-11-29",
+    "decree": "Real Decreto 806/2026, de 5 de octubre",
+    "seatsCongress": 350,
+    "seatsSenate": 208,
+    "electoralCensus": 38728356
+  },
+  "axes": [
+    {
+      "id": "vivienda",
+      "label": "Vivienda y Alquiler",
+      "icon": "🏠"
+    },
+    {
+      "id": "economia",
+      "label": "Economía, Impuestos y Coste de la Vida",
+      "icon": "💶"
+    },
+    {
+      "id": "empleo",
+      "label": "Empleo, Salarios y Jornada Laboral",
+      "icon": "💼"
+    },
+    {
+      "id": "servicios",
+      "label": "Sanidad, Educación y Pensiones",
+      "icon": "🏥"
+    },
+    {
+      "id": "territorial",
+      "label": "Modelo Territorial y Financiación",
+      "icon": "🏛️"
+    },
+    {
+      "id": "seguridad",
+      "label": "Inmigración, Seguridad, Defensa y Justicia",
+      "icon": "🛡️"
+    },
+    {
+      "id": "ecologia",
+      "label": "Transición Ecológica, Energía y Campo",
+      "icon": "🌱"
+    },
+    {
+      "id": "regeneracion",
+      "label": "Regeneración Democrática y Derechos Civiles",
+      "icon": "⚖️"
+    }
+  ],
+  "parties": [
+    {
+      "id": "podemos",
+      "name": "Podemos",
+      "shortName": "Podemos",
+      "candidate": "Irene Montero",
+      "ideologyLabel": "Izquierda transformadora y antimilitarista",
+      "spectrumScore": 10,
+      "economicAxis": 8,
+      "socialTerritorialAxis": 12,
+      "color": "#7c3aed",
+      "officialUrl": "https://pazcasaytrabajo.es",
+      "secondaryUrl": "https://podemos.info",
+      "summary": "Centra su oferta del 29-N en la intervención pública directa sobre vivienda, precios y sectores estratégicos, la reducción de la jornada a 30 horas y el rechazo frontal al incremento del gasto militar.",
+      "officialCommunication": {
+        "slogans": [
+          "Paz, casa y trabajo",
+          "Irene. Paz, casa y trabajo",
+          "Las casas son para vivir",
+          "Ni un euro más para armas"
+        ],
+        "tone": "Registro combativo, directo y de «cultura de la exigencia», estructurado frente a PP/Vox y frente al voto útil socialista.",
+        "framing": "Plantea los problemas cotidianos como un conflicto material entre la mayoría social (\"volver a lo básico\") y poderes inmobiliarios, financieros y militares.",
+        "channels": "Cartelería hiperpersonalizada («Irene» sin apenas siglas ni morado tradicional), plataforma web pazcasaytrabajo.es, mítines conjuntos con ERC (Gabriel Rufián) y presencia en espacios de entretenimiento joven.",
+        "keywords": [
+          "Paz, casa y trabajo",
+          "Fondos buitre",
+          "Bajar alquileres 40 %",
+          "Cultura de la exigencia",
+          "Rearme",
+          "Banca pública"
+        ]
+      },
+      "interviewStyle": {
+        "summary": "Rápida y contundente; contrapone cifras concretas (alquileres -40 %, SMI 1.800 €) al gasto militar y reencuadra preguntas incómodas hacia la defensa cerrada de su gestión o el eje vivienda.",
+        "register": "Directo, asertivo y de confrontación programática con símiles populares."
+      },
+      "proposals": {
+        "vivienda": {
+          "headline": "Bajada forzosa del 40 % en alquileres y expropiación de uso a grandes tenedores",
+          "points": [
+            "Bajada obligatoria por ley del 40 % en todos los alquileres actuales y tope máximo del 30 % de los ingresos familiares.",
+            "Expropiación del uso de en torno al 50 % de las viviendas en manos de grandes tenedores y fondos buitre para alquiler social.",
+            "Nuevo impuesto a la vivienda vacía del 400 % (amparado en el art. 128 CE), veto a la compra especulativa por no residentes y moratoria de 5 años a pisos turísticos."
+          ],
+          "sourceLabel": "pazcasaytrabajo.es / Programa 29-N Podemos",
+          "sourceUrl": "https://pazcasaytrabajo.es"
+        },
+        "economia": {
+          "headline": "Banca y supermercado públicos, topes a la cesta básica y 50 % a beneficios extraordinarios",
+          "points": [
+            "Gravamen extraordinario del 50 % sobre beneficios extraordinarios de IBEX 35, banca y energéticas e igualación fiscal de rentas del capital y del trabajo.",
+            "Creación de una banca pública, un supermercado público y topes máximos de precios en alimentos básicos.",
+            "Nacionalización de empresas energéticas (como Repsol) y reasignación del gasto militar (~24.000 M€ desde 2023) a políticas sociales."
+          ],
+          "sourceLabel": "pazcasaytrabajo.es — Bloque Precios Justos",
+          "sourceUrl": "https://pazcasaytrabajo.es"
+        },
+        "empleo": {
+          "headline": "SMI de 1.800 € mensuales, jornada de 30 horas y persecución penal de horas extra",
+          "points": [
+            "Subida legal del Salario Mínimo Interprofesional (SMI) hasta los 1.800 euros mensuales en 14 pagas.",
+            "Jornada laboral máxima de 30 horas semanales (6 horas diarias) sin reducción salarial.",
+            "Persecución por vía penal de empresas que impongan horas extraordinarias ilegales no remuneradas y remuneración íntegra de las 8 semanas del permiso parental."
+          ],
+          "sourceLabel": "pazcasaytrabajo.es — Bloque Trabajo",
+          "sourceUrl": "https://pazcasaytrabajo.es"
+        },
+        "servicios": {
+          "headline": "Jubilación a los 63 años, fin de conciertos y 80.000 nuevas plazas públicas",
+          "points": [
+            "Contratación de 40.000 nuevos profesionales sanitarios y 40.000 nuevos docentes financiados con el recorte del gasto militar.",
+            "Sanidad y educación 100 % públicas eliminando conciertos privados, y gratuidad educativa de 0 a 18 años.",
+            "Rebaja de la edad ordinaria de jubilación a los 63 años, subida de pensiones mínimas y revalorización ligada al IPC real."
+          ],
+          "sourceLabel": "podemos.info / pazcasaytrabajo.es",
+          "sourceUrl": "https://podemos.info"
+        },
+        "territorial": {
+          "headline": "República plurinacional confederal, derecho a decidir y pactos territoriales",
+          "points": [
+            "Modelo de Estado republicano, plurinacional y confederal basado en soberanías compartidas y reconocimiento del derecho a decidir.",
+            "Equidad territorial con consideración específica de la despoblación en la financiación autonómica.",
+            "Alianzas territoriales del 29-N integradas con ERC en Cataluña, Compromís: Front Valencià y Unidad del Pueblo Canario."
+          ],
+          "sourceLabel": "podemos.info",
+          "sourceUrl": "https://podemos.info"
+        },
+        "seguridad": {
+          "headline": "Salida de la OTAN, cierre de Rota y Morón, embargo a Israel y derogación de Ley Mordaza",
+          "points": [
+            "Consigna «ni un euro más para armas»: salida de España de la OTAN, cierre de las bases de Rota y Morón y embargo total de armas a Israel.",
+            "Respaldo a la regularización de personas migrantes con igualdad plena de derechos y rechazo a vincular migración con inseguridad.",
+            "Derogación íntegra de la Ley Mordaza, prohibición de empresas de desokupación extrajudicial y democratización del CGPJ."
+          ],
+          "sourceLabel": "pazcasaytrabajo.es — Bloque Paz y Derechos",
+          "sourceUrl": "https://pazcasaytrabajo.es"
+        },
+        "ecologia": {
+          "headline": "Empresa pública de energía, cierre nuclear acelerado y freno a fondos en el campo",
+          "points": [
+            "Empresa pública eléctrica a coste real, cierre acelerado de centrales nucleares y sistema 100 % renovable en 2040.",
+            "Impuestos punitivos a jets privados, yates, campos de golf y vehículos de lujo contaminantes.",
+            "Prohibición de compra de tierras agrarias por fondos de inversión, prohibición de venta a pérdidas y control de precios agroalimentarios."
+          ],
+          "sourceLabel": "pazcasaytrabajo.es — Bloque Planeta",
+          "sourceUrl": "https://pazcasaytrabajo.es"
+        },
+        "regeneracion": {
+          "headline": "1.000 M€ contra violencias machistas, defensa de Ley Trans y medidas antilawfare",
+          "points": [
+            "Dotación de 1.000 millones de euros anuales contra las violencias machistas y ley marco conforme al Convenio de Estambul.",
+            "Defensa íntegra de la Ley del solo sí es sí y de la Ley Trans (autodeterminación registral sin informes médicos).",
+            "Regulación estricta de lobbies y puertas giratorias, referéndums vinculantes y límites a la concentración mediática."
+          ],
+          "sourceLabel": "podemos.info",
+          "sourceUrl": "https://podemos.info"
+        }
+      }
+    },
+    {
+      "id": "frente-amplio",
+      "name": "Frente Amplio (Sumar / IU / Más Madrid / Comuns)",
+      "shortName": "Frente Amplio",
+      "candidate": "Ada Colau",
+      "ideologyLabel": "Izquierda progresista, ecologista y plurinacional",
+      "spectrumScore": 22,
+      "economicAxis": 20,
+      "socialTerritorialAxis": 18,
+      "color": "#e11d48",
+      "officialUrl": "https://www.frenteamplio.info",
+      "summary": "Coalición que reúne a Movimiento Sumar, IU, Más Madrid, Comuns y fuerzas territoriales con un programa de 151 páginas centrado en bajar alquileres, jornada de 32 horas y fiscalidad \"Tax the rich\".",
+      "officialCommunication": {
+        "slogans": [
+          "Un voto como una casa",
+          "Un programa como una casa",
+          "Las casas son para vivir, no para especular",
+          "Trabajar para vivir",
+          "Tax the rich"
+        ],
+        "tone": "Combina rigor programático detallado (memorias económicas) con un discurso exigente hacia el PSOE y de defensa material de la clase trabajadora.",
+        "framing": "Se presenta como la «izquierda útil» capaz de condicionar el próximo gobierno para acabar con la especulación inmobiliaria y superar el 10 % en la Ley D’Hondt.",
+        "channels": "Estética rupturista en tonos naranja fluorescente y verde lima centrada en Ada Colau (candidata por Barcelona), frenteamplio.info, actos descentralizados (Vallecas) y pódcasts juveniles.",
+        "keywords": [
+          "Especulación",
+          "Parque público 1,5M",
+          "Tax the rich",
+          "País de países",
+          "Jornada 32h",
+          "Izquierda útil"
+        ]
+      },
+      "interviewStyle": {
+        "summary": "Conversacional y didáctica; evita el moralismo, combina la crítica concreta a los retrasos del PSOE en alquileres con salidas pragmáticas en casos de pequeños propietarios.",
+        "register": "Cercano y programático, con guiños culturales de redes y autocrítica discursiva."
+      },
+      "proposals": {
+        "vivienda": {
+          "headline": "1 % del PIB anual para 1,5 millones de pisos públicos y límite al 25 % de la renta",
+          "points": [
+            "Destinar el 1 % del PIB anual (~17.000 M€) durante 12 años para crear 1,5 millones de viviendas públicas en alquiler (20 % del parque en 2035).",
+            "Topes en zonas tensionadas al 25 % de los ingresos medios del hogar (referencia 600 €/mes) y contratos de alquiler indefinidos por defecto.",
+            "Expropiación progresiva a grandes tenedores corporativos, veto a compra especulativa por fondos/SOCIMIs y extinción de pisos turísticos en 3 años."
+          ],
+          "sourceLabel": "Programa «Un programa como una casa» — frenteamplio.info",
+          "sourceUrl": "https://www.frenteamplio.info"
+        },
+        "economia": {
+          "headline": "Sociedades mínimo al 20 %, impuesto al 3 % a fortunas y 3 horas de luz gratis",
+          "points": [
+            "Tipo mínimo efectivo del 20 % en Sociedades (hasta 30 % si suben beneficios sin subir salarios) e impuesto de hasta el 3 % a patrimonios >50 M€.",
+            "Tipo marginal del 100 % en sucesiones para herencias que superen los 10 millones de euros por heredero.",
+            "Topes a una cesta básica de alimentos ante abusos, IVA progresivo eléctrico y 3 horas diarias de electricidad gratuita en franja solar."
+          ],
+          "sourceLabel": "frenteamplio.info — Bloque Fiscalidad y Economía",
+          "sourceUrl": "https://www.frenteamplio.info"
+        },
+        "empleo": {
+          "headline": "Jornada de 32 horas, reparto del 10 % de beneficios y empleo garantizado",
+          "points": [
+            "Reducción de la jornada laboral desde 37,5 h (35 h en sector público) hasta 32 horas semanales sin recorte salarial.",
+            "Obligación en empresas de 50+ empleados de repartir el 10 % de beneficios entre la plantilla y presencia laboral en consejos.",
+            "Plan de Empleo Garantizado para bajar el paro estructural al 7 %, SMI al 60 % del salario medio neto y extensión del IMV a jóvenes."
+          ],
+          "sourceLabel": "frenteamplio.info — Bloque Trabajo",
+          "sourceUrl": "https://www.frenteamplio.info"
+        },
+        "servicios": {
+          "headline": "Sanidad al 8 % del PIB con dentista y gafas, crianza 200 € y jubilación a los 65",
+          "points": [
+            "Elevar la sanidad pública al 8 % del PIB incluyendo dentista público, gafas, audífonos y salud mental universal.",
+            "Educación al 7 % del PIB, comedores gratuitos y prestación universal por crianza de 200 €/mes por cada hijo menor de 18 años.",
+            "Revertir la reforma de 2011 para fijar la jubilación ordinaria en 65 años (60 años en trabajos penosos) y equiparar la pensión mínima al SMI."
+          ],
+          "sourceLabel": "frenteamplio.info — Servicios Públicos y Pensiones",
+          "sourceUrl": "https://www.frenteamplio.info"
+        },
+        "territorial": {
+          "headline": "Estado republicano federal-plurinacional y suelo fiscal común autonómico",
+          "points": [
+            "Tránsito hacia un Estado republicano, federal y plurinacional («país de países») con reconocimiento del derecho a decidir mediante referéndum regulado.",
+            "Reforma de financiación autonómica condicionada a un suelo fiscal común que impida el dumping tributario entre comunidades.",
+            "Plan de empleo verde, infraestructuras y servicios rurales para la España vaciada."
+          ],
+          "sourceLabel": "frenteamplio.info — Modelo Territorial",
+          "sourceUrl": "https://www.frenteamplio.info"
+        },
+        "seguridad": {
+          "headline": "Acogida solidaria de menores, rechazo al 5 % OTAN y embargo de armas a Israel",
+          "points": [
+            "Regularización y reparto solidario obligatorio de menores migrantes financiado por el Estado; recurso ante el TJUE contra externalizaciones.",
+            "Oposición a subir el gasto militar, reconversión civil de las bases de Rota y Morón, 0,7 % a cooperación y embargo total a Israel.",
+            "Derogación de aspectos restrictivos de la Ley Mordaza, prohibición de pelotas de goma y mediación comunitaria."
+          ],
+          "sourceLabel": "frenteamplio.info — Derechos, Paz y Seguridad",
+          "sourceUrl": "https://www.frenteamplio.info"
+        },
+        "ecologia": {
+          "headline": "3,5 % del PIB a transición verde, 100 % renovable en 2040 y fin a vuelos cortos",
+          "points": [
+            "Inversión legal del 3,5 % del PIB anual en transición ecológica justa con Vicepresidencia Ejecutiva y Fondo Generacional de Energía.",
+            "Electricidad 100 % renovable en 2040 manteniendo el cierre nuclear y prohibición de vuelos nacionales con tren alternativo <2h30.",
+            "Abono único de transporte estatal, restricción a megacruceros, apoyo a ganadería extensiva y freno a macrogranjas."
+          ],
+          "sourceLabel": "frenteamplio.info — Transición Ecológica",
+          "sourceUrl": "https://www.frenteamplio.info"
+        },
+        "regeneracion": {
+          "headline": "Blindaje del aborto, ley contra el racismo y pacto contra deepfakes con IA",
+          "points": [
+            "Blindaje constitucional del aborto, suspensión de visitas a investigados por violencia machista y refuerzo LGTBI+.",
+            "Ley integral contra el racismo, delitos de odio y aporofobia.",
+            "Pacto para prohibir IA vejatoria y deepfakes en campaña, regulación algorítmica de plataformas y horizonte republicano."
+          ],
+          "sourceLabel": "frenteamplio.info — Calidad Democrática",
+          "sourceUrl": "https://www.frenteamplio.info"
+        }
+      }
+    },
+    {
+      "id": "psoe",
+      "name": "Partido Socialista Obrero Español",
+      "shortName": "PSOE",
+      "candidate": "Pedro Sánchez",
+      "ideologyLabel": "Centro-izquierda socialdemócrata y europeísta",
+      "spectrumScore": 38,
+      "economicAxis": 36,
+      "socialTerritorialAxis": 35,
+      "color": "#dc2626",
+      "officialUrl": "https://lafuerzadelagente.es",
+      "secondaryUrl": "https://www.psoe.es",
+      "summary": "Propone consolidar la obra de gobierno con su programa de ~500 medidas (\"La fuerza de seguir avanzando\"), ampliando el parque público estatal CASA 47, la jornada de 37,5 h y nuevos gravámenes a grandes patrimonios y consumo de lujo.",
+      "officialCommunication": {
+        "slogans": [
+          "La fuerza de seguir avanzando",
+          "La fuerza de la gente",
+          "Vota con fuerza"
+        ],
+        "tone": "Institucional y propositivo combinado con épica de movilización urgente («remontada») frente a una eventual coalición PP-Vox.",
+        "framing": "Plantea las elecciones como una elección entre estabilidad progresista y avances sociales frente al «retroceso de 50 años» atribuido a la derecha.",
+        "channels": "Centralidad de Pedro Sánchez con estética cercana y familiar en mítines, portal participativo lafuerzadelagente.es, televisión en prime time y pódcasts largos.",
+        "keywords": [
+          "La fuerza de la gente",
+          "Seguir avanzando",
+          "Blindar derechos",
+          "CASA 47",
+          "Tecno-oligarcas",
+          "Aliados, no vasallos"
+        ]
+      },
+      "interviewStyle": {
+        "summary": "Pausado e institucional en prensa y radio, pero asertivo y combativo cuando cuestionan sus datos; en formatos largos apela a anécdotas personales y balances de gestión.",
+        "register": "Institucional-pedagógico con marcos binarios y réplica firme ante interrupciones."
+      },
+      "proposals": {
+        "vivienda": {
+          "headline": "1 % del PIB en vivienda, 100.000 pisos en CASA 47 y préstamos TUCASA de 50.000 €",
+          "points": [
+            "Reforma constitucional para blindar la vivienda como derecho fundamental exigible e inversión anual mínima del 1 % del PIB.",
+            "Consolidación de la entidad estatal CASA 47 para alcanzar 100.000 viviendas protegidas permanentes y límites al alquiler en zonas tensionadas.",
+            "Préstamos públicos sin intereses (TUCASA) de hasta 50.000 € para jóvenes en la entrada de su primera vivienda y recargos a fondos especulativos."
+          ],
+          "sourceLabel": "Programa «La fuerza de seguir avanzando» — lafuerzadelagente.es",
+          "sourceUrl": "https://lafuerzadelagente.es"
+        },
+        "economia": {
+          "headline": "Crianza 200 €/mes, impuestos a jets y megayates y mínimo del 15 % en Sociedades",
+          "points": [
+            "Consolidación permanente de gravámenes a banca y energéticas, tipo mínimo del 15 % en Sociedades y tributos sobre jets privados, clase business y megayates.",
+            "Exención en IRPF a subidas del SMI y creación de una prestación universal por crianza de 200 euros mensuales por cada hijo menor de edad.",
+            "Estrategia España Crece e inversión de 19.000 millones de euros hasta 2030 en modernización y seguridad ferroviaria."
+          ],
+          "sourceLabel": "lafuerzadelagente.es — Bloque Economía",
+          "sourceUrl": "https://lafuerzadelagente.es"
+        },
+        "empleo": {
+          "headline": "Jornada de 37,5 horas por ley, SMI al 60 % del salario medio y reforma del despido",
+          "points": [
+            "Reducción legal de la jornada máxima a 37,5 horas semanales sin pérdida salarial (vía abierta en convenios hacia 35 h) y registro horario digital.",
+            "Blindaje legal del SMI por encima del 60 % del salario medio y reforma del despido improcedente para hacerlo disuasorio según la Carta Social Europea.",
+            "Permiso retribuido al 100 % por cuidado de menores de 8 años y creación jurídica de la «Unión de amistad» para permisos de convivencia."
+          ],
+          "sourceLabel": "lafuerzadelagente.es — Bloque Empleo",
+          "sourceUrl": "https://lafuerzadelagente.es"
+        },
+        "servicios": {
+          "headline": "Sanidad al 7 % del PIB, psicólogo en 30 días, Plan Sonríe y 1.er año de grado gratis",
+          "points": [
+            "Financiación sanitaria en torno al 7 % del PIB, Ley de Buen Gobierno para frenar privatizaciones, consulta psicológica en máximo 30 días y Plan Sonríe bucodental.",
+            "Gratuidad de la matrícula del primer curso universitario público, Estatuto del Docente e impulso a la FP y escuelas 0-3 años.",
+            "Blindaje constitucional del sistema público de pensiones y de su revalorización anual automática conforme al IPC."
+          ],
+          "sourceLabel": "lafuerzadelagente.es — Estado del Bienestar",
+          "sourceUrl": "https://lafuerzadelagente.es"
+        },
+        "territorial": {
+          "headline": "21.000 M€ extra en financiación autonómica y quita estatal de 83.252 M€ de deuda",
+          "points": [
+            "Nuevo modelo de financiación autonómica con ~21.000 millones € adicionales anuales hacia 2027 para servicios esenciales.",
+            "Asunción por el Estado de 83.252 millones de euros de deuda autonómica (FLA) para las comunidades de régimen común.",
+            "Defensa del Estado autonómico y la cogobernanza multilateral, integrando acuerdos con ERC sobre singularidad y ordinalidad y fondos contra despoblación."
+          ],
+          "sourceLabel": "lafuerzadelagente.es / psoe.es",
+          "sourceUrl": "https://www.psoe.es"
+        },
+        "seguridad": {
+          "headline": "Plan de Integración (500 M€), gasto militar en el 2 % (no 5 %) y nueva LeCrim",
+          "points": [
+            "Sin nueva regularización extraordinaria tras el decreto de 2026: foco en vías legales en origen, reparto solidario de menores y Plan de Integración de 500 M€.",
+            "Defensa en torno al 2 %–2,1 % del PIB y autonomía estratégica europea, rechazando llegar al 5 % exigido por sectores de la OTAN («aliados, no vasallos»).",
+            "Nueva Ley de Enjuiciamiento Criminal (instrucción por Fiscalía), refuerzo policial contra narcotráfico y ciberseguridad."
+          ],
+          "sourceLabel": "lafuerzadelagente.es — Seguridad, Defensa y Justicia",
+          "sourceUrl": "https://lafuerzadelagente.es"
+        },
+        "ecologia": {
+          "headline": "Cierre nuclear a 2035, Ley de Adaptación Climática y centros de datos verdes",
+          "points": [
+            "Mantenimiento del calendario de cierre nuclear hasta 2035 y obligación de que los centros de datos funcionen con energía renovable y uso hídrico responsable.",
+            "Ley de Adaptación al Cambio Climático, Centro Estatal de Fenómenos Extremos y modernización de regadíos y reutilización de agua.",
+            "Ley de Agricultura Familiar y Profesional, bancos de tierras y Estrategia Nacional de Alimentación Ecológica."
+          ],
+          "sourceLabel": "lafuerzadelagente.es — Transición Ecológica",
+          "sourceUrl": "https://lafuerzadelagente.es"
+        },
+        "regeneracion": {
+          "headline": "Blindar el aborto en la Constitución, abolición de prostitución y límite a redes en menores",
+          "points": [
+            "Reforma del art. 43 de la Constitución para blindar el derecho al aborto, ley contra violencia vicaria y abolición penal de la prostitución.",
+            "Plan de Acción por la Democracia (transparencia mediática y de publicidad institucional), registro de lobbies y actualización de Secretos Oficiales.",
+            "Limitación del acceso de menores a redes sociales frente a los «tecno-oligarcas» y defensa de la Memoria Democrática."
+          ],
+          "sourceLabel": "lafuerzadelagente.es — Democracia e Igualdad",
+          "sourceUrl": "https://lafuerzadelagente.es"
+        }
+      }
+    },
+    {
+      "id": "pp",
+      "name": "Partido Popular",
+      "shortName": "PP",
+      "candidate": "Alberto Núñez Feijóo",
+      "ideologyLabel": "Centro-derecha liberal-conservador y reformista",
+      "spectrumScore": 68,
+      "economicAxis": 72,
+      "socialTerritorialAxis": 70,
+      "color": "#0284c7",
+      "officialUrl": "https://www.pp.es",
+      "summary": "Presenta 249 medidas en \"La Reconstrucción Nacional\" centradas en bajar impuestos, construir 1 millón de viviendas sin topes de alquiler, prorrogar las nucleares, frenar regularizaciones masivas y reformar la elección del CGPJ.",
+      "officialCommunication": {
+        "slogans": [
+          "El cambio necesario",
+          "La Reconstrucción Nacional",
+          "Vota el cambio necesario"
+        ],
+        "tone": "Dualidad estratégica: registro presidencial, sobrio y gestor en medios tradicionales, junto a una ofensiva irónica y viral en redes sociales.",
+        "framing": "Encuadra el 29-N como una urgencia de relevo administrativo frente al «fallo sistémico» y el exceso de propaganda, apelando al votante moderado y de centro.",
+        "channels": "Campaña física institucional con fondo azul corporativo, medios generalistas (El Hormiguero, prensa, radio), pódcasts (The Wild Project) y memes/vídeos de IA en X y TikTok.",
+        "keywords": [
+          "El cambio necesario",
+          "Gestión",
+          "Estabilidad",
+          "Fallo sistémico",
+          "Libertad fiscal",
+          "Desalojo 48h"
+        ]
+      },
+      "interviewStyle": {
+        "summary": "Prudente e institucional en prensa y radio, apoyándose en sus 33 años de gestión; en pódcasts y TV usa humor autodefensivo y evita comprometer fórmulas cerradas de coalición.",
+        "register": "Administrativo-sentencioso con ironía controlada y respuestas condicionales sobre pactos."
+      },
+      "proposals": {
+        "vivienda": {
+          "headline": "1 millón de viviendas, derogar topes de alquiler, Hucha Hogar Joven y desalojo en 48h",
+          "points": [
+            "Objetivo de 1.000.000 de viviendas mediante nueva Ley del Suelo (licencias en máximo 3 meses con silencio administrativo positivo).",
+            "Derogación de la Ley de Vivienda estatal eliminando zonas tensionadas e índices de precios del alquiler.",
+            "Avales del 20 % para hipoteca joven, «Hucha Hogar Joven» (desgravación del 20 % hasta 2.000 €/año), incentivos fiscales a propietarios y desalojo exprés de okupas en 48 horas."
+          ],
+          "sourceLabel": "Programa PP 2026 «La Reconstrucción Nacional» — pp.es",
+          "sourceUrl": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-2026-LA-RECONSTRUCCION-NACIONAL.pdf"
+        },
+        "economia": {
+          "headline": "Deflactar IRPF, exención 4 años a jóvenes, IVA 0 % en básicos y cuota cero a autónomos",
+          "points": [
+            "Deflactación del IRPF, exención automática al SMI y rebaja de IRPF a jóvenes de 18 a 35 años (100 %, 75 %, 50 % y 25 % en cuatro años).",
+            "IVA del 0 % en alimentos básicos (incluyendo carne, pescado y conservas) mientras persista la subida de precios y libertad de amortización en digitalización/IA.",
+            "Cuota cero el primer año a nuevos autónomos, exención de liquidar IVA por debajo de 85.000 € de facturación, auditoría en 100 días y regla normativa 1x3."
+          ],
+          "sourceLabel": "Programa Electoral PP 2026 — pp.es",
+          "sourceUrl": "https://www.pp.es"
+        },
+        "empleo": {
+          "headline": "Flexibilidad horaria frente a las 37,5h, mochila austriaca voluntaria y renta única",
+          "points": [
+            "Rechazo a imponer por ley la jornada de 37,5 horas; impulso a bancos de horas flexibles, negociación colectiva y ampliación del límite de horas extra.",
+            "Implantación de una «mochila austriaca» voluntaria (cuenta individual trasladable entre empleos).",
+            "Renta única de activación compatible con el empleo que integre IMV y subsidios, SMI pactado por productividad y plan contra el absentismo fraudulento."
+          ],
+          "sourceLabel": "Programa Electoral PP 2026 — pp.es",
+          "sourceUrl": "https://www.pp.es"
+        },
+        "servicios": {
+          "headline": "4.500 médicos en Primaria, EBAU común, castellano vehicular y pensiones con IPC",
+          "points": [
+            "Pacto de Estado por la Sanidad, 4.500 médicos más en Atención Primaria, Plan de Salud Mental 2027-2037 e historial sanitario único nacional.",
+            "Sustitución de la LOMLOE, EBAU común en toda España, libertad de elección de centro, castellano vehicular y bonos de escolarización 0-3 años.",
+            "Compromiso legal de revalorizar las pensiones conforme al IPC y recuperación del Pacto de Toledo."
+          ],
+          "sourceLabel": "Programa Electoral PP 2026 — pp.es",
+          "sourceUrl": "https://www.pp.es"
+        },
+        "territorial": {
+          "headline": "Rechazo al cupo catalán, reforma multilateral en CPFF y derogar la Amnistía",
+          "points": [
+            "Rechazo a financiaciones singulares y condonaciones unilaterales; reforma multilateral en el CPFF con criterios técnicos de la AIReF y cohesión sanitaria.",
+            "Derogación de la Ley de Amnistía, oposición a pinganillos en las Cámaras y cumplimiento de sentencias sobre bilingüismo escolar.",
+            "Plan Nacional de Infraestructuras de más de 300.000 M€ a 15 años y Plan de Presencia del Estado en la España vaciada."
+          ],
+          "sourceLabel": "Programa Electoral PP 2026 — pp.es",
+          "sourceUrl": "https://www.pp.es"
+        },
+        "seguridad": {
+          "headline": "Veto a regularizaciones masivas, 12 vocales del CGPJ por jueces y prisión permanente",
+          "points": [
+            "Prohibición legal de regularizaciones masivas, identificación en 7 días de entradas irregulares, agilización de expulsiones y cupos laborales anuales.",
+            "Elección directa de los 12 vocales judiciales del CGPJ por jueces y veto de 5 años a puertas giratorias entre política y judicatura.",
+            "Prisión permanente revisable a reincidentes en violencia sexual/machista y gestión de pulseras telemáticas en el Ministerio del Interior."
+          ],
+          "sourceLabel": "Programa Electoral PP 2026 — pp.es",
+          "sourceUrl": "https://www.pp.es"
+        },
+        "ecologia": {
+          "headline": "Prórroga de centrales nucleares en 100 días y Pacto Nacional del Agua (40.000 M€)",
+          "points": [
+            "Frenar en los primeros 100 días el cierre de las centrales nucleares (Almaraz, Ascó, Vandellós, Cofrentes y Trillo) y suprimir el impuesto del 7 % a la generación eléctrica.",
+            "Pacto Nacional del Agua de hasta 40.000 millones € hasta 2030 (embalses, interconexiones, regadíos y desalación) y Tarifa Social Única.",
+            "Pacto Nacional para el Campo, el Mar y el Monte, defensa de la PAC sin recortes y seguro agrario de rentas."
+          ],
+          "sourceLabel": "Programa Electoral PP 2026 — pp.es",
+          "sourceUrl": "https://www.pp.es"
+        },
+        "regeneracion": {
+          "headline": "Prohibir indultos por corrupción, revisión de Ley Trans y ley de violencia vicaria",
+          "points": [
+            "Reforma legal para prohibir indultos en delitos de corrupción, sedición o terrorismo y veto al uso partidista de medios oficiales (Falcon).",
+            "Ley específica contra la violencia vicaria, endurecimiento de penas y planes de empleo femenino rural.",
+            "Revisión de la Ley Trans (supresión de autodeterminación registral sin filtros y retraso de tratamientos en menores) sin modificar el modelo vigente de plazos del aborto."
+          ],
+          "sourceLabel": "Programa Electoral PP 2026 — pp.es",
+          "sourceUrl": "https://www.pp.es"
+        }
+      }
+    },
+    {
+      "id": "vox",
+      "name": "VOX",
+      "shortName": "VOX",
+      "candidate": "Santiago Abascal",
+      "ideologyLabel": "Derecha nacional-conservadora y soberanista",
+      "spectrumScore": 88,
+      "economicAxis": 85,
+      "socialTerritorialAxis": 94,
+      "color": "#16a34a",
+      "officialUrl": "https://votasentidocomun.es",
+      "secondaryUrl": "https://www.voxespana.es",
+      "summary": "Su programa de 115 medidas (\"Es sentido común\") propone recentralizar Sanidad, Educación, Justicia y Seguridad, rebajar impuestos con prioridad nacional, impulsar la remigración y derogar el Pacto Verde Europeo.",
+      "officialCommunication": {
+        "slogans": [
+          "Es sentido común",
+          "Prioridad nacional",
+          "Desregulación",
+          "Remigración"
+        ],
+        "tone": "Confrontación directa y antipolítica contra la «corrección política», presentada bajo una estética pragmática centrada en el coste diario de la vida.",
+        "framing": "Conecta las dificultades materiales cotidianas («no poder llenar la nevera») con el gasto autonómico, la inmigración irregular y las normativas verdes europeas.",
+        "channels": "Cartelería clásica frontal de Santiago Abascal, web votasentidocomun.es, vídeos verticales en X, TikTok e Instagram y mítines territoriales en plazas emblemáticas.",
+        "keywords": [
+          "Sentido común",
+          "Prioridad nacional",
+          "Remigración",
+          "Desregulación",
+          "Estado unitario",
+          "Seguridad jurídica"
+        ]
+      },
+      "interviewStyle": {
+        "summary": "Enfático, asertivo y de frases breves; vincula de forma directa vivienda e inseguridad con la acción del Gobierno y mantiene un registro grave incluso en formatos de entretenimiento.",
+        "register": "Directo, categórico y de contraataque ante premisas del entrevistador."
+      },
+      "proposals": {
+        "vivienda": {
+          "headline": "IVA 0 % e ITP bonificado al 100 % en 1.ª vivienda, prioridad nacional y desalojo en 24h",
+          "points": [
+            "Derogación de la Ley de Vivienda estatal y reforma de la Ley del Suelo para liberalizar suelo edificable y acelerar licencias.",
+            "IVA al 0 % en primera vivienda habitual de nueva construcción y bonificación del 100 % del ITP en segunda mano.",
+            "Exigencia de residencia legal para alquilar, prioridad nacional en vivienda pública, desalojo de okupas en <24 horas y tipificación de la «inquiokupación» como estafa."
+          ],
+          "sourceLabel": "Programa «Es sentido común» (115 medidas) — votasentidocomun.es",
+          "sourceUrl": "https://votasentidocomun.es"
+        },
+        "economia": {
+          "headline": "Rebaja drástica de IRPF por hijos, cuota cero al SMI para autónomos y tasa a remesas",
+          "points": [
+            "Simplificación y rebaja de IRPF ajustada por número de hijos, supresión del Impuesto de Patrimonio y reducción del IVA (4 % en productos infantiles y geriátricos).",
+            "Cuota cero para autónomos con ingresos por debajo del SMI (y progresiva desde 50 € al superarlo) junto a regla desreguladora 1x3.",
+            "Recorte de gasto político, subvenciones ideológicas y duplicidades autonómicas, más creación de un impuesto sobre remesas enviadas al exterior."
+          ],
+          "sourceLabel": "votasentidocomun.es / voxespana.es",
+          "sourceUrl": "https://www.voxespana.es"
+        },
+        "empleo": {
+          "headline": "Oposición a las 37,5h, fin del control horario y supresión de subvenciones sindicales",
+          "points": [
+            "Voto en contra de reducir por ley la jornada a 37,5 horas para no encarecer costes a las pymes ni dañar la competitividad.",
+            "Derogación de la reforma laboral y supresión del control horario obligatorio y de planes de igualdad impuestos a las empresas.",
+            "Sustituir las subidas del SMI por rebajas de IRPF/IVA, fin de subvenciones a patronal y sindicatos y planes de retorno de talento español."
+          ],
+          "sourceLabel": "voxespana.es — Programa 29-N",
+          "sourceUrl": "https://www.voxespana.es"
+        },
+        "servicios": {
+          "headline": "Devolver Sanidad y Educación al Estado, tarjeta única y urgencias a irregulares",
+          "points": [
+            "Devolución al Estado de Sanidad y Educación, tarjeta sanitaria única y limitación de la sanidad gratuita a inmigrantes irregulares solo a urgencias graves.",
+            "Derogación de la LOMLOE, EBAU única, español vehicular en todo el país y eliminación del requisito de lengua cooficial en oposiciones.",
+            "Sostenibilidad de las pensiones apoyada en crecimiento económico, natalidad y ahorro del recorte político-autonómico."
+          ],
+          "sourceLabel": "votasentidocomun.es — Servicios Públicos",
+          "sourceUrl": "https://votasentidocomun.es"
+        },
+        "territorial": {
+          "headline": "Estado unitario descentralizado administrativamente, sin policías ni cámaras regionales",
+          "points": [
+            "Transformación del Estado autonómico en un Estado unitario administrativamente descentralizado, eliminando parlamentos y privilegios fiscales regionales.",
+            "Devolución inmediata al Estado de Sanidad, Educación, Seguridad y Justicia, y supresión de las policías autonómicas.",
+            "Suspensión de la autonomía ante desafíos separatistas y plan estratégico de soberanía y defensa fronteriza para Ceuta y Melilla."
+          ],
+          "sourceLabel": "voxespana.es — Bloque Unidad Nacional",
+          "sourceUrl": "https://www.voxespana.es"
+        },
+        "seguridad": {
+          "headline": "Remigración, fin del arraigo, expulsión de delincuentes extranjeros y CGPJ judicial",
+          "points": [
+            "Prohibición de regularizaciones, supresión del arraigo, exclusión de ayudas sociales a no nacionales, repatriación de irregulares y expulsión de extranjeros que delincan.",
+            "Elección directa de los 12 vocales judiciales del CGPJ por jueces, apartar al TC del control político y recuperar el delito de sedición.",
+            "Endurecimiento general de penas, prohibición de indultos por corrupción y refuerzo de medios y respaldo jurídico a las FF.CC.SS.EE."
+          ],
+          "sourceLabel": "votasentidocomun.es — Inmigración y Justicia",
+          "sourceUrl": "https://votasentidocomun.es"
+        },
+        "ecologia": {
+          "headline": "Derogar Pacto Verde y Agenda 2030, nuevas nucleares, veto a Mercosur y trasvases",
+          "points": [
+            "Derogación de las restricciones del Pacto Verde Europeo y la Agenda 2030 en España y rebaja de impuestos en la factura eléctrica.",
+            "Anulación del cierre nuclear y estudio para instalar nuevas centrales nucleares junto a las existentes.",
+            "Oposición frontal al acuerdo UE-Mercosur para proteger el campo español y nuevo Plan Hidrológico Nacional con interconexión de cuencas y trasvases."
+          ],
+          "sourceLabel": "votasentidocomun.es — Energía y Campo",
+          "sourceUrl": "https://votasentidocomun.es"
+        },
+        "regeneracion": {
+          "headline": "Ley de violencia intrafamiliar, sin cuotas de género y giro pragmático en aborto",
+          "points": [
+            "Sustitución de la Ley de Violencia de Género por una ley de violencia intrafamiliar y eliminación de cuotas por sexo o identidad en oposiciones.",
+            "En 2026 omite pedir la derogación expresa del aborto o la eutanasia (priorizando defensa general de la vida, paliativos y objeción de conciencia).",
+            "Recorte drástico de organismos públicos considerados ideológicos y lucha contra la corrupción política sin indultos."
+          ],
+          "sourceLabel": "votasentidocomun.es",
+          "sourceUrl": "https://votasentidocomun.es"
+        }
+      }
+    },
+    {
+      "id": "salf",
+      "name": "Se Acabó La Fiesta",
+      "shortName": "SALF",
+      "candidate": "Alvise Pérez",
+      "ideologyLabel": "Derecha populista antisistema y desreguladora",
+      "spectrumScore": 92,
+      "economicAxis": 92,
+      "socialTerritorialAxis": 90,
+      "color": "#78350f",
+      "officialUrl": "https://www.seacabolafiesta.com",
+      "summary": "Concurre con un \"Contrato Electoral Simplificado\" de 119 medidas y cláusula de bloqueo del 100 % del sueldo del candidato en el Banco de España; propone exención de IRPF hasta 35.000 €, macrocárcel, 10 ministerios y desregulación total.",
+      "officialCommunication": {
+        "slogans": [
+          "La ilusión de un país",
+          "Contra el terrorismo fiscal, libertad financiera",
+          "Okupa fuera en 48 horas",
+          "O ellos o España"
+        ],
+        "tone": "Rupturista, de urgencia y polarización directa («pueblo contra partitocracia/casta»), con descalificación frontal a los medios tradicionales.",
+        "framing": "Se presenta como un actor externo («outsider») auditado por la ciudadanía mediante penalización económica si incumple sus 119 medidas en junio de 2030.",
+        "channels": "Canal unidireccional de Telegram como eje central de difusión, vídeos verticales, infografías de denuncia y entrevistas en medios digitales alternativos.",
+        "keywords": [
+          "Contrato Electoral",
+          "Partitocracia",
+          "Macrocárcel",
+          "Cuña fiscal 29 %",
+          "Chiringuitos",
+          "Auditoría 2030"
+        ]
+      },
+      "interviewStyle": {
+        "summary": "Relato dicotómico anti-sistema («anti-autónomos, anti-trabajadores») con tono coloquial y autoirónico en lo personal; evita el circuito de prensa y TV tradicional en campaña.",
+        "register": "Confrontativo, populista-digital y centrado en la denuncia judicial ciudadana."
+      },
+      "proposals": {
+        "vivienda": {
+          "headline": "Abaratar 35 % primera vivienda, ITP/AJD al 0 %, suelo libre y desalojo en 48h",
+          "points": [
+            "Eliminación de ITP y AJD en compra de primera vivienda habitual y devolución del IVA en la renta para abaratarla un 35 %.",
+            "Liberalización masiva del suelo (edificable salvo causa justificada), créditos específicos a menores de 45 años y veto a fondos extranjeros en vivienda urbana.",
+            "Rechazo a topes de alquiler, desalojo exprés de okupas en 48 horas y juicios rápidos por impago en 30 días."
+          ],
+          "sourceLabel": "SALF Contrato Electoral Simplificado — Bloque 1",
+          "sourceUrl": "https://www.seacabolafiesta.com"
+        },
+        "economia": {
+          "headline": "IRPF exento hasta 35.000 €, fin de cuota de autónomos y 10 ministerios",
+          "points": [
+            "Exención total del IRPF en los primeros 35.000 € de ingresos y bajada de Sociedades del 25 % al 20 % (15 % si se reinvierte).",
+            "Reducción de la cuña fiscal del 41 % al 29 % y eliminación total de la cuota mensual de autónomos.",
+            "Recorte del Gobierno de 22 a 10 ministerios, cierre de organismos duplicados y blindaje legal del pago en dinero en efectivo."
+          ],
+          "sourceLabel": "SALF Contrato Electoral Simplificado — Bloque 3",
+          "sourceUrl": "https://www.seacabolafiesta.com"
+        },
+        "empleo": {
+          "headline": "Contrato único con mochila austriaca y supresión de cuotas autónomas",
+          "points": [
+            "Implantación de un contrato laboral único vinculado a una «mochila austriaca».",
+            "Recorte de la cuña fiscal del 41 % al 29 % sobre salarios y cotizaciones para ampliar renta neta.",
+            "Supresión íntegra de las cuotas fijas mensuales para trabajadores autónomos."
+          ],
+          "sourceLabel": "SALF Contrato Electoral Simplificado — Bloque 8",
+          "sourceUrl": "https://www.seacabolafiesta.com"
+        },
+        "servicios": {
+          "headline": "Central única sanitaria, cheque escolar con PIN parental y cuentas individuales",
+          "points": [
+            "Central única nacional de compras sanitarias, plazos máximos (60 días cirugía, 30 especialista, 7 pruebas) con derivación pública a privada si se superan.",
+            "Currículo educativo único en toda España, castellano vehicular, cheque escolar («el dinero sigue al alumno») y PIN parental.",
+            "Mantenimiento inicial del IPC en pensiones actuales mientras se crean cuentas individuales de ahorro para menores de 45 años."
+          ],
+          "sourceLabel": "SALF Contrato Electoral Simplificado — Bloques 5, 6 y 9",
+          "sourceUrl": "https://www.seacabolafiesta.com"
+        },
+        "territorial": {
+          "headline": "Recentralización funcional, fin de «taifas» y referéndum sobre la relación con la UE",
+          "points": [
+            "Oposición frontal a modelos de financiación singular, nacionalismos periféricos y autonomías asimétricas en favor de igualdad fiscal única.",
+            "Centralización de compras sanitarias, currículo educativo y reducción ministerial.",
+            "Referéndum nacional para renegociar las condiciones de España con la Unión Europea y bloqueo comercial ante conflictos portuarios con Marruecos."
+          ],
+          "sourceLabel": "SALF Contrato Electoral Simplificado — Bloque 10",
+          "sourceUrl": "https://www.seacabolafiesta.com"
+        },
+        "seguridad": {
+          "headline": "Macrocárcel (3.000 M€), expulsión en 48h, Ejército en el Estrecho y legítima defensa",
+          "points": [
+            "Macrocárcel de máxima seguridad (3.000 M€) con cumplimiento íntegro sin permisos para delitos graves y corruptos que no devuelvan lo robado.",
+            "Presunción legal de legítima defensa dentro de viviendas y negocios frente a asaltos.",
+            "Expulsión en 48 horas de infractores e irregulares y despliegue permanente de Armada y Ejército del Aire en el Estrecho."
+          ],
+          "sourceLabel": "SALF Contrato Electoral Simplificado — Bloques 2 y 4",
+          "sourceUrl": "https://www.seacabolafiesta.com"
+        },
+        "ecologia": {
+          "headline": "Rechazo a la Agenda Verde europea, energía nuclear y menos burocracia agraria",
+          "points": [
+            "Oposición a las normativas de la Agenda Verde europea y bajada de impuestos sobre energía y carburantes.",
+            "Apuesta por mantener y aprovechar la energía nuclear para reducir la factura eléctrica dentro de un ministerio unificado de Energía e Industria.",
+            "Controles fitosanitarios y barreras a importaciones extracomunitarias junto a simplificación de la PAC para agricultores."
+          ],
+          "sourceLabel": "SALF Contrato Electoral Simplificado",
+          "sourceUrl": "https://www.seacabolafiesta.com"
+        },
+        "regeneracion": {
+          "headline": "Corrupción imprescriptible (devolver el triple y 15 % al denunciante) y fin de asimetría penal",
+          "points": [
+            "Delitos de corrupción imprescriptibles, devolución del triple de lo sustraído y recompensa del 15 % de lo recuperado a ciudadanos informantes.",
+            "Bloqueo del 100 % del sueldo público del candidato en el Banco de España hasta auditoría ciudadana en junio de 2030.",
+            "Derogación de leyes con asimetría penal por sexo o subvenciones a observatorios, sustituyéndolas por protección penal universal."
+          ],
+          "sourceLabel": "SALF Contrato Electoral Simplificado — Bloque 7",
+          "sourceUrl": "https://www.seacabolafiesta.com"
+        }
+      }
+    }
+  ],
+  "territorialParties": [
+    {
+      "id": "erc",
+      "shortName": "ERC",
+      "name": "Esquerra Republicana de Catalunya",
+      "candidate": "Gabriel Rufián",
+      "territory": "Cataluña",
+      "spectrumLabel": "Izquierda soberanista",
+      "color": "#eab308",
+      "officialUrl": "https://www.esquerra.cat",
+      "priorities": "Financiación singular y recaudación íntegra de impuestos en Cataluña, recargos fiscales a grandes tenedores en vivienda, traspaso de Rodalies y oficialidad del catalán en la UE.",
+      "parliamentaryRole": "Veto frontal a PP y Vox; busca condicionar externamente a un Gobierno progresista al cumplimiento estricto de pactos (con acuerdo territorial con Podemos en Cataluña)."
+    },
+    {
+      "id": "junts",
+      "shortName": "Junts",
+      "name": "Junts per Catalunya",
+      "candidate": "Míriam Nogueras / Carles Puigdemont",
+      "territory": "Cataluña",
+      "spectrumLabel": "Centroderecha independentista",
+      "color": "#0d9488",
+      "officialUrl": "https://www.junts.cat",
+      "priorities": "Concierto económico catalán, traspaso integral de competencias de inmigración, uso del catalán en Congreso y UE, rebajas fiscales a pymes y rechazo a topes de alquiler.",
+      "parliamentaryRole": "Actor bisagra imprevisible tras romper acuerdos previos con el PSOE a finales de 2025; advierte que no dará cheques en blanco en la investidura."
+    },
+    {
+      "id": "eaj-pnv",
+      "shortName": "EAJ-PNV",
+      "name": "Partido Nacionalista Vasco",
+      "candidate": "Aitor Esteban / Idoia Sagastizabal / Maribel Vaquero",
+      "territory": "Euskadi",
+      "spectrumLabel": "Centro / centroderecha foral",
+      "color": "#15803d",
+      "officialUrl": "https://www.eaj-pnv.eus",
+      "priorities": "Cumplimiento íntegro del Estatuto de Gernika, defensa del Concierto Económico, reconocimiento nacional de Euskadi y agenda de rigor fiscal y bienestar («póliza de seguros»).",
+      "parliamentaryRole": "Dique explícito contra mayorías con Vox y socio pragmático de estabilidad condicionado a transferencias pendientes."
+    },
+    {
+      "id": "eh-bildu",
+      "shortName": "EH Bildu",
+      "name": "Euskal Herria Bildu",
+      "candidate": "Oskar Matute / Arnaldo Otegi",
+      "territory": "Euskadi y Navarra",
+      "spectrumLabel": "Izquierda soberanista",
+      "color": "#65a30d",
+      "officialUrl": "https://www.ehbildu.eus",
+      "priorities": "Regulación permanente de alquileres, marco vasco de relaciones laborales con SMI propio, mejora de pensiones mínimas y derecho a decidir.",
+      "parliamentaryRole": "Disposición declarada a frenar a PP y Vox facilitando una investidura progresista sin entrar en el Consejo de Ministros, exigiendo avances sociales en cada ley."
+    },
+    {
+      "id": "bng",
+      "shortName": "BNG",
+      "name": "Bloque Nacionalista Galego",
+      "candidate": "Néstor Rego / Ana Pontón",
+      "territory": "Galicia",
+      "spectrumLabel": "Izquierda nacionalista gallega",
+      "color": "#0369a1",
+      "officialUrl": "https://www.bng.gal",
+      "priorities": "Decálogo «Axenda Galega»: tarifa eléctrica gallega justa, inversiones ferroviarias, defensa de pesca y agro, vivienda pública y ampliación del autogobierno.",
+      "parliamentaryRole": "Potencial apoyo al bloque progresista condicionado a inversiones reales e infraestructuras para Galicia."
+    }
+  ],
+  "axisComparisons": {
+    "vivienda": {
+      "similarities": [
+        "Todos los partidos coinciden en que el acceso a la vivienda es el principal problema social de la campaña 29-N, especialmente para los jóvenes.",
+        "Existe consenso en que hace falta aumentar la oferta residencial, aunque discrepan en cómo lograrlo.",
+        "Podemos, Frente Amplio y PSOE proponen destinar gran peso presupuestario al parque público de alquiler y restringir pisos turísticos.",
+        "PP, VOX y SALF coinciden en derogar la Ley de Vivienda actual, suprimir topes al alquiler y aprobar desalojos exprés en 24-48 horas."
+      ],
+      "differences": [
+        "Control de precios vs. mercado libre: Podemos (-40 % forzoso), Frente Amplio (tope 25 % renta) y PSOE (zonas tensionadas) regulan precios; PP, VOX y SALF los eliminan.",
+        "Propiedad y grandes tenedores: Podemos y Frente Amplio plantean expropiación de uso o de carteras a fondos; PP, VOX y SALF priorizan incentivos fiscales a propietarios y seguridad jurídica.",
+        "Fiscalidad a la compra: PSOE da préstamos sin intereses (TUCASA), PP avales del 20 % y Hucha Joven, y VOX/SALF proponen IVA 0 % o ITP 0 % en primera vivienda."
+      ]
+    },
+    "economia": {
+      "similarities": [
+        "Todas las fuerzas estatales prometen proteger el poder adquisitivo frente al coste de la vida, bien mediante bonificaciones fiscales o vía precios y rentas.",
+        "PP y PSOE coinciden en evitar que los perceptores del Salario Mínimo tributen en el IRPF por las subidas del SMI.",
+        "PP, VOX y SALF coinciden en aplicar reglas de simplificación normativa (como el 1x3) y reducir cuotas iniciales o totales a autónomos."
+      ],
+      "differences": [
+        "Carga fiscal a empresas y patrimonio: Podemos y Frente Amplio suben Sociedades (20 %-30 % o 50 % a extraordinarios) y patrimonios; PSOE consolida tasas a banca, energéticas y lujo; PP, VOX y SALF rebajan IRPF y Sociedades.",
+        "Intervención en cesta de la compra: Podemos (supermercado público) y Frente Amplio (topes ante abusos) regulan precios; PP propone IVA 0 % en básicos y VOX/SALF rebajas generalizadas de impuestos.",
+        "Tamaño de la Administración: PP audita en 100 días, VOX suprime duplicidades autonómicas y SALF recorta de 22 a 10 ministerios; el bloque progresista amplía prestaciones universales (200 €/mes por hijo)."
+      ]
+    },
+    "empleo": {
+      "similarities": [
+        "PSOE, Frente Amplio y Podemos comparten la reducción legal de la jornada laboral semanal sin bajada salarial y el refuerzo de la inspección sobre horas extra.",
+        "PP y SALF coinciden en implantar cuentas individuales portables de despido/cotización («mochila austriaca»).",
+        "Todos los bloques afirman priorizar la conciliación y la creación de empleo estable en pymes y jóvenes."
+      ],
+      "differences": [
+        "Jornada laboral: Podemos pide 30 h semanales, Frente Amplio camino a 32 h y PSOE 37,5 h por ley; PP apuesta por bancos de horas flexibles y VOX rechazó las 37,5 h por coste a pymes.",
+        "Salario Mínimo (SMI): Podemos propone 1.800 €/mes, Frente Amplio y PSOE blindarlo al 60 % del salario medio; PP lo vincula a productividad y VOX prefiere rebajar IRPF e IVA.",
+        "Organización empresarial: Frente Amplio plantea repartir el 10 % de beneficios en plantillas >50 trabajadores; VOX suprime control horario y planes de igualdad obligatorios."
+      ]
+    },
+    "servicios": {
+      "similarities": [
+        "PSOE, PP, VOX y SALF declaran mantener el poder adquisitivo de las pensiones existentes mediante su actualización con el IPC (con distintos mecanismos de sostenibilidad).",
+        "Todas las formaciones proponen reducir listas de espera en Atención Primaria y reforzar la salud mental.",
+        "PP, VOX y SALF coinciden en establecer una EBAU/prueba única o currículo común en toda España."
+      ],
+      "differences": [
+        "Gestión sanitaria: Podemos elimina conciertos privados, PSOE aprueba ley contra privatizaciones, PP impulsa pacto y 4.500 médicos, y SALF deriva a la privada si se superan plazos.",
+        "Edad de jubilación y modelo: Podemos pide bajarla a 63 años, Frente Amplio volver a 65, PSOE y PP mantienen el marco vigente con IPC y SALF introduce cuentas individuales para <45 años.",
+        "Lenguas y acceso sanitario: VOX limita la sanidad a irregulares a urgencias y quita el requisito de lengua cooficial; el bloque progresista defiende cobertura universal y plurinacionalidad."
+      ]
+    },
+    "territorial": {
+      "similarities": [
+        "PSOE, Frente Amplio, PP y los grupos territoriales reconocen la necesidad de abordar la despoblación rural («España vaciada»).",
+        "PP, VOX y SALF comparten el rechazo a la financiación singular de Cataluña («cupo catalán») y a la Ley de Amnistía.",
+        "Frente Amplio y Podemos coinciden en un horizonte federal o confederal con derecho a decidir."
+      ],
+      "differences": [
+        "Modelo de Estado: Podemos y Frente Amplio proponen República confederal/federal; PSOE defiende el Estado autonómico; PP refuerza la cohesión multilateral; VOX y SALF plantean recentralizar Sanidad, Educación, Justicia o suprimir autonomías legislativas.",
+        "Financiación autonómica: PSOE incluye quita de 83.252 M€ y 21.000 M€ extra; Frente Amplio exige un suelo fiscal común; PP remite todo al CPFF multilateral.",
+        "Relación con partidos territoriales: PSOE y la izquierda pactan investiduras con ERC, EH Bildu, PNV y BNG; PP rechaza cesiones bilaterales y VOX propone ilegalizar fuerzas separatistas."
+      ]
+    },
+    "seguridad": {
+      "similarities": [
+        "PP, VOX y SALF coinciden en prohibir regularizaciones masivas y agilizar expulsiones de inmigrantes en situación irregular.",
+        "PP y VOX coinciden en que los 12 vocales judiciales del CGPJ sean elegidos directamente por los jueces.",
+        "Podemos y Frente Amplio coinciden en rechazar el aumento de gasto militar al 5 % de la OTAN, cerrar las bases de Rota/Morón y embargar armas a Israel."
+      ],
+      "differences": [
+        "Inmigración: Podemos y Frente Amplio defienden regularización y reparto solidario obligatorio de menores; PSOE combina vías legales y 500 M€ de integración sin nueva regularización; PP impone identificación en 7 días; VOX aplica «remigración» y SALF despliegue militar en el Estrecho.",
+        "Gasto en Defensa: Podemos pide salir de la OTAN, Frente Amplio bajar gasto militar, PSOE mantenerse en el 2 % rechazando el 5 %, y PP/VOX refuerzan el compromiso de defensa y fronteras.",
+        "Modelo penal y prisiones: SALF plantea macrocárcel de 3.000 M€ y legítima defensa armada; PP y VOX endurecen penas y prisión permanente; la izquierda deroga la Ley Mordaza."
+      ]
+    },
+    "ecologia": {
+      "similarities": [
+        "PP, VOX y SALF coinciden en prorrogar o impulsar la energía nuclear para reducir la factura eléctrica y frenar restricciones climáticas europeas.",
+        "PSOE, Frente Amplio y Podemos coinciden en mantener el calendario de cierre nuclear y acelerar la electrificación 100 % renovable.",
+        "Todos los partidos dedican medidas específicas de apoyo al sector primario (agricultura y ganadería) ante costes y competencia exterior."
+      ],
+      "differences": [
+        "Energía nuclear: PSOE mantiene cierre a 2035, Podemos lo acelera y Frente Amplio invierte el 3,5 % del PIB en renovables; PP frena cierres en 100 días y VOX estudia nuevas centrales.",
+        "Gestión del agua: PP (40.000 M€) y VOX (Plan Hidrológico con trasvases) apuestan por grandes obras hidráulicas; PSOE, Frente Amplio y Podemos priorizan adaptación climática, reutilización y ahorro.",
+        "Agenda Verde y Mercosur: VOX y SALF piden derogar el Pacto Verde europeo y frenar Mercosur; el bloque progresista refuerza objetivos climáticos y restringe macrogranjas o vuelos cortos."
+      ]
+    },
+    "regeneracion": {
+      "similarities": [
+        "Todos los programas incluyen propuestas explícitas contra la corrupción (desde prohibir indultos en PP/VOX hasta incentivos del 15 % a denunciantes en SALF o regulación de lobbies en PSOE/Frente Amplio/Podemos).",
+        "PSOE y PP coinciden en aprobar una ley específica contra la violencia vicaria.",
+        "PSOE, Frente Amplio y Podemos coinciden en defender la Ley del aborto (blindaje constitucional) y la ampliación de derechos LGTBI+."
+      ],
+      "differences": [
+        "Violencia de género e igualdad: PSOE, Frente Amplio y Podemos refuerzan leyes específicas y presupuestos feministas; PP revisa la Ley Trans manteniendo plazos del aborto; VOX sustituye violencia de género por intrafamiliar y SALF elimina asimetría penal.",
+        "Democracia digital y medios: PSOE y Frente Amplio regulan algoritmos, propiedad mediática y deepfakes con IA; SALF y VOX rechazan cualquier regulación mediática al considerar que censura la disidencia.",
+        "Compromiso salarial y justicia: SALF bloquea el 100 % del sueldo de su candidato hasta auditoría en 2030 y hace imprescriptible la corrupción; PP y VOX prohíben indultos por corrupción."
+      ]
+    }
+  },
+  "interviews": [
+    {
+      "id": "iv-sanchez-eldiario",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "elDiario.es",
+      "program": "Entrevista con Ignacio Escolar",
+      "date": "9 de octubre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Vivienda y Parlamento",
+      "questionContext": "Primera entrevista tras la convocatoria electoral anticipada del 29-N y la crisis de vivienda.",
+      "quote": "Es hora de que el Parlamento se parezca a la calle y no a quienes viven en aticazos",
+      "expressionStyle": "Contraste retórico coloquial-social",
+      "sourceUrl": "https://www.eldiario.es"
+    },
+    {
+      "id": "iv-sanchez-elpais",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "EL PAÍS",
+      "program": "Entrevista de Jan Martínez Ahrens y Carlos E. Cué",
+      "date": "25 de octubre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Pactos y Corrupción",
+      "questionContext": "Valoración de una eventual coalición PP-Vox y balance sobre su mayor error de legislatura.",
+      "quote": "Un Gobierno del PP y Vox no representa una alternancia, es una auténtica involución. Supone retroceder 40 o 50 años de golpe en debates como el aborto o la muerte digna",
+      "expressionStyle": "Marco binario de alerta institucional",
+      "sourceUrl": "https://elpais.com"
+    },
+    {
+      "id": "iv-sanchez-elpais-abalos",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "EL PAÍS",
+      "program": "Entrevista de Jan Martínez Ahrens y Carlos E. Cué",
+      "date": "25 de octubre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Corrupción y Autocrítica",
+      "questionContext": "Pregunta directa sobre cuál ha sido su mayor error en ocho años al frente del Ejecutivo.",
+      "quote": "La corrupción de Ábalos. Por el doble error de no haber visto y, por supuesto, de que sucediera",
+      "expressionStyle": "Reconocimiento acotado de error",
+      "sourceUrl": "https://elpais.com"
+    },
+    {
+      "id": "iv-sanchez-lavanguardia",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "La Vanguardia",
+      "program": "Entrevista de Jordi Juan y Juan Carlos Merino",
+      "date": "8 de noviembre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Expectativas 29-N",
+      "questionContext": "Análisis de las encuestas iniciales de campaña frente al bloque conservador.",
+      "quote": "El partido lo vamos a ganar, pero aún no está ganado",
+      "expressionStyle": "Metáfora deportiva movilizador-prudente",
+      "sourceUrl": "https://www.lavanguardia.com"
+    },
+    {
+      "id": "iv-sanchez-laseptima",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "La Séptima",
+      "program": "La última hora (Javier Ruiz)",
+      "date": "9 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Instituciones y Laicidad",
+      "questionContext": "Explicación sobre su ausencia en funerales u oficios religiosos tras emergencias nacionales.",
+      "quote": "Yo he sido presidente del gobierno durante la pandemia, lo he sido también con incendios, también, lógicamente, con el accidente de Damuz y el accidente de Urda. Yo siempre he ido a ceremonias, aconfesionales, nunca he ido a oficios religiosos, que respeto profundamente",
+      "expressionStyle": "Registro institucional enumerativo",
+      "sourceUrl": "https://www.20minutos.es"
+    },
+    {
+      "id": "iv-sanchez-telecinco",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "Telecinco",
+      "program": "Informativos Telecinco (Carlos Franganillo)",
+      "date": "16 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Inmigración y Turno de Palabra",
+      "questionContext": "Repreguntas tensas sobre las declaraciones acerca de mafias en la frontera de Ceuta y tiempos de entrevista.",
+      "quote": "A lo mejor está usted mal informado, Carlos. Usted habla y yo también tengo derecho a hablar. Por tanto, no me diga que ya terminamos porque usted hace su reflexión y yo merezco hacer también la reflexión",
+      "expressionStyle": "Réplica directa asertiva y defensa del turno",
+      "sourceUrl": "https://www.telecinco.es"
+    },
+    {
+      "id": "iv-sanchez-larevuelta",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "La 1 (RTVE)",
+      "program": "La Revuelta (David Broncano)",
+      "date": "22 de octubre de 2026",
+      "formatType": "Pódcast / Entretenimiento",
+      "topic": "Vivienda y Regulación",
+      "questionContext": "Debate sobre construcción frente a regulación del alquiler en respuesta al reproche por los tiempos.",
+      "quote": "Hay estudios que te dicen que el 60% de la desigualdad que se sufre ahora mismo en España es como consecuencia de la imposibilidad de acceder a una vivienda. Entonces ahí tienes como dos pedales: uno la construcción de viviendas y dos la regulación",
+      "expressionStyle": "Apelación a cifras con analogía didáctica",
+      "sourceUrl": "https://www.rtve.es"
+    },
+    {
+      "id": "iv-sanchez-wild",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "The Wild Project",
+      "program": "Episodio #393 (Jordi Wild)",
+      "date": "13 de noviembre de 2026",
+      "formatType": "Pódcast / Entretenimiento",
+      "topic": "Vivienda y Vida Personal",
+      "questionContext": "Conversación distendida sobre si pensó dejar la política y su situación hipotecaria personal.",
+      "quote": "He pensado dar un paso al lado, pero España vive uno de sus mejores momentos. Me hipotequé por 30 años como todo hijo de vecino, todavía me quedan 20 años",
+      "expressionStyle": "Tono coloquial cercano y autorrevelación",
+      "sourceUrl": "https://as.com"
+    },
+    {
+      "id": "iv-feijoo-lavanguardia",
+      "partyId": "pp",
+      "candidate": "Alberto Núñez Feijóo",
+      "media": "La Vanguardia",
+      "program": "Entrevista de campaña",
+      "date": "1 de noviembre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Gestión y Cataluña",
+      "questionContext": "Diagnóstico de la situación institucional de España y el peso político de Cataluña.",
+      "quote": "España está en fallo sistémico. La gestión se ha suplido por la propaganda. No se puede ser presidente de España sin entender a Catalunya",
+      "expressionStyle": "Diagnóstico técnico-institucional sentencioso",
+      "sourceUrl": "https://www.lavanguardia.com"
+    },
+    {
+      "id": "iv-feijoo-elpais",
+      "partyId": "pp",
+      "candidate": "Alberto Núñez Feijóo",
+      "media": "EL PAÍS",
+      "program": "Entrevista política 29-N",
+      "date": "7 de noviembre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Pactos con Vox y PSOE",
+      "questionContext": "Sobre una hipotética coalición de Gobierno con Vox o una abstención socialista tras las urnas.",
+      "quote": "Hacer una coalición de Gobierno con Vox no depende de mí. ¿Al PSOE de Sánchez? Sí, hombre. Mi grado de ingenuidad, a mi edad y con mi experiencia, no me lo permiten",
+      "expressionStyle": "Pragmatismo evasivo y réplica irónica",
+      "sourceUrl": "https://elpais.com"
+    },
+    {
+      "id": "iv-feijoo-ser",
+      "partyId": "pp",
+      "candidate": "Alberto Núñez Feijóo",
+      "media": "Cadena SER",
+      "program": "Hoy por Hoy (Aimar Bretos)",
+      "date": "23 de octubre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Gobernabilidad y Pactos",
+      "questionContext": "Posibilidad de necesitar los votos de Vox si el PP no alcanza la mayoría absoluta el 29-N.",
+      "quote": "No puedo descartar hacer caso a lo que me manden los españoles. Si me mandan dar estabilidad con la tercera fuerza política de este país, así lo haré",
+      "expressionStyle": "Lenguaje condicional de mandato electoral",
+      "sourceUrl": "https://cadenaser.com"
+    },
+    {
+      "id": "iv-feijoo-ondacero",
+      "partyId": "pp",
+      "candidate": "Alberto Núñez Feijóo",
+      "media": "Onda Cero",
+      "program": "Más de uno (Rafa Latorre)",
+      "date": "27 de octubre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Corrupción y Gestión",
+      "questionContext": "Estándares éticos, exigencia de responsabilidades políticas y trayectoria previa de gestión.",
+      "quote": "Llevo 33 años en esto, he presidido asociaciones y gobiernos autonómicos. No he tenido a una persona sometida a una duda, ni mucho menos en un sumario de corrupción",
+      "expressionStyle": "Contraste biográfico-cuantitativo",
+      "sourceUrl": "https://www.ondacero.es"
+    },
+    {
+      "id": "iv-feijoo-espejo",
+      "partyId": "pp",
+      "candidate": "Alberto Núñez Feijóo",
+      "media": "Antena 3",
+      "program": "Espejo Público (Susanna Griso)",
+      "date": "4 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Infraestructuras y Responsabilidad",
+      "questionContext": "Dimisión ministerial tras el accidente ferroviario de Urda y exigencia electoral.",
+      "quote": "Puente se va, pero Sánchez se queda. Los huérfanos, los viudos, los heridos se quedan y se queda un sistema ferroviario que ha quebrado la confianza de nuestro país",
+      "expressionStyle": "Paralelismo anafórico de impacto",
+      "sourceUrl": "https://www.antena3.com"
+    },
+    {
+      "id": "iv-feijoo-hormiguero",
+      "partyId": "pp",
+      "candidate": "Alberto Núñez Feijóo",
+      "media": "Antena 3",
+      "program": "El Hormiguero (Pablo Motos)",
+      "date": "11 de noviembre de 2026",
+      "formatType": "Pódcast / Entretenimiento",
+      "topic": "Pensiones y Huelga 11-N",
+      "questionContext": "Garantía de revalorización de las pensiones y valoración de la jornada de huelga general.",
+      "quote": "No voy a jugar con ellos, no voy a meterles miedo. Lo siento por Sánchez, pero el 29 de noviembre no hay huelga, la gente va a ir a votar y veremos qué opinan los españoles de verdad",
+      "expressionStyle": "Interpelación tranquila a cámara y contraste electoral",
+      "sourceUrl": "https://www.antena3.com"
+    },
+    {
+      "id": "iv-feijoo-wild",
+      "partyId": "pp",
+      "candidate": "Alberto Núñez Feijóo",
+      "media": "The Wild Project",
+      "program": "Episodio #392 (Jordi Wild)",
+      "date": "13 de noviembre de 2026",
+      "formatType": "Pódcast / Entretenimiento",
+      "topic": "Gestión y Polémicas Personales",
+      "questionContext": "Idiomas, foto histórica de los años 90 y broma sobre los tiempos del programa.",
+      "quote": "Yo no sé inglés, pero sé gobernar. Yo prefiero tener la foto con Marcial Dorado que toda la colección que tiene Sánchez",
+      "expressionStyle": "Humor autodefensivo y réplica comparativa breve",
+      "sourceUrl": "https://elpais.com"
+    },
+    {
+      "id": "iv-abascal-abc",
+      "partyId": "vox",
+      "candidate": "Santiago Abascal",
+      "media": "ABC",
+      "program": "Entrevista de precampaña",
+      "date": "11 de octubre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Clima Electoral 29-N",
+      "questionContext": "Valoración del escenario político y las condiciones de desarrollo de la campaña del 29-N.",
+      "quote": "Yo creo que los españoles deben temerse lo peor. Estas elecciones no solo son trascendentales, creo que van a ser unas elecciones muy complicadas y sucias. Lo que pido a los españoles es que estén alerta",
+      "expressionStyle": "Registro de alerta preventiva y movilización",
+      "sourceUrl": "https://www.europapress.es"
+    },
+    {
+      "id": "iv-abascal-espejo",
+      "partyId": "vox",
+      "candidate": "Santiago Abascal",
+      "media": "Antena 3",
+      "program": "Espejo Público (Susanna Griso)",
+      "date": "5 de octubre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Inmigración y Votación",
+      "questionContext": "Reacción al adelanto electoral del 29-N, situación de Ceuta y voto por correo.",
+      "quote": "Les animo a que no voten por correo. Voten en la urna, porque en estos momentos no me fío absolutamente de nada que pueda hacer Pedro Sánchez",
+      "expressionStyle": "Exhortación categórica de desconfianza institucional",
+      "sourceUrl": "https://www.antena3.com"
+    },
+    {
+      "id": "iv-abascal-cope",
+      "partyId": "vox",
+      "candidate": "Santiago Abascal",
+      "media": "COPE",
+      "program": "Herrera en COPE (Carlos Herrera y Jorge Bustos)",
+      "date": "10 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Encuestas, Huelga y Pactos",
+      "questionContext": "Credibilidad de los sondeos y eventual petición de vicepresidencias en un gobierno con el PP.",
+      "quote": "Yo desconfío muchísimo de las encuestas. En el año 23, con las encuestas que había, se iba a producir un cambio, y ese cambio no llegó",
+      "expressionStyle": "Desmarque tajante por contraste temporal",
+      "sourceUrl": "https://www.cope.es"
+    },
+    {
+      "id": "iv-abascal-larevuelta",
+      "partyId": "vox",
+      "candidate": "Santiago Abascal",
+      "media": "La 1 (RTVE)",
+      "program": "La Revuelta (David Broncano)",
+      "date": "9 de noviembre de 2026",
+      "formatType": "Pódcast / Entretenimiento",
+      "topic": "Vivienda y Tono del Programa",
+      "questionContext": "Debate sobre vivienda, inmigración y cierre tenso de la entrevista en horario de máxima audiencia.",
+      "quote": "El principal fondo buitre es el Gobierno. Más que una entrevista ha sido un debate muy serio. Yo esperaba otra cosa",
+      "expressionStyle": "Confrontación directa y réplica seca",
+      "sourceUrl": "https://elpais.com"
+    },
+    {
+      "id": "iv-colau-lavanguardia",
+      "partyId": "frente-amplio",
+      "candidate": "Ada Colau",
+      "media": "La Vanguardia",
+      "program": "Entrevista de campaña",
+      "date": "15 de noviembre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Vivienda y Balance PSOE",
+      "questionContext": "Evaluación de la política residencial del Ejecutivo socialista durante la legislatura.",
+      "quote": "Pedro Sánchez nos ha fallado en vivienda, ha suspendido. Se comprometió a regular los alquileres y tardó cinco años en hacerlo, y además dejó fuera el alquiler de temporada",
+      "expressionStyle": "Evaluación crítica con reproche programático concreto",
+      "sourceUrl": "https://www.lavanguardia.com"
+    },
+    {
+      "id": "iv-colau-ser",
+      "partyId": "frente-amplio",
+      "candidate": "Ada Colau",
+      "media": "Cadena SER",
+      "program": "Hoy por Hoy (Aimar Bretos)",
+      "date": "28 de octubre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Vivienda y Unidad de Izquierdas",
+      "questionContext": "Medidas fiscales contra la especulación y ruptura de negociaciones unitarias con ERC y Podemos.",
+      "quote": "Queremos que no salga a cuenta especular. Gabriel Rufián ha decepcionado a mucha gente en todo el país, pero es su opción y no quiero entrar en temas personales",
+      "expressionStyle": "Discurso propositivo con crítica política contenida",
+      "sourceUrl": "https://cadenaser.com"
+    },
+    {
+      "id": "iv-colau-larevuelta",
+      "partyId": "frente-amplio",
+      "candidate": "Ada Colau",
+      "media": "La 1 (RTVE)",
+      "program": "La Revuelta (David Broncano)",
+      "date": "10 de noviembre de 2026",
+      "formatType": "Pódcast / Entretenimiento",
+      "topic": "Derechos y Adversarios",
+      "questionContext": "Valoración al arranque del programa tras la entrevista de Santiago Abascal la noche anterior.",
+      "quote": "Todos tuvimos contradicciones. He venido a pasarlo bien. Ayer este señoro, del que no quiero decir su nombre, fue demasiado protagonista y ya no tiene que ser más protagonista",
+      "expressionStyle": "Contraste distendido-reivindicativo con léxico de redes",
+      "sourceUrl": "https://www.huffingtonpost.es"
+    },
+    {
+      "id": "iv-colau-wild",
+      "partyId": "frente-amplio",
+      "candidate": "Ada Colau",
+      "media": "The Wild Project",
+      "program": "Episodio #391 (Jordi Wild)",
+      "date": "13 de noviembre de 2026",
+      "formatType": "Pódcast / Entretenimiento",
+      "topic": "Ocupación y Autocrítica",
+      "questionContext": "Planteamiento ante pequeños propietarios afectados por okupación y tono moral de la izquierda.",
+      "quote": "Me gustaría que un pequeño propietario recupere su casa en uno o dos meses. Desde el moralismo no vamos a ganar",
+      "expressionStyle": "Empatía pragmática y autocrítica discursiva",
+      "sourceUrl": "https://www.abc.es"
+    },
+    {
+      "id": "iv-montero-elpais",
+      "partyId": "podemos",
+      "candidate": "Irene Montero",
+      "media": "EL PAÍS",
+      "program": "Entrevista de Paula Chouza",
+      "date": "20 de septiembre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Primarias y Movilización",
+      "questionContext": "Propuesta de celebrar primarias abiertas en el conjunto de la izquierda alternativa.",
+      "quote": "Las primarias tienen que remover la energía en la izquierda, como Paquito el Chocolatero en una fiesta",
+      "expressionStyle": "Símil popular expresivo de dinamización",
+      "sourceUrl": "https://elpais.com"
+    },
+    {
+      "id": "iv-montero-ser",
+      "partyId": "podemos",
+      "candidate": "Irene Montero",
+      "media": "Cadena SER",
+      "program": "Hora 25 (José Luis Sastre)",
+      "date": "28 de septiembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Decreto de Vivienda",
+      "questionContext": "Valoración del borrador de decreto de vivienda presentado por el Gobierno antes de disolverse las Cortes.",
+      "quote": "Es una propuesta que no hay por dónde cogerla. Siempre se utiliza la misma excusa para no hacer una transformación social",
+      "expressionStyle": "Rechazo tajante y cuestionamiento estructural",
+      "sourceUrl": "https://cadenaser.com"
+    },
+    {
+      "id": "iv-montero-espejo",
+      "partyId": "podemos",
+      "candidate": "Irene Montero",
+      "media": "Antena 3",
+      "program": "Espejo Público (Susanna Griso)",
+      "date": "13 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Igualdad y Gestión",
+      "questionContext": "Sobre la investigación de contratos de pulseras telemáticas antimaltrato durante su etapa ministerial.",
+      "quote": "En el tiempo que nosotras estuvimos en el Ministerio, no solamente no fallaron las pulseras, sino que ninguna mujer ha sido asesinada teniendo ese mecanismo de protección",
+      "expressionStyle": "Defensa acotada con indicador absoluto",
+      "sourceUrl": "https://www.europapress.es"
+    },
+    {
+      "id": "iv-montero-lahora",
+      "partyId": "podemos",
+      "candidate": "Irene Montero",
+      "media": "La 1 (RTVE)",
+      "program": "La Hora de La 1 (Silvia Intxaurrondo)",
+      "date": "17 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Defensa y Alquileres",
+      "questionContext": "Incremento del gasto militar en Europa frente a inversión en servicios públicos y vivienda.",
+      "quote": "Las armas se compran para usarlas. Proponemos bajar un 40% los precios de los alquileres mediante real decreto",
+      "expressionStyle": "Sentencia antimilitarista con propuesta porcentual taxativa",
+      "sourceUrl": "https://www.publico.es"
+    },
+    {
+      "id": "iv-montero-larevuelta",
+      "partyId": "podemos",
+      "candidate": "Irene Montero",
+      "media": "La 1 (RTVE)",
+      "program": "La Revuelta (con David Broncano y Gabriel Rufián)",
+      "date": "27 de octubre de 2026",
+      "formatType": "Pódcast / Entretenimiento",
+      "topic": "Inmigración y Vivienda",
+      "questionContext": "Reencuadre del debate sobre inmigración hacia el mercado inmobiliario y los pisos turísticos.",
+      "quote": "Estamos todo el día hablando de esto y no estamos hablando de los invasores que se están metiendo en nuestros barrios, que son pisos turísticos, Airbnb y fondos buitre",
+      "expressionStyle": "Reencuadre temático en registro coloquial cercano",
+      "sourceUrl": "https://www.mundodeportivo.com"
+    },
+    {
+      "id": "iv-rufian-lasexta",
+      "partyId": "erc",
+      "candidate": "Gabriel Rufián",
+      "media": "laSexta",
+      "program": "laSexta Xplica (José Yélamo)",
+      "date": "7 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Coste de la Vida y Pactos",
+      "questionContext": "Prioridades discursivas de la izquierda en vivienda, alimentación y exigencia hacia el PSOE.",
+      "quote": "Hablar de vivienda, hablar de transporte, hablar de comida para todos, también los precios de la carne, del pescado fresco... Necesitamos a un PSOE exigido",
+      "expressionStyle": "Apelación material cotidiana y tono pragmático",
+      "sourceUrl": "https://www.lasexta.com"
+    },
+    {
+      "id": "iv-esteban-ondacero",
+      "partyId": "eaj-pnv",
+      "candidate": "Aitor Esteban",
+      "media": "Onda Cero",
+      "program": "Más de uno (Rafa Latorre)",
+      "date": "16 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Responsabilidad Institucional",
+      "questionContext": "Exigencia de explicaciones políticas a Pedro Sánchez por los escándalos de legislatura.",
+      "quote": "El presidente no puede decir que no sabe nada",
+      "expressionStyle": "Reproche institucional sobrio y conciso",
+      "sourceUrl": "https://www.ondacero.es"
+    },
+    {
+      "id": "iv-alvise-hoyaragon",
+      "partyId": "salf",
+      "candidate": "Alvise Pérez",
+      "media": "Hoy Aragón",
+      "program": "Entrevista en medio digital regional",
+      "date": "19 de enero de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Sistema Político y Autónomos",
+      "questionContext": "Valoración del sistema fiscal y político y método de recopilación de denuncias ciudadanas.",
+      "quote": "El sistema es anti-nosotros: anti-autónomos, anti-trabajadores. Yo de aquí seguro que soy el más tonto, porque me han engañado todos: el PP… y también Podemos",
+      "expressionStyle": "Discurso antisistema en primera persona y autoironía",
+      "sourceUrl": "https://www.hoyaragon.es"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "id": "q1",
+      "axisId": "vivienda",
+      "axisLabel": "Vivienda y Alquiler",
+      "title": "Encarecimiento brusco del alquiler en tu barrio",
+      "scenario": "Un gran propietario compra varios edificios de tu zona y aplica una subida muy fuerte al renovar los contratos. ¿Qué respuesta pública crees que funcionaría mejor?",
+      "options": [
+        {
+          "text": "Forzar por ley una rebaja importante de los alquileres vigentes, impedir que fondos o no residentes compren casas para rentabilizar y ceder al parque social parte de sus pisos vacíos.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 82,
+            "psoe": 48,
+            "pp": 10,
+            "vox": 5,
+            "salf": 5
+          }
+        },
+        {
+          "text": "Topar los alquileres según los ingresos medios del vecindario, hacer los contratos estables por defecto, retirar licencias turísticas en bloques residenciales y dedicar presupuesto estable a vivienda pública.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 82,
+            "frente-amplio": 100,
+            "psoe": 72,
+            "pp": 15,
+            "vox": 10,
+            "salf": 10
+          }
+        },
+        {
+          "text": "Aplicar índices de referencia solo en áreas tensionadas, ampliar de forma sostenida la oferta de alquiler público estatal y ofrecer préstamos públicos sin intereses a jóvenes para la entrada.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 45,
+            "frente-amplio": 70,
+            "psoe": 100,
+            "pp": 35,
+            "vox": 18,
+            "salf": 15
+          }
+        },
+        {
+          "text": "Quitar los topes de renta para no reducir la oferta, acelerar los permisos de obra nueva, dar avales y ventajas fiscales a jóvenes y caseros, y agilizar la recuperación de pisos ocupados.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 8,
+            "frente-amplio": 12,
+            "psoe": 32,
+            "pp": 100,
+            "vox": 78,
+            "salf": 72
+          }
+        },
+        {
+          "text": "Declarar edificable la mayor parte del suelo disponible, suprimir impuestos en la compra de primera vivienda, acelerar los desalojos y reservar las ayudas públicas a residentes legales.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 5,
+            "frente-amplio": 8,
+            "psoe": 15,
+            "pp": 75,
+            "vox": 98,
+            "salf": 95
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "axisId": "economia",
+      "axisLabel": "Impuestos y Presupuesto",
+      "title": "¿Cómo equilibrar impuestos y coste de la vida?",
+      "scenario": "El precio de la comida, la energía y la vida diaria aprieta a las familias mientras se decide cómo recaudar y repartir el presupuesto estatal. ¿Qué enfoque prefieres?",
+      "options": [
+        {
+          "text": "Poner en marcha entidades públicas de banca y alimentación para abaratar lo básico, subir con fuerza los impuestos a grandes beneficios corporativos y trasladar gasto militar a partidas sociales.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 78,
+            "psoe": 42,
+            "pp": 8,
+            "vox": 5,
+            "salf": 5
+          }
+        },
+        {
+          "text": "Elevar la tributación mínima de las grandes empresas, gravar las grandes fortunas y las herencias multimillonarias, topar productos básicos si hay abusos y ofrecer franjas diarias de luz gratuita.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 80,
+            "frente-amplio": 100,
+            "psoe": 65,
+            "pp": 10,
+            "vox": 8,
+            "salf": 5
+          }
+        },
+        {
+          "text": "Mantener de forma estable los recargos fiscales a banca, energéticas y consumos de lujo, evitar que el salario mínimo pague renta y crear una ayuda mensual universal por cada hijo menor.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 48,
+            "frente-amplio": 72,
+            "psoe": 100,
+            "pp": 30,
+            "vox": 15,
+            "salf": 12
+          }
+        },
+        {
+          "text": "Ajustar los tramos de la renta a la inflación, aliviar fiscalmente a jóvenes que empiezan a trabajar, suprimir temporalmente el impuesto a alimentos básicos y dar cuota inicial gratuita a nuevos autónomos.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 10,
+            "frente-amplio": 14,
+            "psoe": 30,
+            "pp": 100,
+            "vox": 80,
+            "salf": 75
+          }
+        },
+        {
+          "text": "Dejar libres de impuestos los ingresos salariales básicos o reducirlos según hijos, suprimir cuotas mensuales fijas a autónomos, recortar ministerios y gravar las remesas enviadas fuera del país.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 5,
+            "frente-amplio": 8,
+            "psoe": 14,
+            "pp": 72,
+            "vox": 94,
+            "salf": 98
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "axisId": "empleo",
+      "axisLabel": "Empleo y Jornada Laboral",
+      "title": "Reparto de tiempo y salarios en una pyme",
+      "scenario": "Trabajas o diriges una pequeña empresa de 30 personas con sobrecarga de horarios y debate sobre sueldos. ¿Qué marco laboral te parece más justo?",
+      "options": [
+        {
+          "text": "Reducir la semana laboral hasta las seis horas diarias sin recorte salarial, subir con fuerza el salario mínimo y castigar incluso penalmente a las empresas que impongan horas extra sin pagar.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 80,
+            "psoe": 45,
+            "pp": 8,
+            "vox": 5,
+            "salf": 5
+          }
+        },
+        {
+          "text": "Ir recortando la jornada semanal hacia cuatro días sin bajar sueldos, ligar el salario mínimo a la media salarial y obligar a las empresas medianas y grandes a repartir parte del beneficio con la plantilla.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 82,
+            "frente-amplio": 100,
+            "psoe": 74,
+            "pp": 12,
+            "vox": 8,
+            "salf": 8
+          }
+        },
+        {
+          "text": "Aprobar por ley un primer recorte moderado de la jornada semanal ayudando a adaptarse a las pymes, reforzar el fichaje digital y encarecer el despido improcedente según criterios europeos.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 50,
+            "frente-amplio": 76,
+            "psoe": 100,
+            "pp": 28,
+            "vox": 14,
+            "salf": 14
+          }
+        },
+        {
+          "text": "No imponer un recorte horario uniforme por ley; pactar bolsas flexibles de horas por sector, crear cuentas individuales voluntarias de indemnización y ligar el salario mínimo a la productividad.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 8,
+            "frente-amplio": 12,
+            "psoe": 28,
+            "pp": 100,
+            "vox": 76,
+            "salf": 78
+          }
+        },
+        {
+          "text": "Eliminar el registro horario obligatorio y las trabas burocráticas laborales, sustituir la subida salarial por rebajas fiscales o pasar a un contrato único con menos cotizaciones sobre el sueldo.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 5,
+            "frente-amplio": 8,
+            "psoe": 12,
+            "pp": 70,
+            "vox": 96,
+            "salf": 96
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "axisId": "servicios",
+      "axisLabel": "Sanidad Pública",
+      "title": "Listas de espera de varios meses en tu centro de salud",
+      "scenario": "Para una consulta de especialista o prueba diagnóstica te dan cita dentro de varios meses. ¿Cómo debería responder el sistema sanitario?",
+      "options": [
+        {
+          "text": "Terminar con los conciertos y derivaciones a clínicas privadas para blindar un sistema cien por cien público, ampliando plantillas con fondos redirigidos desde defensa.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 80,
+            "psoe": 48,
+            "pp": 12,
+            "vox": 8,
+            "salf": 10
+          }
+        },
+        {
+          "text": "Aumentar de forma sustancial el presupuesto sanitario público e incorporar dentro de la cartera gratuita universal servicios como dentista, gafas, audífonos y salud mental.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 84,
+            "frente-amplio": 100,
+            "psoe": 78,
+            "pp": 18,
+            "vox": 12,
+            "salf": 12
+          }
+        },
+        {
+          "text": "Estabilizar la inversión pública sanitaria, aprobar normas para frenar privatizaciones de gestión, garantizar atención psicológica rápida y sumar de forma gradual salud bucodental.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 52,
+            "frente-amplio": 78,
+            "psoe": 100,
+            "pp": 38,
+            "vox": 20,
+            "salf": 18
+          }
+        },
+        {
+          "text": "Firmar un gran acuerdo nacional para ampliar plazas médicas en Atención Primaria, unificar el historial clínico entre regiones y apoyarse en centros concertados cuando las listas se desborden.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 15,
+            "frente-amplio": 20,
+            "psoe": 40,
+            "pp": 100,
+            "vox": 70,
+            "salf": 68
+          }
+        },
+        {
+          "text": "Centralizar la gestión o las compras médicas en el Estado, derivar a clínicas privadas con cargo público si se superan plazos máximos legales y limitar la gratuidad a extranjeros sin papeles a urgencias.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 5,
+            "frente-amplio": 8,
+            "psoe": 16,
+            "pp": 68,
+            "vox": 96,
+            "salf": 96
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "axisId": "territorial",
+      "axisLabel": "Modelo Territorial",
+      "title": "Reparto de impuestos y competencias autonómicas",
+      "scenario": "El Estado debe acordar cómo se financian las comunidades autónomas y qué nivel de autogobierno tiene cada territorio. ¿Qué diseño encaja más contigo?",
+      "options": [
+        {
+          "text": "Transformar el modelo del Estado hacia una estructura confederal que reconozca distintas identidades nacionales y la posibilidad de votar su encaje futuro.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 86,
+            "psoe": 42,
+            "pp": 5,
+            "vox": 2,
+            "salf": 2
+          }
+        },
+        {
+          "text": "Avanzar hacia un Estado federal plurinacional con derecho a decidir pactado y fijar un mínimo fiscal común para impedir que unas regiones compitan bajando impuestos a las grandes rentas.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 86,
+            "frente-amplio": 100,
+            "psoe": 58,
+            "pp": 10,
+            "vox": 5,
+            "salf": 5
+          }
+        },
+        {
+          "text": "Defender el sistema autonómico actual ampliando recursos para servicios públicos, asumiendo el Estado parte de la deuda regional y encajando fórmulas de singularidad financiera.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 45,
+            "frente-amplio": 62,
+            "psoe": 100,
+            "pp": 24,
+            "vox": 5,
+            "salf": 5
+          }
+        },
+        {
+          "text": "Impedir conciertos fiscales bilaterales o quitas unilaterales de deuda, revertir las medidas de gracia a líderes independentistas y negociar un reparto técnico común entre todas las autonomías.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 8,
+            "frente-amplio": 12,
+            "psoe": 24,
+            "pp": 100,
+            "vox": 74,
+            "salf": 72
+          }
+        },
+        {
+          "text": "Recuperar para el Estado central la gestión de sanidad, educación, justicia y orden público, y recortar estructuras políticas o parlamentos regionales para garantizar la igualdad en todo el país.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 2,
+            "frente-amplio": 4,
+            "psoe": 8,
+            "pp": 64,
+            "vox": 100,
+            "salf": 94
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "axisId": "seguridad",
+      "axisLabel": "Inmigración y Fronteras",
+      "title": "Llegadas irregulares y necesidades del mercado laboral",
+      "scenario": "Varios sectores reclaman trabajadores mientras aumentan las llegadas por vía irregular a costas e islas y se debate la acogida de menores. ¿Qué medida apoyarías?",
+      "options": [
+        {
+          "text": "Impulsar regularizaciones amplias de quienes ya viven y trabajan aquí para darles igualdad plena de derechos y combatir cualquier discurso que asocie inmigración con delito.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 90,
+            "psoe": 52,
+            "pp": 10,
+            "vox": 2,
+            "salf": 2
+          }
+        },
+        {
+          "text": "Facilitar papeles y derechos, obligar a un reparto solidario de menores entre todas las comunidades pagado por el Estado y frenar en los tribunales europeos la externalización de fronteras.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 90,
+            "frente-amplio": 100,
+            "psoe": 68,
+            "pp": 16,
+            "vox": 4,
+            "salf": 4
+          }
+        },
+        {
+          "text": "Priorizar la contratación legal en los países de origen sin abrir otra regularización extraordinaria, reforzar la acogida compartida de menores e invertir en programas locales de integración.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 45,
+            "frente-amplio": 64,
+            "psoe": 100,
+            "pp": 46,
+            "vox": 12,
+            "salf": 10
+          }
+        },
+        {
+          "text": "Prohibir por ley las regularizaciones masivas, identificar rápidamente a quien entre sin permiso para agilizar su retorno y limitar las entradas a cupos anuales según empleo y arraigo.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 8,
+            "frente-amplio": 12,
+            "psoe": 42,
+            "pp": 100,
+            "vox": 74,
+            "salf": 70
+          }
+        },
+        {
+          "text": "Suprimir la regularización por arraigo, expulsar de forma inmediata a irregulares o extranjeros condenados, reservar ayudas sociales a nacionales y reforzar la vigilancia militar en fronteras marítimas.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 2,
+            "frente-amplio": 4,
+            "psoe": 10,
+            "pp": 66,
+            "vox": 100,
+            "salf": 96
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "axisId": "ecologia",
+      "axisLabel": "Energía, Agua y Campo",
+      "title": "Factura eléctrica, sequía y futuro del sector agrario",
+      "scenario": "Se multiplican los episodios de sequía, agricultores y ganaderos piden menos trabas y se discute si cerrar o mantener las centrales nucleares. ¿Qué rumbo eliges?",
+      "options": [
+        {
+          "text": "Crear una eléctrica pública que suministre a precio de coste, acelerar el adiós nuclear, impedir que fondos compren tierras de cultivo y garantizar precios justos al agricultor.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 82,
+            "psoe": 50,
+            "pp": 10,
+            "vox": 10,
+            "salf": 10
+          }
+        },
+        {
+          "text": "Invertir a gran escala en transición ecológica para lograr electricidad totalmente renovable sin energía nuclear, frenar la ganadería industrial intensiva y limitar vuelos cortos con alternativa en tren.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 82,
+            "frente-amplio": 100,
+            "psoe": 70,
+            "pp": 14,
+            "vox": 8,
+            "salf": 8
+          }
+        },
+        {
+          "text": "Mantener el calendario pactado de cierre nuclear gradual, exigir energías limpias a grandes centros tecnológicos, proteger la agricultura familiar y modernizar regadíos ante la sequía.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 48,
+            "frente-amplio": 70,
+            "psoe": 100,
+            "pp": 38,
+            "vox": 18,
+            "salf": 16
+          }
+        },
+        {
+          "text": "Alargar sin demora la vida útil de las centrales nucleares existentes, eliminar impuestos sobre la generación eléctrica e impulsar grandes inversiones hidráulicas para almacenar y repartir agua.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 10,
+            "frente-amplio": 12,
+            "psoe": 36,
+            "pp": 100,
+            "vox": 82,
+            "salf": 76
+          }
+        },
+        {
+          "text": "Dejar sin efecto las restricciones climáticas europeas en España, abrir la puerta a nueva energía nuclear, rechazar tratados comerciales que dañen al campo y conectar cuencas mediante trasvases.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 5,
+            "frente-amplio": 6,
+            "psoe": 16,
+            "pp": 76,
+            "vox": 100,
+            "salf": 90
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "axisId": "servicios",
+      "axisLabel": "Pensiones y Jubilación",
+      "title": "Cómo sostener las pensiones de las próximas décadas",
+      "scenario": "Cada vez hay más jubilados en proporción a la población activa y quieres asegurar una pensión digna sin que el sistema se vuelva insostenible. ¿Qué diseño prefieres?",
+      "options": [
+        {
+          "text": "Adelantar la edad ordinaria de jubilación, elevar las pensiones mínimas y cubrir cualquier déficit aumentando impuestos permanentes a grandes fortunas y entidades financieras.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 82,
+            "psoe": 48,
+            "pp": 12,
+            "vox": 8,
+            "salf": 5
+          }
+        },
+        {
+          "text": "Volver a la jubilación a los sesenta y cinco años (antes en empleos duros), igualar la pensión mínima al salario mínimo y crear un fondo público ligado a la energía para sostener la subida por inflación.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 84,
+            "frente-amplio": 100,
+            "psoe": 68,
+            "pp": 16,
+            "vox": 10,
+            "salf": 8
+          }
+        },
+        {
+          "text": "Mantener las reglas actuales pero proteger en la Constitución el sistema público de reparto para que las pensiones suban por ley cada año según el coste de la vida.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 50,
+            "frente-amplio": 70,
+            "psoe": 100,
+            "pp": 62,
+            "vox": 35,
+            "salf": 22
+          }
+        },
+        {
+          "text": "Garantizar la revalorización anual según la inflación sin recortes, buscar consenso parlamentario estable para su sostenibilidad y equilibrar cuentas mediante creación de empleo y rigor fiscal.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 15,
+            "frente-amplio": 20,
+            "psoe": 60,
+            "pp": 100,
+            "vox": 76,
+            "salf": 56
+          }
+        },
+        {
+          "text": "Garantizar las pensiones actuales recortando drásticamente el gasto político y fomentando la natalidad, mientras se introducen cuentas individuales de ahorro para los trabajadores más jóvenes.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 5,
+            "frente-amplio": 8,
+            "psoe": 24,
+            "pp": 68,
+            "vox": 94,
+            "salf": 98
+          }
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "axisId": "seguridad",
+      "axisLabel": "Defensa, Seguridad y Justicia",
+      "title": "Presupuesto de defensa y funcionamiento de la Justicia",
+      "scenario": "Se exige a los países europeos gastar más en defensa mientras en España se discute cómo combatir la inseguridad y evitar la politización judicial. ¿Cuál es tu postura?",
+      "options": [
+        {
+          "text": "Salir de alianzas militares internacionales, cerrar bases extranjeras en suelo español, cortar toda compraventa de armas en conflictos y abrir la carrera judicial a mayor control democrático.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 80,
+            "psoe": 36,
+            "pp": 5,
+            "vox": 2,
+            "salf": 2
+          }
+        },
+        {
+          "text": "Frenar el rearme militar reconvirtiendo bases a usos civiles, prohibir el comercio armamentístico con países en conflicto, retirar material antidisturbios lesivo y suavizar sanciones a la protesta.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 82,
+            "frente-amplio": 100,
+            "psoe": 56,
+            "pp": 10,
+            "vox": 4,
+            "salf": 4
+          }
+        },
+        {
+          "text": "Mantener el gasto militar moderado rechazando aumentos desproporcionados, impulsar una defensa europea autónoma, ampliar fuerzas de seguridad y trasladar la instrucción penal a la Fiscalía.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 34,
+            "frente-amplio": 56,
+            "psoe": 100,
+            "pp": 44,
+            "vox": 16,
+            "salf": 12
+          }
+        },
+        {
+          "text": "Hacer que los propios jueces elijan directamente a sus representantes en el órgano de gobierno judicial sin pasar por partidos, y endurecer penas con prisión permanente para agresores reincidentes.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 6,
+            "frente-amplio": 10,
+            "psoe": 34,
+            "pp": 100,
+            "vox": 84,
+            "salf": 70
+          }
+        },
+        {
+          "text": "Construir centros penitenciarios de máxima seguridad sin beneficios ni terceros grados para delitos graves, ampliar la legítima defensa en el hogar y apartar cualquier influencia partidista de los tribunales.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 2,
+            "frente-amplio": 4,
+            "psoe": 10,
+            "pp": 66,
+            "vox": 96,
+            "salf": 98
+          }
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "axisId": "regeneracion",
+      "axisLabel": "Regeneración e Igualdad",
+      "title": "Lucha contra la corrupción, redes sociales e igualdad",
+      "scenario": "Tras varios casos de corrupción y fuerte tensión en redes digitales, se plantean reformas para regenerar las instituciones y proteger derechos civiles. ¿Qué priorizas?",
+      "options": [
+        {
+          "text": "Blindar los avances en derechos sexuales y de identidad de género, multiplicar los recursos contra la violencia machista, frenar puertas giratorias y limitar la concentración de grandes medios.",
+          "spectrumScore": 10,
+          "alignedParties": [
+            "podemos"
+          ],
+          "partyAlignment": {
+            "podemos": 100,
+            "frente-amplio": 88,
+            "psoe": 62,
+            "pp": 10,
+            "vox": 4,
+            "salf": 4
+          }
+        },
+        {
+          "text": "Elevar a rango constitucional el derecho al aborto, aprobar una ley integral contra el racismo y prohibir en campaña el uso de inteligencia artificial manipuladora y algoritmos opacos.",
+          "spectrumScore": 24,
+          "alignedParties": [
+            "frente-amplio"
+          ],
+          "partyAlignment": {
+            "podemos": 86,
+            "frente-amplio": 100,
+            "psoe": 80,
+            "pp": 16,
+            "vox": 6,
+            "salf": 6
+          }
+        },
+        {
+          "text": "Proteger constitucionalmente la interrupción voluntaria del embarazo, reforzar leyes contra la violencia en el ámbito familiar y exigir transparencia sobre la propiedad de medios y redes a menores.",
+          "spectrumScore": 40,
+          "alignedParties": [
+            "psoe"
+          ],
+          "partyAlignment": {
+            "podemos": 60,
+            "frente-amplio": 80,
+            "psoe": 100,
+            "pp": 36,
+            "vox": 12,
+            "salf": 12
+          }
+        },
+        {
+          "text": "Prohibir por ley conceder indultos por corrupción o delitos graves contra el Estado, vetar usos partidistas de recursos oficiales y revisar las leyes de autodeterminación de género sin restringir el aborto.",
+          "spectrumScore": 68,
+          "alignedParties": [
+            "pp"
+          ],
+          "partyAlignment": {
+            "podemos": 10,
+            "frente-amplio": 14,
+            "psoe": 36,
+            "pp": 100,
+            "vox": 74,
+            "salf": 68
+          }
+        },
+        {
+          "text": "Hacer que los delitos de corrupción no prescriban obligando a devolver mucho más de lo robado con premio a denunciantes, y sustituir leyes penales asimétricas por normas iguales sin subvenciones ideológicas.",
+          "spectrumScore": 90,
+          "alignedParties": [
+            "vox",
+            "salf"
+          ],
+          "partyAlignment": {
+            "podemos": 4,
+            "frente-amplio": 6,
+            "psoe": 12,
+            "pp": 64,
+            "vox": 94,
+            "salf": 100
+          }
+        }
+      ]
+    }
+  ]
+}

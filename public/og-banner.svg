@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="PolitiFácil 29-N — Test a Ciegas y Comparador Electoral Neutral">
+  <defs>
+    <radialGradient id="bgGlow" cx="78%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="28" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+  <rect x="72" y="84" width="440" height="36" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="94" y="107" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" letter-spacing="1.4" fill="#93c5fd">ELECCIONES GENERALES ESPAÑA · 29-N 2026</text>
+
+  <text x="72" y="222" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="78" font-weight="800" letter-spacing="-1.5" fill="#f8fafc">PolitiFácil 29-N</text>
+  <text x="72" y="284" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="27" font-weight="500" fill="#cbd5e1">Test a Ciegas y Comparador Electoral Neutral · España</text>
+
+  <line x1="72" y1="326" x2="680" y2="326" stroke="#334155" stroke-width="1.5"/>
+
+  <g font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="16" font-weight="700" fill="#f8fafc">
+    <rect x="72" y="362" width="198" height="42" rx="21" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+    <text x="171" y="388" text-anchor="middle">6 Partidos Estatales</text>
+
+    <rect x="284" y="362" width="168" height="42" rx="21" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+    <text x="368" y="388" text-anchor="middle">8 Ejes Oficiales</text>
+
+    <rect x="466" y="362" width="118" height="42" rx="21" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+    <text x="525" y="388" text-anchor="middle">0 Opinión</text>
+
+    <rect x="598" y="362" width="148" height="42" rx="21" fill="#f59e0b"/>
+    <text x="672" y="388" text-anchor="middle" fill="#0f172a">10 Escenarios</text>
+  </g>
+
+  <text x="72" y="454" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="18" font-weight="600" fill="#94a3b8">6 Partidos Estatales · 8 Ejes Oficiales · 0 Opinión · 10 Escenarios</text>
+
+  <text x="72" y="544" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="18" font-weight="600" fill="#e2e8f0">Solo programas oficiales · Citas literales de entrevistas · Real Decreto 806/2026</text>
+
+  <g>
+    <path d="M 785 365 A 160 160 0 0 1 1105 365" fill="none" stroke="#1e293b" stroke-width="32"/>
+    <path d="M 785.0 365.0 A 160 160 0 0 1 809.9 279.3" fill="none" stroke="#7c3aed" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 809.9 279.3 A 160 160 0 0 1 859.3 229.9" fill="none" stroke="#e11d48" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 859.3 229.9 A 160 160 0 0 1 955.0 205.3" fill="none" stroke="#dc2626" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 955.0 205.3 A 160 160 0 0 1 1068.3 263.0" fill="none" stroke="#0284c7" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 1068.3 263.0 A 160 160 0 0 1 1097.2 315.6" fill="none" stroke="#16a34a" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 1097.2 315.6 A 160 160 0 0 1 1105.0 365.0" fill="none" stroke="#78350f" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <g>
+      <circle cx="792.8" cy="315.6" r="12" fill="#7c3aed" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="762.4" y="305.7" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Podemos</text>
+    </g>
+    <g>
+      <circle cx="821.7" cy="263.0" r="12" fill="#e11d48" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="797.1" y="242.6" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Frente Amplio</text>
+    </g>
+    <g>
+      <circle cx="886.1" cy="216.2" r="12" fill="#dc2626" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="874.3" y="186.5" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">PSOE</text>
+    </g>
+    <g>
+      <circle cx="1030.7" cy="229.9" r="12" fill="#0284c7" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="1047.9" y="202.9" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">PP</text>
+    </g>
+    <g>
+      <circle cx="1093.8" cy="306.1" r="12" fill="#16a34a" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="1123.5" y="294.3" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">VOX</text>
+    </g>
+    <g>
+      <circle cx="1100.0" cy="325.2" r="12" fill="#78350f" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="1131.0" y="317.3" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">SALF</text>
+    </g>
+    <line x1="943.9" y1="347.0" x2="935.8" y2="219.3" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="945" cy="365" r="14" fill="#fbbf24" stroke="#0f172a" stroke-width="4"/>
+    <circle cx="935.8" cy="219.3" r="10" fill="#fbbf24" stroke="#0f172a" stroke-width="3"/>
+    <text x="785" y="401" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" fill="#94a3b8">IZQ (0)</text>
+    <text x="945" y="401" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" fill="#fbbf24">BRÚJULA 29-N</text>
+    <text x="1105" y="401" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" fill="#94a3b8">DER (100)</text>
+  </g>
+</svg>

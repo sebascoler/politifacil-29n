@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "node scripts/validate-data.js",
-    "validate": "node scripts/validate-data.js"
+    "build": "node scripts/validate-data.js && node scripts/build-seo.js",
+    "validate": "node scripts/validate-data.js",
+    "indexnow": "node scripts/submit-indexnow.js"
   },
   "engines": {
     "node": ">=18.0.0"

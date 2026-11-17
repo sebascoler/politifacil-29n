@@ -12,11 +12,15 @@ const MIME_TYPES = {
   '.css': 'text/css; charset=utf-8',
   '.js': 'application/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.ico': 'image/x-icon',
   '.txt': 'text/plain; charset=utf-8',
+  '.md': 'text/markdown; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
 };
 
 function loadElectionData() {
@@ -119,6 +123,36 @@ function handleApi(req, res, pathname, searchParams) {
   return sendJson(res, 404, { error: 'Endpoint no encontrado' });
 }
 
+function isInsidePublicDir(targetPath) {
+  return targetPath === PUBLIC_DIR || targetPath.startsWith(PUBLIC_DIR + path.sep);
+}
+
+function resolveStaticFile(filePath) {
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    return filePath;
+  }
+
+  const trimmedPath = filePath.length > PUBLIC_DIR.length && filePath.endsWith(path.sep)
+    ? filePath.slice(0, -1)
+    : filePath;
+
+  if (!path.extname(trimmedPath)) {
+    const htmlCandidate = `${trimmedPath}.html`;
+    if (isInsidePublicDir(htmlCandidate) && fs.existsSync(htmlCandidate) && fs.statSync(htmlCandidate).isFile()) {
+      return htmlCandidate;
+    }
+
+    const indexCandidate = path.join(trimmedPath, 'index.html');
+    if (isInsidePublicDir(indexCandidate) && fs.existsSync(indexCandidate) && fs.statSync(indexCandidate).isFile()) {
+      return indexCandidate;
+    }
+
+    return path.join(PUBLIC_DIR, 'index.html');
+  }
+
+  return null;
+}
+
 function serveStatic(req, res, pathname) {
   let relativePath = pathname === '/' ? '/index.html' : pathname;
   try {
@@ -129,25 +163,24 @@ function serveStatic(req, res, pathname) {
   }
 
   const safePath = path.normalize(relativePath).replace(/^(\.\.[/\\])+/, '');
-  let filePath = path.join(PUBLIC_DIR, safePath);
+  const requestedPath = path.join(PUBLIC_DIR, safePath);
 
-  if (!filePath.startsWith(PUBLIC_DIR)) {
+  if (!isInsidePublicDir(requestedPath)) {
     res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
     return res.end('Acceso denegado');
   }
 
-  if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
-    // Fallback SPA a index.html para rutas sin extensión
-    if (!path.extname(filePath)) {
-      filePath = path.join(PUBLIC_DIR, 'index.html');
-    } else {
-      res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-      return res.end('Archivo no encontrado');
-    }
+  const filePath = resolveStaticFile(requestedPath);
+  if (!filePath) {
+    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    return res.end('Archivo no encontrado');
   }
 
   const ext = path.extname(filePath).toLowerCase();
-  const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+  const baseName = path.basename(filePath);
+  const contentType = (baseName === 'llms.txt' || baseName === 'llms-full.txt')
+    ? 'text/markdown; charset=utf-8'
+    : (MIME_TYPES[ext] || 'application/octet-stream');
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
