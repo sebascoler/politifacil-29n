@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PolitiFácil 29-N | Comparador Electoral Neutral y Test de Afinidad en España</title>
+  <meta name="description" content="Plataforma neutral, visual y sin sesgos para entender las propuestas oficiales, el estilo comunicativo y las entrevistas de los candidatos en las elecciones generales de España del 29 de noviembre de 2026." />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 24" width="36" height="24" fill="none">
+            <path d="M4 20 A14 14 0 0 1 32 20" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+            <circle cx="9" cy="14" r="2.2" fill="#7c3aed"/>
+            <circle cx="13" cy="9" r="2.2" fill="#d97706"/>
+            <circle cx="18" cy="7" r="2.2" fill="#dc2626"/>
+            <circle cx="24" cy="9" r="2.2" fill="#0284c7"/>
+            <circle cx="28" cy="14" r="2.2" fill="#16a34a"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-title">PolitiFácil <span class="brand-badge">29-N</span></span>
+          <p class="brand-subtitle">España · Elecciones Generales 29 de noviembre de 2026</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Secciones principales">
+        <button class="nav-pill is-active" data-section="arco-overview" type="button">Arco y Comunicación</button>
+        <button class="nav-pill" data-section="comparador" type="button">Comparador de Propuestas</button>
+        <button class="nav-pill" data-section="entrevistas" type="button">Entrevistas (Sin Opinión)</button>
+        <button class="nav-pill nav-pill-accent" data-section="test-afinidad" type="button">Test 10 Escenarios</button>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Cambiar tema claro u oscuro" title="Cambiar tema claro u oscuro">
+          <span id="theme-icon" aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="neutrality-banner" aria-label="Compromiso de neutralidad">
+    <div class="container neutrality-inner">
+      <div class="neutrality-chips">
+        <span class="chip chip-neutral">✓ Solo fuentes oficiales de partidos</span>
+        <span class="chip chip-neutral">✓ Cero columnas de opinión</span>
+        <span class="chip chip-neutral">✓ Citas textuales de entrevistas</span>
+        <span class="chip chip-neutral">✓ Modo lectura a ciegas</span>
+      </div>
+      <div class="countdown-pill" id="election-countdown" aria-live="polite">
+        29 de noviembre de 2026 · 350 escaños al Congreso
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content" class="container main-shell">
+    <!-- SECCIÓN 1: ARCO PARLAMENTARIO Y COMUNICACIÓN -->
+    <section id="arco-overview" class="view-section is-visible" aria-labelledby="heading-arco">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Panorama Electoral · Sin Sesgo</span>
+          <h1 id="heading-arco">Arco Político y Estilo de Comunicación</h1>
+          <p class="section-lead">
+            Explora de izquierda a derecha dónde se sitúa cada formación estatal, qué propone en su documentación oficial y cómo comunica tanto en sus canales propios como en entrevistas.
+          </p>
+        </div>
+        <div class="sort-control" role="group" aria-label="Orden de visualización de partidos">
+          <span class="control-label">Orden de tarjetas:</span>
+          <button class="seg-btn is-active" data-sort="spectrum" type="button">Izquierda → Derecha</button>
+          <button class="seg-btn" data-sort="alpha" type="button">Alfabético</button>
+          <button class="seg-btn" data-sort="random" type="button">Aleatorio neutral</button>
+        </div>
+      </div>
+
+      <div class="arc-card card">
+        <div class="arc-card-header">
+          <div>
+            <h2>Espectro Político Interactivo (0 Izquierda — 100 Derecha)</h2>
+            <p class="muted-text">Haz clic en cualquier formación sobre el arco para inspeccionar su ficha oficial, estilo comunicativo y posición en los ejes económico y social-territorial.</p>
+          </div>
+          <div class="legend-inline">
+            <span class="legend-item"><span class="dot" style="background:#6d28d9"></span>Izquierda</span>
+            <span class="legend-item"><span class="dot" style="background:#dc2626"></span>Centro-izq.</span>
+            <span class="legend-item"><span class="dot" style="background:#0284c7"></span>Centro-der.</span>
+            <span class="legend-item"><span class="dot" style="background:#16a34a"></span>Derecha</span>
+          </div>
+        </div>
+
+        <div class="arc-layout">
+          <div class="arc-svg-wrap" id="overview-arc-container" aria-label="Arco político interactivo de izquierda a derecha">
+            <!-- SVG inyectado por app.js -->
+          </div>
+          <aside class="party-detail-panel" id="party-detail-panel" aria-live="polite">
+            <!-- Detalle del partido seleccionado -->
+          </aside>
+        </div>
+      </div>
+
+      <div class="subsection-header">
+        <h2>Todos los Partidos Estatales</h2>
+        <p class="muted-text">Pulsa cualquier tarjeta para ver sus 8 bloques programáticos o compararlos cara a cara.</p>
+      </div>
+      <div class="party-grid" id="party-cards-grid">
+        <!-- Tarjetas de partidos inyectadas por app.js -->
+      </div>
+
+      <div class="card territorial-card">
+        <div class="territorial-header">
+          <div>
+            <span class="eyebrow">Aritmética Parlamentaria</span>
+            <h2>Fuerzas Territoriales Clave en el Congreso</h2>
+            <p class="muted-text">Además de los partidos de ámbito estatal, el sistema electoral español otorga un peso decisivo en la investidura y los presupuestos a las formaciones autonómicas y nacionalistas.</p>
+          </div>
+        </div>
+        <div class="territorial-grid" id="territorial-grid">
+          <!-- Partidos territoriales inyectados por app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: COMPARADOR DE PROPUESTAS Y SIMILITUDES / DIFERENCIAS -->
+    <section id="comparador" class="view-section" aria-labelledby="heading-comparador" hidden>
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Programas Oficiales · 8 Ejes</span>
+          <h1 id="heading-comparador">Comparador de Propuestas: Similitudes y Diferencias</h1>
+          <p class="section-lead">
+            Para evitar sesgos o prejuicios previos, <strong>por defecto las propuestas se muestran sin nombres de partidos ni colores</strong> (salvo que desactives el <em>Modo Sin Sesgos</em> a la derecha). Recorre los distintos temas, elige las propuestas que más te convenzan y al final descubre con cuáles estás más de acuerdo.
+          </p>
+        </div>
+        <div class="blind-mode-box">
+          <label class="toggle-switch" for="blind-mode-toggle">
+            <input type="checkbox" id="blind-mode-toggle" checked />
+            <span class="toggle-slider" aria-hidden="true"></span>
+            <span class="toggle-text">
+              <strong>Modo Sin Sesgos activo (Siglas ocultas)</strong>
+              <small>Desactívalo solo si quieres mostrar nombres y colores de partidos</small>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card blind-intro-banner" id="blind-intro-banner">
+        <div>
+          <strong>¿Por qué no ves nombres de partidos?</strong>
+          <p class="muted-text">
+            Las siglas no se muestran salvo que desactives el interruptor <em>Modo Sin Sesgos</em> de arriba. Mientras esté activo, las propuestas aparecen mezcladas en orden aleatorio (Opción A, B, C...): pulsa <strong>«☆ Me convence»</strong> en las ideas que prefieras en cada tema y al final haz clic en <strong>«Revelar Partidos Coincidentes»</strong> para saber con quién coincides más.
+          </p>
+        </div>
+      </div>
+
+      <div class="card controls-panel">
+        <div class="control-row">
+          <div class="control-group">
+            <span class="control-label">1. Elige el tema a comparar:</span>
+            <div class="axis-tabs" id="axis-tabs" role="tablist" aria-label="Ejes temáticos">
+              <!-- Botones de eje inyectados por app.js -->
+            </div>
+          </div>
+        </div>
+
+        <div class="control-row split-controls">
+          <div class="control-group">
+            <span class="control-label">2. Partidos visibles en la comparativa:</span>
+            <div class="party-filter-pills" id="comparator-party-pills">
+              <!-- Chips para activar/desactivar partidos -->
+            </div>
+          </div>
+          <div class="control-group pair-selector-group">
+            <span class="control-label">3. Contraste rápido cara a cara (2 partidos):</span>
+            <div class="pair-selects">
+              <select id="pair-left" aria-label="Primer partido a contrastar"></select>
+              <span class="vs-badge" aria-hidden="true">VS</span>
+              <select id="pair-right" aria-label="Segundo partido a contrastar"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa visual de similitudes y diferencias del eje actual -->
+      <div class="similarity-grid" id="similarity-panel">
+        <!-- Similitudes, diferencias y choque directo entre los 2 seleccionados -->
+      </div>
+
+      <!-- Barra de progreso del modo a ciegas -->
+      <div class="blind-summary-bar card" id="blind-summary-bar" hidden>
+        <div class="blind-summary-info">
+          <strong>Modo Lectura a Ciegas activo:</strong> Marca con ★ las propuestas que más te convenzan en distintos temas y revela al final qué partido encaja mejor contigo.
+          <span id="blind-picks-count" class="chip">0 preferencias marcadas</span>
+        </div>
+        <div class="blind-summary-actions">
+          <button id="blind-reveal-btn" class="btn btn-primary" type="button">Revelar Partidos Coincidentes</button>
+          <button id="blind-reset-btn" class="btn btn-ghost" type="button">Limpiar marcas</button>
+        </div>
+      </div>
+
+      <div id="blind-reveal-results" class="card blind-reveal-card" hidden>
+        <!-- Resultados al revelar el modo a ciegas -->
+      </div>
+
+      <div class="proposals-grid" id="proposals-grid">
+        <!-- Tarjetas comparativas de propuestas -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: HEMEROTECA DE ENTREVISTAS SIN SESGO -->
+    <section id="entrevistas" class="view-section" aria-labelledby="heading-entrevistas" hidden>
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Cero Columnas de Opinión · Declaraciones Directas</span>
+          <h1 id="heading-entrevistas">En Sus Propias Palabras: Entrevistas en Medios</h1>
+          <p class="section-lead">
+            Recopilación de entrevistas reales en prensa escrita, radio, televisión pública y privada, y formatos largos digitales. Sin valoraciones de tertulianos ni editoriales: solo la pregunta, la respuesta literal del candidato y su estilo expresivo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Comparativa descriptiva de estilo de expresión por candidato -->
+      <div class="card expression-matrix-card">
+        <div class="matrix-header">
+          <h2>Radiografía Expresiva: ¿Cómo habla cada candidato en entrevista?</h2>
+          <p class="muted-text">Análisis descriptivo de tono, registro, estructura argumentativa y respuesta ante preguntas incómodas.</p>
+        </div>
+        <div class="expression-grid" id="expression-grid">
+          <!-- Fichas de expresión de candidatos -->
+        </div>
+      </div>
+
+      <div class="card filter-bar">
+        <div class="filter-field">
+          <label for="interview-party-filter">Candidato / Partido</label>
+          <select id="interview-party-filter">
+            <option value="all">Todos los candidatos</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="interview-format-filter">Tipo de medio</label>
+          <select id="interview-format-filter">
+            <option value="all">Todos los formatos</option>
+            <option value="Radio / TV Informativa">Radio / TV Informativa</option>
+            <option value="Prensa Escrita / Agencia">Prensa Escrita / Agencia</option>
+            <option value="Pódcast / Entretenimiento">Pódcast / Entretenimiento</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="interview-topic-filter">Tema tratado</label>
+          <select id="interview-topic-filter">
+            <option value="all">Todos los temas</option>
+          </select>
+        </div>
+        <div class="filter-field filter-search">
+          <label for="interview-search-input">Buscar cita o medio</label>
+          <input id="interview-search-input" type="search" placeholder="Ej: vivienda, Alsina, RTVE, Wild..." />
+        </div>
+      </div>
+
+      <div class="results-meta" id="interviews-meta"></div>
+      <div class="interviews-grid" id="interviews-grid">
+        <!-- Tarjetas de entrevistas -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: TEST DE 10 ESCENARIOS CON ARCO POLÍTICO -->
+    <section id="test-afinidad" class="view-section" aria-labelledby="heading-test" hidden>
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Brújula Electoral 29-N · Sin Nombres de Partido</span>
+          <h1 id="heading-test">Test de 10 Escenarios: ¿Dónde te sitúas en el Arco Político?</h1>
+          <p class="section-lead">
+            Responde a 10 situaciones reales sobre vivienda, sanidad, impuestos, empleo, territorio o inmigración. Ninguna opción menciona siglas para evitar prejuicios. Al finalizar verás tu posición exacta en el arco izquierda-derecha y tu afinidad con cada programa.
+          </p>
+        </div>
+      </div>
+
+      <div id="quiz-stage" class="card quiz-card">
+        <!-- Contenido dinámico del test o resultados -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>PolitiFácil 29-N</strong> — Herramienta cívica informativa sin afiliación partidista.
+        <p class="muted-text">Datos contrastados con programas oficiales y declaraciones literales en entrevistas periodísticas. Verifica siempre los programas íntegros en las webs enlazadas.</p>
+      </div>
+      <div class="footer-links">
+        <button class="btn btn-ghost btn-sm" data-jump="arco-overview" type="button">Arco</button>
+        <button class="btn btn-ghost btn-sm" data-jump="comparador" type="button">Comparador</button>
+        <button class="btn btn-ghost btn-sm" data-jump="entrevistas" type="button">Entrevistas</button>
+        <button class="btn btn-ghost btn-sm" data-jump="test-afinidad" type="button">Test 10 Escenarios</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/data/electionData.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

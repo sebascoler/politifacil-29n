@@ -1,0 +1,14 @@
+{
+  "name": "politifacil-29n",
+  "version": "1.0.0",
+  "description": "Plataforma interactiva y neutral para comparar programas electorales, estilos de comunicación, entrevistas a candidatos y test de afinidad en el arco político para las elecciones generales en España del 29 de noviembre de 2026.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node scripts/validate-data.js",
+    "validate": "node scripts/validate-data.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
