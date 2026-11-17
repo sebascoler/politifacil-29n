@@ -1,0 +1,64 @@
+name: Daily SEO & GEO Monitor
+
+on:
+  schedule:
+    # 07:00 UTC = 08:00 AM Europe/Madrid (horario CET de invierno)
+    - cron: '0 7 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  seo-geo-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generar reporte diario SEO & GEO
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/cloud-seo-geo-report.js
+
+      - name: Subir artefacto del Dashboard y Reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-geo-dashboard
+          path: |
+            reports/seo-geo-dashboard.html
+            reports/seo-geo-history.json
+            reports/latest-email-summary.md
+            reports/latest-email-summary.html
+          retention-days: 30
+
+      - name: Guardar histórico y dashboard en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/seo-geo-history.json reports/seo-geo-dashboard.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(reports): actualizar reporte diario SEO & GEO [skip ci] [vercel skip]"
+            git push
+          fi
+
+      - name: Enviar resumen diario por Gmail
+        if: ${{ secrets.GMAIL_APP_PASSWORD != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: sebastian.coler@gmail.com
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          subject: "PolitiFácil 29-N · Reporte Diario SEO & GEO"
+          to: sebastian.coler@gmail.com
+          from: "PolitiFácil Monitor <sebastian.coler@gmail.com>"
+          html_body: file://reports/latest-email-summary.html
+          attachments: reports/seo-geo-dashboard.html

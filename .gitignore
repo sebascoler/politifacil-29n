@@ -4,4 +4,6 @@ node_modules/
 .env
 .env.*
 *.log
-reports/
+reports/*
+!reports/seo-geo-history.json
+!reports/seo-geo-dashboard.html

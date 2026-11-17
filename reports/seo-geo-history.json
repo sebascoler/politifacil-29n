@@ -1,0 +1,241 @@
+{
+  "project": {
+    "name": "PolitiFácil 29-N",
+    "siteUrl": "https://politifacil-29n.vercel.app/",
+    "electionDate": "2026-11-29",
+    "ga4AccountId": "416678566",
+    "ga4PropertyId": "564800083",
+    "ga4StreamId": "16360556273",
+    "gtmContainerId": "GTM-N2V3Q8RQ",
+    "gscProperty": "https://politifacil-29n.vercel.app/",
+    "expectedSitemapUrls": 40
+  },
+  "instrumentedEvents": [
+    {
+      "name": "quiz_complete",
+      "category": "Conversión principal",
+      "description": "Completa los 10 escenarios del test de afinidad y ve su posición en el arco"
+    },
+    {
+      "name": "quiz_start",
+      "category": "Embudo Test",
+      "description": "Responde el primer escenario del test de afinidad"
+    },
+    {
+      "name": "quiz_step_answer",
+      "category": "Embudo Test",
+      "description": "Avance por escenario (incluye tema prioritario x2)"
+    },
+    {
+      "name": "blind_reveal",
+      "category": "Conversión Comparador",
+      "description": "Revela qué partidos están detrás de sus selecciones a ciegas"
+    },
+    {
+      "name": "blind_pick_toggle",
+      "category": "Embudo Comparador",
+      "description": "Marca o desmarca «Me convence» en una propuesta sin siglas"
+    },
+    {
+      "name": "share_result",
+      "category": "Conversión viral",
+      "description": "Comparte por WhatsApp, Telegram, X, copia resumen o descarga PNG"
+    },
+    {
+      "name": "ai_referral_visit",
+      "category": "GEO / IA",
+      "description": "Visita procedente de ChatGPT, Perplexity, Gemini, Claude, Copilot, Grok o DeepSeek"
+    },
+    {
+      "name": "section_view",
+      "category": "Navegación SPA",
+      "description": "Cambio de pestaña/sección principal en la SPA"
+    },
+    {
+      "name": "comparator_interaction",
+      "category": "Engagement",
+      "description": "Cambio de eje, cara a cara, modo sin sesgos o salto desde resultado"
+    },
+    {
+      "name": "party_inspect",
+      "category": "Engagement",
+      "description": "Selección de partido en el arco, ficha o enlaces a propuestas/entrevistas"
+    },
+    {
+      "name": "interview_filter",
+      "category": "Engagement",
+      "description": "Filtrado de hemeroteca de entrevistas por partido, formato o tema"
+    },
+    {
+      "name": "static_cta_click",
+      "category": "SEO Landing -> App",
+      "description": "Clic en CTA desde las 39 páginas estáticas SEO hacia el test o comparador"
+    },
+    {
+      "name": "official_source_click",
+      "category": "Confianza / Verificación",
+      "description": "Clic saliente hacia programas oficiales o medios periodísticos verificados"
+    }
+  ],
+  "entries": [
+    {
+      "date": "2026-11-17",
+      "checkedAt": "2026-11-17T21:52:00+01:00",
+      "dateRangeNote": "GA4: 1 nov – 17 nov 2026 (todo el tráfico registrado hoy 17 nov); GSC: últimos 3 meses (alta inicial hoy 17 nov)",
+      "ga4": {
+        "activeUsers": 11,
+        "newUsers": 11,
+        "sessions": 11,
+        "engagedSessions": 7,
+        "engagementRatePct": 63.64,
+        "views": 28,
+        "viewsPerUser": 2.55,
+        "avgEngagementTimeLabel": "3 min 52 s",
+        "avgEngagementTimeSec": 232,
+        "totalEvents": 67,
+        "keyEvents": 0,
+        "organicSearchSessions": 0,
+        "aiReferralSessions": 0,
+        "aiSources": [],
+        "channels": [
+          {
+            "channel": "Direct",
+            "sourceMedium": "(direct) / (none)",
+            "sessions": 7,
+            "sharePct": 63.64,
+            "engagedSessions": 3,
+            "engagementRatePct": 42.86,
+            "avgEngagementTime": "6 s",
+            "events": 27
+          },
+          {
+            "channel": "Organic Social",
+            "sourceMedium": "reddit.com / referral",
+            "sessions": 4,
+            "sharePct": 36.36,
+            "engagedSessions": 4,
+            "engagementRatePct": 100.0,
+            "avgEngagementTime": "7 min 25 s",
+            "events": 23
+          },
+          {
+            "channel": "Unassigned",
+            "sourceMedium": "(sin definir)",
+            "sessions": 3,
+            "sharePct": 27.27,
+            "engagedSessions": 0,
+            "engagementRatePct": 0.0,
+            "avgEngagementTime": "4 min 03 s",
+            "events": 17
+          },
+          {
+            "channel": "Organic Search (SEO)",
+            "sourceMedium": "google / organic",
+            "sessions": 0,
+            "sharePct": 0.0,
+            "engagedSessions": 0,
+            "engagementRatePct": 0.0,
+            "avgEngagementTime": "0 s",
+            "events": 0
+          },
+          {
+            "channel": "GEO / Motores de IA",
+            "sourceMedium": "chatgpt / perplexity / gemini / claude",
+            "sessions": 0,
+            "sharePct": 0.0,
+            "engagedSessions": 0,
+            "engagementRatePct": 0.0,
+            "avgEngagementTime": "0 s",
+            "events": 0
+          }
+        ],
+        "landingPages": [
+          {
+            "path": "/test-afinidad",
+            "sessions": 8,
+            "activeUsers": 8,
+            "newUsers": 8,
+            "avgEngagementTime": "3 min 50 s"
+          },
+          {
+            "path": "/",
+            "sessions": 5,
+            "activeUsers": 5,
+            "newUsers": 3,
+            "avgEngagementTime": "1 min 20 s"
+          },
+          {
+            "path": "(sin definir)",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 0,
+            "avgEngagementTime": "5 min 16 s"
+          }
+        ],
+        "pagesAndScreens": [
+          {
+            "path": "/",
+            "views": 16,
+            "activeUsers": 8,
+            "avgEngagementTime": "5 min 06 s",
+            "events": 27
+          },
+          {
+            "path": "/test-afinidad",
+            "views": 12,
+            "activeUsers": 8,
+            "avgEngagementTime": "13 s",
+            "events": 40
+          }
+        ],
+        "keyEventBreakdown": {}
+      },
+      "gsc": {
+        "status": "processing",
+        "statusMessage": "Se están procesando los datos; vuelve a comprobar esta sección mañana",
+        "clicks": null,
+        "impressions": null,
+        "ctrPct": null,
+        "avgPosition": null,
+        "indexedPages": null,
+        "notIndexedPages": null,
+        "indexingReasons": [],
+        "sitemap": {
+          "url": "/sitemap.xml",
+          "status": "Correcto",
+          "submittedDate": "2026-11-17",
+          "lastReadDate": "2026-11-17",
+          "discoveredUrls": 40
+        },
+        "robotsTxtStatus": "Válidas",
+        "topQueries": [],
+        "topPages": []
+      },
+      "decision": {
+        "status": "mejoras_propuestas",
+        "statusLabel": "Arranque inicial · Mejoras propuestas",
+        "summary": "Lanzamiento día 1: sitemap (40 URLs) y robots.txt validados en Search Console; GA4 registra 11 sesiones con 100% de interacción desde Reddit (7m25s), pero Search Console aún procesa datos y no hay tráfico orgánico ni GEO registrado todavía.",
+        "recommendations": [
+          {
+            "priority": "alta",
+            "area": "SEO / Indexación",
+            "title": "Solicitar indexación prioritaria en Search Console",
+            "detail": "Faltan 12 días para el 29-N. Usar «Inspección de URLs → Solicitar indexación» para /, /test-afinidad, /comparador, /entrevistas, /territorios y /comparar."
+          },
+          {
+            "priority": "alta",
+            "area": "GA4 + GSC",
+            "title": "Vincular Search Console con GA4 y marcar eventos clave",
+            "detail": "Asociar la propiedad GSC con GA4 (564800083) en Ajustes → Asociaciones, configurar las etiquetas en GTM (GTM-N2V3Q8RQ) y marcar quiz_complete, blind_reveal, share_result y ai_referral_visit como Eventos Clave."
+          },
+          {
+            "priority": "media",
+            "area": "GEO / IA",
+            "title": "Crear grupo de canales personalizado para tráfico de IA en GA4",
+            "detail": "Agrupar fuentes chatgpt.com, perplexity.ai, gemini.google.com, claude.ai, copilot.microsoft.com, grok.com y deepseek.com y revisar mañana el primer informe de cobertura e impresiones."
+          }
+        ]
+      }
+    }
+  ]
+}

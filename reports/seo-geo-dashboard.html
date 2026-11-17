@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard SEO & GEO — PolitiFácil 29-N</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #111a2e;
+      --surface-2: #17233c;
+      --border: rgba(148, 163, 184, 0.18);
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --purple: #a78bfa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { margin: 0 0 6px; font-size: 1.65rem; letter-spacing: -0.02em; }
+    h2 { margin: 0 0 12px; font-size: 1.1rem; }
+    h3 { margin: 0 0 10px; font-size: 0.98rem; color: #e2e8f0; }
+    h4 { margin: 6px 0 4px; font-size: 0.95rem; }
+    p { margin: 0 0 8px; }
+    .muted { color: var(--muted); font-size: 0.88rem; }
+    code {
+      background: rgba(148, 163, 184, 0.12);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.84em;
+      color: #cbd5e1;
+    }
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.12);
+      color: #bae6fd;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+    .status-banner {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .status-banner.is-ok { border-left: 4px solid var(--green); }
+    .status-banner.is-action { border-left: 4px solid var(--amber); }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .kpi-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .kpi-value {
+      font-size: 1.48rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .kpi-sub {
+      font-size: 0.79rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .delta {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .delta-up { color: var(--green); }
+    .delta-down { color: var(--red); }
+    .delta-flat { color: var(--muted); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+    .spark-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .spark-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .spark-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      margin-bottom: 6px;
+    }
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    th, td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .notice {
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: var(--surface-2);
+      border: 1px dashed var(--border);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+    .rec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .rec-item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .rec-alta { border-left: 3px solid var(--amber); }
+    .rec-media { border-left: 3px solid var(--accent); }
+    .rec-baja { border-left: 3px solid var(--muted); }
+    .rec-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .rec-area { font-size: 0.76rem; color: var(--muted); font-weight: 600; }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+    .badge-alta { background: rgba(245, 158, 11, 0.18); color: #fde68a; }
+    .badge-media { background: rgba(56, 189, 248, 0.16); color: #bae6fd; }
+    .badge-baja { background: rgba(148, 163, 184, 0.16); color: #cbd5e1; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Dashboard SEO &amp; GEO — PolitiFácil 29-N</h1>
+        <p class="muted">https://politifacil-29n.vercel.app/ · GA4 Propiedad <code>564800083</code> · GTM <code>GTM-N2V3Q8RQ</code></p>
+        <div class="meta-pills">
+          <span class="pill">Último análisis: 2026-11-17</span>
+          <span class="pill">Faltan 12 días para el 29-N</span>
+          <span class="pill">Rango: GA4: 1 nov – 17 nov 2026 (todo el tráfico registrado hoy 17 nov); GSC: últimos 3 meses (alta inicial hoy 17 nov)</span>
+        </div>
+      </div>
+      <div class="muted" style="text-align:right;">
+        <div>Actualizado: 2026-11-17T21:52:00+01:00</div>
+        <div>Seguimiento diario automático: 08:00 Europe/Madrid</div>
+      </div>
+    </header>
+
+    <section class="status-banner is-action">
+      <div>
+        <div class="kpi-label">Estado del monitoreo diario</div>
+        <h2 style="margin:0 0 4px;">Arranque inicial · Mejoras propuestas</h2>
+        <p class="muted" style="margin:0;">Lanzamiento día 1: sitemap (40 URLs) y robots.txt validados en Search Console; GA4 registra 11 sesiones con 100% de interacción desde Reddit (7m25s), pero Search Console aún procesa datos y no hay tráfico orgánico ni GEO registrado todavía.</p>
+      </div>
+      <span class="pill">3 acciones sugeridas</span>
+    </section>
+
+    <section class="kpi-grid" aria-label="KPIs principales">
+      <div class="kpi-card">
+        <div class="kpi-label">Sesiones (GA4)</div>
+        <div class="kpi-value">11</div>
+        
+        <div class="kpi-sub">11 usuarios activos · 28 vistas</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Tasa de interacción</div>
+        <div class="kpi-value">63,64 %</div>
+        
+        <div class="kpi-sub">Media: 3 min 52 s</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Organic Search (SEO)</div>
+        <div class="kpi-value">0</div>
+        
+        <div class="kpi-sub">Sesiones orgánicas en GA4</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Tráfico GEO / IA</div>
+        <div class="kpi-value">0</div>
+        
+        <div class="kpi-sub">ChatGPT, Perplexity, Gemini, Claude</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Clics / Impresiones (GSC)</div>
+        <div class="kpi-value">Procesando</div>
+        <div class="kpi-sub">CTR: Procesando · Pos: Procesando</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Indexación y Sitemap</div>
+        <div class="kpi-value">0 / 40</div>
+        <div class="kpi-sub">Sitemap: Correcto · robots.txt: Válidas</div>
+      </div>
+    </section>
+
+    <section class="spark-grid" aria-label="Tendencia histórica">
+      
+    <div class="spark-card">
+      <div class="spark-head">
+        <span>Sesiones GA4</span>
+        <strong>11</strong>
+      </div>
+      <svg viewBox="0 0 260 56" width="100%" height="56" role="img" aria-label="Tendencia de Sesiones GA4">
+        <line x1="8" y1="48" x2="252" y2="48" stroke="rgba(148,163,184,0.22)" stroke-width="1" />
+        
+        <circle cx="130.0" cy="8.0" r="3.5" fill="#38bdf8"><title>11</title></circle>
+      </svg>
+    </div>
+  
+      
+    <div class="spark-card">
+      <div class="spark-head">
+        <span>Tráfico SEO (GA4)</span>
+        <strong>0</strong>
+      </div>
+      <svg viewBox="0 0 260 56" width="100%" height="56" role="img" aria-label="Tendencia de Tráfico SEO (GA4)">
+        <line x1="8" y1="48" x2="252" y2="48" stroke="rgba(148,163,184,0.22)" stroke-width="1" />
+        
+        <circle cx="130.0" cy="48.0" r="3.5" fill="#22c55e"><title>0</title></circle>
+      </svg>
+    </div>
+  
+      
+    <div class="spark-card">
+      <div class="spark-head">
+        <span>Tráfico GEO / IA (GA4)</span>
+        <strong>0</strong>
+      </div>
+      <svg viewBox="0 0 260 56" width="100%" height="56" role="img" aria-label="Tendencia de Tráfico GEO / IA (GA4)">
+        <line x1="8" y1="48" x2="252" y2="48" stroke="rgba(148,163,184,0.22)" stroke-width="1" />
+        
+        <circle cx="130.0" cy="48.0" r="3.5" fill="#a78bfa"><title>0</title></circle>
+      </svg>
+    </div>
+  
+      
+    <div class="spark-card">
+      <div class="spark-head">
+        <span>Impresiones (GSC)</span>
+        <strong>0</strong>
+      </div>
+      <svg viewBox="0 0 260 56" width="100%" height="56" role="img" aria-label="Tendencia de Impresiones (GSC)">
+        <line x1="8" y1="48" x2="252" y2="48" stroke="rgba(148,163,184,0.22)" stroke-width="1" />
+        
+        <circle cx="130.0" cy="48.0" r="3.5" fill="#f59e0b"><title>0</title></circle>
+      </svg>
+    </div>
+  
+    </section>
+
+    <section class="card">
+      <h2>Adquisición por Canal (SEO vs Social vs GEO/IA)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Canal</th>
+              <th>Fuente / Medio</th>
+              <th class="num">Sesiones</th>
+              <th class="num">Cuota</th>
+              <th class="num">Con interacción</th>
+              <th class="num">% Interacción</th>
+              <th class="num">Tiempo medio</th>
+              <th class="num">Eventos</th>
+            </tr>
+          </thead>
+          <tbody>
+      <tr>
+        <td><strong>Direct</strong></td>
+        <td><code>(direct) / (none)</code></td>
+        <td class="num">7</td>
+        <td class="num">63,64 %</td>
+        <td class="num">3</td>
+        <td class="num">42,86 %</td>
+        <td class="num">6 s</td>
+        <td class="num">27</td>
+      </tr>
+      <tr>
+        <td><strong>Organic Social</strong></td>
+        <td><code>reddit.com / referral</code></td>
+        <td class="num">4</td>
+        <td class="num">36,36 %</td>
+        <td class="num">4</td>
+        <td class="num">100 %</td>
+        <td class="num">7 min 25 s</td>
+        <td class="num">23</td>
+      </tr>
+      <tr>
+        <td><strong>Unassigned</strong></td>
+        <td><code>(sin definir)</code></td>
+        <td class="num">3</td>
+        <td class="num">27,27 %</td>
+        <td class="num">0</td>
+        <td class="num">0 %</td>
+        <td class="num">4 min 03 s</td>
+        <td class="num">17</td>
+      </tr>
+      <tr>
+        <td><strong>Organic Search (SEO)</strong></td>
+        <td><code>google / organic</code></td>
+        <td class="num">0</td>
+        <td class="num">0 %</td>
+        <td class="num">0</td>
+        <td class="num">0 %</td>
+        <td class="num">0 s</td>
+        <td class="num">0</td>
+      </tr>
+      <tr>
+        <td><strong>GEO / Motores de IA</strong></td>
+        <td><code>chatgpt / perplexity / gemini / claude</code></td>
+        <td class="num">0</td>
+        <td class="num">0 %</td>
+        <td class="num">0</td>
+        <td class="num">0 %</td>
+        <td class="num">0 s</td>
+        <td class="num">0</td>
+      </tr></tbody>
+        </table>
+      </div>
+      <div style="margin-top:14px;">
+        <h3>Detalle GEO · Referencias desde Motores de IA</h3>
+        <p class="muted">Sin sesiones de referencia desde motores de IA todavía (<code>chatgpt.com</code>, <code>perplexity.ai</code>, <code>gemini.google.com</code>, <code>claude.ai</code>, <code>copilot.microsoft.com</code>).</p>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section class="card" style="margin-bottom:0;">
+        <h2>Search Console · Consultas Principales</h2>
+        <div class="table-wrap"><div class="notice">Se están procesando los datos; vuelve a comprobar esta sección mañana</div></div>
+      </section>
+      <section class="card" style="margin-bottom:0;">
+        <h2>Search Console · Páginas Principales e Indexación</h2>
+        <div class="table-wrap"><div class="notice">Se están procesando los datos; vuelve a comprobar esta sección mañana</div></div>
+        
+      </section>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <section class="card" style="margin-bottom:0;">
+        <h2>GA4 · Páginas de Destino</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Ruta</th><th class="num">Sesiones</th><th class="num">Usuarios</th><th class="num">Nuevos</th><th class="num">Tiempo medio</th></tr></thead>
+            <tbody>
+      <tr>
+        <td><code>/test-afinidad</code></td>
+        <td class="num">8</td>
+        <td class="num">8</td>
+        <td class="num">8</td>
+        <td class="num">3 min 50 s</td>
+      </tr>
+      <tr>
+        <td><code>/</code></td>
+        <td class="num">5</td>
+        <td class="num">5</td>
+        <td class="num">3</td>
+        <td class="num">1 min 20 s</td>
+      </tr>
+      <tr>
+        <td><code>(sin definir)</code></td>
+        <td class="num">1</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="num">5 min 16 s</td>
+      </tr></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card" style="margin-bottom:0;">
+        <h2>GA4 · Páginas y Pantallas</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Ruta</th><th class="num">Vistas</th><th class="num">Usuarios</th><th class="num">Tiempo medio</th><th class="num">Eventos</th></tr></thead>
+            <tbody>
+      <tr>
+        <td><code>/</code></td>
+        <td class="num">16</td>
+        <td class="num">8</td>
+        <td class="num">5 min 06 s</td>
+        <td class="num">27</td>
+      </tr>
+      <tr>
+        <td><code>/test-afinidad</code></td>
+        <td class="num">12</td>
+        <td class="num">8</td>
+        <td class="num">13 s</td>
+        <td class="num">40</td>
+      </tr></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:18px;">
+      <h2>Diagnóstico y Mejoras Propuestas (2026-11-17)</h2>
+      <div class="rec-grid">
+          <div class="rec-item rec-alta">
+            <div class="rec-top">
+              <span class="badge badge-alta">ALTA</span>
+              <span class="rec-area">SEO / Indexación</span>
+            </div>
+            <h4>Solicitar indexación prioritaria en Search Console</h4>
+            <p>Faltan 12 días para el 29-N. Usar «Inspección de URLs → Solicitar indexación» para /, /test-afinidad, /comparador, /entrevistas, /territorios y /comparar.</p>
+          </div>
+          <div class="rec-item rec-alta">
+            <div class="rec-top">
+              <span class="badge badge-alta">ALTA</span>
+              <span class="rec-area">GA4 + GSC</span>
+            </div>
+            <h4>Vincular Search Console con GA4 y marcar eventos clave</h4>
+            <p>Asociar la propiedad GSC con GA4 (564800083) en Ajustes → Asociaciones, configurar las etiquetas en GTM (GTM-N2V3Q8RQ) y marcar quiz_complete, blind_reveal, share_result y ai_referral_visit como Eventos Clave.</p>
+          </div>
+          <div class="rec-item rec-media">
+            <div class="rec-top">
+              <span class="badge badge-media">MEDIA</span>
+              <span class="rec-area">GEO / IA</span>
+            </div>
+            <h4>Crear grupo de canales personalizado para tráfico de IA en GA4</h4>
+            <p>Agrupar fuentes chatgpt.com, perplexity.ai, gemini.google.com, claude.ai, copilot.microsoft.com, grok.com y deepseek.com y revisar mañana el primer informe de cobertura e impresiones.</p>
+          </div></div>
+    </section>
+
+    <section class="card">
+      <h2>Eventos Clave Instrumentados (GA4 / GTM + Vercel Analytics)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Evento</th><th>Tipo</th><th>Qué mide</th><th class="num">Conteo hoy</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><code>quiz_complete</code></td>
+          <td><span class="pill">Conversión principal</span></td>
+          <td>Completa los 10 escenarios del test de afinidad y ve su posición en el arco</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>quiz_start</code></td>
+          <td><span class="pill">Embudo Test</span></td>
+          <td>Responde el primer escenario del test de afinidad</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>quiz_step_answer</code></td>
+          <td><span class="pill">Embudo Test</span></td>
+          <td>Avance por escenario (incluye tema prioritario x2)</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>blind_reveal</code></td>
+          <td><span class="pill">Conversión Comparador</span></td>
+          <td>Revela qué partidos están detrás de sus selecciones a ciegas</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>blind_pick_toggle</code></td>
+          <td><span class="pill">Embudo Comparador</span></td>
+          <td>Marca o desmarca «Me convence» en una propuesta sin siglas</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>share_result</code></td>
+          <td><span class="pill">Conversión viral</span></td>
+          <td>Comparte por WhatsApp, Telegram, X, copia resumen o descarga PNG</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>ai_referral_visit</code></td>
+          <td><span class="pill">GEO / IA</span></td>
+          <td>Visita procedente de ChatGPT, Perplexity, Gemini, Claude, Copilot, Grok o DeepSeek</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>section_view</code></td>
+          <td><span class="pill">Navegación SPA</span></td>
+          <td>Cambio de pestaña/sección principal en la SPA</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>comparator_interaction</code></td>
+          <td><span class="pill">Engagement</span></td>
+          <td>Cambio de eje, cara a cara, modo sin sesgos o salto desde resultado</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>party_inspect</code></td>
+          <td><span class="pill">Engagement</span></td>
+          <td>Selección de partido en el arco, ficha o enlaces a propuestas/entrevistas</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>interview_filter</code></td>
+          <td><span class="pill">Engagement</span></td>
+          <td>Filtrado de hemeroteca de entrevistas por partido, formato o tema</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>static_cta_click</code></td>
+          <td><span class="pill">SEO Landing -&gt; App</span></td>
+          <td>Clic en CTA desde las 39 páginas estáticas SEO hacia el test o comparador</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr>
+        <tr>
+          <td><code>official_source_click</code></td>
+          <td><span class="pill">Confianza / Verificación</span></td>
+          <td>Clic saliente hacia programas oficiales o medios periodísticos verificados</td>
+          <td class="num"><span class="muted">0</span></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Histórico Diario de Seguimiento</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th class="num">Sesiones</th>
+              <th class="num">% Interacción</th>
+              <th class="num">SEO (GA4)</th>
+              <th class="num">GEO / IA</th>
+              <th class="num">Clics GSC</th>
+              <th class="num">Impresiones GSC</th>
+              <th class="num">Indexadas</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+      <tr>
+        <td><strong>2026-11-17</strong></td>
+        <td class="num">11</td>
+        <td class="num">63,64 %</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="num">Procesando</td>
+        <td class="num">Procesando</td>
+        <td class="num">Procesando</td>
+        <td><span class="pill">Arranque inicial · Mejoras propuestas</span></td>
+      </tr></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
