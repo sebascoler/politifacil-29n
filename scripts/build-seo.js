@@ -378,7 +378,7 @@ function buildHomeHeadBlock() {
   const title = 'PolitiFácil 29-N | Comparador Electoral Neutral y Test de Afinidad en España';
   const description =
     'Plataforma neutral, visual y sin sesgos para entender las propuestas oficiales, el estilo comunicativo y las entrevistas de los candidatos en las elecciones generales de España del 29 de noviembre de 2026.';
-  const ogImage = `${SITE_URL}/og-banner.svg`;
+  const ogImage = `${SITE_URL}/og-banner.png`;
 
   const allPartiesForList = [
     ...DATA.parties.map((p) => ({
@@ -521,6 +521,8 @@ function buildHomeHeadBlock() {
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${escapeHtml(SITE_URL)}/" />
   <meta property="og:image" content="${escapeHtml(ogImage)}" />
+  <meta property="og:image:secure_url" content="${escapeHtml(ogImage)}" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="PolitiFácil 29-N: arco parlamentario multicolor y comparador electoral neutral en España" />
@@ -528,6 +530,7 @@ function buildHomeHeadBlock() {
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="6 Partidos Estatales · 8 Ejes Oficiales · 0 Opinión · Test de 10 Escenarios en el arco político de España (29-N)." />
   <meta name="twitter:image" content="${escapeHtml(ogImage)}" />
+  <meta name="twitter:image:alt" content="PolitiFácil 29-N: arco parlamentario multicolor y comparador electoral neutral en España" />
   <script type="application/ld+json">
 ${safeJsonLd(jsonLd)}
   </script>`;
@@ -966,7 +969,7 @@ function renderStaticPage(opts) {
 
   const normalizedPath = urlPath === '/' ? '/' : urlPath.replace(/\/$/, '');
   const canonicalUrl = `${SITE_URL}${normalizedPath}`;
-  const ogImage = `${SITE_URL}/og-banner.svg`;
+  const ogImage = `${SITE_URL}/og-banner.png`;
 
   const breadcrumbListSchema = {
     '@type': 'BreadcrumbList',
@@ -1051,6 +1054,8 @@ function renderStaticPage(opts) {
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
   <meta property="og:image" content="${escapeHtml(ogImage)}" />
+  <meta property="og:image:secure_url" content="${escapeHtml(ogImage)}" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="${escapeHtml(title)}" />
@@ -1058,6 +1063,7 @@ function renderStaticPage(opts) {
   <meta name="twitter:title" content="${escapeHtml(title)}" />
   <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="${escapeHtml(ogImage)}" />
+  <meta name="twitter:image:alt" content="${escapeHtml(title)}" />
   <link rel="stylesheet" href="/styles.css" />
   <script>
     (function () {

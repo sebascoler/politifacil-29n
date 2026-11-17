@@ -49,6 +49,13 @@
       ]
     },
     {
+      "source": "/og-banner.png",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" },
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
       "source": "/og-banner.svg",
       "headers": [
         { "key": "Content-Type", "value": "image/svg+xml; charset=utf-8" },
