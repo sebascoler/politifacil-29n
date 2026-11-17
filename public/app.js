@@ -86,6 +86,83 @@
     }
   }
 
+  const AI_REFERRER_SOURCES = [
+    'chatgpt.com',
+    'chat.openai.com',
+    'perplexity.ai',
+    'gemini.google.com',
+    'claude.ai',
+    'copilot.microsoft.com',
+    'grok.com',
+    'deepseek.com',
+    'you.com',
+    'phind.com',
+    'meta.ai',
+  ];
+
+  function trackEvent(eventName, params = {}) {
+    const payload = params && typeof params === 'object' ? params : {};
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, payload);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: eventName, ...payload });
+      }
+      if (typeof window.va === 'function') {
+        window.va('event', { name: eventName, data: payload });
+      }
+    } catch {
+      // Ignorar errores de analítica
+    }
+  }
+
+  function detectAiSource() {
+    const rawRef = (document.referrer || '').toLowerCase();
+    const params = new URLSearchParams(window.location.search);
+    const utmSource = (params.get('utm_source') || '').toLowerCase();
+    const refParam = (params.get('ref') || '').toLowerCase();
+
+    let refHost = '';
+    if (rawRef) {
+      try {
+        refHost = new URL(rawRef).hostname.toLowerCase();
+      } catch {
+        refHost = rawRef;
+      }
+    }
+
+    for (const domain of AI_REFERRER_SOURCES) {
+      const shortToken = domain.split('.')[0];
+      if (
+        (refHost && refHost.includes(domain)) ||
+        (utmSource && (utmSource.includes(domain) || utmSource === shortToken)) ||
+        (refParam && (refParam.includes(domain) || refParam === shortToken))
+      ) {
+        return domain;
+      }
+    }
+    return '';
+  }
+
+  function trackAiReferralOnce() {
+    const aiSource = detectAiSource();
+    if (!aiSource) return;
+    const sessionKey = 'politifacil_29n_ai_ref_v1';
+    try {
+      if (window.sessionStorage.getItem(sessionKey)) return;
+      window.sessionStorage.setItem(sessionKey, aiSource);
+    } catch {
+      // Continuar aunque sessionStorage esté restringido
+    }
+    trackEvent('ai_referral_visit', {
+      ai_source: aiSource,
+      landing_path: window.location.pathname,
+      landing_section: state.activeSection,
+      referrer: document.referrer || '',
+    });
+  }
+
   function escapeHtml(str) {
     return String(str == null ? '' : str)
       .replace(/&/g, '&amp;')
@@ -166,6 +243,7 @@
       copyBtnId,
       downloadBtnId = '',
       compact = false,
+      shareContext = 'quiz',
     } = config;
     const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`;
     const telegramHref = `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
@@ -175,27 +253,39 @@
 
     return `
       <div class="${rowClass}">
-        <a class="btn${sizeClass} btn-whatsapp" href="${escapeHtml(whatsappHref)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a class="btn${sizeClass} btn-telegram" href="${escapeHtml(telegramHref)}" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a class="btn${sizeClass} btn-x" href="${escapeHtml(xHref)}" target="_blank" rel="noopener noreferrer">Compartir en X</a>
+        <a class="btn${sizeClass} btn-whatsapp" href="${escapeHtml(whatsappHref)}" target="_blank" rel="noopener noreferrer" data-share-method="whatsapp" data-share-context="${escapeHtml(shareContext)}">WhatsApp</a>
+        <a class="btn${sizeClass} btn-telegram" href="${escapeHtml(telegramHref)}" target="_blank" rel="noopener noreferrer" data-share-method="telegram" data-share-context="${escapeHtml(shareContext)}">Telegram</a>
+        <a class="btn${sizeClass} btn-x" href="${escapeHtml(xHref)}" target="_blank" rel="noopener noreferrer" data-share-method="x" data-share-context="${escapeHtml(shareContext)}">Compartir en X</a>
         <button type="button" class="btn${sizeClass} btn-copy" id="${escapeHtml(copyBtnId)}">Copiar resumen</button>
         ${downloadBtnId ? `<button type="button" class="btn${sizeClass} btn-download-img" id="${escapeHtml(downloadBtnId)}">Descargar imagen PNG de mi Arco</button>` : ''}
       </div>
     `;
   }
 
-  function bindCopyShareButton(buttonId, feedbackId, textToCopy) {
+  function bindCopyShareButton(buttonId, feedbackId, textToCopy, shareContext = 'quiz') {
     const btn = document.getElementById(buttonId);
     const feedback = document.getElementById(feedbackId);
     if (!btn) return;
     btn.addEventListener('click', async () => {
       const ok = await copyTextToClipboard(textToCopy);
+      trackEvent('share_result', { method: 'copy', context: shareContext });
       if (feedback) {
         feedback.textContent = ok
           ? '✓ Resumen copiado al portapapeles'
           : 'No se pudo copiar automáticamente; selecciona el enlace de la barra.';
       }
     });
+    const row = btn.closest('.share-buttons-row') || btn.parentElement;
+    if (row) {
+      row.querySelectorAll('[data-share-method]').forEach((link) => {
+        link.addEventListener('click', () => {
+          trackEvent('share_result', {
+            method: link.dataset.shareMethod,
+            context: link.dataset.shareContext || shareContext,
+          });
+        });
+      });
+    }
   }
 
   /* ================= TEMA Y NAVEGACIÓN ================= */
@@ -333,6 +423,13 @@
       }
     }
 
+    if (updateHistory) {
+      trackEvent('section_view', {
+        section_id: resolvedSection,
+        page_path: window.location.pathname,
+      });
+    }
+
     if (scroll) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -441,12 +538,14 @@
     arcWrap.querySelectorAll('[data-party-node]').forEach((node) => {
       node.addEventListener('click', () => {
         state.selectedPartyId = node.dataset.partyNode;
+        trackEvent('party_inspect', { party_id: state.selectedPartyId, action: 'arc_select' });
         renderOverviewSection();
       });
       node.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') {
           ev.preventDefault();
           state.selectedPartyId = node.dataset.partyNode;
+          trackEvent('party_inspect', { party_id: state.selectedPartyId, action: 'arc_select' });
           renderOverviewSection();
         }
       });
@@ -520,6 +619,7 @@
         state.visiblePartyIds.push(party.id);
       }
       state.pairLeft = party.id;
+      trackEvent('party_inspect', { party_id: party.id, action: 'inspect_proposals' });
       switchSection('comparador');
       renderComparatorSection();
     });
@@ -528,6 +628,7 @@
       state.interviewParty = party.id;
       const selectEl = document.getElementById('interview-party-filter');
       if (selectEl) selectEl.value = party.id;
+      trackEvent('party_inspect', { party_id: party.id, action: 'inspect_interviews' });
       switchSection('entrevistas');
       renderInterviewsSection();
     });
@@ -564,6 +665,7 @@
     grid.querySelectorAll('[data-select-party]').forEach((btn) => {
       btn.addEventListener('click', () => {
         state.selectedPartyId = btn.dataset.selectParty;
+        trackEvent('party_inspect', { party_id: state.selectedPartyId, action: 'card_select' });
         renderOverviewSection();
         document.getElementById('overview-arc-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
@@ -613,10 +715,22 @@
 
     pairLeft.addEventListener('change', () => {
       state.pairLeft = pairLeft.value;
+      trackEvent('comparator_interaction', {
+        action: 'pair_change',
+        pair_left: state.pairLeft,
+        pair_right: state.pairRight,
+        axis_id: state.activeAxis,
+      });
       renderSimilarityPanel();
     });
     pairRight.addEventListener('change', () => {
       state.pairRight = pairRight.value;
+      trackEvent('comparator_interaction', {
+        action: 'pair_change',
+        pair_left: state.pairLeft,
+        pair_right: state.pairRight,
+        axis_id: state.activeAxis,
+      });
       renderSimilarityPanel();
     });
 
@@ -631,11 +745,17 @@
       if (state.blindMode) {
         ensureBlindOrderForAxis(state.activeAxis);
       }
+      trackEvent('comparator_interaction', {
+        action: 'blind_mode_toggle',
+        blind_mode: state.blindMode,
+        axis_id: state.activeAxis,
+      });
       renderComparatorSection();
     });
 
     document.getElementById('blind-reveal-btn').addEventListener('click', () => {
       state.blindRevealed = true;
+      trackEvent('blind_reveal', { total_picks: countBlindPicks() });
       renderBlindRevealResults();
     });
 
@@ -663,6 +783,11 @@
       btn.addEventListener('click', () => {
         state.activeAxis = btn.dataset.axis;
         if (state.blindMode) ensureBlindOrderForAxis(state.activeAxis);
+        trackEvent('comparator_interaction', {
+          action: 'axis_change',
+          axis_id: state.activeAxis,
+          blind_mode: state.blindMode,
+        });
         renderComparatorSection();
       });
     });
@@ -857,12 +982,13 @@
           shareText: blindShareText,
           copyBtnId: 'blind-copy-share-btn',
           compact: true,
+          shareContext: 'blind_comparator',
         })}
         <p class="share-feedback" id="blind-share-feedback" aria-live="polite"></p>
       </div>
     `;
 
-    bindCopyShareButton('blind-copy-share-btn', 'blind-share-feedback', blindFullShareText);
+    bindCopyShareButton('blind-copy-share-btn', 'blind-share-feedback', blindFullShareText, 'blind_comparator');
 
     const showCardsBtn = document.getElementById('reveal-show-cards-btn');
     if (showCardsBtn) {
@@ -932,6 +1058,12 @@
         if (!state.blindPicks[axisId]) state.blindPicks[axisId] = {};
         state.blindPicks[axisId][pid] = !state.blindPicks[axisId][pid];
         saveState();
+        trackEvent('blind_pick_toggle', {
+          axis_id: axisId,
+          party_id: pid,
+          selected: Boolean(state.blindPicks[axisId][pid]),
+          total_picks: countBlindPicks(),
+        });
         updateBlindPicksCounter();
         renderProposalsGrid();
         if (state.blindRevealed) renderBlindRevealResults();
@@ -974,14 +1106,17 @@
 
     partySelect.addEventListener('change', () => {
       state.interviewParty = partySelect.value;
+      trackEvent('interview_filter', { filter_type: 'party', filter_value: state.interviewParty });
       renderInterviewsSection();
     });
     formatSelect.addEventListener('change', () => {
       state.interviewFormat = formatSelect.value;
+      trackEvent('interview_filter', { filter_type: 'format', filter_value: state.interviewFormat });
       renderInterviewsSection();
     });
     topicSelect.addEventListener('change', () => {
       state.interviewTopic = topicSelect.value;
+      trackEvent('interview_filter', { filter_type: 'topic', filter_value: state.interviewTopic });
       renderInterviewsSection();
     });
     searchInput.addEventListener('input', () => {
@@ -1454,6 +1589,13 @@
       }
     };
 
+    trackEvent('share_result', {
+      method: 'download_png',
+      context: 'quiz',
+      user_score: roundedScore,
+      top_party: res.rankings[0].party.id,
+    });
+
     if (typeof canvas.toBlob === 'function') {
       canvas.toBlob((blob) => {
         if (blob) {
@@ -1573,11 +1715,25 @@
     stage.querySelectorAll('[data-option-idx]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const idx = Number(btn.dataset.optionIdx);
+        const isFirstAnswer = Object.keys(state.quizAnswers).length === 0;
+        const priorityChecked = Boolean(document.getElementById('quiz-priority-check').checked);
+        if (isFirstAnswer) {
+          trackEvent('quiz_start', {
+            first_question_id: q.id,
+            axis_label: q.axisLabel,
+          });
+        }
         state.quizAnswers[q.id] = {
           optionIndex: idx,
-          priority: Boolean(document.getElementById('quiz-priority-check').checked),
+          priority: priorityChecked,
         };
         saveState();
+        trackEvent('quiz_step_answer', {
+          question_id: q.id,
+          step_number: state.quizIndex + 1,
+          axis_label: q.axisLabel,
+          priority: priorityChecked,
+        });
         renderQuizSection();
       });
     });
@@ -1604,6 +1760,15 @@
         state.quizIndex += 1;
       } else {
         state.quizCompleted = true;
+        const res = calculateQuizResults();
+        trackEvent('quiz_complete', {
+          user_score: Math.round(res.userSpectrumScore),
+          zone_label: describeSpectrumZone(res.userSpectrumScore),
+          top_party: res.rankings[0].party.id,
+          top_affinity: res.rankings[0].affinity,
+          second_party: res.rankings[1].party.id,
+          second_affinity: res.rankings[1].affinity,
+        });
       }
       saveState();
       renderQuizSection();
@@ -1686,6 +1851,7 @@
           copyBtnId: 'quiz-copy-share-btn',
           downloadBtnId: 'quiz-download-png-btn',
           compact: false,
+          shareContext: 'quiz',
         })}
         <p class="share-feedback" id="quiz-share-feedback" aria-live="polite"></p>
       </div>
@@ -1725,7 +1891,7 @@
       </div>
     `;
 
-    bindCopyShareButton('quiz-copy-share-btn', 'quiz-share-feedback', copySummaryText);
+    bindCopyShareButton('quiz-copy-share-btn', 'quiz-share-feedback', copySummaryText, 'quiz');
 
     const downloadPngBtn = document.getElementById('quiz-download-png-btn');
     if (downloadPngBtn) {
@@ -1740,6 +1906,7 @@
       state.quizIndex = 0;
       state.quizCompleted = false;
       saveState();
+      trackEvent('quiz_restart', { action: 'restart' });
       renderQuizSection();
     });
 
@@ -1750,6 +1917,11 @@
       state.pairLeft = top1.party.id;
       state.pairRight = top2.party.id;
       state.visiblePartyIds = [top1.party.id, top2.party.id];
+      trackEvent('comparator_interaction', {
+        action: 'compare_top2',
+        pair_left: top1.party.id,
+        pair_right: top2.party.id,
+      });
       switchSection('comparador');
       renderComparatorSection();
     });
@@ -1813,6 +1985,7 @@
   function init() {
     loadSavedState();
     parseUrlParams(false);
+    trackAiReferralOnce();
     applyTheme();
     updateCountdown();
     bindGlobalEvents();

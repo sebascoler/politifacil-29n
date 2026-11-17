@@ -637,6 +637,98 @@
           applyTheme(next);
         });
       }
+
+      function emitEvent(eventName, params) {
+        var payload = params || {};
+        try {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, payload);
+          } else {
+            window.dataLayer = window.dataLayer || [];
+            var dlPayload = { event: eventName };
+            for (var k in payload) {
+              if (Object.prototype.hasOwnProperty.call(payload, k)) {
+                dlPayload[k] = payload[k];
+              }
+            }
+            window.dataLayer.push(dlPayload);
+          }
+          if (typeof window.va === 'function') {
+            window.va('event', { name: eventName, data: payload });
+          }
+        } catch (e) {}
+      }
+
+      (function detectAiReferral() {
+        var aiDomains = [
+          'chatgpt.com',
+          'chat.openai.com',
+          'perplexity.ai',
+          'gemini.google.com',
+          'claude.ai',
+          'copilot.microsoft.com',
+          'grok.com',
+          'deepseek.com',
+          'you.com',
+          'phind.com',
+          'meta.ai'
+        ];
+        var rawRef = (document.referrer || '').toLowerCase();
+        var refHost = '';
+        if (rawRef) {
+          try {
+            refHost = new URL(rawRef).hostname.toLowerCase();
+          } catch (e) {
+            refHost = rawRef;
+          }
+        }
+        var params = new URLSearchParams(window.location.search);
+        var utmSource = (params.get('utm_source') || '').toLowerCase();
+        var refParam = (params.get('ref') || '').toLowerCase();
+        var matched = '';
+        for (var i = 0; i < aiDomains.length; i += 1) {
+          var d = aiDomains[i];
+          var tok = d.split('.')[0];
+          if (
+            (refHost && refHost.indexOf(d) !== -1) ||
+            (utmSource && (utmSource.indexOf(d) !== -1 || utmSource === tok)) ||
+            (refParam && (refParam.indexOf(d) !== -1 || refParam === tok))
+          ) {
+            matched = d;
+            break;
+          }
+        }
+        if (!matched) return;
+        var sKey = 'politifacil_29n_ai_ref_v1';
+        try {
+          if (window.sessionStorage.getItem(sKey)) return;
+          window.sessionStorage.setItem(sKey, matched);
+        } catch (e) {}
+        emitEvent('ai_referral_visit', {
+          ai_source: matched,
+          landing_path: window.location.pathname,
+          landing_section: 'static_page',
+          referrer: document.referrer || ''
+        });
+      })();
+
+      document.querySelectorAll('.cta-banner-card a.btn').forEach(function (ctaLink) {
+        ctaLink.addEventListener('click', function () {
+          emitEvent('static_cta_click', {
+            cta_href: ctaLink.getAttribute('href') || '',
+            page_path: window.location.pathname
+          });
+        });
+      });
+
+      document.querySelectorAll('.source-link').forEach(function (srcLink) {
+        srcLink.addEventListener('click', function () {
+          emitEvent('official_source_click', {
+            source_url: srcLink.getAttribute('href') || '',
+            page_path: window.location.pathname
+          });
+        });
+      });
     })();
   </script>
   <script>
