@@ -9,6 +9,8 @@
   }
 
   const STORAGE_KEY = 'politifacil_29n_state_v1';
+  const QUIZ_COUNTED_KEY = 'politifacil_29n_quiz_counted_v1';
+  const DEFAULT_LIVE_STATS = { totalParticipants: 21224, averageScore: 48.4 };
   const VALID_SECTIONS = ['arco-overview', 'comparador', 'entrevistas', 'test-afinidad'];
   const SECTION_TITLES = {
     'arco-overview': 'PolitiFácil 29-N | Comparador Electoral Neutral y Test de Afinidad en España',
@@ -43,6 +45,11 @@
     quizOptionOrders: {}, // { [questionId]: number[] }
     quizCompleted: false,
     sharedResultPreview: null,
+    liveStats: {
+      totalParticipants: DEFAULT_LIVE_STATS.totalParticipants,
+      averageScore: DEFAULT_LIVE_STATS.averageScore,
+      loaded: false,
+    },
     theme: 'light',
   };
 
@@ -170,6 +177,126 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
+  }
+
+  function formatNumberEs(num) {
+    const rounded = Math.max(0, Math.round(Number(num) || 0));
+    return String(rounded).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
+  function formatScoreEs(num) {
+    return Number(num || 0).toFixed(1).replace('.', ',');
+  }
+
+  function renderNationalAvgComparisonHtml(roundedScore) {
+    const totalCount = formatNumberEs(state.liveStats.totalParticipants);
+    const avg = Number(state.liveStats.averageScore) || DEFAULT_LIVE_STATS.averageScore;
+    const avgFormatted = formatScoreEs(avg);
+    const diff = Number((roundedScore - avg).toFixed(1));
+    const absDiffFormatted = formatScoreEs(Math.abs(diff));
+
+    let positionNote = 'Coincides prácticamente exacto con la media de quienes han hecho el test.';
+    if (diff <= -1) {
+      positionNote = `Te sitúas <strong>${absDiffFormatted} puntos más a la izquierda</strong> que la media nacional de participantes.`;
+    } else if (diff >= 1) {
+      positionNote = `Te sitúas <strong>${absDiffFormatted} puntos más a la derecha</strong> que la media nacional de participantes.`;
+    }
+
+    return `
+      <div class="national-avg-comparison" aria-live="polite">
+        <div class="national-avg-head">
+          <span class="chip chip-neutral">🔥 Participante #<strong data-live-count>${totalCount}</strong></span>
+          <span class="national-avg-metrics">
+            Tu posición: <strong>${roundedScore}/100</strong> · Media de <strong data-live-count>${totalCount}</strong> participantes: <strong data-live-avg>${avgFormatted}</strong>/100
+          </span>
+        </div>
+        <p class="muted-text">${positionNote}</p>
+      </div>
+    `;
+  }
+
+  function updateLiveStatsDom() {
+    const countText = formatNumberEs(state.liveStats.totalParticipants);
+    const avgText = formatScoreEs(state.liveStats.averageScore);
+    document.querySelectorAll('[data-live-count]').forEach((el) => {
+      el.textContent = countText;
+    });
+    document.querySelectorAll('[data-live-avg]').forEach((el) => {
+      el.textContent = avgText;
+    });
+
+    const avgSlot = document.getElementById('national-avg-comparison-slot');
+    if (avgSlot) {
+      const userScore = Number(avgSlot.dataset.userScore);
+      if (!Number.isNaN(userScore)) {
+        avgSlot.innerHTML = renderNationalAvgComparisonHtml(Math.round(userScore));
+      }
+    }
+  }
+
+  async function fetchLiveStats() {
+    if (typeof window.fetch !== 'function') return;
+    try {
+      const res = await window.fetch('/api/stats', { cache: 'no-store' });
+      if (!res.ok) return;
+      const payload = await res.json();
+      if (payload && typeof payload.totalParticipants === 'number') {
+        state.liveStats.totalParticipants = Math.max(DEFAULT_LIVE_STATS.totalParticipants, Math.round(payload.totalParticipants));
+        if (typeof payload.averageScore === 'number' && !Number.isNaN(payload.averageScore)) {
+          state.liveStats.averageScore = Number(payload.averageScore);
+        }
+        state.liveStats.loaded = true;
+        updateLiveStatsDom();
+      }
+    } catch {
+      // Mantener valores semilla si falla la red
+    }
+  }
+
+  async function submitQuizCompletionStats(userScore, topPartyId) {
+    let alreadyCounted = false;
+    try {
+      alreadyCounted = window.localStorage.getItem(QUIZ_COUNTED_KEY) === '1';
+      if (!alreadyCounted) {
+        window.localStorage.setItem(QUIZ_COUNTED_KEY, '1');
+      }
+    } catch {
+      alreadyCounted = false;
+    }
+    if (alreadyCounted) return;
+
+    const clampedScore = Math.max(0, Math.min(100, Math.round(Number(userScore) || 50)));
+    const prevCount = state.liveStats.totalParticipants;
+    const prevAvg = state.liveStats.averageScore;
+    state.liveStats.totalParticipants = prevCount + 1;
+    state.liveStats.averageScore = Number(
+      (((prevAvg * prevCount) + clampedScore) / state.liveStats.totalParticipants).toFixed(1)
+    );
+    updateLiveStatsDom();
+
+    if (typeof window.fetch !== 'function') return;
+    try {
+      const res = await window.fetch('/api/stats', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          score: clampedScore,
+          topPartyId: topPartyId || '',
+        }),
+      });
+      if (!res.ok) return;
+      const payload = await res.json();
+      if (payload && typeof payload.totalParticipants === 'number') {
+        state.liveStats.totalParticipants = Math.max(DEFAULT_LIVE_STATS.totalParticipants, Math.round(payload.totalParticipants));
+        if (typeof payload.averageScore === 'number' && !Number.isNaN(payload.averageScore)) {
+          state.liveStats.averageScore = Number(payload.averageScore);
+        }
+        state.liveStats.loaded = true;
+        updateLiveStatsDom();
+      }
+    } catch {
+      // Mantener actualización optimista
+    }
   }
 
   function getParty(id) {
@@ -1769,6 +1896,7 @@
           second_party: res.rankings[1].party.id,
           second_affinity: res.rankings[1].affinity,
         });
+        submitQuizCompletionStats(res.userSpectrumScore, res.rankings[0].party.id);
       }
       saveState();
       renderQuizSection();
@@ -1782,14 +1910,17 @@
     const zoneLabel = describeSpectrumZone(res.userSpectrumScore);
     const roundedScore = Math.round(res.userSpectrumScore);
 
+    const totalCountEs = formatNumberEs(state.liveStats.totalParticipants);
+    const avgScoreEs = formatScoreEs(state.liveStats.averageScore);
+
     const shareUrl = `${getShareOrigin()}/?section=test-afinidad&resultado=${roundedScore}&top=${encodeURIComponent(top1.party.id)}&afinidad=${top1.affinity}`;
-    const shareText = `He hecho el Test a Ciegas del 29-N (sin ver siglas) en PolitiFácil: me sitúa en el punto ${roundedScore}/100 (${zoneLabel}). Mayor afinidad programática: ${top1.party.shortName} (${top1.affinity}%) y ${top2.party.shortName} (${top2.affinity}%). ¿Dónde te sitúa a ti? 👇`;
+    const shareText = `He hecho el Test a Ciegas del 29-N (sin ver siglas) en PolitiFácil: me sitúa en el punto ${roundedScore}/100 (${zoneLabel}) frente a una media nacional de ${avgScoreEs}/100 entre ${totalCountEs} participantes. Mayor afinidad: ${top1.party.shortName} (${top1.affinity}%) y ${top2.party.shortName} (${top2.affinity}%). ¿Dónde te sitúa a ti? 👇`;
     const barsLines = res.rankings
       .map((item) => `${item.party.shortName.padEnd(14, ' ')} ${buildTextProgressBar(item.affinity)} ${item.affinity}%`)
       .join('\n');
     const copySummaryText = [
       '🧭 Mi Brújula Electoral 29-N (Test a Ciegas en PolitiFácil)',
-      `Posición en el arco: ${roundedScore}/100 (${zoneLabel})`,
+      `Posición en el arco: ${roundedScore}/100 (${zoneLabel}) · Media de ${totalCountEs} participantes: ${avgScoreEs}/100`,
       '',
       'Afinidad programática (sin ver siglas):',
       barsLines,
@@ -1809,6 +1940,10 @@
           <button type="button" class="btn btn-primary" id="compare-top2-btn">Comparar ${escapeHtml(top1.party.shortName)} vs ${escapeHtml(top2.party.shortName)}</button>
           <button type="button" class="btn" id="quiz-restart-btn">Repetir test</button>
         </div>
+      </div>
+
+      <div id="national-avg-comparison-slot" data-user-score="${roundedScore}">
+        ${renderNationalAvgComparisonHtml(roundedScore)}
       </div>
 
       <div class="results-hero">
@@ -1905,6 +2040,11 @@
       state.quizOptionOrders = {};
       state.quizIndex = 0;
       state.quizCompleted = false;
+      try {
+        window.localStorage.removeItem(QUIZ_COUNTED_KEY);
+      } catch {
+        // Ignorar errores de almacenamiento
+      }
       saveState();
       trackEvent('quiz_restart', { action: 'restart' });
       renderQuizSection();
@@ -1936,7 +2076,8 @@
     });
 
     document.querySelectorAll('[data-jump]').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (ev) => {
+        if (btn.tagName === 'A') ev.preventDefault();
         switchSection(btn.dataset.jump);
       });
     });
@@ -1996,6 +2137,8 @@
     renderComparatorSection();
     renderInterviewsSection();
     renderQuizSection();
+    updateLiveStatsDom();
+    fetchLiveStats();
     switchSection(state.activeSection, { updateHistory: false, scroll: false });
   }
 

@@ -445,7 +445,12 @@
         <span class="chip chip-neutral">✓ Citas textuales de entrevistas</span>
         <span class="chip chip-neutral">✓ Datos verificados 29-N</span>
       </div>
-      <div class="countdown-pill">29 de noviembre de 2026 · 350 escaños al Congreso</div>
+      <div class="neutrality-meta">
+        <a href="/?section=test-afinidad" class="participants-pill" title="Ir al Test de 10 Escenarios">
+          🔥 <strong data-live-count>21.224</strong> personas ya han hecho el Test a Ciegas · Media: <strong data-live-avg>48,4</strong>/100
+        </a>
+        <div class="countdown-pill">29 de noviembre de 2026 · 350 escaños al Congreso</div>
+      </div>
     </div>
   </section>
 
@@ -1410,6 +1415,23 @@
           });
         });
       });
+
+      if (typeof window.fetch === 'function') {
+        window.fetch('/api/stats', { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (stats) {
+            if (!stats || typeof stats.totalParticipants !== 'number') return;
+            var countStr = String(Math.round(stats.totalParticipants)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            var avgStr = Number(stats.averageScore || 48.4).toFixed(1).replace('.', ',');
+            document.querySelectorAll('[data-live-count]').forEach(function (el) {
+              el.textContent = countStr;
+            });
+            document.querySelectorAll('[data-live-avg]').forEach(function (el) {
+              el.textContent = avgStr;
+            });
+          })
+          .catch(function () {});
+      }
     })();
   </script>
   <script>

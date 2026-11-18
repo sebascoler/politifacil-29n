@@ -1134,7 +1134,12 @@ ${safeJsonLd(jsonLd)}
         <span class="chip chip-neutral">✓ Citas textuales de entrevistas</span>
         <span class="chip chip-neutral">✓ Datos verificados 29-N</span>
       </div>
-      <div class="countdown-pill">29 de noviembre de 2026 · ${DATA.meta.seatsCongress} escaños al Congreso</div>
+      <div class="neutrality-meta">
+        <a href="/?section=test-afinidad" class="participants-pill" title="Ir al Test de 10 Escenarios">
+          🔥 <strong data-live-count>21.224</strong> personas ya han hecho el Test a Ciegas · Media: <strong data-live-avg>48,4</strong>/100
+        </a>
+        <div class="countdown-pill">29 de noviembre de 2026 · ${DATA.meta.seatsCongress} escaños al Congreso</div>
+      </div>
     </div>
   </section>
 
@@ -1294,6 +1299,23 @@ ${safeJsonLd(jsonLd)}
           });
         });
       });
+
+      if (typeof window.fetch === 'function') {
+        window.fetch('/api/stats', { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (stats) {
+            if (!stats || typeof stats.totalParticipants !== 'number') return;
+            var countStr = String(Math.round(stats.totalParticipants)).replace(/\\B(?=(\\d{3})+(?!\\d))/g, '.');
+            var avgStr = Number(stats.averageScore || 48.4).toFixed(1).replace('.', ',');
+            document.querySelectorAll('[data-live-count]').forEach(function (el) {
+              el.textContent = countStr;
+            });
+            document.querySelectorAll('[data-live-avg]').forEach(function (el) {
+              el.textContent = avgStr;
+            });
+          })
+          .catch(function () {});
+      }
     })();
   </script>
   <script>
@@ -1492,6 +1514,12 @@ function generateTestLanding() {
     secondaryLabel: 'O probar el Comparador a Ciegas',
   });
 
+  const socialProofHtml = `
+    <div class="quiz-social-proof" style="margin-bottom:18px;" aria-live="polite">
+      🧭 <strong data-live-count>21.224</strong> ciudadanos ya han calculado su posición sin siglas · Media nacional actual en el arco: <strong data-live-avg>48,4</strong>/100
+    </div>
+  `.trim();
+
   const scenariosHtml = `
     <section class="card" style="margin-top:20px;">
       <h2 style="margin-bottom:6px;">Los ${DATA.quizQuestions.length} Escenarios del Test (Sin Nombres de Partido)</h2>
@@ -1531,7 +1559,7 @@ function generateTestLanding() {
       lead: 'Comprueba cómo calcula PolitiFácil 29-N tu afinidad programática en vivienda, economía, empleo, sanidad, pensiones, modelo territorial, defensa, ecología e igualdad.',
       chips: ['10 Escenarios Sin Sesgos', 'Escala 0 Izquierda — 100 Derecha', 'Cálculo 100 % Local'],
     },
-    mainHtml: `${methodologyHtml}\n${ctaTop}\n${scenariosHtml}`,
+    mainHtml: `${socialProofHtml}\n${methodologyHtml}\n${ctaTop}\n${scenariosHtml}`,
   });
 
   writeFile(path.join(PUBLIC_DIR, 'test-afinidad.html'), html);

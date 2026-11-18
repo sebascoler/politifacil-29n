@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const statsHandler = require('./api/stats');
 
 const PORT = Number(process.env.PORT) || 3000;
 const HOST = process.env.HOST || '127.0.0.1';
@@ -46,6 +47,10 @@ function sendJson(res, statusCode, payload) {
 }
 
 function handleApi(req, res, pathname, searchParams) {
+  if (pathname === '/api/stats') {
+    return statsHandler(req, res);
+  }
+
   const data = loadElectionData();
   if (!data) {
     return sendJson(res, 503, { error: 'Base de datos electoral no disponible aún.' });
