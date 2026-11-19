@@ -728,6 +728,15 @@ ${gsc.topQueries.length > 0 ? gsc.topQueries.slice(0, 8).map((q) => `  - "${q.qu
   return { md, html };
 }
 
+function writeGithubOutput(shouldSend, reportDate) {
+  if (!process.env.GITHUB_OUTPUT) return;
+  fs.appendFileSync(
+    process.env.GITHUB_OUTPUT,
+    `should_send=${shouldSend ? 'true' : 'false'}\nreport_date=${reportDate}\n`,
+    'utf8'
+  );
+}
+
 async function main() {
   if (!fs.existsSync(HISTORY_PATH)) {
     throw new Error(`No existe ${HISTORY_PATH}`);
@@ -735,21 +744,27 @@ async function main() {
 
   const history = JSON.parse(fs.readFileSync(HISTORY_PATH, 'utf8'));
   const project = history.project || {};
+  const entries = Array.isArray(history.entries) ? history.entries.slice() : [];
+  const todayMadrid = getMadridDate(0);
+  const start28 = getMadridDate(-27);
+
+  if (process.env.SKIP_IF_TODAY_EXISTS === 'true' && entries.some((e) => e.date === todayMadrid)) {
+    console.log(`REPORTE DEL DÍA ${todayMadrid} YA EXISTE; SE OMITE ENVÍO DUPLICADO.`);
+    writeGithubOutput(false, todayMadrid);
+    return;
+  }
+
   const propertyId = process.env.GA4_PROPERTY_ID || project.ga4PropertyId || '564800083';
   const siteUrl = process.env.GSC_SITE_URL || project.gscProperty || 'https://politifacil-29n.vercel.app/';
 
   const creds = loadServiceAccountCredentials();
   const token = await getGoogleAccessToken(creds);
 
-  const todayMadrid = getMadridDate(0);
-  const start28 = getMadridDate(-27);
-
   const [ga4, gsc] = await Promise.all([
     fetchGa4Metrics(propertyId, token, start28, todayMadrid),
     fetchGscMetrics(siteUrl, token, start28, todayMadrid, project.expectedSitemapUrls || 40),
   ]);
 
-  const entries = Array.isArray(history.entries) ? history.entries.slice() : [];
   const prevEntry =
     entries
       .filter((e) => e.date !== todayMadrid)
@@ -788,6 +803,8 @@ async function main() {
   if (process.env.GITHUB_STEP_SUMMARY) {
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md + '\n', 'utf8');
   }
+
+  writeGithubOutput(true, todayMadrid);
 
   console.log('CLOUD SEO/GEO REPORT COMPLETADO:', {
     date: todayMadrid,

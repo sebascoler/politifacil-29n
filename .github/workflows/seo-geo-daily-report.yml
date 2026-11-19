@@ -1,10 +1,18 @@
-name: Daily SEO & GEO Monitor
+name: SEO & GEO Daily Report
 
 on:
   schedule:
-    # 06:57 UTC = 07:57 AM Europe/Madrid (horario CET de invierno; evita el pico del minuto :00)
-    - cron: '57 6 * * *'
-  workflow_dispatch: {}
+    # 4 franjas escalonadas (07:43–09:13 Europe/Madrid CET) para absorber descartes del cron de GitHub;
+    # la idempotencia en scripts/cloud-seo-geo-report.js garantiza 1 único correo al día.
+    - cron: '43 6 * * *'
+    - cron: '7 7 * * *'
+    - cron: '37 7 * * *'
+    - cron: '13 8 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: seo-geo-daily-report
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -24,12 +32,14 @@ jobs:
           node-version: '20'
 
       - name: Generar reporte diario SEO & GEO
+        id: report
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          SKIP_IF_TODAY_EXISTS: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
         run: node scripts/cloud-seo-geo-report.js
 
       - name: Subir artefacto del Dashboard y Reporte
-        if: always()
+        if: steps.report.outputs.should_send == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: seo-geo-dashboard
@@ -41,17 +51,19 @@ jobs:
           retention-days: 30
 
       - name: Guardar histórico y dashboard en el repositorio
+        if: steps.report.outputs.should_send == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports/seo-geo-history.json reports/seo-geo-dashboard.html
           if ! git diff --cached --quiet; then
             git commit -m "chore(reports): actualizar reporte diario SEO & GEO [vercel skip]"
+            git pull --rebase origin main
             git push
           fi
 
       - name: Enviar resumen diario por Gmail
-        if: env.GMAIL_APP_PASSWORD != ''
+        if: steps.report.outputs.should_send == 'true' && env.GMAIL_APP_PASSWORD != ''
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -59,7 +71,7 @@ jobs:
           secure: true
           username: sebastian.coler@gmail.com
           password: ${{ secrets.GMAIL_APP_PASSWORD }}
-          subject: "PolitiFácil 29-N · Reporte Diario SEO & GEO"
+          subject: "PolitiFácil 29-N · Reporte Diario SEO & GEO (${{ steps.report.outputs.report_date }})"
           to: sebastian.coler@gmail.com
           from: "PolitiFácil Monitor <sebastian.coler@gmail.com>"
           html_body: file://reports/latest-email-summary.html
