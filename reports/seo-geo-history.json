@@ -563,6 +563,275 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-11-19",
+      "checkedAt": "2026-11-19T11:06:36",
+      "dateRangeNote": "GA4 y GSC: últimos 28 días (2026-10-23 – 2026-11-19)",
+      "ga4": {
+        "activeUsers": 226,
+        "newUsers": 225,
+        "sessions": 286,
+        "engagedSessions": 190,
+        "engagementRatePct": 66.43,
+        "views": 610,
+        "viewsPerUser": 2.7,
+        "avgEngagementTimeLabel": "5 min 21 s",
+        "avgEngagementTimeSec": 321,
+        "totalEvents": 2527,
+        "keyEvents": 59,
+        "organicSearchSessions": 1,
+        "aiReferralSessions": 0,
+        "aiSources": [],
+        "channels": [
+          {
+            "channel": "Direct",
+            "sourceMedium": "(direct) / (none)",
+            "sessions": 250,
+            "sharePct": 87.41,
+            "engagedSessions": 166,
+            "engagementRatePct": 66.4,
+            "avgEngagementTime": "3 min 51 s",
+            "events": 2140
+          },
+          {
+            "channel": "Organic Social",
+            "sourceMedium": "reddit.com / referral",
+            "sessions": 31,
+            "sharePct": 10.84,
+            "engagedSessions": 22,
+            "engagementRatePct": 70.97,
+            "avgEngagementTime": "6 min 45 s",
+            "events": 335
+          },
+          {
+            "channel": "Unassigned",
+            "sourceMedium": "(not set)",
+            "sessions": 5,
+            "sharePct": 1.75,
+            "engagedSessions": 0,
+            "engagementRatePct": 0,
+            "avgEngagementTime": "4 min 54 s",
+            "events": 22
+          },
+          {
+            "channel": "Organic Search",
+            "sourceMedium": "google / organic",
+            "sessions": 1,
+            "sharePct": 0.35,
+            "engagedSessions": 1,
+            "engagementRatePct": 100,
+            "avgEngagementTime": "4 min 19 s",
+            "events": 24
+          },
+          {
+            "channel": "Organic Social",
+            "sourceMedium": "old.reddit.com / referral",
+            "sessions": 1,
+            "sharePct": 0.35,
+            "engagedSessions": 1,
+            "engagementRatePct": 100,
+            "avgEngagementTime": "10 min 46 s",
+            "events": 6
+          },
+          {
+            "channel": "GEO / Motores de IA",
+            "sourceMedium": "chatgpt / perplexity / gemini / claude",
+            "sessions": 0,
+            "sharePct": 0,
+            "engagedSessions": 0,
+            "engagementRatePct": 0,
+            "avgEngagementTime": "0 s",
+            "events": 0
+          }
+        ],
+        "landingPages": [
+          {
+            "path": "/test-afinidad",
+            "sessions": 186,
+            "activeUsers": 175,
+            "newUsers": 175,
+            "avgEngagementTime": "5 min 35 s"
+          },
+          {
+            "path": "/",
+            "sessions": 78,
+            "activeUsers": 60,
+            "newUsers": 47,
+            "avgEngagementTime": "3 min 42 s"
+          },
+          {
+            "path": "(not set)",
+            "sessions": 17,
+            "activeUsers": 15,
+            "newUsers": 0,
+            "avgEngagementTime": "35 s"
+          },
+          {
+            "path": "(not set)",
+            "sessions": 3,
+            "activeUsers": 2,
+            "newUsers": 0,
+            "avgEngagementTime": "41 s"
+          },
+          {
+            "path": "/comparar/pp-vs-vox",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 1,
+            "avgEngagementTime": "2 min 34 s"
+          },
+          {
+            "path": "/comparar/psoe-vs-pp",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 1,
+            "avgEngagementTime": "1 s"
+          },
+          {
+            "path": "/propuestas/empleo",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 0,
+            "avgEngagementTime": "0 s"
+          },
+          {
+            "path": "/propuestas/vivienda",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 0,
+            "avgEngagementTime": "0 s"
+          },
+          {
+            "path": "/territorios/erc",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 1,
+            "avgEngagementTime": "1 s"
+          }
+        ],
+        "pagesAndScreens": [
+          {
+            "path": "/",
+            "views": 293,
+            "activeUsers": 168,
+            "avgEngagementTime": "6 min 45 s",
+            "events": 1484
+          },
+          {
+            "path": "/test-afinidad",
+            "views": 280,
+            "activeUsers": 179,
+            "avgEngagementTime": "22 s",
+            "events": 953
+          },
+          {
+            "path": "/propuestas/vivienda",
+            "views": 9,
+            "activeUsers": 6,
+            "avgEngagementTime": "25 s",
+            "events": 21
+          },
+          {
+            "path": "/comparador",
+            "views": 4,
+            "activeUsers": 3,
+            "avgEngagementTime": "3 s",
+            "events": 9
+          },
+          {
+            "path": "/comparar",
+            "views": 3,
+            "activeUsers": 1,
+            "avgEngagementTime": "22 s",
+            "events": 6
+          },
+          {
+            "path": "/comparar/podemos-vs-frente-amplio",
+            "views": 2,
+            "activeUsers": 1,
+            "avgEngagementTime": "45 s",
+            "events": 3
+          },
+          {
+            "path": "/comparar/pp-vs-vox",
+            "views": 2,
+            "activeUsers": 2,
+            "avgEngagementTime": "1 min 41 s",
+            "events": 7
+          },
+          {
+            "path": "/partidos/pp",
+            "views": 2,
+            "activeUsers": 2,
+            "avgEngagementTime": "4 s",
+            "events": 3
+          },
+          {
+            "path": "/partidos/vox",
+            "views": 2,
+            "activeUsers": 1,
+            "avgEngagementTime": "8 s",
+            "events": 4
+          },
+          {
+            "path": "/propuestas/empleo",
+            "views": 2,
+            "activeUsers": 1,
+            "avgEngagementTime": "2 s",
+            "events": 6
+          }
+        ],
+        "keyEventBreakdown": {
+          "quiz_complete": 50,
+          "quiz_start": 63,
+          "quiz_step_answer": 720,
+          "blind_reveal": 4,
+          "blind_pick_toggle": 5,
+          "share_result": 5,
+          "ai_referral_visit": 0,
+          "section_view": 34,
+          "comparator_interaction": 13,
+          "party_inspect": 4,
+          "interview_filter": 0,
+          "static_cta_click": 63,
+          "official_source_click": 5
+        }
+      },
+      "gsc": {
+        "status": "processing",
+        "statusMessage": "Sin impresiones todavía o en procesamiento inicial en Google Search Console",
+        "clicks": null,
+        "impressions": null,
+        "ctrPct": null,
+        "avgPosition": null,
+        "indexedPages": 0,
+        "notIndexedPages": 40,
+        "indexingReasons": [],
+        "sitemap": {
+          "url": "/sitemap.xml",
+          "status": "Correcto",
+          "submittedDate": "2026-11-17",
+          "lastReadDate": "2026-11-17",
+          "discoveredUrls": 40
+        },
+        "robotsTxtStatus": "Válidas",
+        "topQueries": [],
+        "topPages": []
+      },
+      "decision": {
+        "status": "mejoras_propuestas",
+        "statusLabel": "Mejoras propuestas",
+        "summary": "Faltan 11 días para el 29-N. Se registran 286 sesiones (66.43 % interacción), 1 de SEO y 0 de motores de IA. Hay 1 recomendación(es) prioritaria(s) para acelerar visibilidad antes del 29-N.",
+        "recommendations": [
+          {
+            "priority": "alta",
+            "area": "SEO / Indexación",
+            "title": "Acelerar indexación inicial en Search Console",
+            "detail": "Search Console aún no muestra impresiones consolidadas. Conviene solicitar indexación manual en Inspección de URLs para /, /test-afinidad, /comparador, /entrevistas y /territorios."
+          }
+        ]
+      }
     }
   ]
 }
