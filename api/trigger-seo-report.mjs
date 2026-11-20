@@ -1,7 +1,11 @@
 import { handleSchedule } from '@vercel/schedules';
 
 export const POST = handleSchedule(async (metadata) => {
-  const token = (process.env.GITHUB_DISPATCH_TOKEN || '').trim();
+  const token = (
+    process.env.GITHUB_DISPATCH_TOKEN ||
+    process.env.ITHUB_DISPATCH_TOKEN ||
+    ''
+  ).trim();
   if (!token) {
     throw new Error(
       'Falta GITHUB_DISPATCH_TOKEN en las variables de entorno de Vercel.'
