@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const statsHandler = require('./api/stats');
+const resultsHandler = require('./api/results');
 
 const PORT = Number(process.env.PORT) || 3000;
 const HOST = process.env.HOST || '127.0.0.1';
@@ -49,6 +50,9 @@ function sendJson(res, statusCode, payload) {
 function handleApi(req, res, pathname, searchParams) {
   if (pathname === '/api/stats') {
     return statsHandler(req, res);
+  }
+  if (pathname === '/api/results') {
+    return resultsHandler(req, res);
   }
 
   const data = loadElectionData();

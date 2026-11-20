@@ -47,7 +47,9 @@
     sharedResultPreview: null,
     liveStats: {
       totalParticipants: DEFAULT_LIVE_STATS.totalParticipants,
+      realParticipants: null,
       averageScore: DEFAULT_LIVE_STATS.averageScore,
+      isRealAverage: false,
       loaded: false,
     },
     theme: 'light',
@@ -242,8 +244,14 @@
       const payload = await res.json();
       if (payload && typeof payload.totalParticipants === 'number') {
         state.liveStats.totalParticipants = Math.max(DEFAULT_LIVE_STATS.totalParticipants, Math.round(payload.totalParticipants));
+        if (typeof payload.realParticipants === 'number') {
+          state.liveStats.realParticipants = Math.max(0, Math.round(payload.realParticipants));
+        }
         if (typeof payload.averageScore === 'number' && !Number.isNaN(payload.averageScore)) {
           state.liveStats.averageScore = Number(payload.averageScore);
+        }
+        if (typeof payload.isRealAverage === 'boolean') {
+          state.liveStats.isRealAverage = payload.isRealAverage;
         }
         state.liveStats.loaded = true;
         updateLiveStatsDom();
@@ -253,7 +261,7 @@
     }
   }
 
-  async function submitQuizCompletionStats(userScore, topPartyId) {
+  async function submitQuizCompletionStats(res) {
     let alreadyCounted = false;
     try {
       alreadyCounted = window.localStorage.getItem(QUIZ_COUNTED_KEY) === '1';
@@ -265,31 +273,70 @@
     }
     if (alreadyCounted) return;
 
-    const clampedScore = Math.max(0, Math.min(100, Math.round(Number(userScore) || 50)));
+    const rawScore = res && typeof res.userSpectrumScore === 'number' ? res.userSpectrumScore : 50;
+    const clampedScore = Math.max(0, Math.min(100, Math.round(rawScore)));
     const prevCount = state.liveStats.totalParticipants;
-    const prevAvg = state.liveStats.averageScore;
     state.liveStats.totalParticipants = prevCount + 1;
-    state.liveStats.averageScore = Number(
-      (((prevAvg * prevCount) + clampedScore) / state.liveStats.totalParticipants).toFixed(1)
-    );
+
+    if (typeof state.liveStats.realParticipants === 'number') {
+      const prevReal = state.liveStats.realParticipants;
+      const nextReal = prevReal + 1;
+      state.liveStats.realParticipants = nextReal;
+      state.liveStats.averageScore = prevReal > 0
+        ? Number((((state.liveStats.averageScore * prevReal) + clampedScore) / nextReal).toFixed(1))
+        : clampedScore;
+      state.liveStats.isRealAverage = true;
+    }
     updateLiveStatsDom();
+
+    const rankings = Array.isArray(res?.rankings) ? res.rankings : [];
+    const top1 = rankings[0];
+    const top2 = rankings[1];
+    const affinities = {};
+    rankings.forEach((item) => {
+      if (item && item.party && item.party.id) {
+        affinities[item.party.id] = item.affinity;
+      }
+    });
+
+    const answers = {};
+    Object.entries(state.quizAnswers || {}).forEach(([qid, ans]) => {
+      if (ans && typeof ans.optionIndex === 'number') {
+        answers[qid] = {
+          optionIndex: ans.optionIndex,
+          priority: Boolean(ans.priority),
+        };
+      }
+    });
 
     if (typeof window.fetch !== 'function') return;
     try {
-      const res = await window.fetch('/api/stats', {
+      const response = await window.fetch('/api/stats', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           score: clampedScore,
-          topPartyId: topPartyId || '',
+          zoneLabel: describeSpectrumZone(rawScore),
+          topPartyId: top1 && top1.party ? top1.party.id : '',
+          topAffinity: top1 ? top1.affinity : undefined,
+          secondPartyId: top2 && top2.party ? top2.party.id : '',
+          secondAffinity: top2 ? top2.affinity : undefined,
+          affinities,
+          answers,
         }),
       });
-      if (!res.ok) return;
-      const payload = await res.json();
+      if (!response.ok) return;
+      const payload = await response.json();
       if (payload && typeof payload.totalParticipants === 'number') {
         state.liveStats.totalParticipants = Math.max(DEFAULT_LIVE_STATS.totalParticipants, Math.round(payload.totalParticipants));
+        if (typeof payload.realParticipants === 'number') {
+          state.liveStats.realParticipants = Math.max(0, Math.round(payload.realParticipants));
+        }
         if (typeof payload.averageScore === 'number' && !Number.isNaN(payload.averageScore)) {
           state.liveStats.averageScore = Number(payload.averageScore);
+        }
+        if (typeof payload.isRealAverage === 'boolean') {
+          state.liveStats.isRealAverage = payload.isRealAverage;
         }
         state.liveStats.loaded = true;
         updateLiveStatsDom();
@@ -1896,7 +1943,7 @@
           second_party: res.rankings[1].party.id,
           second_affinity: res.rankings[1].affinity,
         });
-        submitQuizCompletionStats(res.userSpectrumScore, res.rankings[0].party.id);
+        submitQuizCompletionStats(res);
       }
       saveState();
       renderQuizSection();
