@@ -1,13 +1,6 @@
 name: SEO & GEO Daily Report
 
 on:
-  schedule:
-    # 4 franjas escalonadas (07:43–09:13 Europe/Madrid CET) para absorber descartes del cron de GitHub;
-    # la idempotencia en scripts/cloud-seo-geo-report.js garantiza 1 único correo al día.
-    - cron: '43 6 * * *'
-    - cron: '7 7 * * *'
-    - cron: '37 7 * * *'
-    - cron: '13 8 * * *'
   workflow_dispatch:
 
 concurrency:

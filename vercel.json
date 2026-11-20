@@ -5,6 +5,20 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "cleanUrls": true,
+  "functions": {
+    "api/trigger-seo-report.mjs": {
+      "experimentalTriggers": [
+        { "type": "schedule/v1beta" }
+      ]
+    }
+  },
+  "schedules": {
+    "daily-seo-geo-report": {
+      "schedule": "0 8 * * *",
+      "timezone": "Europe/Madrid",
+      "function": "api/trigger-seo-report"
+    }
+  },
   "headers": [
     {
       "source": "/llms.txt",
