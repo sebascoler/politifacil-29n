@@ -1301,6 +1301,12 @@ ${safeJsonLd(jsonLd)}
       });
 
       if (typeof window.fetch === 'function') {
+        var PARTY_META = ${JSON.stringify(
+          DATA.parties.reduce((acc, p) => {
+            acc[p.id] = { shortName: p.shortName, candidate: p.candidate, color: p.color };
+            return acc;
+          }, {})
+        )};
         window.fetch('/api/stats', { cache: 'no-store' })
           .then(function (r) { return r.ok ? r.json() : null; })
           .then(function (stats) {
@@ -1313,6 +1319,27 @@ ${safeJsonLd(jsonLd)}
             document.querySelectorAll('[data-live-avg]').forEach(function (el) {
               el.textContent = avgStr;
             });
+            if (Array.isArray(stats.partyRanking)) {
+              document.querySelectorAll('[data-live-barometer]').forEach(function (box) {
+                if (!stats.totalPartyVotes) {
+                  box.innerHTML = '<p class="muted-text">Aún no hay resultados registrados. Completa el Test de 10 Escenarios para inaugurar el termómetro en vivo.</p>';
+                  return;
+                }
+                box.innerHTML = stats.partyRanking.map(function (item) {
+                  var meta = PARTY_META[item.partyId] || { shortName: item.partyId, candidate: '', color: '#64748b' };
+                  var pctNum = Math.max(0, Math.min(100, Number(item.pct) || 0));
+                  var pctStr = pctNum.toFixed(1).replace('.', ',');
+                  var fillW = item.count > 0 ? Math.max(4, pctNum) : 0;
+                  return '<div class="barometer-row">' +
+                    '<div class="barometer-row-top">' +
+                      '<span class="barometer-party-meta"><span class="color-swatch" style="background:' + meta.color + '"></span><strong>' + meta.shortName + '</strong> <span class="muted-text">· ' + meta.candidate + '</span></span>' +
+                      '<span class="barometer-pct">' + pctStr + ' %</span>' +
+                    '</div>' +
+                    '<div class="barometer-track"><div class="barometer-fill" style="width:' + fillW + '%; background:' + meta.color + ';"></div></div>' +
+                  '</div>';
+                }).join('');
+              });
+            }
           })
           .catch(function () {});
       }
@@ -1520,6 +1547,27 @@ function generateTestLanding() {
     </div>
   `.trim();
 
+  const barometerHtml = `
+    <section class="card barometer-card" style="margin-top:20px;" aria-labelledby="heading-barometer-test">
+      <div class="barometer-header">
+        <div>
+          <span class="eyebrow">📊 Termómetro en Vivo · Resultados Reales Sin Siglas</span>
+          <h2 id="heading-barometer-test">¿Qué partido sale más cuando se vota sin ver siglas?</h2>
+          <p class="muted-text">
+            Distribución real de mayor coincidencia (#1) entre quienes completan el Test a Ciegas · Media actual en el arco: <strong data-live-avg>48,4</strong>/100.
+          </p>
+        </div>
+        <a href="/?section=test-afinidad" class="btn btn-primary btn-sm">Hacer el Test ahora →</a>
+      </div>
+      <div class="barometer-bars" data-live-barometer aria-live="polite">
+        <p class="muted-text">Cargando termómetro en vivo...</p>
+      </div>
+      <p class="barometer-note muted-text">
+        Datos reales agregados de participantes voluntarios del Test a Ciegas de PolitiFácil 29-N (contador acumulado: <strong data-live-count>21.224</strong>). No constituye una encuesta probabilística ni intención de voto.
+      </p>
+    </section>
+  `.trim();
+
   const scenariosHtml = `
     <section class="card" style="margin-top:20px;">
       <h2 style="margin-bottom:6px;">Los ${DATA.quizQuestions.length} Escenarios del Test (Sin Nombres de Partido)</h2>
@@ -1559,7 +1607,7 @@ function generateTestLanding() {
       lead: 'Comprueba cómo calcula PolitiFácil 29-N tu afinidad programática en vivienda, economía, empleo, sanidad, pensiones, modelo territorial, defensa, ecología e igualdad.',
       chips: ['10 Escenarios Sin Sesgos', 'Escala 0 Izquierda — 100 Derecha', 'Cálculo 100 % Local'],
     },
-    mainHtml: `${socialProofHtml}\n${methodologyHtml}\n${ctaTop}\n${scenariosHtml}`,
+    mainHtml: `${socialProofHtml}\n${methodologyHtml}\n${ctaTop}\n${barometerHtml}\n${scenariosHtml}`,
   });
 
   writeFile(path.join(PUBLIC_DIR, 'test-afinidad.html'), html);

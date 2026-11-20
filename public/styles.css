@@ -1876,3 +1876,108 @@ input[type="search"] {
     padding: 5px 10px;
   }
 }
+
+/* ================= TERMÓMETRO EN VIVO 29-N ================= */
+.barometer-card {
+  margin-bottom: 28px;
+  border-top: 4px solid var(--accent);
+}
+
+.barometer-card-embedded {
+  margin: 20px 0 22px 0;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+}
+
+.barometer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.barometer-header h2,
+.barometer-header h3 {
+  margin: 4px 0 4px 0;
+  color: var(--text);
+}
+
+.barometer-bars {
+  display: grid;
+  gap: 10px;
+}
+
+.barometer-row {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.barometer-card-embedded .barometer-row {
+  background: var(--surface);
+}
+
+.barometer-row.is-user-top {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.barometer-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 7px;
+  font-size: 0.88rem;
+}
+
+.barometer-party-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.barometer-user-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+[data-theme="dark"] .barometer-user-tag {
+  color: #e0f2fe;
+}
+
+.barometer-pct {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.barometer-track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.barometer-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.barometer-note {
+  margin-top: 12px;
+  font-size: 0.78rem;
+}

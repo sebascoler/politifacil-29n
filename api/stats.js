@@ -11,6 +11,7 @@ const {
   readJsonBody,
   runRedisPipeline,
   sanitizeQuizEntry,
+  parseRedisHashArray,
 } = require('../lib/stats-store');
 
 async function handler(req, res) {
@@ -31,11 +32,13 @@ async function handler(req, res) {
       const results = await runRedisPipeline([
         ['GET', REDIS_KEYS.count],
         ['GET', REDIS_KEYS.scoreSum],
+        ['HGETALL', REDIS_KEYS.partyCounts],
       ]);
       if (Array.isArray(results)) {
         const realCount = Math.max(0, parseInt(results[0]?.result ?? '0', 10) || 0);
         const realSum = Math.max(0, parseInt(results[1]?.result ?? '0', 10) || 0);
-        return sendJson(res, 200, buildPublicStats(realCount, realSum, 'redis'));
+        const partyCounts = parseRedisHashArray(results[2]?.result);
+        return sendJson(res, 200, buildPublicStats(realCount, realSum, 'redis', partyCounts));
       }
     } catch (err) {
       console.error('Error leyendo estadísticas en Upstash Redis:', err.message);
@@ -44,7 +47,12 @@ async function handler(req, res) {
     return sendJson(
       res,
       200,
-      buildPublicStats(fallbackState.count, fallbackState.scoreSum, 'seed')
+      buildPublicStats(
+        fallbackState.count,
+        fallbackState.scoreSum,
+        'seed',
+        parseRedisHashArray(fallbackState.partyCounts)
+      )
     );
   }
 
@@ -68,12 +76,15 @@ async function handler(req, res) {
       }
       commands.push(['LPUSH', REDIS_KEYS.resultsList, JSON.stringify(entry)]);
       commands.push(['LTRIM', REDIS_KEYS.resultsList, 0, MAX_STORED_RESULTS - 1]);
+      commands.push(['HGETALL', REDIS_KEYS.partyCounts]);
 
       const results = await runRedisPipeline(commands);
       if (Array.isArray(results)) {
         const realCount = Math.max(0, parseInt(results[0]?.result ?? '0', 10) || 0);
         const realSum = Math.max(0, parseInt(results[1]?.result ?? '0', 10) || 0);
-        return sendJson(res, 200, buildPublicStats(realCount, realSum, 'redis'));
+        const hashResult = results[results.length - 1]?.result;
+        const partyCounts = parseRedisHashArray(hashResult);
+        return sendJson(res, 200, buildPublicStats(realCount, realSum, 'redis', partyCounts));
       }
     } catch (err) {
       console.error('Error actualizando estadísticas en Upstash Redis:', err.message);
@@ -93,7 +104,12 @@ async function handler(req, res) {
     return sendJson(
       res,
       200,
-      buildPublicStats(fallbackState.count, fallbackState.scoreSum, 'seed')
+      buildPublicStats(
+        fallbackState.count,
+        fallbackState.scoreSum,
+        'seed',
+        parseRedisHashArray(fallbackState.partyCounts)
+      )
     );
   }
 

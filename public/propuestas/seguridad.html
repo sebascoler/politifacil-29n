@@ -630,6 +630,7 @@
       });
 
       if (typeof window.fetch === 'function') {
+        var PARTY_META = {"podemos":{"shortName":"Podemos","candidate":"Irene Montero","color":"#7c3aed"},"frente-amplio":{"shortName":"Frente Amplio","candidate":"Ada Colau","color":"#e11d48"},"psoe":{"shortName":"PSOE","candidate":"Pedro Sánchez","color":"#dc2626"},"pp":{"shortName":"PP","candidate":"Alberto Núñez Feijóo","color":"#0284c7"},"vox":{"shortName":"VOX","candidate":"Santiago Abascal","color":"#16a34a"},"salf":{"shortName":"SALF","candidate":"Alvise Pérez","color":"#78350f"}};
         window.fetch('/api/stats', { cache: 'no-store' })
           .then(function (r) { return r.ok ? r.json() : null; })
           .then(function (stats) {
@@ -642,6 +643,27 @@
             document.querySelectorAll('[data-live-avg]').forEach(function (el) {
               el.textContent = avgStr;
             });
+            if (Array.isArray(stats.partyRanking)) {
+              document.querySelectorAll('[data-live-barometer]').forEach(function (box) {
+                if (!stats.totalPartyVotes) {
+                  box.innerHTML = '<p class="muted-text">Aún no hay resultados registrados. Completa el Test de 10 Escenarios para inaugurar el termómetro en vivo.</p>';
+                  return;
+                }
+                box.innerHTML = stats.partyRanking.map(function (item) {
+                  var meta = PARTY_META[item.partyId] || { shortName: item.partyId, candidate: '', color: '#64748b' };
+                  var pctNum = Math.max(0, Math.min(100, Number(item.pct) || 0));
+                  var pctStr = pctNum.toFixed(1).replace('.', ',');
+                  var fillW = item.count > 0 ? Math.max(4, pctNum) : 0;
+                  return '<div class="barometer-row">' +
+                    '<div class="barometer-row-top">' +
+                      '<span class="barometer-party-meta"><span class="color-swatch" style="background:' + meta.color + '"></span><strong>' + meta.shortName + '</strong> <span class="muted-text">· ' + meta.candidate + '</span></span>' +
+                      '<span class="barometer-pct">' + pctStr + ' %</span>' +
+                    '</div>' +
+                    '<div class="barometer-track"><div class="barometer-fill" style="width:' + fillW + '%; background:' + meta.color + ';"></div></div>' +
+                  '</div>';
+                }).join('');
+              });
+            }
           })
           .catch(function () {});
       }

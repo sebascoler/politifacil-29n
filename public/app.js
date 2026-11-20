@@ -50,6 +50,8 @@
       realParticipants: null,
       averageScore: DEFAULT_LIVE_STATS.averageScore,
       isRealAverage: false,
+      partyRanking: [],
+      totalPartyVotes: 0,
       loaded: false,
     },
     theme: 'light',
@@ -217,6 +219,66 @@
     `;
   }
 
+  function renderBarometerBarsHtml(partyRanking, highlightPartyId = '') {
+    if (!Array.isArray(partyRanking) || partyRanking.length === 0) {
+      return '<p class="muted-text">Cargando termómetro en vivo...</p>';
+    }
+    const totalVotes = Number(state.liveStats.totalPartyVotes) || 0;
+    if (totalVotes <= 0) {
+      return '<p class="muted-text">Aún no hay resultados registrados. Completa el Test de 10 Escenarios para inaugurar el termómetro en vivo.</p>';
+    }
+
+    return partyRanking
+      .map((item) => {
+        const party = getParty(item.partyId);
+        const pct = Math.max(0, Math.min(100, Number(item.pct) || 0));
+        const pctStr = formatScoreEs(pct);
+        const fillWidth = item.count > 0 ? Math.max(4, pct) : 0;
+        const isUserTop = Boolean(highlightPartyId && item.partyId === highlightPartyId);
+        return `
+          <div class="barometer-row ${isUserTop ? 'is-user-top' : ''}">
+            <div class="barometer-row-top">
+              <span class="barometer-party-meta">
+                <span class="color-swatch" style="background:${escapeHtml(party.color)}"></span>
+                <strong>${escapeHtml(party.shortName)}</strong>
+                <span class="muted-text">· ${escapeHtml(party.candidate)}</span>
+                ${isUserTop ? '<span class="barometer-user-tag">← Tu #1</span>' : ''}
+              </span>
+              <span class="barometer-pct">${pctStr} %</span>
+            </div>
+            <div class="barometer-track">
+              <div class="barometer-fill" style="width:${fillWidth}%; background:${escapeHtml(party.color)};"></div>
+            </div>
+          </div>
+        `;
+      })
+      .join('');
+  }
+
+  function applyStatsPayload(payload) {
+    if (!payload || typeof payload.totalParticipants !== 'number') return;
+    state.liveStats.totalParticipants = Math.max(
+      DEFAULT_LIVE_STATS.totalParticipants,
+      Math.round(payload.totalParticipants)
+    );
+    if (typeof payload.realParticipants === 'number') {
+      state.liveStats.realParticipants = Math.max(0, Math.round(payload.realParticipants));
+    }
+    if (typeof payload.averageScore === 'number' && !Number.isNaN(payload.averageScore)) {
+      state.liveStats.averageScore = Number(payload.averageScore);
+    }
+    if (typeof payload.isRealAverage === 'boolean') {
+      state.liveStats.isRealAverage = payload.isRealAverage;
+    }
+    if (Array.isArray(payload.partyRanking)) {
+      state.liveStats.partyRanking = payload.partyRanking;
+    }
+    if (typeof payload.totalPartyVotes === 'number') {
+      state.liveStats.totalPartyVotes = Math.max(0, Math.round(payload.totalPartyVotes));
+    }
+    state.liveStats.loaded = true;
+  }
+
   function updateLiveStatsDom() {
     const countText = formatNumberEs(state.liveStats.totalParticipants);
     const avgText = formatScoreEs(state.liveStats.averageScore);
@@ -234,6 +296,13 @@
         avgSlot.innerHTML = renderNationalAvgComparisonHtml(Math.round(userScore));
       }
     }
+
+    if (state.liveStats.loaded) {
+      document.querySelectorAll('[data-live-barometer]').forEach((el) => {
+        const highlight = el.dataset.highlightParty || '';
+        el.innerHTML = renderBarometerBarsHtml(state.liveStats.partyRanking, highlight);
+      });
+    }
   }
 
   async function fetchLiveStats() {
@@ -243,17 +312,7 @@
       if (!res.ok) return;
       const payload = await res.json();
       if (payload && typeof payload.totalParticipants === 'number') {
-        state.liveStats.totalParticipants = Math.max(DEFAULT_LIVE_STATS.totalParticipants, Math.round(payload.totalParticipants));
-        if (typeof payload.realParticipants === 'number') {
-          state.liveStats.realParticipants = Math.max(0, Math.round(payload.realParticipants));
-        }
-        if (typeof payload.averageScore === 'number' && !Number.isNaN(payload.averageScore)) {
-          state.liveStats.averageScore = Number(payload.averageScore);
-        }
-        if (typeof payload.isRealAverage === 'boolean') {
-          state.liveStats.isRealAverage = payload.isRealAverage;
-        }
-        state.liveStats.loaded = true;
+        applyStatsPayload(payload);
         updateLiveStatsDom();
       }
     } catch {
@@ -328,17 +387,7 @@
       if (!response.ok) return;
       const payload = await response.json();
       if (payload && typeof payload.totalParticipants === 'number') {
-        state.liveStats.totalParticipants = Math.max(DEFAULT_LIVE_STATS.totalParticipants, Math.round(payload.totalParticipants));
-        if (typeof payload.realParticipants === 'number') {
-          state.liveStats.realParticipants = Math.max(0, Math.round(payload.realParticipants));
-        }
-        if (typeof payload.averageScore === 'number' && !Number.isNaN(payload.averageScore)) {
-          state.liveStats.averageScore = Number(payload.averageScore);
-        }
-        if (typeof payload.isRealAverage === 'boolean') {
-          state.liveStats.isRealAverage = payload.isRealAverage;
-        }
-        state.liveStats.loaded = true;
+        applyStatsPayload(payload);
         updateLiveStatsDom();
       }
     } catch {
@@ -2037,6 +2086,22 @@
         })}
         <p class="share-feedback" id="quiz-share-feedback" aria-live="polite"></p>
       </div>
+
+      <section class="barometer-card barometer-card-embedded" aria-label="Termómetro en vivo del Test a Ciegas">
+        <div class="barometer-header">
+          <div>
+            <span class="eyebrow">📊 Termómetro en Vivo · Resultados Reales Sin Siglas</span>
+            <h3>Cómo se reparte el #1 entre todos los participantes</h3>
+            <p class="muted-text">Compara tu resultado con el reparto real acumulado hasta este momento (media actual: <strong data-live-avg>${avgScoreEs}</strong>/100).</p>
+          </div>
+        </div>
+        <div class="barometer-bars" data-live-barometer data-highlight-party="${escapeHtml(top1.party.id)}" aria-live="polite">
+          ${state.liveStats.loaded ? renderBarometerBarsHtml(state.liveStats.partyRanking, top1.party.id) : '<p class="muted-text">Cargando termómetro en vivo...</p>'}
+        </div>
+        <p class="barometer-note muted-text">
+          Datos reales agregados de participantes voluntarios sin ver siglas (contador acumulado: <strong data-live-count>${totalCountEs}</strong>). No constituye una encuesta estadística ni intención de voto.
+        </p>
+      </section>
 
       <div>
         <h3>Desglose escenario por escenario</h3>

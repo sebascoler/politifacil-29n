@@ -7,6 +7,7 @@ const {
   REDIS_KEYS,
   ALLOWED_PARTY_IDS,
   fallbackState,
+  buildPartyRanking,
   sendJson,
   runRedisPipeline,
   parseRedisHashArray,
@@ -84,19 +85,6 @@ function buildCsvDocument(results) {
   });
 
   return `\uFEFF${headers.join(',')}\n${rows.join('\n')}\n`;
-}
-
-function buildPartyRanking(partyCounts) {
-  const totalWinners = ALLOWED_PARTY_IDS.reduce(
-    (acc, pid) => acc + (Number(partyCounts[pid]) || 0),
-    0
-  );
-
-  return ALLOWED_PARTY_IDS.map((pid) => {
-    const count = Number(partyCounts[pid]) || 0;
-    const pct = totalWinners > 0 ? Number(((count / totalWinners) * 100).toFixed(1)) : 0;
-    return { partyId: pid, count, pct };
-  }).sort((a, b) => b.count - a.count);
 }
 
 async function handler(req, res) {
@@ -201,7 +189,7 @@ async function handler(req, res) {
       isRealAverage,
       storedResultsCount,
       partyCounts,
-      partyRanking: buildPartyRanking(partyCounts),
+      partyRanking: buildPartyRanking(partyCounts).partyRanking,
     },
     returnedCount: results.length,
     results,
