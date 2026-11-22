@@ -85,9 +85,19 @@ function buildDashboardHtml(data) {
   const latest = entries[entries.length - 1];
   const prev = entries.length > 1 ? entries[entries.length - 2] : null;
   const ga4 = latest.ga4 || {};
+  const ga4_24h = latest.ga4Last24h || null;
   const gsc = latest.gsc || {};
+  const gsc_24h = latest.gscLast24h || null;
   const decision = latest.decision || {};
   const isOkMode = decision.status === 'monitoreo_estable' || decision.status === 'ok';
+  const launchDate = project.launchDate || '2026-11-17';
+
+  const channel24Map = new Map();
+  if (ga4_24h && Array.isArray(ga4_24h.channels)) {
+    ga4_24h.channels.forEach((c) => {
+      channel24Map.set(`${c.channel}||${c.sourceMedium}`, c.sessions);
+    });
+  }
 
   const daysToElection = (() => {
     if (!project.electionDate) return null;
@@ -97,19 +107,21 @@ function buildDashboardHtml(data) {
   })();
 
   const channelsHtml = (ga4.channels || [])
-    .map(
-      (ch) => `
+    .map((ch) => {
+      const s24 = ga4_24h ? channel24Map.get(`${ch.channel}||${ch.sourceMedium}`) || 0 : null;
+      return `
       <tr>
         <td><strong>${escapeHtml(ch.channel)}</strong></td>
         <td><code>${escapeHtml(ch.sourceMedium || '')}</code></td>
+        <td class="num"><strong>${s24 !== null ? fmtNum(s24) : '—'}</strong></td>
         <td class="num">${fmtNum(ch.sessions)}</td>
         <td class="num">${fmtPct(ch.sharePct)}</td>
         <td class="num">${fmtNum(ch.engagedSessions)}</td>
         <td class="num">${fmtPct(ch.engagementRatePct)}</td>
         <td class="num">${escapeHtml(ch.avgEngagementTime || '0 s')}</td>
         <td class="num">${fmtNum(ch.events)}</td>
-      </tr>`
-    )
+      </tr>`;
+    })
     .join('');
 
   const landingHtml = (ga4.landingPages || [])
@@ -203,14 +215,17 @@ function buildDashboardHtml(data) {
       : '<p class="muted">Sin mejoras urgentes hoy. Se mantiene el monitoreo diario automático.</p>';
 
   const keyEventsMap = ga4.keyEventBreakdown || {};
+  const keyEvents24Map = (ga4_24h && ga4_24h.keyEventBreakdown) || {};
   const eventsHtml = (data.instrumentedEvents || [])
     .map((ev) => {
       const count = keyEventsMap[ev.name];
+      const count24 = ga4_24h ? keyEvents24Map[ev.name] || 0 : null;
       return `
         <tr>
           <td><code>${escapeHtml(ev.name)}</code></td>
           <td><span class="pill">${escapeHtml(ev.category)}</span></td>
           <td>${escapeHtml(ev.description)}</td>
+          <td class="num"><strong>${count24 !== null ? fmtNum(count24) : '—'}</strong></td>
           <td class="num">${count !== undefined ? fmtNum(count) : '<span class="muted">0</span>'}</td>
         </tr>`;
     })
@@ -223,6 +238,7 @@ function buildDashboardHtml(data) {
       (e) => `
       <tr>
         <td><strong>${escapeHtml(e.date)}</strong></td>
+        <td class="num">${e.ga4Last24h ? fmtNum(e.ga4Last24h.sessions) : '—'}</td>
         <td class="num">${fmtNum(e.ga4 && e.ga4.sessions)}</td>
         <td class="num">${fmtPct(e.ga4 && e.ga4.engagementRatePct)}</td>
         <td class="num">${fmtNum(e.ga4 && e.ga4.organicSearchSessions)}</td>
@@ -480,9 +496,41 @@ function buildDashboardHtml(data) {
       <span class="pill">${(decision.recommendations || []).length} acciones sugeridas</span>
     </section>
 
-    <section class="kpi-grid" aria-label="KPIs principales">
+    <section aria-label="KPIs últimas 24 horas" style="margin-bottom:20px;">
+      <h2 style="margin-bottom:10px;">Últimas 24 horas (${escapeHtml((ga4_24h && ga4_24h.windowLabel) || 'Pendiente de próximo corte')})</h2>
+      <div class="kpi-grid" style="margin-bottom:0;">
+        <div class="kpi-card">
+          <div class="kpi-label">Sesiones (24h)</div>
+          <div class="kpi-value">${ga4_24h ? fmtNum(ga4_24h.sessions) : '—'}</div>
+          <div class="kpi-sub">${ga4_24h ? `${fmtNum(ga4_24h.activeUsers)} usuarios · ${fmtNum(ga4_24h.views)} vistas` : 'Se completará en el próximo corte'}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Interacción (24h)</div>
+          <div class="kpi-value">${ga4_24h ? fmtPct(ga4_24h.engagementRatePct) : '—'}</div>
+          <div class="kpi-sub">Media: ${escapeHtml((ga4_24h && ga4_24h.avgEngagementTimeLabel) || '—')}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Tests completados (24h)</div>
+          <div class="kpi-value">${ga4_24h ? fmtNum((ga4_24h.keyEventBreakdown && ga4_24h.keyEventBreakdown.quiz_complete) || 0) : '—'}</div>
+          <div class="kpi-sub">${ga4_24h ? `${fmtNum((ga4_24h.keyEventBreakdown && ga4_24h.keyEventBreakdown.quiz_start) || 0)} iniciados · ${fmtNum((ga4_24h.keyEventBreakdown && ga4_24h.keyEventBreakdown.share_result) || 0)} compartidos` : '—'}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">SEO &amp; GEO / IA (24h)</div>
+          <div class="kpi-value">${ga4_24h ? `${fmtNum(ga4_24h.organicSearchSessions)} / ${fmtNum(ga4_24h.aiReferralSessions)}` : '—'}</div>
+          <div class="kpi-sub">Sesiones Google / Motores de IA</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Search Console (último día)</div>
+          <div class="kpi-value">${gsc_24h && gsc_24h.hasData ? `${fmtNum(gsc_24h.clicks)} / ${fmtNum(gsc_24h.impressions)}` : '0 / 0'}</div>
+          <div class="kpi-sub">${escapeHtml((gsc_24h && gsc_24h.windowLabel) || 'Sin datos diarios aún')}</div>
+        </div>
+      </div>
+    </section>
+
+    <h2 style="margin-bottom:10px;">Acumulado desde el inicio (${escapeHtml(launchDate)} – ${escapeHtml(latest.date)})</h2>
+    <section class="kpi-grid" aria-label="KPIs acumulados">
       <div class="kpi-card">
-        <div class="kpi-label">Sesiones (GA4)</div>
+        <div class="kpi-label">Sesiones (Acum.)</div>
         <div class="kpi-value">${fmtNum(ga4.sessions)}</div>
         ${computeDelta(ga4.sessions, prev && prev.ga4 && prev.ga4.sessions)}
         <div class="kpi-sub">${fmtNum(ga4.activeUsers)} usuarios activos · ${fmtNum(ga4.views)} vistas</div>
@@ -532,7 +580,8 @@ function buildDashboardHtml(data) {
             <tr>
               <th>Canal</th>
               <th>Fuente / Medio</th>
-              <th class="num">Sesiones</th>
+              <th class="num">Sesiones (24h)</th>
+              <th class="num">Sesiones (Acum.)</th>
               <th class="num">Cuota</th>
               <th class="num">Con interacción</th>
               <th class="num">% Interacción</th>
@@ -591,7 +640,7 @@ function buildDashboardHtml(data) {
       <h2>Eventos Clave Instrumentados (GA4 / GTM + Vercel Analytics)</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Evento</th><th>Tipo</th><th>Qué mide</th><th class="num">Conteo hoy</th></tr></thead>
+          <thead><tr><th>Evento</th><th>Tipo</th><th>Qué mide</th><th class="num">Últimas 24 h</th><th class="num">Acumulado</th></tr></thead>
           <tbody>${eventsHtml}</tbody>
         </table>
       </div>
@@ -604,7 +653,8 @@ function buildDashboardHtml(data) {
           <thead>
             <tr>
               <th>Fecha</th>
-              <th class="num">Sesiones</th>
+              <th class="num">Sesiones (24h)</th>
+              <th class="num">Sesiones (Acum.)</th>
               <th class="num">% Interacción</th>
               <th class="num">SEO (GA4)</th>
               <th class="num">GEO / IA</th>

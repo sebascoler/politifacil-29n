@@ -52,6 +52,28 @@ function getMadridDate(offsetDays = 0) {
   }).format(target);
 }
 
+function getLast24DateHours() {
+  const fmt = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Madrid',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    hourCycle: 'h23',
+  });
+  const nowMs = Date.now();
+  const hours = [];
+  for (let i = 23; i >= 0; i -= 1) {
+    const parts = fmt.formatToParts(new Date(nowMs - i * 3600000));
+    const map = {};
+    for (const p of parts) {
+      map[p.type] = p.value;
+    }
+    hours.push(`${map.year}${map.month}${map.day}${map.hour}`);
+  }
+  return hours;
+}
+
 function getMadridIsoNow() {
   const now = new Date();
   const datePart = getMadridDate(0);
@@ -191,12 +213,14 @@ function matchAiDomain(sourceMedium) {
   return null;
 }
 
-async function fetchGa4Metrics(propertyId, token, startDate, endDate) {
+async function fetchGa4Metrics(propertyId, token, startDate, endDate, options = {}) {
   const dateRanges = [{ startDate, endDate }];
+  const filterClause = options.dimensionFilter ? { dimensionFilter: options.dimensionFilter } : {};
 
   const [overviewRes, channelRes, landingRes, screenRes, eventsRes] = await Promise.all([
     runGa4Report(propertyId, token, {
       dateRanges,
+      ...filterClause,
       metrics: [
         { name: 'activeUsers' },
         { name: 'newUsers' },
@@ -212,6 +236,7 @@ async function fetchGa4Metrics(propertyId, token, startDate, endDate) {
     }),
     runGa4Report(propertyId, token, {
       dateRanges,
+      ...filterClause,
       dimensions: [{ name: 'sessionPrimaryChannelGroup' }, { name: 'sessionSourceMedium' }],
       metrics: [
         { name: 'sessions' },
@@ -225,6 +250,7 @@ async function fetchGa4Metrics(propertyId, token, startDate, endDate) {
     }),
     runGa4Report(propertyId, token, {
       dateRanges,
+      ...filterClause,
       dimensions: [{ name: 'landingPage' }],
       metrics: [
         { name: 'sessions' },
@@ -237,6 +263,7 @@ async function fetchGa4Metrics(propertyId, token, startDate, endDate) {
     }),
     runGa4Report(propertyId, token, {
       dateRanges,
+      ...filterClause,
       dimensions: [{ name: 'pagePath' }],
       metrics: [
         { name: 'screenPageViews' },
@@ -249,6 +276,7 @@ async function fetchGa4Metrics(propertyId, token, startDate, endDate) {
     }),
     runGa4Report(propertyId, token, {
       dateRanges,
+      ...filterClause,
       dimensions: [{ name: 'eventName' }],
       metrics: [{ name: 'eventCount' }],
       limit: 100,
@@ -395,6 +423,60 @@ async function fetchGa4Metrics(propertyId, token, startDate, endDate) {
   };
 }
 
+async function fetchGa4Last24h(propertyId, token, yesterdayMadrid, todayMadrid) {
+  try {
+    const dateHours = getLast24DateHours();
+    const metrics = await fetchGa4Metrics(propertyId, token, yesterdayMadrid, todayMadrid, {
+      dimensionFilter: {
+        filter: {
+          fieldName: 'dateHour',
+          inListFilter: { values: dateHours },
+        },
+      },
+    });
+    return {
+      ...metrics,
+      windowLabel: 'Últimas 24 horas',
+      windowRange: `${dateHours[0]} – ${dateHours[dateHours.length - 1]}`,
+    };
+  } catch (err) {
+    console.warn('Aviso: filtro dateHour no disponible en GA4, usando día completo de ayer:', err.message);
+    const fallback = await fetchGa4Metrics(propertyId, token, yesterdayMadrid, yesterdayMadrid);
+    return {
+      ...fallback,
+      windowLabel: 'Ayer (último día completo)',
+      windowRange: yesterdayMadrid,
+    };
+  }
+}
+
+async function fetchGscLast24h(siteUrl, token, todayMadrid) {
+  const encodedSite = encodeURIComponent(siteUrl);
+  const baseUrl = `https://www.googleapis.com/webmasters/v3/sites/${encodedSite}`;
+  const startLookback = getMadridDate(-3);
+  const res = await apiJson(`${baseUrl}/searchAnalytics/query`, token, {
+    method: 'POST',
+    body: { startDate: startLookback, endDate: todayMadrid, dimensions: ['date'], rowLimit: 10 },
+  });
+  const sorted = (res.rows || [])
+    .slice()
+    .sort((a, b) => String((b.keys && b.keys[0]) || '').localeCompare(String((a.keys && a.keys[0]) || '')));
+  const latestRow = sorted[0] || null;
+  const latestDate = latestRow && latestRow.keys ? latestRow.keys[0] : null;
+  const hasData = Boolean(latestRow && (latestRow.impressions > 0 || latestRow.clicks > 0));
+  return {
+    date: latestDate,
+    clicks: hasData ? Math.round(latestRow.clicks || 0) : null,
+    impressions: hasData ? Math.round(latestRow.impressions || 0) : null,
+    ctrPct: hasData ? Number(((latestRow.ctr || 0) * 100).toFixed(2)) : null,
+    avgPosition: hasData && latestRow.position != null ? Number(latestRow.position.toFixed(1)) : null,
+    hasData,
+    windowLabel: latestDate
+      ? `Último día con datos (${latestDate})`
+      : 'Sin datos diarios consolidados aún',
+  };
+}
+
 async function fetchGscMetrics(siteUrl, token, startDate, endDate, expectedSitemapUrls) {
   const encodedSite = encodeURIComponent(siteUrl);
   const baseUrl = `https://www.googleapis.com/webmasters/v3/sites/${encodedSite}`;
@@ -484,9 +566,10 @@ async function fetchGscMetrics(siteUrl, token, startDate, endDate, expectedSitem
   };
 }
 
-function evaluateDailyDecision(ga4, gsc, prevEntry, project, todayDate) {
+function evaluateDailyDecision(ga4, gsc, prevEntry, project, todayDate, ga4Last24h = null) {
   const recommendations = [];
   const expectedUrls = project.expectedSitemapUrls || 40;
+  const launchDate = process.env.LAUNCH_DATE || project.launchDate || '2026-11-17';
 
   const daysToElection = project.electionDate
     ? Math.ceil(
@@ -569,15 +652,44 @@ function evaluateDailyDecision(ga4, gsc, prevEntry, project, todayDate) {
   const statusLabel = hasActionable ? 'Mejoras propuestas' : 'Todo en orden · Monitoreo estable';
 
   const daysTxt = daysToElection != null && daysToElection > 0 ? `Faltan ${daysToElection} días para el 29-N. ` : '';
+  const recentTxt = ga4Last24h
+    ? `Últimas 24 h: ${ga4Last24h.sessions} sesiones (${ga4Last24h.engagementRatePct} % interacción, ${ga4Last24h.organicSearchSessions} SEO, ${ga4Last24h.aiReferralSessions} IA). `
+    : '';
   const summary = hasActionable
-    ? `${daysTxt}Se registran ${ga4.sessions} sesiones (${ga4.engagementRatePct} % interacción), ${ga4.organicSearchSessions} de SEO y ${ga4.aiReferralSessions} de motores de IA. Hay ${recommendations.length} recomendación(es) prioritaria(s) para acelerar visibilidad antes del 29-N.`
-    : `${daysTxt}Métricas saludables y sin incidencias (${ga4.sessions} sesiones, ${ga4.engagementRatePct} % interacción, ${gsc.clicks || 0} clics en Google y ${ga4.aiReferralSessions} visitas desde IA). Se mantiene el monitoreo diario sin cambios necesarios.`;
+    ? `${daysTxt}${recentTxt}Acumulado desde ${launchDate}: ${ga4.sessions} sesiones (${ga4.engagementRatePct} % interacción), ${ga4.organicSearchSessions} de SEO y ${ga4.aiReferralSessions} de IA. Hay ${recommendations.length} recomendación(es) prioritaria(s).`
+    : `${daysTxt}${recentTxt}Acumulado desde ${launchDate}: ${ga4.sessions} sesiones (${ga4.engagementRatePct} % interacción, ${gsc.clicks || 0} clics en Google y ${ga4.aiReferralSessions} visitas desde IA). Se mantiene el monitoreo diario sin cambios necesarios.`;
 
   return { status, statusLabel, summary, recommendations };
 }
 
 function buildEmailReports(entry, prevEntry, project) {
   const { date, ga4, gsc, decision } = entry;
+  const ga4_24h = entry.ga4Last24h || {
+    activeUsers: 0,
+    newUsers: 0,
+    sessions: 0,
+    engagedSessions: 0,
+    engagementRatePct: 0,
+    views: 0,
+    avgEngagementTimeLabel: '0 s',
+    organicSearchSessions: 0,
+    aiReferralSessions: 0,
+    aiSources: [],
+    channels: [],
+    keyEventBreakdown: {},
+    windowLabel: 'Últimas 24 horas',
+  };
+  const gsc_24h = entry.gscLast24h || {
+    date: null,
+    clicks: null,
+    impressions: null,
+    ctrPct: null,
+    avgPosition: null,
+    hasData: false,
+    windowLabel: 'Sin datos diarios consolidados aún',
+  };
+
+  const launchDate = process.env.LAUNCH_DATE || project.launchDate || '2026-11-17';
   const prevGa4 = prevEntry ? prevEntry.ga4 : null;
   const prevGsc = prevEntry ? prevEntry.gsc : null;
 
@@ -591,24 +703,30 @@ function buildEmailReports(entry, prevEntry, project) {
 
   const deltaSessionsTxt =
     prevGa4 && prevGa4.sessions != null
-      ? ` (${ga4.sessions - prevGa4.sessions >= 0 ? '+' : ''}${ga4.sessions - prevGa4.sessions} respecto al último registro)`
+      ? ` (${ga4.sessions - prevGa4.sessions >= 0 ? '+' : ''}${ga4.sessions - prevGa4.sessions} respecto al último reporte)`
       : '';
 
-  const bestChannel = (ga4.channels || [])
+  const bestChannel24h = (ga4_24h.channels || [])
     .filter((c) => c.sessions > 0)
     .sort((a, b) => b.engagementRatePct - a.engagementRatePct)[0];
+  const bestChannelAll = (ga4.channels || [])
+    .filter((c) => c.sessions > 0)
+    .sort((a, b) => b.engagementRatePct - a.engagementRatePct)[0];
+  const bestChannel = bestChannel24h || bestChannelAll;
 
-  const googleSentence =
+  const google24hSentence = gsc_24h.hasData
+    ? `En el último día con datos en Search Console (${gsc_24h.date}): **${gsc_24h.impressions} impresiones**, **${gsc_24h.clicks} clics** (CTR **${gsc_24h.ctrPct} %**, posición media **${gsc_24h.avgPosition}**) y **${ga4_24h.organicSearchSessions} visitas** desde buscadores en las últimas 24 h.`
+    : `En las últimas 24 h se registraron **${ga4_24h.organicSearchSessions} visitas** desde buscadores (Search Console aún no consolida impresiones del último día).`;
+
+  const googleAllSentence =
     gsc.status === 'processing'
-      ? `Google ya ha detectado tu mapa de **${gsc.sitemap.discoveredUrls} páginas**, aunque todavía está procesando los primeros resultados de búsqueda. De momento hay **${ga4.organicSearchSessions} visitas** desde buscadores.`
-      : `En Google tu web apareció **${gsc.impressions} veces** y recibió **${gsc.clicks} clics** (CTR del **${gsc.ctrPct} %**, posición media **${gsc.avgPosition}**). Hay **${gsc.indexedPages != null ? gsc.indexedPages : '?'} de ${gsc.sitemap.discoveredUrls} páginas** indexadas.`;
+      ? `Desde el inicio (${launchDate}), Google ya detectó tus **${gsc.sitemap.discoveredUrls} páginas**, aunque sigue procesando las impresiones acumuladas (**${ga4.organicSearchSessions} visitas** orgánicas en total).`
+      : `Desde el inicio (${launchDate}), tu web apareció **${gsc.impressions} veces** en Google y sumó **${gsc.clicks} clics** (CTR **${gsc.ctrPct} %**, posición media **${gsc.avgPosition}**; **${ga4.organicSearchSessions} visitas** orgánicas y **${gsc.indexedPages != null ? gsc.indexedPages : '?'} de ${gsc.sitemap.discoveredUrls} páginas** indexadas).`;
 
   const aiSentence =
-    ga4.aiReferralSessions > 0
-      ? `Ya estamos recibiendo **${ga4.aiReferralSessions} visitas** recomendadas directamente por asistentes de IA (${ga4.aiSources
-          .map((s) => `${s.source}: ${s.sessions}`)
-          .join(', ')}).`
-      : 'Todavía no se han registrado visitas procedentes de asistentes de IA como ChatGPT, Perplexity, Gemini o Claude.';
+    ga4.aiReferralSessions > 0 || ga4_24h.aiReferralSessions > 0
+      ? `Últimas 24 h: **${ga4_24h.aiReferralSessions} visitas** desde asistentes de IA. Acumulado desde ${launchDate}: **${ga4.aiReferralSessions} visitas** (${(ga4.aiSources || []).map((s) => `${s.source}: ${s.sessions}`).join(', ') || 'motores de IA'}).`
+      : `Tanto en las últimas 24 h como en el acumulado desde el ${launchDate}, todavía hay **0 visitas** registradas desde ChatGPT, Perplexity, Gemini o Claude.`;
 
   const verdictHeading =
     decision.status === 'monitoreo_estable'
@@ -620,24 +738,59 @@ function buildEmailReports(entry, prevEntry, project) {
       ? decision.recommendations.map((r, i) => `${i + 1}. **${r.title}:** ${r.detail}`).join('\n')
       : '- Sin cambios necesarios; las métricas evolucionan según lo esperado.';
 
-  const quizDone = (ga4.keyEventBreakdown && ga4.keyEventBreakdown.quiz_complete) || 0;
-  const blindDone = (ga4.keyEventBreakdown && ga4.keyEventBreakdown.blind_reveal) || 0;
-  const sharesDone = (ga4.keyEventBreakdown && ga4.keyEventBreakdown.share_result) || 0;
+  const ev24 = ga4_24h.keyEventBreakdown || {};
+  const evAll = ga4.keyEventBreakdown || {};
+
+  const quizStart24h = ev24.quiz_start || 0;
+  const quizDone24h = ev24.quiz_complete || 0;
+  const blindDone24h = ev24.blind_reveal || 0;
+  const sharesDone24h = ev24.share_result || 0;
+
+  const quizStartAll = evAll.quiz_start || 0;
+  const quizDoneAll = evAll.quiz_complete || 0;
+  const blindDoneAll = evAll.blind_reveal || 0;
+  const sharesDoneAll = evAll.share_result || 0;
+
+  const channel24Map = new Map();
+  (ga4_24h.channels || []).forEach((c) => {
+    channel24Map.set(`${c.channel}||${c.sourceMedium}`, c.sessions);
+  });
+
+  const gsc24Label = gsc_24h.hasData
+    ? `${gsc_24h.clicks} / ${gsc_24h.impressions} (${gsc_24h.date})`
+    : 'Sin datos nuevos';
+  const gscAllLabel =
+    gsc.clicks != null ? `${gsc.clicks} / ${gsc.impressions}` : 'Procesando';
+
+  const comparisonRows = [
+    ['Usuarios activos', ga4_24h.activeUsers, ga4.activeUsers],
+    ['Sesiones (visitas)', ga4_24h.sessions, ga4.sessions],
+    ['% Interacción', `${ga4_24h.engagementRatePct} %`, `${ga4.engagementRatePct} %`],
+    ['Tiempo medio', ga4_24h.avgEngagementTimeLabel, ga4.avgEngagementTimeLabel],
+    ['Vistas de página', ga4_24h.views, ga4.views],
+    ['Tests iniciados / completados', `${quizStart24h} / ${quizDone24h}`, `${quizStartAll} / ${quizDoneAll}`],
+    ['Compartidos (share_result)', sharesDone24h, sharesDoneAll],
+    ['Organic Search SEO (GA4)', ga4_24h.organicSearchSessions, ga4.organicSearchSessions],
+    ['GEO / Motores de IA (GA4)', ga4_24h.aiReferralSessions, ga4.aiReferralSessions],
+    ['Search Console: Clics / Impresiones', gsc24Label, gscAllLabel],
+  ];
 
   const md = `## Resumen ejecutivo (sin tecnicismos)
 
-**1. Qué pasó hoy en la web:**
-Entraron **${ga4.activeUsers} personas** (**${ga4.sessions} visitas**${deltaSessionsTxt}) y **el ${ga4.engagementRatePct} % interactuó activamente**, pasando una media de **${ga4.avgEngagementTimeLabel}** en la página.${bestChannel ? ` El canal con mejor respuesta fue **${bestChannel.sourceMedium}** (${bestChannel.engagementRatePct} % de interacción).` : ''}${quizDone || blindDone || sharesDone ? ` Se completaron **${quizDone} tests**, **${blindDone} lecturas a ciegas** y se compartió **${sharesDone} veces**.` : ''}
+**1. Qué pasó en la web (Últimas 24 horas vs Acumulado desde el ${launchDate}):**
+* **Últimas 24 horas (${ga4_24h.windowLabel}):** Entraron **${ga4_24h.activeUsers} personas** (**${ga4_24h.sessions} visitas**) y **el ${ga4_24h.engagementRatePct} % interactuó activamente**, pasando una media de **${ga4_24h.avgEngagementTimeLabel}** en la página.${quizDone24h || blindDone24h || sharesDone24h ? ` Se completaron **${quizDone24h} tests**, **${blindDone24h} lecturas a ciegas** y se compartió **${sharesDone24h} veces**.` : ''}${bestChannel24h ? ` El canal más comprometido de las últimas 24 h fue **${bestChannel24h.sourceMedium}** (${bestChannel24h.engagementRatePct} % de interacción).` : ''}
+* **Acumulado desde el inicio (${launchDate} – ${date}):** Suman **${ga4.activeUsers} personas** (**${ga4.sessions} visitas**${deltaSessionsTxt}) con **${ga4.engagementRatePct} % de interacción** y **${ga4.avgEngagementTimeLabel}** de media.${quizDoneAll || blindDoneAll || sharesDoneAll ? ` En total van **${quizDoneAll} tests completados**, **${blindDoneAll} lecturas a ciegas** y **${sharesDoneAll} compartidos**.` : ''}${!bestChannel24h && bestChannel ? ` Canal destacado: **${bestChannel.sourceMedium}** (${bestChannel.engagementRatePct} %).` : ''}
 
 **2. Cómo vamos en Google y en respuestas de IA (ChatGPT, Perplexity, Gemini):**
-* **Google:** ${googleSentence}
+* **Google (último día):** ${google24hSentence}
+* **Google (acumulado):** ${googleAllSentence}
 * **Asistentes de IA:** ${aiSentence}
 
 **3. Qué hay que hacer hoy:**
 ${verdictHeading}
 ${simpleActionsMd}
 
-*(Más abajo tienes el anexo técnico completo por si quieres revisar el detalle de métricas).*
+*(Más abajo tienes el anexo técnico completo con la comparativa de últimas 24 horas y acumulado).*
 
 ---
 
@@ -645,41 +798,51 @@ ${simpleActionsMd}
 
 - **Web:** ${project.siteUrl}
 - **Cuenta atrás 29-N:** ${daysToElection != null && daysToElection > 0 ? `Faltan ${daysToElection} días` : 'Elecciones Generales 29-N'}
-- **Rango consultado:** ${entry.dateRangeNote}
+- **Ventanas consultadas:** ${entry.dateRangeNote}
 
-### Google Analytics 4 (Propiedad ${project.ga4PropertyId})
-- **Usuarios activos:** ${ga4.activeUsers} | **Nuevos:** ${ga4.newUsers} | **Sesiones:** ${ga4.sessions}
-- **Sesiones con interacción:** ${ga4.engagedSessions} (${ga4.engagementRatePct} %) | **Tiempo medio:** ${ga4.avgEngagementTimeLabel}
-- **Vistas:** ${ga4.views} (${ga4.viewsPerUser} por usuario) | **Eventos clave:** ${ga4.keyEvents}
-- **Organic Search (SEO):** ${ga4.organicSearchSessions} sesiones | **GEO / IA:** ${ga4.aiReferralSessions} sesiones
-- **Canales:**
+### Comparativa rápida: Últimas 24 horas vs Acumulado desde el inicio (${launchDate})
+${comparisonRows.map(([label, v24, vAll]) => `- **${label}:** ${v24} *(últimas 24 h)* | **${vAll}** *(acumulado)*`).join('\n')}
+
+### Canales (Últimas 24 h y Acumulado)
 ${(ga4.channels || [])
-  .map((c) => `  - \`${c.channel}\` (${c.sourceMedium}): ${c.sessions} sesiones (${c.sharePct} % · ${c.engagementRatePct} % interacción · ${c.avgEngagementTime})`)
+  .map((c) => {
+    const s24 = channel24Map.get(`${c.channel}||${c.sourceMedium}`) || 0;
+    return `  - \`${c.channel}\` (${c.sourceMedium}): **${s24}** *(24 h)* · **${c.sessions}** *(acum., ${c.sharePct} % · ${c.engagementRatePct} % interacción · ${c.avgEngagementTime})*`;
+  })
   .join('\n')}
-- **Páginas de destino:**
+
+### Páginas de destino (Acumulado)
 ${(ga4.landingPages || [])
   .map((lp) => `  - \`${lp.path}\`: ${lp.sessions} sesiones (${lp.activeUsers} usuarios · ${lp.avgEngagementTime})`)
   .join('\n')}
 
 ### Google Search Console (${project.gscProperty})
-- **Estado:** ${gsc.statusMessage}
+- **Último día con datos:** ${gsc_24h.hasData ? `${gsc_24h.date} — ${gsc_24h.clicks} clics · ${gsc_24h.impressions} impresiones · CTR ${gsc_24h.ctrPct} % · Pos ${gsc_24h.avgPosition}` : gsc_24h.windowLabel}
+- **Acumulado (${launchDate} – ${date}):** ${gsc.statusMessage}
 - **Clics:** ${gsc.clicks != null ? gsc.clicks : 'Procesando'}${prevGsc && prevGsc.clicks != null && gsc.clicks != null ? ` (${gsc.clicks - prevGsc.clicks >= 0 ? '+' : ''}${gsc.clicks - prevGsc.clicks} vs previo)` : ''} | **Impresiones:** ${gsc.impressions != null ? gsc.impressions : 'Procesando'} | **CTR:** ${gsc.ctrPct != null ? `${gsc.ctrPct} %` : 'Procesando'} | **Posición media:** ${gsc.avgPosition != null ? gsc.avgPosition : 'Procesando'}
 - **Sitemap:** ${gsc.sitemap.status} (${gsc.sitemap.discoveredUrls} URLs descubiertas${gsc.indexedPages != null ? `, ${gsc.indexedPages} indexadas` : ''})
 - **Top consultas:**
 ${gsc.topQueries.length > 0 ? gsc.topQueries.slice(0, 8).map((q) => `  - "${q.query}": ${q.clicks} clics · ${q.impressions} imp · CTR ${q.ctrPct} % · Pos ${q.position}`).join('\n') : '  - Sin consultas consolidadas todavía.'}
 `;
 
+  const formatBoldMd = (str) => escapeHtml(str).replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
   const html = `<!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8" /></head>
-<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#0f172a;line-height:1.55;max-width:720px;margin:0 auto;padding:16px;">
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#0f172a;line-height:1.55;max-width:740px;margin:0 auto;padding:16px;">
   <div style="background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid ${decision.status === 'monitoreo_estable' ? '#16a34a' : '#d97706'};border-radius:10px;padding:16px 18px;margin-bottom:20px;">
-    <h2 style="margin:0 0 10px;font-size:18px;color:#0f172a;">Resumen ejecutivo (sin tecnicismos) — ${escapeHtml(date)}</h2>
-    <p style="margin:0 0 10px;"><strong>1. Qué pasó hoy en la web:</strong> Entraron <strong>${ga4.activeUsers} personas</strong> (<strong>${ga4.sessions} visitas</strong>${escapeHtml(deltaSessionsTxt)}) y <strong>el ${ga4.engagementRatePct} % interactuó activamente</strong>, pasando una media de <strong>${escapeHtml(ga4.avgEngagementTimeLabel)}</strong>.${bestChannel ? ` El canal con mejor respuesta fue <strong>${escapeHtml(bestChannel.sourceMedium)}</strong> (${bestChannel.engagementRatePct} % de interacción).` : ''}</p>
+    <h2 style="margin:0 0 12px;font-size:18px;color:#0f172a;">Resumen ejecutivo (sin tecnicismos) — ${escapeHtml(date)}</h2>
+    <p style="margin:0 0 6px;"><strong>1. Qué pasó en la web:</strong></p>
+    <ul style="margin:0 0 12px;padding-left:20px;">
+      <li><strong>Últimas 24 horas (${escapeHtml(ga4_24h.windowLabel)}):</strong> Entraron <strong>${ga4_24h.activeUsers} personas</strong> (<strong>${ga4_24h.sessions} visitas</strong>) y <strong>el ${ga4_24h.engagementRatePct} % interactuó activamente</strong>, pasando una media de <strong>${escapeHtml(ga4_24h.avgEngagementTimeLabel)}</strong>.${quizDone24h || blindDone24h || sharesDone24h ? ` Se completaron <strong>${quizDone24h} tests</strong>, <strong>${blindDone24h} lecturas a ciegas</strong> y se compartió <strong>${sharesDone24h} veces</strong>.` : ''}${bestChannel24h ? ` Canal destacado: <strong>${escapeHtml(bestChannel24h.sourceMedium)}</strong> (${bestChannel24h.engagementRatePct} %).` : ''}</li>
+      <li><strong>Acumulado desde el inicio (${escapeHtml(launchDate)}):</strong> Suman <strong>${ga4.activeUsers} personas</strong> (<strong>${ga4.sessions} visitas</strong>${escapeHtml(deltaSessionsTxt)}) con <strong>${ga4.engagementRatePct} % de interacción</strong> y <strong>${escapeHtml(ga4.avgEngagementTimeLabel)}</strong> de media.${quizDoneAll || blindDoneAll || sharesDoneAll ? ` En total van <strong>${quizDoneAll} tests completados</strong>, <strong>${blindDoneAll} lecturas a ciegas</strong> y <strong>${sharesDoneAll} compartidos</strong>.` : ''}</li>
+    </ul>
     <p style="margin:0 0 6px;"><strong>2. Cómo vamos en Google y en respuestas de IA:</strong></p>
-    <ul style="margin:0 0 10px;padding-left:20px;">
-      <li><strong>Google:</strong> ${escapeHtml(googleSentence).replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>
-      <li><strong>Asistentes de IA:</strong> ${escapeHtml(aiSentence).replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>
+    <ul style="margin:0 0 12px;padding-left:20px;">
+      <li><strong>Google (último día):</strong> ${formatBoldMd(google24hSentence)}</li>
+      <li><strong>Google (acumulado):</strong> ${formatBoldMd(googleAllSentence)}</li>
+      <li><strong>Asistentes de IA:</strong> ${formatBoldMd(aiSentence)}</li>
     </ul>
     <p style="margin:0 0 6px;"><strong>3. Qué hay que hacer hoy:</strong> ${escapeHtml(verdictHeading)}</p>
     ${
@@ -693,35 +856,59 @@ ${gsc.topQueries.length > 0 ? gsc.topQueries.slice(0, 8).map((q) => `  - "${q.qu
 
   <hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0;" />
 
-  <h3 style="margin:0 0 8px;font-size:15px;color:#334155;">Anexo técnico — ${escapeHtml(project.name)} (${escapeHtml(date)})</h3>
-  <p style="margin:0 0 12px;font-size:13px;color:#475569;">${escapeHtml(project.siteUrl)} · ${daysToElection != null && daysToElection > 0 ? `Faltan ${daysToElection} días para el 29-N` : '29-N'} · ${escapeHtml(entry.dateRangeNote)}</p>
+  <h3 style="margin:0 0 6px;font-size:15px;color:#334155;">Anexo técnico — ${escapeHtml(project.name)} (${escapeHtml(date)})</h3>
+  <p style="margin:0 0 14px;font-size:13px;color:#475569;">${escapeHtml(project.siteUrl)} · ${daysToElection != null && daysToElection > 0 ? `Faltan ${daysToElection} días para el 29-N` : '29-N'} · ${escapeHtml(entry.dateRangeNote)}</p>
 
-  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:18px;">
     <thead>
       <tr style="background:#f1f5f9;">
-        <th style="text-align:left;padding:8px;border:1px solid #cbd5e1;">Canal</th>
-        <th style="text-align:left;padding:8px;border:1px solid #cbd5e1;">Fuente / Medio</th>
-        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">Sesiones</th>
-        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">% Interacción</th>
-        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">Tiempo</th>
+        <th style="text-align:left;padding:8px;border:1px solid #cbd5e1;">Métrica</th>
+        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">Últimas 24 horas</th>
+        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">Acumulado (desde ${escapeHtml(launchDate)})</th>
       </tr>
     </thead>
     <tbody>
-      ${(ga4.channels || [])
+      ${comparisonRows
         .map(
-          (c) => `<tr>
-            <td style="padding:7px 8px;border:1px solid #e2e8f0;">${escapeHtml(c.channel)}</td>
-            <td style="padding:7px 8px;border:1px solid #e2e8f0;"><code>${escapeHtml(c.sourceMedium)}</code></td>
-            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;">${c.sessions}</td>
-            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;">${c.engagementRatePct} %</td>
-            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;">${escapeHtml(c.avgEngagementTime)}</td>
+          ([label, v24, vAll]) => `<tr>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;">${escapeHtml(label)}</td>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;font-weight:600;">${escapeHtml(String(v24))}</td>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;">${escapeHtml(String(vAll))}</td>
           </tr>`
         )
         .join('')}
     </tbody>
   </table>
 
-  <p style="font-size:13px;color:#334155;"><strong>Search Console:</strong> Clics: ${gsc.clicks != null ? gsc.clicks : 'Procesando'} · Impresiones: ${gsc.impressions != null ? gsc.impressions : 'Procesando'} · CTR: ${gsc.ctrPct != null ? `${gsc.ctrPct} %` : 'Procesando'} · Sitemap: ${escapeHtml(gsc.sitemap.status)} (${gsc.sitemap.discoveredUrls} URLs${gsc.indexedPages != null ? `, ${gsc.indexedPages} indexadas` : ''}).</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+    <thead>
+      <tr style="background:#f1f5f9;">
+        <th style="text-align:left;padding:8px;border:1px solid #cbd5e1;">Canal</th>
+        <th style="text-align:left;padding:8px;border:1px solid #cbd5e1;">Fuente / Medio</th>
+        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">Sesiones (24h)</th>
+        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">Sesiones (Acum.)</th>
+        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">% Interacción</th>
+        <th style="text-align:right;padding:8px;border:1px solid #cbd5e1;">Tiempo</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${(ga4.channels || [])
+        .map((c) => {
+          const s24 = channel24Map.get(`${c.channel}||${c.sourceMedium}`) || 0;
+          return `<tr>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;">${escapeHtml(c.channel)}</td>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;"><code>${escapeHtml(c.sourceMedium)}</code></td>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;font-weight:600;">${s24}</td>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;">${c.sessions}</td>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;">${c.engagementRatePct} %</td>
+            <td style="padding:7px 8px;border:1px solid #e2e8f0;text-align:right;">${escapeHtml(c.avgEngagementTime)}</td>
+          </tr>`;
+        })
+        .join('')}
+    </tbody>
+  </table>
+
+  <p style="font-size:13px;color:#334155;"><strong>Search Console:</strong> Último día: ${escapeHtml(gsc24Label)} · Acumulado: Clics: ${gsc.clicks != null ? gsc.clicks : 'Procesando'} · Impresiones: ${gsc.impressions != null ? gsc.impressions : 'Procesando'} · CTR: ${gsc.ctrPct != null ? `${gsc.ctrPct} %` : 'Procesando'} · Sitemap: ${escapeHtml(gsc.sitemap.status)} (${gsc.sitemap.discoveredUrls} URLs${gsc.indexedPages != null ? `, ${gsc.indexedPages} indexadas` : ''}).</p>
 </body>
 </html>`;
 
@@ -746,7 +933,8 @@ async function main() {
   const project = history.project || {};
   const entries = Array.isArray(history.entries) ? history.entries.slice() : [];
   const todayMadrid = getMadridDate(0);
-  const start28 = getMadridDate(-27);
+  const yesterdayMadrid = getMadridDate(-1);
+  const launchDate = process.env.LAUNCH_DATE || project.launchDate || '2026-11-17';
 
   if (process.env.SKIP_IF_TODAY_EXISTS === 'true' && entries.some((e) => e.date === todayMadrid)) {
     console.log(`REPORTE DEL DÍA ${todayMadrid} YA EXISTE; SE OMITE ENVÍO DUPLICADO.`);
@@ -760,9 +948,11 @@ async function main() {
   const creds = loadServiceAccountCredentials();
   const token = await getGoogleAccessToken(creds);
 
-  const [ga4, gsc] = await Promise.all([
-    fetchGa4Metrics(propertyId, token, start28, todayMadrid),
-    fetchGscMetrics(siteUrl, token, start28, todayMadrid, project.expectedSitemapUrls || 40),
+  const [ga4, ga4Last24h, gsc, gscLast24h] = await Promise.all([
+    fetchGa4Metrics(propertyId, token, launchDate, todayMadrid),
+    fetchGa4Last24h(propertyId, token, yesterdayMadrid, todayMadrid),
+    fetchGscMetrics(siteUrl, token, launchDate, todayMadrid, project.expectedSitemapUrls || 40),
+    fetchGscLast24h(siteUrl, token, todayMadrid),
   ]);
 
   const prevEntry =
@@ -771,14 +961,16 @@ async function main() {
       .sort((a, b) => String(a.date).localeCompare(String(b.date)))
       .pop() || null;
 
-  const decision = evaluateDailyDecision(ga4, gsc, prevEntry, project, todayMadrid);
+  const decision = evaluateDailyDecision(ga4, gsc, prevEntry, project, todayMadrid, ga4Last24h);
 
   const newEntry = {
     date: todayMadrid,
     checkedAt: getMadridIsoNow(),
-    dateRangeNote: `GA4 y GSC: últimos 28 días (${start28} – ${todayMadrid})`,
+    dateRangeNote: `24h (${ga4Last24h.windowLabel}) · Acumulado (${launchDate} – ${todayMadrid})`,
     ga4,
+    ga4Last24h,
     gsc,
+    gscLast24h,
     decision,
   };
 
@@ -808,7 +1000,8 @@ async function main() {
 
   console.log('CLOUD SEO/GEO REPORT COMPLETADO:', {
     date: todayMadrid,
-    sessions: ga4.sessions,
+    sessionsLast24h: ga4Last24h.sessions,
+    sessionsCumulative: ga4.sessions,
     organicSearchSessions: ga4.organicSearchSessions,
     aiReferralSessions: ga4.aiReferralSessions,
     gscStatus: gsc.status,
