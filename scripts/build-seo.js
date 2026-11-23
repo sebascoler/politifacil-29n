@@ -805,6 +805,13 @@ function renderSeoHubHtml() {
   const parties = DATA.parties;
   const duelPairs = getAllDuelPairs();
 
+  const tldrCssVars = parties
+    .map(
+      (p, idx) =>
+        `--label-${idx + 2}: '${p.shortName.replace(/'/g, "\\'")}'; --color-${idx + 2}: ${p.color}`
+    )
+    .join('; ');
+
   const tldrHeaderCols = parties
     .map(
       (p) =>
@@ -851,10 +858,10 @@ function renderSeoHubHtml() {
       </div>
 
       <div class="card" style="margin-bottom:24px;">
-        <h3>Tabla Resumen Comparativa (TL;DR 29-N): Partidos × 8 Ejes Oficiales</h3>
+        <h3 id="tldr-table-heading">Tabla Resumen Comparativa (TL;DR 29-N): Partidos × 8 Ejes Oficiales</h3>
         <p class="muted-text" style="margin-bottom:12px;">Pulsa en cualquier eje temático o sigla para abrir su análisis completo con fuentes oficiales.</p>
-        <div class="tldr-table-wrap">
-          <table class="tldr-table">
+        <div class="tldr-table-wrap" tabindex="0" role="region" aria-labelledby="tldr-table-heading">
+          <table class="tldr-table" style="${escapeHtml(tldrCssVars)}">
             <thead>
               <tr>
                 <th scope="col">Eje Temático</th>
