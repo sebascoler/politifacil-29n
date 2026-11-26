@@ -7,25 +7,25 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "politifacil-29n.vercel.app"
         }
       ],
-      "destination": "https://politifacil.com/:path*",
+      "destination": "https://politifacil.com/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.politifacil.com"
         }
       ],
-      "destination": "https://politifacil.com/:path*",
+      "destination": "https://politifacil.com/$1",
       "permanent": true
     }
   ],
