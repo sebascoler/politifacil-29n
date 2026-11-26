@@ -3,11 +3,12 @@ const fs = require('fs');
 const path = require('path');
 const statsHandler = require('./api/stats');
 const resultsHandler = require('./api/results');
+const { getCountryConfig, getActiveCountries } = require('./config/portal');
 
 const PORT = Number(process.env.PORT) || 3000;
 const HOST = process.env.HOST || '127.0.0.1';
 const PUBLIC_DIR = path.join(__dirname, 'public');
-const DATA_PATH = path.join(PUBLIC_DIR, 'data', 'electionData.js');
+const CALENDAR_DATA_PATH = path.join(PUBLIC_DIR, 'data', 'calendarData.js');
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -25,15 +26,37 @@ const MIME_TYPES = {
   '.webmanifest': 'application/manifest+json; charset=utf-8',
 };
 
-function loadElectionData() {
-  if (!fs.existsSync(DATA_PATH)) {
+function resolveCountryDataPath(countryId) {
+  const cfg = getCountryConfig(String(countryId || 'es').toLowerCase());
+  if (cfg && cfg.dataFile) {
+    return path.join(__dirname, cfg.dataFile);
+  }
+  return path.join(PUBLIC_DIR, 'data', 'electionData.js');
+}
+
+function loadElectionData(countryId = 'es') {
+  const dataPath = resolveCountryDataPath(countryId);
+  if (!fs.existsSync(dataPath)) {
     return null;
   }
   try {
-    delete require.cache[require.resolve(DATA_PATH)];
-    return require(DATA_PATH);
+    delete require.cache[require.resolve(dataPath)];
+    return require(dataPath);
   } catch (err) {
-    console.error('Error cargando electionData.js:', err.message);
+    console.error(`Error cargando datos electorales (${countryId}):`, err.message);
+    return null;
+  }
+}
+
+function loadCalendarData() {
+  if (!fs.existsSync(CALENDAR_DATA_PATH)) {
+    return null;
+  }
+  try {
+    delete require.cache[require.resolve(CALENDAR_DATA_PATH)];
+    return require(CALENDAR_DATA_PATH);
+  } catch (err) {
+    console.error('Error cargando calendarData.js:', err.message);
     return null;
   }
 }
@@ -55,19 +78,60 @@ function handleApi(req, res, pathname, searchParams) {
     return resultsHandler(req, res);
   }
 
-  const data = loadElectionData();
-  if (!data) {
-    return sendJson(res, 503, { error: 'Base de datos electoral no disponible aún.' });
+  if (pathname === '/api/calendar') {
+    const calendar = loadCalendarData();
+    if (!calendar) {
+      return sendJson(res, 503, { error: 'Calendario electoral no disponible aún.' });
+    }
+    const region = searchParams.get('region');
+    const year = searchParams.get('year');
+    const type = searchParams.get('type');
+    let events = calendar.events || [];
+    if (region && region !== 'all') {
+      events = events.filter((e) => e.region === region);
+    }
+    if (year && year !== 'all') {
+      events = events.filter((e) => String(e.year) === String(year));
+    }
+    if (type && type !== 'all') {
+      events = events.filter((e) => e.type === type);
+    }
+    return sendJson(res, 200, {
+      meta: calendar.meta,
+      total: events.length,
+      events,
+    });
   }
 
+  const countryParam = (searchParams.get('country') || 'es').toLowerCase();
+
   if (pathname === '/api/health') {
+    const active = getActiveCountries().map((c) => {
+      const d = loadElectionData(c.id);
+      return {
+        country: c.id,
+        electionDate: d?.meta?.electionDate || c.electionDate,
+        partiesCount: Array.isArray(d?.parties) ? d.parties.length : 0,
+        interviewsCount: Array.isArray(d?.interviews) ? d.interviews.length : 0,
+        quizQuestionsCount: Array.isArray(d?.quizQuestions) ? d.quizQuestions.length : 0,
+      };
+    });
+    const calendar = loadCalendarData();
+    const esData = loadElectionData('es');
     return sendJson(res, 200, {
       status: 'ok',
-      electionDate: data.meta?.electionDate || '2026-11-29',
-      partiesCount: Array.isArray(data.parties) ? data.parties.length : 0,
-      interviewsCount: Array.isArray(data.interviews) ? data.interviews.length : 0,
-      quizQuestionsCount: Array.isArray(data.quizQuestions) ? data.quizQuestions.length : 0,
+      electionDate: esData?.meta?.electionDate || '2026-11-29',
+      partiesCount: Array.isArray(esData?.parties) ? esData.parties.length : 0,
+      interviewsCount: Array.isArray(esData?.interviews) ? esData.interviews.length : 0,
+      quizQuestionsCount: Array.isArray(esData?.quizQuestions) ? esData.quizQuestions.length : 0,
+      activeCountries: active,
+      calendarEventsCount: Array.isArray(calendar?.events) ? calendar.events.length : 0,
     });
+  }
+
+  const data = loadElectionData(countryParam);
+  if (!data) {
+    return sendJson(res, 503, { error: 'Base de datos electoral no disponible aún.' });
   }
 
   if (pathname === '/api/election-data') {
@@ -81,6 +145,7 @@ function handleApi(req, res, pathname, searchParams) {
       return found ? sendJson(res, 200, found) : sendJson(res, 404, { error: 'Partido no encontrado' });
     }
     return sendJson(res, 200, {
+      country: countryParam,
       parties: data.parties,
       territorialParties: data.territorialParties || [],
     });
@@ -99,6 +164,7 @@ function handleApi(req, res, pathname, searchParams) {
       proposals: axis && p.proposals?.[axis] ? { [axis]: p.proposals[axis] } : p.proposals,
     }));
     return sendJson(res, 200, {
+      country: countryParam,
       axes: axis ? (data.axes || []).filter((a) => a.id === axis) : data.axes || [],
       axisComparisons: axis && data.axisComparisons?.[axis] ? { [axis]: data.axisComparisons[axis] } : data.axisComparisons || {},
       parties: result,
@@ -119,11 +185,12 @@ function handleApi(req, res, pathname, searchParams) {
     if (topic && topic !== 'all') {
       list = list.filter((item) => item.topic === topic);
     }
-    return sendJson(res, 200, { total: list.length, interviews: list });
+    return sendJson(res, 200, { country: countryParam, total: list.length, interviews: list });
   }
 
   if (pathname === '/api/quiz') {
     return sendJson(res, 200, {
+      country: countryParam,
       total: (data.quizQuestions || []).length,
       questions: data.quizQuestions || [],
     });
@@ -136,7 +203,7 @@ function isInsidePublicDir(targetPath) {
   return targetPath === PUBLIC_DIR || targetPath.startsWith(PUBLIC_DIR + path.sep);
 }
 
-function resolveStaticFile(filePath) {
+function resolveStaticFile(filePath, relativePath = '') {
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     return filePath;
   }
@@ -154,6 +221,14 @@ function resolveStaticFile(filePath) {
     const indexCandidate = path.join(trimmedPath, 'index.html');
     if (isInsidePublicDir(indexCandidate) && fs.existsSync(indexCandidate) && fs.statSync(indexCandidate).isFile()) {
       return indexCandidate;
+    }
+
+    const seg = relativePath.split('/').filter(Boolean)[0];
+    if (seg === 'ar' || seg === 'es') {
+      const countryIndex = path.join(PUBLIC_DIR, seg, 'index.html');
+      if (fs.existsSync(countryIndex)) {
+        return countryIndex;
+      }
     }
 
     return path.join(PUBLIC_DIR, 'index.html');
@@ -179,7 +254,7 @@ function serveStatic(req, res, pathname) {
     return res.end('Acceso denegado');
   }
 
-  const filePath = resolveStaticFile(requestedPath);
+  const filePath = resolveStaticFile(requestedPath, relativePath);
   if (!filePath) {
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     return res.end('Archivo no encontrado');
@@ -213,5 +288,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, HOST, () => {
-  console.log(`PolitiFácil 29-N corriendo en http://${HOST}:${PORT}`);
+  console.log(`PolitiFácil corriendo en http://${HOST}:${PORT}`);
 });

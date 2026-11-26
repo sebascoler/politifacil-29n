@@ -1,11 +1,33 @@
 {
   "meta": {
+    "countryCode": "es",
+    "countryName": "España",
+    "lang": "es-ES",
+    "basePath": "",
+    "statsCountry": "es",
     "title": "PolitiFácil 29-N",
+    "badge": "29-N",
+    "subtitle": "España · Elecciones Generales 29 de noviembre de 2026",
     "electionDate": "2026-11-29",
+    "electionDateDisplay": "29 de noviembre de 2026",
+    "electionTimeIso": "2026-11-29T09:00:00+01:00",
+    "countdownLabel": "para el 29-N",
     "decree": "Real Decreto 806/2026, de 5 de octubre",
     "seatsCongress": 350,
+    "seatsCongressMajority": 176,
     "seatsSenate": 208,
-    "electoralCensus": 38728356
+    "electoralCensus": 38728356,
+    "chamberSummary": "350 escaños al Congreso · 208 al Senado",
+    "defaultSelectedPartyId": "psoe",
+    "defaultPairLeft": "psoe",
+    "defaultPairRight": "pp",
+    "defaultAxis": "vivienda",
+    "seedStats": {
+      "totalParticipants": 21224,
+      "averageScore": 48.4
+    },
+    "shareSlug": "29n",
+    "shareTitle": "Mi Brújula Electoral 29-N"
   },
   "axes": [
     {
@@ -1356,6 +1378,90 @@
       "quote": "El sistema es anti-nosotros: anti-autónomos, anti-trabajadores. Yo de aquí seguro que soy el más tonto, porque me han engañado todos: el PP… y también Podemos",
       "expressionStyle": "Discurso antisistema en primera persona y autoironía",
       "sourceUrl": "https://www.hoyaragon.es"
+    },
+    {
+      "id": "iv-sanchez-cara-a-cara",
+      "partyId": "psoe",
+      "candidate": "Pedro Sánchez",
+      "media": "Academia de TV / RTVE",
+      "program": "Debate Cara a Cara 29-N",
+      "date": "19 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Autocrítica y Balance de Legislatura",
+      "questionContext": "Intervención en el cara a cara televisado sobre errores de gestión, casos de corrupción y balance económico.",
+      "quote": "Mi Gobierno no ha sido perfecto, he cometido errores y he confiado en la gente que no debía. Lo que nos estamos jugando es que España avance, no que avance el pasado",
+      "expressionStyle": "Autocrítica acotada con contraste de futuro",
+      "sourceUrl": "https://www.rtve.es"
+    },
+    {
+      "id": "iv-feijoo-cara-a-cara",
+      "partyId": "pp",
+      "candidate": "Alberto Núñez Feijóo",
+      "media": "Academia de TV / RTVE",
+      "program": "Debate Cara a Cara 29-N",
+      "date": "19 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Vivienda y Regeneración",
+      "questionContext": "Réplica en el cara a cara televisado sobre construcción de vivienda pública y escándalos de corrupción.",
+      "quote": "Hay más pisos en los sumarios de corrupción de los que ustedes han edificado. España merece un presidente decente y él no lo es",
+      "expressionStyle": "Contraste punzante y apelación ética directa",
+      "sourceUrl": "https://www.rtve.es"
+    },
+    {
+      "id": "iv-abascal-vivienda-nov26",
+      "partyId": "vox",
+      "candidate": "Santiago Abascal",
+      "media": "EL PAÍS",
+      "program": "Cobertura de recta final 29-N",
+      "date": "24 de noviembre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Vivienda e Inmigración",
+      "questionContext": "Posicionamiento sobre el encarecimiento del mercado de la vivienda y la política migratoria del Ejecutivo.",
+      "quote": "El principal fondo buitre es el Gobierno",
+      "expressionStyle": "Aforismo frontal de inversión del marco",
+      "sourceUrl": "https://elpais.com"
+    },
+    {
+      "id": "iv-colau-ser-nov26",
+      "partyId": "frente-amplio",
+      "candidate": "Ada Colau",
+      "media": "Cadena SER",
+      "program": "Hoy por Hoy (recta final 29-N)",
+      "date": "26 de noviembre de 2026",
+      "formatType": "Radio / TV Informativa",
+      "topic": "Vivienda y Condiciones de Pacto",
+      "questionContext": "Entrevista el día del debate a cuatro sobre el balance del Ministerio de Vivienda y exigencias al PSOE.",
+      "quote": "Es verdad que se ha fallado en algunas cuestiones clave, como es la vivienda. Yo un ministerio de Vivienda anecdótico no lo quiero, lo que quiero es un Ministerio de Vivienda con plenas competencias y también quiero un acuerdo firmado con el PSOE donde se diga que van a estar todos los recursos económicos, por ejemplo el 1% del PIB",
+      "expressionStyle": "Autocrítica explícita con exigencia presupuestaria concreta",
+      "sourceUrl": "https://cadenaser.com"
+    },
+    {
+      "id": "iv-montero-cierre-nov26",
+      "partyId": "podemos",
+      "candidate": "Irene Montero",
+      "media": "El Periódico",
+      "program": "Acto de recta final de campaña 29-N",
+      "date": "22 de noviembre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Movilización Post-29N",
+      "questionContext": "Llamamiento a la movilización social y sindical ante el escenario posterior a las elecciones del 29-N.",
+      "quote": "Porque pase lo que pase el día 29, vamos a necesitar gente que pelee. Vamos a necesitar gente dispuesta a poner la cara y a poner el cuerpo",
+      "expressionStyle": "Arenga militante de movilización social",
+      "sourceUrl": "https://www.elperiodico.com"
+    },
+    {
+      "id": "iv-salf-campana-nov26",
+      "partyId": "salf",
+      "candidate": "Alvise Pérez",
+      "media": "21 Noticias",
+      "program": "Campaña 29-N (Contrato Electoral de 119 medidas)",
+      "date": "23 de noviembre de 2026",
+      "formatType": "Prensa Escrita / Agencia",
+      "topic": "Formato de Campaña y Antipolítica",
+      "questionContext": "Explicación de su formato de actos callejeros frente a los mítines clásicos de los partidos tradicionales.",
+      "quote": "Donde otros ponen un mitin, nosotros ponemos una mesa y dos sillas. Los problemas de la gente no se resuelven desde un despacho ni se conocen leyendo encuestas",
+      "expressionStyle": "Contraste populista de cercanía callejera",
+      "sourceUrl": "https://www.21noticias.com"
     }
   ],
   "quizQuestions": [

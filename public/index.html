@@ -27,12 +27,12 @@
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="PolitiFácil 29-N: arco parlamentario multicolor y comparador electoral neutral en España" />
+  <meta property="og:image:alt" content="PolitiFácil 29-N: arco político y comparador electoral neutral en España" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PolitiFácil 29-N | Comparador Electoral Neutral y Test de Afinidad en España" />
-  <meta name="twitter:description" content="6 Partidos Estatales · 8 Ejes Oficiales · 0 Opinión · Test de 10 Escenarios en el arco político de España (29-N)." />
+  <meta name="twitter:description" content="6 Partidos Estatales · 8 Ejes Oficiales · 0 Opinión · Test de 10 Escenarios en España." />
   <meta name="twitter:image" content="https://politifacil-29n.vercel.app/og-banner.png" />
-  <meta name="twitter:image:alt" content="PolitiFácil 29-N: arco parlamentario multicolor y comparador electoral neutral en España" />
+  <meta name="twitter:image:alt" content="PolitiFácil 29-N: arco político y comparador electoral neutral en España" />
   <!-- Google Tag Manager / GA4 -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -70,30 +70,29 @@
       },
       "about": {
         "@type": "Event",
-        "name": "Elecciones Generales de España 29-N (2026)",
+        "name": "Elecciones Generales 29-N (2026)",
         "startDate": "2026-11-29",
         "location": {
           "@type": "Country",
           "name": "España"
         },
-        "description": "Real Decreto 806/2026, de 5 de octubre. 350 escaños al Congreso y 208 al Senado."
+        "description": "Real Decreto 806/2026, de 5 de octubre. 350 escaños en cámara baja y 208 en Senado."
       }
     },
     {
       "@type": "Dataset",
       "@id": "https://politifacil-29n.vercel.app/#dataset",
-      "name": "Programas Electorales y Entrevistas — Elecciones Generales España 29-N (2026)",
-      "description": "Base de datos estructurada y neutral sobre programas electorales oficiales, estilo comunicativo y declaraciones literales en entrevistas para las elecciones generales de España del 29 de noviembre de 2026 (Real Decreto 806/2026, de 5 de octubre).",
+      "name": "Programas y Entrevistas — España (29-N)",
+      "description": "Base de datos estructurada y neutral sobre programas oficiales, estilo comunicativo y declaraciones literales en entrevistas para España (Real Decreto 806/2026, de 5 de octubre).",
       "url": "https://politifacil-29n.vercel.app/",
-      "spatialCoverage": "Spain",
+      "spatialCoverage": "España",
       "temporalCoverage": "2026-11-29",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": "es-ES",
       "keywords": [
-        "Elecciones Generales España 2026",
-        "29-N",
+        "Elecciones España",
+        "Elecciones Generales 29-N (2026)",
         "Real Decreto 806/2026, de 5 de octubre",
-        "Programas electorales",
         "Comparador electoral neutral",
         "Test de afinidad política"
       ],
@@ -113,7 +112,7 @@
     {
       "@type": "ItemList",
       "@id": "https://politifacil-29n.vercel.app/#parties-list",
-      "name": "Partidos estatales y fuerzas territoriales en las Elecciones Generales 29-N (España)",
+      "name": "Fuerzas políticas principales en España",
       "numberOfItems": 11,
       "itemListElement": [
         {
@@ -398,6 +397,22 @@
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 
+  <nav class="portal-topbar" aria-label="Selector de país y herramientas globales de PolitiFácil">
+    <div class="container portal-topbar-inner">
+      <a class="portal-topbar-brand" href="/portal">
+        <span>🌐</span>
+        <span>PolitiFácil Internacional</span>
+      </a>
+      <div class="portal-topbar-links">
+        <a class="portal-switch-link" href="/portal">Inicio Global</a>
+        <a class="portal-switch-link is-current" href="/">🇪🇸 España <span style="opacity:0.75;">(29-N)</span></a>
+        <a class="portal-switch-link" href="/ar">🇦🇷 Argentina <span style="opacity:0.75;">(2027)</span></a>
+        <a class="portal-switch-link" href="/calendario">📅 Calendario 2026–2028</a>
+        <a class="portal-switch-link" href="/articulos">📰 Artículos</a>
+      </div>
+    </div>
+  </nav>
+
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand-block">
@@ -441,9 +456,7 @@
         <span class="chip chip-neutral">✓ Modo lectura a ciegas</span>
       </div>
       <div class="neutrality-meta">
-        <a href="/?section=test-afinidad" class="participants-pill" id="live-participants-pill" data-jump="test-afinidad" title="Ir al Test de 10 Escenarios">
-          🔥 <strong data-live-count>21.224</strong> personas ya han hecho el Test a Ciegas · Media: <strong data-live-avg>48,4</strong>/100
-        </a>
+        <a href="/?section=test-afinidad" class="participants-pill" id="live-participants-pill" data-jump="test-afinidad" title="Ir al Test de 10 Escenarios">🔥 <strong data-live-count>21.224</strong> personas ya han hecho el Test a Ciegas · Media: <strong data-live-avg>48,4</strong>/100</a>
         <div class="countdown-pill" id="election-countdown" aria-live="polite">
           29 de noviembre de 2026 · 350 escaños al Congreso
         </div>
@@ -452,17 +465,17 @@
   </section>
 
   <main id="main-content" class="container main-shell">
-    <!-- SECCIÓN 1: ARCO PARLAMENTARIO Y COMUNICACIÓN -->
+    <!-- SECCIÓN 1: ARCO POLÍTICO Y COMUNICACIÓN -->
     <section id="arco-overview" class="view-section is-visible" aria-labelledby="heading-arco">
       <div class="section-header">
         <div>
           <span class="eyebrow">Panorama Electoral · Sin Sesgo</span>
           <h1 id="heading-arco">Arco Político y Estilo de Comunicación</h1>
           <p class="section-lead">
-            Explora de izquierda a derecha dónde se sitúa cada formación estatal, qué propone en su documentación oficial y cómo comunica tanto en sus canales propios como en entrevistas.
+            Explora de izquierda a derecha dónde se sitúa cada formación, qué propone en su documentación oficial y cómo comunica tanto en sus canales propios como en entrevistas.
           </p>
         </div>
-        <div class="sort-control" role="group" aria-label="Orden de visualización de partidos">
+        <div class="sort-control" role="group" aria-label="Orden de visualización de fuerzas">
           <span class="control-label">Orden de tarjetas:</span>
           <button class="seg-btn is-active" data-sort="spectrum" type="button">Izquierda → Derecha</button>
           <button class="seg-btn" data-sort="alpha" type="button">Alfabético</button>
@@ -603,7 +616,7 @@
         <div class="barometer-header">
           <div>
             <span class="eyebrow">📊 Termómetro en Vivo · Resultados Reales Sin Siglas</span>
-            <h2 id="heading-barometer">¿Qué partido sale más cuando se vota sin ver siglas?</h2>
+            <h2 id="heading-barometer">¿Qué fuerza sale más cuando se elige sin ver siglas?</h2>
             <p class="muted-text">
               Distribución real de mayor coincidencia (#1) entre quienes completan el Test a Ciegas · Media actual en el arco: <strong data-live-avg>48,4</strong>/100.
             </p>
@@ -746,7 +759,7 @@
           <div>
             <span class="eyebrow">Aritmética Parlamentaria</span>
             <h2>Fuerzas Territoriales Clave en el Congreso</h2>
-            <p class="muted-text">Además de los partidos de ámbito estatal, el sistema electoral español otorga un peso decisivo en la investidura y los presupuestos a las formaciones autonómicas y nacionalistas.</p>
+            <p class="muted-text">Además de los partidos de ámbito estatal, el sistema electoral otorga un peso decisivo en la gobernabilidad y las leyes a las formaciones territoriales.</p>
           </div>
         </div>
         <div class="territorial-grid" id="territorial-grid">
@@ -762,7 +775,7 @@
         </p>
         <p style="margin:0 0 6px 0; font-size:0.84rem;">Financiación singular y recaudación íntegra de impuestos en Cataluña, recargos fiscales a grandes tenedores en vivienda, traspaso de Rodalies y oficialidad del catalán en la UE.</p>
         <p class="muted-text" style="font-size:0.79rem; margin-bottom:8px;"><strong>Papel 29-N:</strong> Veto frontal a PP y Vox; busca condicionar externamente a un Gobierno progresista al cumplimiento estricto de pactos (con acuerdo territorial con Podemos en Cataluña).</p>
-        <a class="source-link" href="/territorios/erc" style="font-size:0.8rem;">Ver ficha territorial 29-N →</a>
+        <a class="source-link" href="/territorios/erc" style="font-size:0.8rem;">Ver ficha territorial →</a>
       </article>
 
       <article class="territorial-item" style="--party-color:#0d9488">
@@ -775,7 +788,7 @@
         </p>
         <p style="margin:0 0 6px 0; font-size:0.84rem;">Concierto económico catalán, traspaso integral de competencias de inmigración, uso del catalán en Congreso y UE, rebajas fiscales a pymes y rechazo a topes de alquiler.</p>
         <p class="muted-text" style="font-size:0.79rem; margin-bottom:8px;"><strong>Papel 29-N:</strong> Actor bisagra imprevisible tras romper acuerdos previos con el PSOE a finales de 2025; advierte que no dará cheques en blanco en la investidura.</p>
-        <a class="source-link" href="/territorios/junts" style="font-size:0.8rem;">Ver ficha territorial 29-N →</a>
+        <a class="source-link" href="/territorios/junts" style="font-size:0.8rem;">Ver ficha territorial →</a>
       </article>
 
       <article class="territorial-item" style="--party-color:#15803d">
@@ -788,7 +801,7 @@
         </p>
         <p style="margin:0 0 6px 0; font-size:0.84rem;">Cumplimiento íntegro del Estatuto de Gernika, defensa del Concierto Económico, reconocimiento nacional de Euskadi y agenda de rigor fiscal y bienestar («póliza de seguros»).</p>
         <p class="muted-text" style="font-size:0.79rem; margin-bottom:8px;"><strong>Papel 29-N:</strong> Dique explícito contra mayorías con Vox y socio pragmático de estabilidad condicionado a transferencias pendientes.</p>
-        <a class="source-link" href="/territorios/eaj-pnv" style="font-size:0.8rem;">Ver ficha territorial 29-N →</a>
+        <a class="source-link" href="/territorios/eaj-pnv" style="font-size:0.8rem;">Ver ficha territorial →</a>
       </article>
 
       <article class="territorial-item" style="--party-color:#65a30d">
@@ -801,7 +814,7 @@
         </p>
         <p style="margin:0 0 6px 0; font-size:0.84rem;">Regulación permanente de alquileres, marco vasco de relaciones laborales con SMI propio, mejora de pensiones mínimas y derecho a decidir.</p>
         <p class="muted-text" style="font-size:0.79rem; margin-bottom:8px;"><strong>Papel 29-N:</strong> Disposición declarada a frenar a PP y Vox facilitando una investidura progresista sin entrar en el Consejo de Ministros, exigiendo avances sociales en cada ley.</p>
-        <a class="source-link" href="/territorios/eh-bildu" style="font-size:0.8rem;">Ver ficha territorial 29-N →</a>
+        <a class="source-link" href="/territorios/eh-bildu" style="font-size:0.8rem;">Ver ficha territorial →</a>
       </article>
 
       <article class="territorial-item" style="--party-color:#0369a1">
@@ -814,7 +827,7 @@
         </p>
         <p style="margin:0 0 6px 0; font-size:0.84rem;">Decálogo «Axenda Galega»: tarifa eléctrica gallega justa, inversiones ferroviarias, defensa de pesca y agro, vivienda pública y ampliación del autogobierno.</p>
         <p class="muted-text" style="font-size:0.79rem; margin-bottom:8px;"><strong>Papel 29-N:</strong> Potencial apoyo al bloque progresista condicionado a inversiones reales e infraestructuras para Galicia.</p>
-        <a class="source-link" href="/territorios/bng" style="font-size:0.8rem;">Ver ficha territorial 29-N →</a>
+        <a class="source-link" href="/territorios/bng" style="font-size:0.8rem;">Ver ficha territorial →</a>
       </article>
 <!-- SSR_TERRITORIAL_GRID_END -->
         </div>
@@ -857,7 +870,6 @@
           <div class="control-group">
             <span class="control-label">1. Elige el tema a comparar:</span>
             <div class="axis-tabs" id="axis-tabs" role="tablist" aria-label="Ejes temáticos">
-              <!-- Botones de eje inyectados por app.js -->
             </div>
           </div>
         </div>
@@ -866,21 +878,19 @@
           <div class="control-group">
             <span class="control-label">2. Partidos visibles en la comparativa:</span>
             <div class="party-filter-pills" id="comparator-party-pills">
-              <!-- Chips para activar/desactivar partidos -->
             </div>
           </div>
           <div class="control-group pair-selector-group">
-            <span class="control-label">3. Contraste rápido cara a cara (2 partidos):</span>
+            <span class="control-label">3. Contraste rápido cara a cara (2 fuerzas):</span>
             <div class="pair-selects">
-              <select id="pair-left" aria-label="Primer partido a contrastar"></select>
+              <select id="pair-left" aria-label="Primer espacio a contrastar"></select>
               <span class="vs-badge" aria-hidden="true">VS</span>
-              <select id="pair-right" aria-label="Segundo partido a contrastar"></select>
+              <select id="pair-right" aria-label="Segundo espacio a contrastar"></select>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Mapa visual de similitudes y diferencias del eje actual -->
       <div class="similarity-grid" id="similarity-panel">
         <!-- SSR_SIMILARITY_PANEL_START -->
 <div class="sim-card sim-card-converge">
@@ -915,10 +925,9 @@
 <!-- SSR_SIMILARITY_PANEL_END -->
       </div>
 
-      <!-- Barra de progreso del modo a ciegas -->
       <div class="blind-summary-bar card" id="blind-summary-bar" hidden>
         <div class="blind-summary-info">
-          <strong>Modo Lectura a Ciegas activo:</strong> Marca con ★ las propuestas que más te convenzan en distintos temas y revela al final qué partido encaja mejor contigo.
+          <strong>Modo Lectura a Ciegas activo:</strong> Marca con ★ las propuestas que más te convenzan en distintos temas y revela al final qué fuerza encaja mejor contigo.
           <span id="blind-picks-count" class="chip">0 preferencias marcadas</span>
         </div>
         <div class="blind-summary-actions">
@@ -928,7 +937,6 @@
       </div>
 
       <div id="blind-reveal-results" class="card blind-reveal-card" hidden>
-        <!-- Resultados al revelar el modo a ciegas -->
       </div>
 
       <div class="proposals-grid" id="proposals-grid">
@@ -1052,15 +1060,14 @@
           <span class="eyebrow">Cero Columnas de Opinión · Declaraciones Directas</span>
           <h2 id="heading-entrevistas" class="section-h1">En Sus Propias Palabras: Entrevistas en Medios</h2>
           <p class="section-lead">
-            Recopilación de entrevistas reales en prensa escrita, radio, televisión pública y privada, y formatos largos digitales. Sin valoraciones de tertulianos ni editoriales: solo la pregunta, la respuesta literal del candidato y su estilo expresivo.
+            Recopilación de entrevistas reales en prensa escrita, radio, televisión pública y privada, y formatos largos digitales. Sin valoraciones de tertulianos ni editoriales: solo la pregunta, la respuesta literal y su estilo expresivo.
           </p>
         </div>
       </div>
 
-      <!-- Comparativa descriptiva de estilo de expresión por candidato -->
       <div class="card expression-matrix-card">
         <div class="matrix-header">
-          <h2>Radiografía Expresiva: ¿Cómo habla cada candidato en entrevista?</h2>
+          <h2>Radiografía Expresiva: ¿Cómo habla cada referente en entrevista?</h2>
           <p class="muted-text">Análisis descriptivo de tono, registro, estructura argumentativa y respuesta ante preguntas incómodas.</p>
         </div>
         <div class="expression-grid" id="expression-grid">
@@ -1137,9 +1144,9 @@
 
       <div class="card filter-bar">
         <div class="filter-field">
-          <label for="interview-party-filter">Candidato / Partido</label>
+          <label for="interview-party-filter">Referente / Fuerza</label>
           <select id="interview-party-filter">
-            <option value="all">Todos los candidatos</option>
+            <option value="all">Todos los referentes</option>
           </select>
         </div>
         <div class="filter-field">
@@ -1879,6 +1886,144 @@
           <a class="source-link" href="https://www.hoyaragon.es" target="_blank" rel="noopener noreferrer">Ver medio ↗</a>
         </div>
       </article>
+
+      <article class="card interview-card" style="--party-color:#dc2626">
+        <div class="interview-meta">
+          <div>
+            <strong>Pedro Sánchez</strong>
+            <span class="muted-text"> · <a class="source-link" href="/partidos/psoe">PSOE</a></span>
+          </div>
+          <span class="chip">Radio / TV Informativa</span>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; font-size:0.78rem;">
+          <span class="chip">Academia de TV / RTVE — Debate Cara a Cara 29-N</span>
+          <span class="chip">19 de noviembre de 2026</span>
+          <span class="chip">Tema: Autocrítica y Balance de Legislatura</span>
+        </div>
+        <div class="interview-question">
+          <strong>Pregunta / Contexto:</strong> Intervención en el cara a cara televisado sobre errores de gestión, casos de corrupción y balance económico.
+        </div>
+        <blockquote class="interview-quote">“Mi Gobierno no ha sido perfecto, he cometido errores y he confiado en la gente que no debía. Lo que nos estamos jugando es que España avance, no que avance el pasado”</blockquote>
+        <div class="interview-footer">
+          <span class="tag">Estilo: Autocrítica acotada con contraste de futuro</span>
+          <a class="source-link" href="https://www.rtve.es" target="_blank" rel="noopener noreferrer">Ver medio ↗</a>
+        </div>
+      </article>
+
+      <article class="card interview-card" style="--party-color:#0284c7">
+        <div class="interview-meta">
+          <div>
+            <strong>Alberto Núñez Feijóo</strong>
+            <span class="muted-text"> · <a class="source-link" href="/partidos/pp">PP</a></span>
+          </div>
+          <span class="chip">Radio / TV Informativa</span>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; font-size:0.78rem;">
+          <span class="chip">Academia de TV / RTVE — Debate Cara a Cara 29-N</span>
+          <span class="chip">19 de noviembre de 2026</span>
+          <span class="chip">Tema: Vivienda y Regeneración</span>
+        </div>
+        <div class="interview-question">
+          <strong>Pregunta / Contexto:</strong> Réplica en el cara a cara televisado sobre construcción de vivienda pública y escándalos de corrupción.
+        </div>
+        <blockquote class="interview-quote">“Hay más pisos en los sumarios de corrupción de los que ustedes han edificado. España merece un presidente decente y él no lo es”</blockquote>
+        <div class="interview-footer">
+          <span class="tag">Estilo: Contraste punzante y apelación ética directa</span>
+          <a class="source-link" href="https://www.rtve.es" target="_blank" rel="noopener noreferrer">Ver medio ↗</a>
+        </div>
+      </article>
+
+      <article class="card interview-card" style="--party-color:#16a34a">
+        <div class="interview-meta">
+          <div>
+            <strong>Santiago Abascal</strong>
+            <span class="muted-text"> · <a class="source-link" href="/partidos/vox">VOX</a></span>
+          </div>
+          <span class="chip">Prensa Escrita / Agencia</span>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; font-size:0.78rem;">
+          <span class="chip">EL PAÍS — Cobertura de recta final 29-N</span>
+          <span class="chip">24 de noviembre de 2026</span>
+          <span class="chip">Tema: Vivienda e Inmigración</span>
+        </div>
+        <div class="interview-question">
+          <strong>Pregunta / Contexto:</strong> Posicionamiento sobre el encarecimiento del mercado de la vivienda y la política migratoria del Ejecutivo.
+        </div>
+        <blockquote class="interview-quote">“El principal fondo buitre es el Gobierno”</blockquote>
+        <div class="interview-footer">
+          <span class="tag">Estilo: Aforismo frontal de inversión del marco</span>
+          <a class="source-link" href="https://elpais.com" target="_blank" rel="noopener noreferrer">Ver medio ↗</a>
+        </div>
+      </article>
+
+      <article class="card interview-card" style="--party-color:#e11d48">
+        <div class="interview-meta">
+          <div>
+            <strong>Ada Colau</strong>
+            <span class="muted-text"> · <a class="source-link" href="/partidos/frente-amplio">Frente Amplio</a></span>
+          </div>
+          <span class="chip">Radio / TV Informativa</span>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; font-size:0.78rem;">
+          <span class="chip">Cadena SER — Hoy por Hoy (recta final 29-N)</span>
+          <span class="chip">26 de noviembre de 2026</span>
+          <span class="chip">Tema: Vivienda y Condiciones de Pacto</span>
+        </div>
+        <div class="interview-question">
+          <strong>Pregunta / Contexto:</strong> Entrevista el día del debate a cuatro sobre el balance del Ministerio de Vivienda y exigencias al PSOE.
+        </div>
+        <blockquote class="interview-quote">“Es verdad que se ha fallado en algunas cuestiones clave, como es la vivienda. Yo un ministerio de Vivienda anecdótico no lo quiero, lo que quiero es un Ministerio de Vivienda con plenas competencias y también quiero un acuerdo firmado con el PSOE donde se diga que van a estar todos los recursos económicos, por ejemplo el 1% del PIB”</blockquote>
+        <div class="interview-footer">
+          <span class="tag">Estilo: Autocrítica explícita con exigencia presupuestaria concreta</span>
+          <a class="source-link" href="https://cadenaser.com" target="_blank" rel="noopener noreferrer">Ver medio ↗</a>
+        </div>
+      </article>
+
+      <article class="card interview-card" style="--party-color:#7c3aed">
+        <div class="interview-meta">
+          <div>
+            <strong>Irene Montero</strong>
+            <span class="muted-text"> · <a class="source-link" href="/partidos/podemos">Podemos</a></span>
+          </div>
+          <span class="chip">Prensa Escrita / Agencia</span>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; font-size:0.78rem;">
+          <span class="chip">El Periódico — Acto de recta final de campaña 29-N</span>
+          <span class="chip">22 de noviembre de 2026</span>
+          <span class="chip">Tema: Movilización Post-29N</span>
+        </div>
+        <div class="interview-question">
+          <strong>Pregunta / Contexto:</strong> Llamamiento a la movilización social y sindical ante el escenario posterior a las elecciones del 29-N.
+        </div>
+        <blockquote class="interview-quote">“Porque pase lo que pase el día 29, vamos a necesitar gente que pelee. Vamos a necesitar gente dispuesta a poner la cara y a poner el cuerpo”</blockquote>
+        <div class="interview-footer">
+          <span class="tag">Estilo: Arenga militante de movilización social</span>
+          <a class="source-link" href="https://www.elperiodico.com" target="_blank" rel="noopener noreferrer">Ver medio ↗</a>
+        </div>
+      </article>
+
+      <article class="card interview-card" style="--party-color:#78350f">
+        <div class="interview-meta">
+          <div>
+            <strong>Alvise Pérez</strong>
+            <span class="muted-text"> · <a class="source-link" href="/partidos/salf">SALF</a></span>
+          </div>
+          <span class="chip">Prensa Escrita / Agencia</span>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; font-size:0.78rem;">
+          <span class="chip">21 Noticias — Campaña 29-N (Contrato Electoral de 119 medidas)</span>
+          <span class="chip">23 de noviembre de 2026</span>
+          <span class="chip">Tema: Formato de Campaña y Antipolítica</span>
+        </div>
+        <div class="interview-question">
+          <strong>Pregunta / Contexto:</strong> Explicación de su formato de actos callejeros frente a los mítines clásicos de los partidos tradicionales.
+        </div>
+        <blockquote class="interview-quote">“Donde otros ponen un mitin, nosotros ponemos una mesa y dos sillas. Los problemas de la gente no se resuelven desde un despacho ni se conocen leyendo encuestas”</blockquote>
+        <div class="interview-footer">
+          <span class="tag">Estilo: Contraste populista de cercanía callejera</span>
+          <a class="source-link" href="https://www.21noticias.com" target="_blank" rel="noopener noreferrer">Ver medio ↗</a>
+        </div>
+      </article>
 <!-- SSR_INTERVIEWS_GRID_END -->
       </div>
     </section>
@@ -1890,10 +2035,10 @@
           <span class="eyebrow">Brújula Electoral 29-N · Sin Nombres de Partido</span>
           <h2 id="heading-test" class="section-h1">Test de 10 Escenarios: ¿Dónde te sitúas en el Arco Político?</h2>
           <p class="section-lead">
-            Responde a 10 situaciones reales sobre vivienda, sanidad, impuestos, empleo, territorio o inmigración. Ninguna opción menciona siglas para evitar prejuicios. Al finalizar verás tu posición exacta en el arco izquierda-derecha y tu afinidad con cada programa.
+            Responde a 10 situaciones reales sobre economía, empleo, salud, educación, vivienda, instituciones y seguridad. Ninguna opción menciona siglas para evitar prejuicios. Al finalizar verás tu posición exacta en el arco izquierda-derecha y tu afinidad con cada fuerza.
           </p>
-          <div class="quiz-social-proof" aria-live="polite">
-            🧭 <strong data-live-count>21.224</strong> ciudadanos ya han calculado su posición sin siglas · Media nacional actual en el arco: <strong data-live-avg>48,4</strong>/100
+          <div class="quiz-social-proof" data-quiz-proof-dynamic aria-live="polite">
+            🧭 <strong data-live-count>21.224</strong> participantes ya calcularon su posición sin siglas · Media en el arco: <strong data-live-avg>48,4</strong>/100
           </div>
         </div>
       </div>
@@ -2002,19 +2147,19 @@
     </section>
 
     <!-- SSR_SEO_HUB_START -->
-<section class="seo-hub-section" id="guia-completa-29n" aria-labelledby="heading-seo-hub">
+<section class="seo-hub-section" id="guia-completa-es" aria-labelledby="heading-seo-hub">
       <div class="section-header">
         <div>
           <span class="eyebrow">Síntesis Programática · Datos Verificados 29-N</span>
-          <h2 id="heading-seo-hub">Tabla Comparativa Rápida (8 Ejes), Preguntas Frecuentes y Directorio 29-N</h2>
+          <h2 id="heading-seo-hub">Tabla Comparativa Rápida (8 Ejes), Preguntas Frecuentes y Directorio (España)</h2>
           <p class="section-lead">
-            Resumen estructurado de los 6 partidos estatales en los 8 bloques programáticos, respuestas directas sobre las elecciones generales del 29 de noviembre de 2026 (Real Decreto 806/2026, de 5 de octubre) y acceso a todas las guías temáticas y duelos cara a cara.
+            Resumen estructurado de las 6 partidos estatales en los 8 bloques programáticos, respuestas directas sobre el ciclo 29 de noviembre de 2026 (Real Decreto 806/2026, de 5 de octubre) y acceso a todas las guías temáticas y duelos cara a cara.
           </p>
         </div>
       </div>
 
       <div class="card" style="margin-bottom:24px;">
-        <h3 id="tldr-table-heading">Tabla Resumen Comparativa (TL;DR 29-N): Partidos × 8 Ejes Oficiales</h3>
+        <h3 id="tldr-table-heading">Tabla Resumen Comparativa (TL;DR 29-N): Fuerzas × 8 Ejes Oficiales</h3>
         <p class="muted-text" style="margin-bottom:12px;">Pulsa en cualquier eje temático o sigla para abrir su análisis completo con fuentes oficiales.</p>
         <div class="tldr-table-wrap" tabindex="0" role="region" aria-labelledby="tldr-table-heading">
           <table class="tldr-table" style="--label-2: &#39;Podemos&#39;; --color-2: #7c3aed; --label-3: &#39;Frente Amplio&#39;; --color-3: #e11d48; --label-4: &#39;PSOE&#39;; --color-4: #dc2626; --label-5: &#39;PP&#39;; --color-5: #0284c7; --label-6: &#39;VOX&#39;; --color-6: #16a34a; --label-7: &#39;SALF&#39;; --color-7: #78350f">
@@ -2071,8 +2216,8 @@
       </div>
 
       <div class="card" style="margin-bottom:24px;">
-        <h3>Preguntas Frecuentes sobre las Elecciones Generales 29-N (FAQ)</h3>
-        <p class="muted-text" style="margin-bottom:14px;">Respuestas contrastadas exclusivamente con los datos censales y los programas oficiales recogidos en PolitiFácil 29-N.</p>
+        <h3>Preguntas Frecuentes sobre las Elecciones en España (29-N)</h3>
+        <p class="muted-text" style="margin-bottom:14px;">Respuestas contrastadas exclusivamente con los datos oficiales y programas oficiales recogidos en PolitiFácil 29-N.</p>
         <div class="faq-list">
           
       <details class="faq-item">
@@ -2134,8 +2279,8 @@
       </div>
 
       <div class="card">
-        <h3>Directorio Completo de Guías, Partidos y Comparativas 29-N</h3>
-        <p class="muted-text" style="margin-bottom:14px;">Explora páginas dedicadas e indexables para cada bloque temático, formación política y duelo cara a cara.</p>
+        <h3>Directorio Completo de Guías, Fuerzas y Comparativas (España)</h3>
+        <p class="muted-text" style="margin-bottom:14px;">Explora páginas dedicadas e indexables para cada bloque temático, espacio político y duelo cara a cara.</p>
         <div class="internal-links-grid">
           <div class="internal-links-group">
             <h4>Secciones Principales</h4>
@@ -2144,8 +2289,10 @@
               <li><a href="/comparador">Comparador de Propuestas (8 Ejes)</a></li>
               <li><a href="/entrevistas">Hemeroteca de Entrevistas Literales</a></li>
               <li><a href="/test-afinidad">Test de Afinidad de 10 Escenarios</a></li>
-              <li><a href="/territorios">Aritmética Parlamentaria y Partidos Territoriales</a></li>
+              <li><a href="/territorios">Fuerzas Territoriales Clave en el Congreso</a></li>
               <li><a href="/comparar">Todos los Duelos Cara a Cara (15)</a></li>
+              <li><a href="/portal">🌐 PolitiFácil Portal Global</a></li>
+              <li><a href="/calendario">📅 Calendario Electoral 2026–2028</a></li>
             </ul>
           </div>
 
@@ -2213,13 +2360,15 @@
     <div class="container footer-inner">
       <div>
         <strong>PolitiFácil 29-N</strong> — Herramienta cívica informativa sin afiliación partidista.
-        <p class="muted-text">Datos contrastados con programas oficiales y declaraciones literales en entrevistas periodísticas. Verifica siempre los programas íntegros en las webs enlazadas.</p>
+        <p class="muted-text">Datos contrastados con programas oficiales y declaraciones literales en entrevistas periodísticas. Verifica siempre los documentos íntegros en las fuentes enlazadas.</p>
       </div>
       <div class="footer-links">
         <button class="btn btn-ghost btn-sm" data-jump="arco-overview" type="button">Arco</button>
         <button class="btn btn-ghost btn-sm" data-jump="comparador" type="button">Comparador</button>
         <button class="btn btn-ghost btn-sm" data-jump="entrevistas" type="button">Entrevistas</button>
         <button class="btn btn-ghost btn-sm" data-jump="test-afinidad" type="button">Test 10 Escenarios</button>
+        <a class="btn btn-ghost btn-sm" href="/portal">Portal Global</a>
+        <a class="btn btn-ghost btn-sm" href="/calendario">Calendario</a>
       </div>
     </div>
   </footer>

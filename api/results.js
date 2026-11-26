@@ -2,11 +2,9 @@
 
 const crypto = require('crypto');
 const {
-  SEED_COUNT,
-  SEED_AVG_SCORE,
-  REDIS_KEYS,
-  ALLOWED_PARTY_IDS,
-  fallbackState,
+  resolveCountryKey,
+  getCountryStoreConfig,
+  getFallbackState,
   buildPartyRanking,
   sendJson,
   runRedisPipeline,
@@ -55,16 +53,18 @@ function formatAnswersCompact(answers) {
     .join(';');
 }
 
-function buildCsvDocument(results) {
+function buildCsvDocument(results, countryKey = 'es') {
+  const cfg = getCountryStoreConfig(countryKey);
   const headers = [
     'timestamp',
+    'country',
     'score',
     'zoneLabel',
     'topPartyId',
     'topAffinity',
     'secondPartyId',
     'secondAffinity',
-    ...ALLOWED_PARTY_IDS,
+    ...cfg.allowedPartyIds,
     'answers',
   ];
 
@@ -72,13 +72,14 @@ function buildCsvDocument(results) {
     const affinities = entry.affinities || {};
     const cells = [
       entry.timestamp || '',
+      entry.country || cfg.country,
       entry.score ?? '',
       entry.zoneLabel || '',
       entry.topPartyId || '',
       entry.topAffinity ?? '',
       entry.secondPartyId || '',
       entry.secondAffinity ?? '',
-      ...ALLOWED_PARTY_IDS.map((pid) => affinities[pid] ?? ''),
+      ...cfg.allowedPartyIds.map((pid) => affinities[pid] ?? ''),
       formatAnswersCompact(entry.answers),
     ];
     return cells.map(escapeCsvCell).join(',');
@@ -121,31 +122,35 @@ async function handler(req, res) {
     });
   }
 
+  const countryKey = resolveCountryKey(reqUrl.searchParams.get('country'));
+  const cfg = getCountryStoreConfig(countryKey);
+  const fallback = getFallbackState(countryKey);
+
   const rawLimit = parseInt(reqUrl.searchParams.get('limit') || '200', 10);
   const limit = Number.isNaN(rawLimit) ? 200 : Math.max(1, Math.min(2000, rawLimit));
   const format = (reqUrl.searchParams.get('format') || 'json').trim().toLowerCase();
 
   let source = 'seed';
-  let realParticipants = fallbackState.count;
-  let realSum = fallbackState.scoreSum;
-  let partyCounts = parseRedisHashArray(fallbackState.partyCounts);
-  let storedResultsCount = fallbackState.results.length;
-  let results = fallbackState.results.slice(0, limit);
+  let realParticipants = fallback.count;
+  let realSum = fallback.scoreSum;
+  let partyCounts = parseRedisHashArray(fallback.partyCounts, countryKey);
+  let storedResultsCount = fallback.results.length;
+  let results = fallback.results.slice(0, limit);
 
   try {
     const pipelineRes = await runRedisPipeline([
-      ['GET', REDIS_KEYS.count],
-      ['GET', REDIS_KEYS.scoreSum],
-      ['HGETALL', REDIS_KEYS.partyCounts],
-      ['LLEN', REDIS_KEYS.resultsList],
-      ['LRANGE', REDIS_KEYS.resultsList, 0, limit - 1],
+      ['GET', cfg.redisKeys.count],
+      ['GET', cfg.redisKeys.scoreSum],
+      ['HGETALL', cfg.redisKeys.partyCounts],
+      ['LLEN', cfg.redisKeys.resultsList],
+      ['LRANGE', cfg.redisKeys.resultsList, 0, limit - 1],
     ]);
 
     if (Array.isArray(pipelineRes)) {
       source = 'redis';
       realParticipants = Math.max(0, parseInt(pipelineRes[0]?.result ?? '0', 10) || 0);
       realSum = Math.max(0, parseInt(pipelineRes[1]?.result ?? '0', 10) || 0);
-      partyCounts = parseRedisHashArray(pipelineRes[2]?.result);
+      partyCounts = parseRedisHashArray(pipelineRes[2]?.result, countryKey);
       storedResultsCount = Math.max(0, parseInt(pipelineRes[3]?.result ?? '0', 10) || 0);
 
       const rawItems = Array.isArray(pipelineRes[4]?.result) ? pipelineRes[4].result : [];
@@ -161,14 +166,17 @@ async function handler(req, res) {
         .filter(Boolean);
     }
   } catch (err) {
-    console.error('Error leyendo listado de resultados en Upstash Redis:', err.message);
+    console.error(`Error leyendo listado de resultados (${countryKey}) en Upstash Redis:`, err.message);
   }
 
   if (format === 'csv') {
-    const csvBody = buildCsvDocument(results);
+    const csvBody = buildCsvDocument(results, countryKey);
+    const filename = countryKey === 'es'
+      ? 'politifacil-29n-resultados.csv'
+      : `politifacil-${countryKey}-resultados.csv`;
     res.writeHead(200, {
       'Content-Type': 'text/csv; charset=utf-8',
-      'Content-Disposition': 'attachment; filename="politifacil-29n-resultados.csv"',
+      'Content-Disposition': `attachment; filename="${filename}"`,
       'Cache-Control': 'no-store, no-cache, must-revalidate',
     });
     return res.end(csvBody);
@@ -177,19 +185,20 @@ async function handler(req, res) {
   const isRealAverage = realParticipants > 0;
   const realAverageScore = isRealAverage
     ? Number((realSum / realParticipants).toFixed(1))
-    : SEED_AVG_SCORE;
+    : cfg.seedAvgScore;
 
   return sendJson(res, 200, {
     ok: true,
+    country: countryKey,
     source,
     summary: {
       realParticipants,
-      displayParticipants: SEED_COUNT + realParticipants,
+      displayParticipants: cfg.seedCount + realParticipants,
       realAverageScore,
       isRealAverage,
       storedResultsCount,
       partyCounts,
-      partyRanking: buildPartyRanking(partyCounts).partyRanking,
+      partyRanking: buildPartyRanking(partyCounts, countryKey).partyRanking,
     },
     returnedCount: results.length,
     results,

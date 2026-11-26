@@ -8,16 +8,59 @@
     return;
   }
 
-  const STORAGE_KEY = 'politifacil_29n_state_v1';
-  const QUIZ_COUNTED_KEY = 'politifacil_29n_quiz_counted_v1';
-  const DEFAULT_LIVE_STATS = { totalParticipants: 21224, averageScore: 48.4 };
+  const META = DATA.meta || {};
+  const COUNTRY_CODE = META.countryCode || 'es';
+  const COUNTRY_NAME = META.countryName || 'España';
+  const BASE_PATH = (META.basePath || '').replace(/\/$/, '');
+  const STATS_COUNTRY = META.statsCountry || COUNTRY_CODE;
+  const SHARE_SLUG = META.shareSlug || (COUNTRY_CODE === 'es' ? '29n' : `${COUNTRY_CODE}-2027`);
+  const SITE_TITLE_BADGE = META.title || 'PolitiFácil 29-N';
+
+  const STORAGE_KEY = COUNTRY_CODE === 'es'
+    ? 'politifacil_29n_state_v1'
+    : `politifacil_${COUNTRY_CODE}_state_v1`;
+  const QUIZ_COUNTED_KEY = COUNTRY_CODE === 'es'
+    ? 'politifacil_29n_quiz_counted_v1'
+    : `politifacil_${COUNTRY_CODE}_quiz_counted_v1`;
+  const AI_REF_KEY = COUNTRY_CODE === 'es'
+    ? 'politifacil_29n_ai_ref_v1'
+    : `politifacil_${COUNTRY_CODE}_ai_ref_v1`;
+  const DEFAULT_LIVE_STATS = META.seedStats || { totalParticipants: 21224, averageScore: 48.4 };
   const VALID_SECTIONS = ['arco-overview', 'comparador', 'entrevistas', 'test-afinidad'];
-  const SECTION_TITLES = {
+  const SECTION_TITLES = META.sectionTitles || {
     'arco-overview': 'PolitiFácil 29-N | Comparador Electoral Neutral y Test de Afinidad en España',
     comparador: 'Comparador de Propuestas a Ciegas 29-N | PolitiFácil',
     entrevistas: 'Entrevistas a Candidatos 29-N (Sin Opinión) | PolitiFácil',
     'test-afinidad': 'Test de Afinidad 29-N (10 Escenarios Sin Siglas) | PolitiFácil',
   };
+
+  function countryHref(subpath) {
+    const clean = subpath.startsWith('/') ? subpath : `/${subpath}`;
+    return `${BASE_PATH}${clean}`;
+  }
+
+  function countryHomeUrl(queryString = '') {
+    const base = BASE_PATH ? `${BASE_PATH}` : '/';
+    if (!queryString) return base;
+    return BASE_PATH ? `${BASE_PATH}?${queryString}` : `/?${queryString}`;
+  }
+
+  const defaultSelectedPartyId =
+    META.defaultSelectedPartyId && DATA.parties.some((p) => p.id === META.defaultSelectedPartyId)
+      ? META.defaultSelectedPartyId
+      : DATA.parties[0].id;
+  const defaultActiveAxis =
+    META.defaultAxis && DATA.axes.some((a) => a.id === META.defaultAxis)
+      ? META.defaultAxis
+      : DATA.axes[0].id;
+  const defaultPairLeft =
+    META.defaultPairLeft && DATA.parties.some((p) => p.id === META.defaultPairLeft)
+      ? META.defaultPairLeft
+      : DATA.parties[0].id;
+  const defaultPairRight =
+    META.defaultPairRight && DATA.parties.some((p) => p.id === META.defaultPairRight)
+      ? META.defaultPairRight
+      : (DATA.parties[1] || DATA.parties[0]).id;
 
   const urlControlledFlags = {
     party: false,
@@ -27,11 +70,11 @@
   const state = {
     activeSection: 'arco-overview',
     sortMode: 'spectrum',
-    selectedPartyId: 'psoe',
-    activeAxis: 'vivienda',
+    selectedPartyId: defaultSelectedPartyId,
+    activeAxis: defaultActiveAxis,
     visiblePartyIds: DATA.parties.map((p) => p.id),
-    pairLeft: 'psoe',
-    pairRight: 'pp',
+    pairLeft: defaultPairLeft,
+    pairRight: defaultPairRight,
     blindMode: true,
     blindOrderMap: {},
     blindRevealed: false,
@@ -112,7 +155,7 @@
   ];
 
   function trackEvent(eventName, params = {}) {
-    const payload = params && typeof params === 'object' ? params : {};
+    const payload = params && typeof params === 'object' ? { country: COUNTRY_CODE, ...params } : { country: COUNTRY_CODE };
     try {
       if (typeof window.gtag === 'function') {
         window.gtag('event', eventName, payload);
@@ -159,7 +202,7 @@
   function trackAiReferralOnce() {
     const aiSource = detectAiSource();
     if (!aiSource) return;
-    const sessionKey = 'politifacil_29n_ai_ref_v1';
+    const sessionKey = AI_REF_KEY;
     try {
       if (window.sessionStorage.getItem(sessionKey)) return;
       window.sessionStorage.setItem(sessionKey, aiSource);
@@ -193,7 +236,20 @@
   }
 
   function renderNationalAvgComparisonHtml(roundedScore) {
-    const totalCount = formatNumberEs(state.liveStats.totalParticipants);
+    const totalCountNum = Number(state.liveStats.totalParticipants) || 0;
+    if (totalCountNum <= 0 || (totalCountNum === 1 && !state.liveStats.loaded)) {
+      return `
+        <div class="national-avg-comparison" aria-live="polite">
+          <div class="national-avg-head">
+            <span class="chip chip-neutral">🧭 Brújula ${escapeHtml(COUNTRY_NAME)}</span>
+            <span class="national-avg-metrics">Tu posición calculada en el arco: <strong>${roundedScore}/100</strong></span>
+          </div>
+          <p class="muted-text">Tu resultado ya suma al termómetro ciudadano sin siglas de ${escapeHtml(COUNTRY_NAME)}.</p>
+        </div>
+      `;
+    }
+
+    const totalCount = formatNumberEs(totalCountNum);
     const avg = Number(state.liveStats.averageScore) || DEFAULT_LIVE_STATS.averageScore;
     const avgFormatted = formatScoreEs(avg);
     const diff = Number((roundedScore - avg).toFixed(1));
@@ -280,13 +336,31 @@
   }
 
   function updateLiveStatsDom() {
-    const countText = formatNumberEs(state.liveStats.totalParticipants);
+    const totalCountNum = Number(state.liveStats.totalParticipants) || 0;
+    const countText = formatNumberEs(totalCountNum);
     const avgText = formatScoreEs(state.liveStats.averageScore);
     document.querySelectorAll('[data-live-count]').forEach((el) => {
       el.textContent = countText;
     });
     document.querySelectorAll('[data-live-avg]').forEach((el) => {
       el.textContent = avgText;
+    });
+
+    const pillEl = document.getElementById('live-participants-pill');
+    if (pillEl) {
+      if (totalCountNum > 0) {
+        pillEl.innerHTML = `🔥 <strong data-live-count>${countText}</strong> personas ya han hecho el Test a Ciegas · Media: <strong data-live-avg>${avgText}</strong>/100`;
+      } else {
+        pillEl.innerHTML = `🧭 Estrena el Test a Ciegas de ${escapeHtml(COUNTRY_NAME)} · 10 escenarios sin siglas`;
+      }
+    }
+
+    document.querySelectorAll('[data-quiz-proof-dynamic]').forEach((el) => {
+      if (totalCountNum > 0) {
+        el.innerHTML = `🧭 <strong data-live-count>${countText}</strong> participantes ya calcularon su posición sin siglas · Media en el arco: <strong data-live-avg>${avgText}</strong>/100`;
+      } else {
+        el.innerHTML = `🧭 Test ciudadano sin siglas ni colores · Tu resultado inaugura el termómetro de ${escapeHtml(COUNTRY_NAME)}`;
+      }
     });
 
     const avgSlot = document.getElementById('national-avg-comparison-slot');
@@ -308,7 +382,7 @@
   async function fetchLiveStats() {
     if (typeof window.fetch !== 'function') return;
     try {
-      const res = await window.fetch('/api/stats', { cache: 'no-store' });
+      const res = await window.fetch(`/api/stats?country=${encodeURIComponent(STATS_COUNTRY)}`, { cache: 'no-store' });
       if (!res.ok) return;
       const payload = await res.json();
       if (payload && typeof payload.totalParticipants === 'number') {
@@ -374,6 +448,7 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          country: STATS_COUNTRY,
           score: clampedScore,
           zoneLabel: describeSpectrumZone(rawScore),
           topPartyId: top1 && top1.party ? top1.party.id : '',
@@ -615,8 +690,13 @@
     }
 
     if (updateHistory && window.history && typeof window.history.pushState === 'function') {
-      const pathname = window.location.pathname;
-      if (pathname === '/' || pathname === '/index.html') {
+      const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+      const homePath = BASE_PATH || '/';
+      const isCountryHome =
+        normalizedPath === homePath ||
+        normalizedPath === `${BASE_PATH}/index.html` ||
+        (BASE_PATH === '' && normalizedPath === '/index.html');
+      if (isCountryHome) {
         const params = new URLSearchParams(window.location.search);
         if (resolvedSection !== 'test-afinidad') {
           params.delete('resultado');
@@ -638,7 +718,7 @@
           params.set('section', resolvedSection);
         }
         const qs = params.toString();
-        const nextUrl = qs ? `/?${qs}` : '/';
+        const nextUrl = countryHomeUrl(qs);
         const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
         if (nextUrl !== currentUrl) {
           window.history.pushState({ section: resolvedSection }, '', nextUrl);
@@ -834,6 +914,7 @@
       <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
         <button class="btn btn-primary btn-sm" type="button" data-action="inspect-proposals" data-id="${escapeHtml(party.id)}">Ver propuestas en comparador</button>
         <button class="btn btn-sm" type="button" data-action="inspect-interviews" data-id="${escapeHtml(party.id)}">Ver entrevistas</button>
+        <a class="btn btn-sm" href="${escapeHtml(countryHref('/partidos/' + party.id))}">Ficha y 8 ejes</a>
       </div>
     `;
 
@@ -898,6 +979,7 @@
   function renderTerritorialGrid() {
     const grid = document.getElementById('territorial-grid');
     if (!grid) return;
+    const roleHeading = COUNTRY_CODE === 'es' ? 'Papel 29-N' : 'Rol legislativo';
     grid.innerHTML = (DATA.territorialParties || [])
       .map(
         (tp) => `
@@ -910,7 +992,8 @@
           <strong>Referente:</strong> ${escapeHtml(tp.candidate)} · ${escapeHtml(tp.spectrumLabel)}
         </p>
         <p style="margin:0 0 6px 0; font-size:0.84rem;">${escapeHtml(tp.priorities)}</p>
-        <p class="muted-text" style="font-size:0.79rem;"><strong>Papel 29-N:</strong> ${escapeHtml(tp.parliamentaryRole)}</p>
+        <p class="muted-text" style="font-size:0.79rem; margin-bottom:8px;"><strong>${roleHeading}:</strong> ${escapeHtml(tp.parliamentaryRole)}</p>
+        <a class="source-link" href="${escapeHtml(countryHref('/territorios/' + tp.id))}" style="font-size:0.8rem;">Ver ficha territorial →</a>
       </article>
     `
       )
@@ -1165,8 +1248,9 @@
       }))
       .sort((a, b) => b.picks - a.picks);
 
-    const blindShareUrl = `${getShareOrigin()}/?section=comparador`;
-    const blindShareText = `He comparado las propuestas oficiales del 29-N SIN VER SIGLAS NI COLORES y mi mayor coincidencia fue con ${ranked[0].party.shortName} (${ranked[0].pct}% de ${totalPicks} selecciones). Haz la prueba a ciegas aquí:`;
+    const blindShareUrl = `${getShareOrigin()}${countryHomeUrl('section=comparador')}`;
+    const campaignLabel = COUNTRY_CODE === 'es' ? 'del 29-N' : `de ${COUNTRY_NAME}`;
+    const blindShareText = `He comparado las propuestas oficiales ${campaignLabel} SIN VER SIGLAS NI COLORES y mi mayor coincidencia fue con ${ranked[0].party.shortName} (${ranked[0].pct}% de ${totalPicks} selecciones). Haz la prueba a ciegas aquí:`;
     const blindFullShareText = `${blindShareText} ${blindShareUrl}`;
 
     card.hidden = false;
@@ -1496,6 +1580,14 @@
   }
 
   function describeSpectrumZone(score) {
+    if (COUNTRY_CODE === 'ar') {
+      if (score < 18) return 'Izquierda anticapitalista / socialista';
+      if (score < 34) return 'Centro-izquierda desarrollista / estatalista';
+      if (score < 46) return 'Centro reformista / social-liberal';
+      if (score <= 62) return 'Centro pragmático / federalismo productivo';
+      if (score <= 78) return 'Centroderecha liberal-conservadora';
+      return 'Derecha libertaria / desreguladora';
+    }
     if (score < 18) return 'Izquierda transformadora / estatalista';
     if (score < 32) return 'Izquierda progresista y ecologista';
     if (score < 45) return 'Centro-izquierda socialdemócrata';
@@ -1589,12 +1681,12 @@
     ctx.font = `700 16px ${fontFamily}`;
     ctx.textAlign = 'left';
     ctx.textBaseline = 'alphabetic';
-    ctx.fillText('PolitiFácil 29-N · Test a Ciegas (Sin siglas)', 66, 74);
+    ctx.fillText(`${SITE_TITLE_BADGE} · Test a Ciegas (Sin siglas)`, 66, 74);
 
     ctx.fillStyle = '#94a3b8';
     ctx.font = `600 14px ${fontFamily}`;
     ctx.textAlign = 'right';
-    ctx.fillText('Elecciones Generales · 29 de noviembre de 2026', width - 66, 74);
+    ctx.fillText(META.subtitle || 'Elecciones Generales · 29 de noviembre de 2026', width - 66, 74);
 
     ctx.fillStyle = '#f8fafc';
     ctx.font = `800 34px ${fontFamily}`;
@@ -1653,9 +1745,13 @@
       salf: -5.5,
     };
 
-    sortedParties.forEach((party) => {
+    sortedParties.forEach((party, idx) => {
       const pt = scoreToArcPoint(party.spectrumScore, cx, cy, rMain);
-      const adjRad = ((labelAngleAdjustDeg[party.id] || 0) * Math.PI) / 180;
+      let adjDeg = labelAngleAdjustDeg[party.id] || 0;
+      if (adjDeg === 0 && idx > 0 && party.spectrumScore - sortedParties[idx - 1].spectrumScore <= 10) {
+        adjDeg = -4;
+      }
+      const adjRad = (adjDeg * Math.PI) / 180;
       const labelAngle = pt.angle + adjRad;
       const labelRadius = rMain + 44;
       const lx = cx + labelRadius * Math.cos(labelAngle);
@@ -1799,16 +1895,18 @@
     ctx.font = `600 14.5px ${fontFamily}`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
+    const pngDomainPath = BASE_PATH ? `politifacil-29n.vercel.app${BASE_PATH}` : 'politifacil-29n.vercel.app';
     ctx.fillText(
-      'Basado en programas oficiales · Haz tu test sin sesgos en politifacil-29n.vercel.app',
+      `Basado en fuentes oficiales · Haz tu test sin sesgos en ${pngDomainPath}`,
       width / 2,
       574
     );
 
+    const downloadFilename = `mi-arco-politico-${SHARE_SLUG}.png`;
     const feedbackEl = document.getElementById('quiz-share-feedback');
     const notifyDone = () => {
       if (feedbackEl) {
-        feedbackEl.textContent = '✓ Imagen descargada (mi-arco-politico-29n.png)';
+        feedbackEl.textContent = `✓ Imagen descargada (${downloadFilename})`;
       }
     };
 
@@ -1823,15 +1921,15 @@
       canvas.toBlob((blob) => {
         if (blob) {
           const objectUrl = URL.createObjectURL(blob);
-          triggerImageDownload(objectUrl, 'mi-arco-politico-29n.png', true);
+          triggerImageDownload(objectUrl, downloadFilename, true);
           notifyDone();
         } else {
-          triggerImageDownload(canvas.toDataURL('image/png'), 'mi-arco-politico-29n.png', false);
+          triggerImageDownload(canvas.toDataURL('image/png'), downloadFilename, false);
           notifyDone();
         }
       }, 'image/png');
     } else {
-      triggerImageDownload(canvas.toDataURL('image/png'), 'mi-arco-politico-29n.png', false);
+      triggerImageDownload(canvas.toDataURL('image/png'), downloadFilename, false);
       notifyDone();
     }
   }
@@ -2006,17 +2104,25 @@
     const zoneLabel = describeSpectrumZone(res.userSpectrumScore);
     const roundedScore = Math.round(res.userSpectrumScore);
 
-    const totalCountEs = formatNumberEs(state.liveStats.totalParticipants);
+    const totalCountNum = Number(state.liveStats.totalParticipants) || 0;
+    const totalCountEs = formatNumberEs(totalCountNum);
     const avgScoreEs = formatScoreEs(state.liveStats.averageScore);
 
-    const shareUrl = `${getShareOrigin()}/?section=test-afinidad&resultado=${roundedScore}&top=${encodeURIComponent(top1.party.id)}&afinidad=${top1.affinity}`;
-    const shareText = `He hecho el Test a Ciegas del 29-N (sin ver siglas) en PolitiFácil: me sitúa en el punto ${roundedScore}/100 (${zoneLabel}) frente a una media nacional de ${avgScoreEs}/100 entre ${totalCountEs} participantes. Mayor afinidad: ${top1.party.shortName} (${top1.affinity}%) y ${top2.party.shortName} (${top2.affinity}%). ¿Dónde te sitúa a ti? 👇`;
+    const shareUrl = `${getShareOrigin()}${countryHomeUrl(`section=test-afinidad&resultado=${roundedScore}&top=${encodeURIComponent(top1.party.id)}&afinidad=${top1.affinity}`)}`;
+    const avgShareSnippet = totalCountNum > 0
+      ? ` frente a una media nacional de ${avgScoreEs}/100 entre ${totalCountEs} participantes.`
+      : '.';
+    const shareText = `He hecho el Test a Ciegas en ${SITE_TITLE_BADGE} (sin ver siglas): me sitúa en el punto ${roundedScore}/100 (${zoneLabel})${avgShareSnippet} Mayor afinidad: ${top1.party.shortName} (${top1.affinity}%) y ${top2.party.shortName} (${top2.affinity}%). ¿Dónde te sitúa a ti? 👇`;
     const barsLines = res.rankings
-      .map((item) => `${item.party.shortName.padEnd(14, ' ')} ${buildTextProgressBar(item.affinity)} ${item.affinity}%`)
+      .map((item) => `${item.party.shortName.padEnd(18, ' ')} ${buildTextProgressBar(item.affinity)} ${item.affinity}%`)
       .join('\n');
+    const summaryHeaderTitle = META.shareTitle || '🧭 Mi Brújula Electoral 29-N';
+    const summaryStatsLine = totalCountNum > 0
+      ? `Posición en el arco: ${roundedScore}/100 (${zoneLabel}) · Media de ${totalCountEs} participantes: ${avgScoreEs}/100`
+      : `Posición en el arco: ${roundedScore}/100 (${zoneLabel})`;
     const copySummaryText = [
-      '🧭 Mi Brújula Electoral 29-N (Test a Ciegas en PolitiFácil)',
-      `Posición en el arco: ${roundedScore}/100 (${zoneLabel}) · Media de ${totalCountEs} participantes: ${avgScoreEs}/100`,
+      `${summaryHeaderTitle} (Test a Ciegas en PolitiFácil)`,
+      summaryStatsLine,
       '',
       'Afinidad programática (sin ver siglas):',
       barsLines,
@@ -2074,7 +2180,7 @@
       </div>
 
       <div class="viral-share-card">
-        <h3>Comparte tu brújula 29-N (y reta a otros sin sesgos)</h3>
+        <h3>Comparte tu brújula de ${escapeHtml(COUNTRY_NAME)} (y reta a otros sin sesgos)</h3>
         <p class="muted-text">Envía tu enlace con tu puntuación en el arco para que tus contactos respondan los 10 escenarios sin ver siglas ni colores y comparen su posición contigo.</p>
         ${buildShareButtonsHtml({
           shareUrl,
@@ -2092,7 +2198,7 @@
           <div>
             <span class="eyebrow">📊 Termómetro en Vivo · Resultados Reales Sin Siglas</span>
             <h3>Cómo se reparte el #1 entre todos los participantes</h3>
-            <p class="muted-text">Compara tu resultado con el reparto real acumulado hasta este momento (media actual: <strong data-live-avg>${avgScoreEs}</strong>/100).</p>
+            <p class="muted-text">Compara tu resultado con el reparto real acumulado hasta este momento${totalCountNum > 0 ? ` (media actual: <strong data-live-avg>${avgScoreEs}</strong>/100)` : ''}.</p>
           </div>
         </div>
         <div class="barometer-bars" data-live-barometer data-highlight-party="${escapeHtml(top1.party.id)}" aria-live="polite">
@@ -2223,15 +2329,20 @@
   function updateCountdown() {
     const el = document.getElementById('election-countdown');
     if (!el) return;
-    const election = new Date('2026-11-29T09:00:00+01:00');
+    const electionIso = META.electionTimeIso || '2026-11-29T09:00:00+01:00';
+    const election = new Date(electionIso);
     const now = new Date();
     const diffDays = Math.ceil((election.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    const chamberInfo = META.chamberSummary || '350 escaños al Congreso';
+    const countdownTarget = META.countdownLabel || 'para el 29-N';
     if (diffDays > 0) {
-      el.textContent = `Faltan ${diffDays} días para el 29-N · 350 escaños al Congreso`;
+      el.textContent = `Faltan ${diffDays} días ${countdownTarget} · ${chamberInfo}`;
     } else if (diffDays === 0) {
-      el.textContent = 'Hoy es la jornada electoral 29-N · Colegios de 9:00 a 20:00 h';
+      el.textContent = COUNTRY_CODE === 'es'
+        ? 'Hoy es la jornada electoral 29-N · Colegios de 9:00 a 20:00 h'
+        : `Hoy es la jornada electoral en ${COUNTRY_NAME} · ${chamberInfo}`;
     } else {
-      el.textContent = 'Elecciones Generales 29 de noviembre de 2026';
+      el.textContent = `${META.electionDateDisplay || '29 de noviembre de 2026'} · ${chamberInfo}`;
     }
   }
 

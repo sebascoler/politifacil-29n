@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "build": "node scripts/validate-data.js && node scripts/build-seo.js",
+    "build:global": "PORTAL_ROOT_MODE=global node scripts/validate-data.js && PORTAL_ROOT_MODE=global node scripts/build-seo.js",
     "validate": "node scripts/validate-data.js",
+    "article:new": "node scripts/new-article.js",
     "indexnow": "node scripts/submit-indexnow.js",
     "seo:dashboard": "node scripts/update-seo-dashboard.js",
     "seo:cloud-report": "node scripts/cloud-seo-geo-report.js"

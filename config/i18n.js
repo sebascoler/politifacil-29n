@@ -1,0 +1,285 @@
+'use strict';
+
+const BASE_LANG = {
+  es: {
+    skipLink: 'Saltar al contenido principal',
+    topbarPortalLabel: 'Portal Global',
+    topbarCalendarLabel: 'Calendario Electoral',
+    nav: {
+      home: 'Arco y Comunicación',
+      comparator: 'Comparador de Propuestas',
+      comparatorShort: 'Comparador (8 Ejes)',
+      interviews: 'Entrevistas (Sin Opinión)',
+      territories: 'Territorios',
+      test: 'Test 10 Escenarios',
+    },
+    neutralityChips: {
+      officialSources: 'Solo fuentes oficiales de partidos',
+      zeroOpinion: 'Cero columnas de opinión',
+      literalQuotes: 'Citas textuales de entrevistas',
+      blindMode: 'Modo lectura a ciegas',
+    },
+    arc: {
+      eyebrow: 'Panorama Electoral · Sin Sesgo',
+      heading: 'Arco Político y Estilo de Comunicación',
+      lead: 'Explora de izquierda a derecha dónde se sitúa cada formación, qué propone en su documentación oficial y cómo comunica tanto en sus canales propios como en entrevistas.',
+      interactiveTitle: 'Espectro Político Interactivo (0 Izquierda — 100 Derecha)',
+      interactiveLead: 'Haz clic en cualquier formación sobre el arco para inspeccionar su ficha oficial, estilo comunicativo y posición en los ejes económico y social-territorial.',
+      leftLabel: '← Izquierda (0)',
+      centerLabel: 'Centro (50)',
+      rightLabel: 'Derecha (100) →',
+      legend: ['Izquierda', 'Centro-izq.', 'Centro-der.', 'Derecha'],
+      sortLabel: 'Orden de tarjetas:',
+      sortSpectrum: 'Izquierda → Derecha',
+      sortAlpha: 'Alfabético',
+      sortRandom: 'Aleatorio neutral',
+    },
+    partyDetail: {
+      candidateLabel: 'Candidato/a:',
+      officialWeb: 'Web oficial ↗',
+      leftRightMeter: 'Eje Izq → Der',
+      stateMeter: 'Interv. Estatal',
+      commHeading: 'Estilo de comunicación oficial (Web y campaña)',
+      slogansLabel: 'Eslóganes:',
+      toneLabel: 'Tono y registro:',
+      framingLabel: 'Encuadre (framing):',
+      channelsLabel: 'Canales prioritarios:',
+      interviewHeading: 'Cómo se expresa en entrevistas',
+      fullProfileBtn: 'Ver ficha completa y 8 ejes',
+      openComparatorBtn: 'Abrir en comparador',
+      commStamp: 'Sello comunicativo',
+      programLink: 'Programa / Web oficial ↗',
+      cardLink: 'Ficha y 8 ejes',
+    },
+    barometer: {
+      eyebrow: '📊 Termómetro en Vivo · Resultados Reales Sin Siglas',
+      heading: '¿Qué fuerza sale más cuando se elige sin ver siglas?',
+      notePrefix: 'Distribución real de mayor coincidencia (#1) entre quienes completan el Test a Ciegas · Media actual en el arco:',
+      cta: 'Hacer el Test a Ciegas →',
+      loading: 'Cargando termómetro en vivo...',
+      empty: 'Aún no hay resultados registrados. Completa el Test de 10 Escenarios para inaugurar el termómetro en vivo.',
+      disclaimer: 'Datos reales agregados de participantes voluntarios del Test a Ciegas. No constituye una encuesta probabilística ni intención de voto.',
+    },
+    vocab: {
+      partiesAllHeading: 'Todos los Partidos Estatales',
+      partiesAllSub: 'Pulsa cualquier tarjeta para ver sus 8 bloques programáticos o compararlos cara a cara.',
+      partiesUnitSingular: 'partido estatal',
+      partiesUnitPlural: 'partidos estatales',
+      territoriesEyebrow: 'Aritmética Parlamentaria',
+      territoriesHeading: 'Fuerzas Territoriales Clave en el Congreso',
+      territoriesLead: 'Además de los partidos de ámbito estatal, el sistema electoral otorga un peso decisivo en la gobernabilidad y las leyes a las formaciones territoriales.',
+      territoriesNavLabel: 'Territorios',
+      territoriesRolePrefix: 'Papel',
+      territoriesLinkLabel: 'Ver ficha territorial',
+      duelsLabel: 'Comparativas Cara a Cara (VS)',
+      axesLabel: 'Ejes Programáticos',
+      seatUnit: 'escaños',
+      censusUnit: 'electores',
+      programWord: 'programa oficial',
+      programsWord: 'programas oficiales',
+    },
+    comparator: {
+      eyebrow: 'Programas Oficiales · 8 Ejes',
+      heading: 'Comparador de Propuestas: Similitudes y Diferencias',
+      lead: 'Para evitar sesgos o prejuicios previos, <strong>por defecto las propuestas se muestran sin nombres de partidos ni colores</strong> (salvo que desactives el <em>Modo Sin Sesgos</em> a la derecha). Recorre los distintos temas, elige las propuestas que más te convenzan y al final descubre con cuáles estás más de acuerdo.',
+      blindTitle: 'Modo Sin Sesgos activo (Siglas ocultas)',
+      blindSubtitle: 'Desactívalo solo si quieres mostrar nombres y colores de partidos',
+      blindWhyTitle: '¿Por qué no ves nombres de partidos?',
+      blindWhyText: 'Las siglas no se muestran salvo que desactives el interruptor <em>Modo Sin Sesgos</em> de arriba. Mientras esté activo, las propuestas aparecen mezcladas en orden aleatorio (Opción A, B, C...): pulsa <strong>«☆ Me convence»</strong> en las ideas que prefieras en cada tema y al final haz clic en <strong>«Revelar Partidos Coincidentes»</strong> para saber con quién coincides más.',
+      step1: '1. Elige el tema a comparar:',
+      step2: '2. Partidos visibles en la comparativa:',
+      step3: '3. Contraste rápido cara a cara (2 fuerzas):',
+      blindBarLead: 'Marca con ★ las propuestas que más te convenzan en distintos temas y revela al final qué fuerza encaja mejor contigo.',
+      revealBtn: 'Revelar Partidos Coincidentes',
+      resetBtn: 'Limpiar marcas',
+    },
+    interviews: {
+      eyebrow: 'Cero Columnas de Opinión · Declaraciones Directas',
+      heading: 'En Sus Propias Palabras: Entrevistas en Medios',
+      lead: 'Recopilación de entrevistas reales en prensa escrita, radio, televisión pública y privada, y formatos largos digitales. Sin valoraciones de tertulianos ni editoriales: solo la pregunta, la respuesta literal y su estilo expresivo.',
+      matrixTitle: 'Radiografía Expresiva: ¿Cómo habla cada referente en entrevista?',
+      matrixLead: 'Análisis descriptivo de tono, registro, estructura argumentativa y respuesta ante preguntas incómodas.',
+      filterParty: 'Referente / Fuerza',
+      filterFormat: 'Tipo de medio',
+      filterTopic: 'Tema tratado',
+      filterSearch: 'Buscar cita o medio',
+      allCandidates: 'Todos los referentes',
+      allFormats: 'Todos los formatos',
+      allTopics: 'Todos los temas',
+      formats: [
+        'Radio / TV Informativa',
+        'Prensa Escrita / Agencia',
+        'Pódcast / Entretenimiento',
+      ],
+    },
+    quiz: {
+      eyebrowPrefix: 'Brújula Electoral · Sin Nombres de Partido',
+      heading: 'Test de 10 Escenarios: ¿Dónde te sitúas en el Arco Político?',
+      lead: 'Responde a 10 situaciones reales sobre economía, empleo, salud, educación, vivienda, instituciones y seguridad. Ninguna opción menciona siglas para evitar prejuicios. Al finalizar verás tu posición exacta en el arco izquierda-derecha y tu afinidad con cada fuerza.',
+      themeToggleLabel: 'Cambiar tema claro u oscuro',
+      footerTagline: 'Herramienta cívica informativa sin afiliación partidista.',
+    },
+  },
+  en: {
+    skipLink: 'Skip to main content',
+    topbarPortalLabel: 'Global Portal',
+    topbarCalendarLabel: 'Election Calendar',
+    nav: {
+      home: 'Political Arc & Messaging',
+      comparator: 'Policy Comparator',
+      comparatorShort: 'Comparator (8 Axes)',
+      interviews: 'Interviews (No Opinion)',
+      territories: 'Regions & States',
+      test: '10-Scenario Quiz',
+    },
+    neutralityChips: {
+      officialSources: 'Official party platforms only',
+      zeroOpinion: 'Zero opinion columns',
+      literalQuotes: 'Verbatim interview quotes',
+      blindMode: 'Blind reading mode',
+    },
+    arc: {
+      eyebrow: 'Electoral Overview · Unbiased',
+      heading: 'Political Spectrum & Communication Style',
+      lead: 'Explore left to right where each party stands, what its official platform proposes, and how candidates communicate.',
+      interactiveTitle: 'Interactive Political Spectrum (0 Left — 100 Right)',
+      interactiveLead: 'Click any party on the arc to inspect its official profile, messaging style, and economic/social positioning.',
+      leftLabel: '← Left (0)',
+      centerLabel: 'Center (50)',
+      rightLabel: 'Right (100) →',
+      legend: ['Left', 'Center-left', 'Center-right', 'Right'],
+      sortLabel: 'Card order:',
+      sortSpectrum: 'Left → Right',
+      sortAlpha: 'Alphabetical',
+      sortRandom: 'Neutral random',
+    },
+    vocab: {
+      partiesAllHeading: 'All National Parties',
+      partiesAllSub: 'Click any card to inspect all 8 policy areas or compare side by side.',
+      partiesUnitSingular: 'national party',
+      partiesUnitPlural: 'national parties',
+      territoriesEyebrow: 'Congressional Math',
+      territoriesHeading: 'Key Regional & Swing Blocs',
+      territoriesLead: 'Explore decisive regional alliances and legislative swing groups.',
+      territoriesNavLabel: 'Regions',
+      territoriesRolePrefix: 'Role',
+      territoriesLinkLabel: 'View regional profile',
+      duelsLabel: 'Head-to-Head Comparisons (VS)',
+      axesLabel: 'Policy Axes',
+      seatUnit: 'seats',
+      censusUnit: 'voters',
+      programWord: 'official platform',
+      programsWord: 'official platforms',
+    },
+  },
+  pt: {
+    skipLink: 'Ir para o conteúdo principal',
+    topbarPortalLabel: 'Portal Global',
+    topbarCalendarLabel: 'Calendário Eleitoral',
+    nav: {
+      home: 'Arco e Comunicação',
+      comparator: 'Comparador de Propostas',
+      comparatorShort: 'Comparador (8 Eixos)',
+      interviews: 'Entrevistas (Sem Opinião)',
+      territories: 'Bancadas Regionais',
+      test: 'Teste 10 Cenários',
+    },
+    neutralityChips: {
+      officialSources: 'Apenas fontes oficiais de partidos',
+      zeroOpinion: 'Zero colunas de opinião',
+      literalQuotes: 'Citações literais de entrevistas',
+      blindMode: 'Modo leitura às cegas',
+    },
+    arc: {
+      eyebrow: 'Panorama Eleitoral · Sem Viés',
+      heading: 'Arco Político e Estilo de Comunicação',
+      lead: 'Explore da esquerda à direita onde cada força se posiciona, o que propõe em seu programa oficial e como se comunica.',
+      interactiveTitle: 'Espectro Político Interativo (0 Esquerda — 100 Direita)',
+      interactiveLead: 'Clique em qualquer partido no arco para ver sua ficha oficial, estratégia de campanha e posição nos eixos.',
+      leftLabel: '← Esquerda (0)',
+      centerLabel: 'Centro (50)',
+      rightLabel: 'Direita (100) →',
+      legend: ['Esquerda', 'Centro-esq.', 'Centro-dir.', 'Direita'],
+      sortLabel: 'Ordem dos cartões:',
+      sortSpectrum: 'Esquerda → Direita',
+      sortAlpha: 'Alfabética',
+      sortRandom: 'Aleatório neutro',
+    },
+    vocab: {
+      partiesAllHeading: 'Principais Forças Nacionais',
+      partiesAllSub: 'Clique em qualquer cartão para ver os 8 eixos programáticos ou comparar lado a lado.',
+      partiesUnitSingular: 'partido nacional',
+      partiesUnitPlural: 'partidos nacionais',
+      territoriesEyebrow: 'Aritmética Parlamentar',
+      territoriesHeading: 'Bancadas e Forças Regionais-Chave',
+      territoriesLead: 'Veja como alianças e blocos regionais influenciam a governabilidade no Congresso.',
+      territoriesNavLabel: 'Regiões',
+      territoriesRolePrefix: 'Papel',
+      territoriesLinkLabel: 'Ver ficha regional',
+      duelsLabel: 'Comparativos Diretos (VS)',
+      axesLabel: 'Eixos Programáticos',
+      seatUnit: 'cadeiras',
+      censusUnit: 'eleitores',
+      programWord: 'programa oficial',
+      programsWord: 'programas oficiais',
+    },
+  },
+};
+
+const LOCALE_OVERRIDES = {
+  'es-ES': {},
+  'es-AR': {
+    nav: {
+      territories: 'Provincias y Bloques',
+    },
+    vocab: {
+      partiesAllHeading: 'Principales Fuerzas Nacionales',
+      partiesAllSub: 'Pulsa cualquier tarjeta para ver sus 8 bloques programáticos o compararlos cara a cara.',
+      partiesUnitSingular: 'fuerza nacional',
+      partiesUnitPlural: 'fuerzas nacionales',
+      territoriesEyebrow: 'Aritmética Legislativa',
+      territoriesHeading: 'Fuerzas Provinciales y Bloques Clave en el Congreso',
+      territoriesLead: 'Además de los frentes nacionales, los gobernadores y bloques provinciales cumplen un rol decisivo para alcanzar quórum, aprobar leyes y sostener o revertir vetos en Diputados y el Senado.',
+      territoriesNavLabel: 'Provincias',
+      territoriesRolePrefix: 'Rol legislativo',
+      territoriesLinkLabel: 'Ver ficha provincial',
+      duelsLabel: 'Comparativas Cara a Cara (VS)',
+      axesLabel: 'Ejes Programáticos',
+      seatUnit: 'bancas',
+      censusUnit: 'electores habilitados',
+      programWord: 'plataforma electoral',
+      programsWord: 'plataformas oficiales',
+    },
+    comparator: {
+      step2: '2. Espacios visibles en la comparativa:',
+      step3: '3. Contraste rápido cara a cara (2 espacios):',
+    },
+  },
+};
+
+function deepMerge(target, source) {
+  const out = { ...target };
+  if (!source || typeof source !== 'object') return out;
+  Object.keys(source).forEach((key) => {
+    const val = source[key];
+    if (val && typeof val === 'object' && !Array.isArray(val) && target[key] && typeof target[key] === 'object') {
+      out[key] = deepMerge(target[key], val);
+    } else {
+      out[key] = val;
+    }
+  });
+  return out;
+}
+
+function getStrings(locale = 'es-ES') {
+  const lang = String(locale || 'es').split('-')[0].toLowerCase();
+  const base = BASE_LANG[lang] || BASE_LANG.es;
+  const override = LOCALE_OVERRIDES[locale] || {};
+  return deepMerge(base, override);
+}
+
+module.exports = {
+  BASE_LANG,
+  LOCALE_OVERRIDES,
+  getStrings,
+};

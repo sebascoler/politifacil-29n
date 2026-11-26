@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "updatedAt": "2026-11-26",
+    "count": 3,
+    "url": "https://politifacil-29n.vercel.app/articulos"
+  },
+  "articles": [
+    {
+      "slug": "como-funcionan-elecciones-argentina-2027-guia-completa",
+      "url": "https://politifacil-29n.vercel.app/articulos/como-funcionan-elecciones-argentina-2027-guia-completa",
+      "path": "/articulos/como-funcionan-elecciones-argentina-2027-guia-completa",
+      "title": "Cómo funcionan las elecciones de Argentina 2027: cargos, balotaje y fuerzas principales",
+      "description": "Guía neutral rumbo a las elecciones presidenciales y legislativas de Argentina 2027: Ley 19.945, bancas en juego, umbral de balotaje y fuerzas nacionales.",
+      "country": "ar",
+      "category": "guia-voto",
+      "categoryLabel": "Guía de Voto",
+      "axisId": "economia",
+      "relatedParties": [
+        "fit-u",
+        "fuerza-patria",
+        "ucr",
+        "provincias-unidas",
+        "pro",
+        "lla"
+      ],
+      "keywords": [
+        "elecciones Argentina 2027",
+        "balotaje Argentina",
+        "Diputados y Senado Argentina",
+        "comparador electoral Argentina"
+      ],
+      "publishedAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "readingMinutes": 2,
+      "sources": [
+        {
+          "label": "Cámara Nacional Electoral (CNE)",
+          "url": "https://www.electoral.gob.ar"
+        },
+        {
+          "label": "Código Electoral Nacional — Ley 19.945 (InfoLEG)",
+          "url": "https://servicios.infoleg.gob.ar"
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuándo se proyectan las elecciones presidenciales y legislativas de Argentina 2027?",
+          "a": "Según el calendario constitucional regulado por el Código Electoral Nacional (Ley 19.945), la elección general está prevista para el cuarto domingo de octubre: 24 de octubre de 2027 (fecha sujeta a convocatoria oficial del Ejecutivo)."
+        },
+        {
+          "q": "¿Cuántos votos se necesitan para ganar en primera vuelta y evitar el balotaje?",
+          "a": "Para imponerse en primera vuelta la fórmula presidencial debe obtener más del 45 % de los votos afirmativos válidamente emitidos, o alcanzar al menos el 40 % con una diferencia superior a 10 puntos porcentuales sobre la segunda fórmula."
+        },
+        {
+          "q": "¿Cómo funciona la renovación del Congreso Nacional?",
+          "a": "La Cámara de Diputados (257 bancas totales, mayoría de 129) renueva la mitad de sus escaños cada dos años; en el Senado (72 bancas totales) se renueva un tercio de las provincias (24 senadores)."
+        },
+        {
+          "q": "¿Cómo comparar las propuestas de Argentina 2027 en PolitiFácil?",
+          "a": "En /ar puedes consultar las 6 fuerzas nacionales y 5 bloques provinciales a lo largo de 8 ejes, leer 18 citas literales de 2025–2026 y realizar el test de 10 escenarios sin siglas."
+        }
+      ]
+    },
+    {
+      "slug": "guia-practica-elecciones-29n-espana-2026",
+      "url": "https://politifacil-29n.vercel.app/articulos/guia-practica-elecciones-29n-espana-2026",
+      "path": "/articulos/guia-practica-elecciones-29n-espana-2026",
+      "title": "Guía práctica de las elecciones generales en España (29-N 2026): escaños, censo y candidaturas",
+      "description": "Resumen neutral de las elecciones generales del 29 de noviembre de 2026 en España: 350 escaños al Congreso, 208 al Senado, censo oficial y fuerzas principales.",
+      "country": "es",
+      "category": "guia-voto",
+      "categoryLabel": "Guía de Voto",
+      "axisId": "vivienda",
+      "relatedParties": [
+        "psoe",
+        "pp",
+        "vox",
+        "frente-amplio",
+        "podemos",
+        "salf"
+      ],
+      "keywords": [
+        "elecciones 29N España",
+        "guia voto 29 noviembre 2026",
+        "350 escaños Congreso",
+        "programas electorales España"
+      ],
+      "publishedAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "readingMinutes": 2,
+      "sources": [
+        {
+          "label": "Boletín Oficial del Estado — Real Decreto 806/2026, de 5 de octubre",
+          "url": "https://www.boe.es"
+        },
+        {
+          "label": "Junta Electoral Central (JEC)",
+          "url": "https://www.juntaelectoralcentral.es"
+        },
+        {
+          "label": "Instituto Nacional de Estadística — Censo Electoral",
+          "url": "https://www.ine.es"
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuándo se celebran las elecciones generales 29-N en España y qué decreto las convoca?",
+          "a": "La jornada de votación es el domingo 29 de noviembre de 2026 desde las 09:00 hasta las 20:00 (hora peninsular), convocada mediante el Real Decreto 806/2026, de 5 de octubre."
+        },
+        {
+          "q": "¿Cuántos escaños se eligen al Congreso de los Diputados y al Senado?",
+          "a": "Se eligen 350 escaños al Congreso de los Diputados (donde la mayoría absoluta se sitúa en 176 escaños) y 208 senadores de elección directa."
+        },
+        {
+          "q": "¿Cuántos electores figuran en el censo electoral oficial?",
+          "a": "El censo electoral recogido para la convocatoria asciende a 38.728.356 personas con derecho a voto."
+        },
+        {
+          "q": "¿Cómo puedo comparar los programas de los partidos sin ver siglas ni colores?",
+          "a": "En la edición España 29-N de PolitiFácil puedes activar el comparador a ciegas en cualquiera de los 8 ejes temáticos o responder al test de 10 escenarios sin nombres de partidos."
+        }
+      ]
+    },
+    {
+      "slug": "vivienda-29n-que-propone-cada-partido-sin-siglas",
+      "url": "https://politifacil-29n.vercel.app/articulos/vivienda-29n-que-propone-cada-partido-sin-siglas",
+      "path": "/articulos/vivienda-29n-que-propone-cada-partido-sin-siglas",
+      "title": "Vivienda en el 29-N: qué propone exactamente cada partido en su programa oficial",
+      "description": "Comparativa objetiva de las propuestas de vivienda y alquiler de Podemos, Frente Amplio, PSOE, PP, VOX y SALF para las elecciones del 29-N en España.",
+      "country": "es",
+      "category": "comparativa",
+      "categoryLabel": "Comparativa por Eje",
+      "axisId": "vivienda",
+      "relatedParties": [
+        "podemos",
+        "frente-amplio",
+        "psoe",
+        "pp",
+        "vox",
+        "salf"
+      ],
+      "keywords": [
+        "propuestas vivienda 29N",
+        "alquiler programas electorales",
+        "CASA 47",
+        "Hucha Hogar Joven"
+      ],
+      "publishedAt": "2026-11-26",
+      "updatedAt": "2026-11-26",
+      "readingMinutes": 3,
+      "sources": [
+        {
+          "label": "Programa Podemos 29-N",
+          "url": "https://pazcasaytrabajo.es"
+        },
+        {
+          "label": "Programa Frente Amplio 29-N",
+          "url": "https://www.frenteamplio.info"
+        },
+        {
+          "label": "Programa PSOE 29-N",
+          "url": "https://lafuerzadelagente.es"
+        },
+        {
+          "label": "Programa PP 2026 — La Reconstrucción Nacional",
+          "url": "https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-2026-LA-RECONSTRUCCION-NACIONAL.pdf"
+        },
+        {
+          "label": "Programa VOX — Es sentido común",
+          "url": "https://votasentidocomun.es"
+        },
+        {
+          "label": "Contrato Electoral SALF",
+          "url": "https://www.seacabolafiesta.com"
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Qué partidos proponen mantener o endurecer topes al alquiler?",
+          "a": "Podemos (bajada forzosa del 40 % y tope del 30 % de ingresos), Frente Amplio (límite al 25 % de ingresos medios y contratos indefinidos) y PSOE (límites en zonas tensionadas)."
+        },
+        {
+          "q": "¿Qué formaciones plantean derogar la Ley de Vivienda estatal?",
+          "a": "PP y VOX incluyen expresamente en sus programas la derogación de la Ley de Vivienda estatal y la eliminación de las zonas tensionadas; SALF también rechaza los topes al alquiler."
+        },
+        {
+          "q": "¿Cómo plantea cada bloque aumentar la oferta o facilitar la compra?",
+          "a": "Frente Amplio y PSOE plantean invertir el 1 % del PIB en parque público (1,5 millones en 12 años y 100.000 pisos en CASA 47 con préstamos TUCASA de 50.000 €, respectivamente). PP propone 1 millón de viviendas con licencias en 3 meses y Hucha Hogar Joven; VOX y SALF proponen liberalizar suelo y suprimir/bonificar impuestos de compra (IVA 0 % o ITP 0 %)."
+        },
+        {
+          "q": "¿Dónde comparar estas medidas en modo anónimo?",
+          "a": "En la página del eje Vivienda y Alquiler de PolitiFácil puedes enfrentar dos programas lado a lado u ocultar las siglas antes de leer."
+        }
+      ]
+    }
+  ]
+}

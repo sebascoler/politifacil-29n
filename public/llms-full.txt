@@ -1,17 +1,17 @@
-# PolitiFácil 29-N — Corpus Electoral Completo (España 2026)
+# PolitiFácil 29-N — Corpus Electoral Completo (España)
 
 - URL canónica: https://politifacil-29n.vercel.app/
-- Fecha de elecciones: 2026-11-29
-- Convocatoria: Real Decreto 806/2026, de 5 de octubre
-- Escaños Congreso: 350 (mayoría absoluta: 176)
-- Escaños Senado: 208
-- Censo electoral: 38.728.356
+- Fecha electoral: 2026-11-29
+- Marco: Real Decreto 806/2026, de 5 de octubre
+- Congreso: 350 escaños (mayoría: 176)
+- Senado: 208 escaños
+- Padrón / Censo: 38.728.356
 - Licencia de datos compilados: https://creativecommons.org/licenses/by/4.0/
 
 
-## 1. Partidos Estatales (6) y Programas por 8 Ejes
+## 1. Fuerzas Principales (6) y Propuestas por 8 Ejes
 
-### Podemos (Podemos) — Candidato/a: Irene Montero
+### Podemos (Podemos) — Referente: Irene Montero
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/podemos
 - Web oficial: https://pazcasaytrabajo.es · https://podemos.info
 - Etiqueta ideológica: Izquierda transformadora y antimilitarista
@@ -80,7 +80,7 @@
 - Regulación estricta de lobbies y puertas giratorias, referéndums vinculantes y límites a la concentración mediática.
 - **Fuente**: podemos.info (https://podemos.info)
 
-### Frente Amplio (Sumar / IU / Más Madrid / Comuns) (Frente Amplio) — Candidato/a: Ada Colau
+### Frente Amplio (Sumar / IU / Más Madrid / Comuns) (Frente Amplio) — Referente: Ada Colau
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/frente-amplio
 - Web oficial: https://www.frenteamplio.info
 - Etiqueta ideológica: Izquierda progresista, ecologista y plurinacional
@@ -149,7 +149,7 @@
 - Pacto para prohibir IA vejatoria y deepfakes en campaña, regulación algorítmica de plataformas y horizonte republicano.
 - **Fuente**: frenteamplio.info — Calidad Democrática (https://www.frenteamplio.info)
 
-### Partido Socialista Obrero Español (PSOE) — Candidato/a: Pedro Sánchez
+### Partido Socialista Obrero Español (PSOE) — Referente: Pedro Sánchez
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/psoe
 - Web oficial: https://lafuerzadelagente.es · https://www.psoe.es
 - Etiqueta ideológica: Centro-izquierda socialdemócrata y europeísta
@@ -218,7 +218,7 @@
 - Limitación del acceso de menores a redes sociales frente a los «tecno-oligarcas» y defensa de la Memoria Democrática.
 - **Fuente**: lafuerzadelagente.es — Democracia e Igualdad (https://lafuerzadelagente.es)
 
-### Partido Popular (PP) — Candidato/a: Alberto Núñez Feijóo
+### Partido Popular (PP) — Referente: Alberto Núñez Feijóo
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/pp
 - Web oficial: https://www.pp.es
 - Etiqueta ideológica: Centro-derecha liberal-conservador y reformista
@@ -287,7 +287,7 @@
 - Revisión de la Ley Trans (supresión de autodeterminación registral sin filtros y retraso de tratamientos en menores) sin modificar el modelo vigente de plazos del aborto.
 - **Fuente**: Programa Electoral PP 2026 — pp.es (https://www.pp.es)
 
-### VOX (VOX) — Candidato/a: Santiago Abascal
+### VOX (VOX) — Referente: Santiago Abascal
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/vox
 - Web oficial: https://votasentidocomun.es · https://www.voxespana.es
 - Etiqueta ideológica: Derecha nacional-conservadora y soberanista
@@ -356,7 +356,7 @@
 - Recorte drástico de organismos públicos considerados ideológicos y lucha contra la corrupción política sin indultos.
 - **Fuente**: votasentidocomun.es (https://votasentidocomun.es)
 
-### Se Acabó La Fiesta (SALF) — Candidato/a: Alvise Pérez
+### Se Acabó La Fiesta (SALF) — Referente: Alvise Pérez
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/salf
 - Web oficial: https://www.seacabolafiesta.com
 - Etiqueta ideológica: Derecha populista antisistema y desreguladora
@@ -425,7 +425,7 @@
 - Derogación de leyes con asimetría penal por sexo o subvenciones a observatorios, sustituyéndolas por protección penal universal.
 - **Fuente**: SALF Contrato Electoral Simplificado — Bloque 7 (https://www.seacabolafiesta.com)
 
-## 2. Fuerzas Territoriales Clave (5)
+## 2. Fuerzas Territoriales / Provinciales Clave (5)
 
 ### ERC — Esquerra Republicana de Catalunya (Cataluña)
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/erc
@@ -433,7 +433,7 @@
 - Espectro: Izquierda soberanista
 - Web oficial: https://www.esquerra.cat
 - Prioridades: Financiación singular y recaudación íntegra de impuestos en Cataluña, recargos fiscales a grandes tenedores en vivienda, traspaso de Rodalies y oficialidad del catalán en la UE.
-- Papel parlamentario 29-N: Veto frontal a PP y Vox; busca condicionar externamente a un Gobierno progresista al cumplimiento estricto de pactos (con acuerdo territorial con Podemos en Cataluña).
+- Rol parlamentario: Veto frontal a PP y Vox; busca condicionar externamente a un Gobierno progresista al cumplimiento estricto de pactos (con acuerdo territorial con Podemos en Cataluña).
 
 ### Junts — Junts per Catalunya (Cataluña)
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/junts
@@ -441,7 +441,7 @@
 - Espectro: Centroderecha independentista
 - Web oficial: https://www.junts.cat
 - Prioridades: Concierto económico catalán, traspaso integral de competencias de inmigración, uso del catalán en Congreso y UE, rebajas fiscales a pymes y rechazo a topes de alquiler.
-- Papel parlamentario 29-N: Actor bisagra imprevisible tras romper acuerdos previos con el PSOE a finales de 2025; advierte que no dará cheques en blanco en la investidura.
+- Rol parlamentario: Actor bisagra imprevisible tras romper acuerdos previos con el PSOE a finales de 2025; advierte que no dará cheques en blanco en la investidura.
 
 ### EAJ-PNV — Partido Nacionalista Vasco (Euskadi)
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/eaj-pnv
@@ -449,7 +449,7 @@
 - Espectro: Centro / centroderecha foral
 - Web oficial: https://www.eaj-pnv.eus
 - Prioridades: Cumplimiento íntegro del Estatuto de Gernika, defensa del Concierto Económico, reconocimiento nacional de Euskadi y agenda de rigor fiscal y bienestar («póliza de seguros»).
-- Papel parlamentario 29-N: Dique explícito contra mayorías con Vox y socio pragmático de estabilidad condicionado a transferencias pendientes.
+- Rol parlamentario: Dique explícito contra mayorías con Vox y socio pragmático de estabilidad condicionado a transferencias pendientes.
 
 ### EH Bildu — Euskal Herria Bildu (Euskadi y Navarra)
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/eh-bildu
@@ -457,7 +457,7 @@
 - Espectro: Izquierda soberanista
 - Web oficial: https://www.ehbildu.eus
 - Prioridades: Regulación permanente de alquileres, marco vasco de relaciones laborales con SMI propio, mejora de pensiones mínimas y derecho a decidir.
-- Papel parlamentario 29-N: Disposición declarada a frenar a PP y Vox facilitando una investidura progresista sin entrar en el Consejo de Ministros, exigiendo avances sociales en cada ley.
+- Rol parlamentario: Disposición declarada a frenar a PP y Vox facilitando una investidura progresista sin entrar en el Consejo de Ministros, exigiendo avances sociales en cada ley.
 
 ### BNG — Bloque Nacionalista Galego (Galicia)
 - URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/bng
@@ -465,7 +465,7 @@
 - Espectro: Izquierda nacionalista gallega
 - Web oficial: https://www.bng.gal
 - Prioridades: Decálogo «Axenda Galega»: tarifa eléctrica gallega justa, inversiones ferroviarias, defensa de pesca y agro, vivienda pública y ampliación del autogobierno.
-- Papel parlamentario 29-N: Potencial apoyo al bloque progresista condicionado a inversiones reales e infraestructuras para Galicia.
+- Rol parlamentario: Potencial apoyo al bloque progresista condicionado a inversiones reales e infraestructuras para Galicia.
 
 ## 3. Similitudes y Diferencias por Eje Temático (8)
 
@@ -558,7 +558,7 @@
 - Democracia digital y medios: PSOE y Frente Amplio regulan algoritmos, propiedad mediática y deepfakes con IA; SALF y VOX rechazan cualquier regulación mediática al considerar que censura la disidencia.
 - Compromiso salarial y justicia: SALF bloquea el 100 % del sueldo de su candidato hasta auditoría en 2030 y hace imprescriptible la corrupción; PP y VOX prohíben indultos por corrupción.
 
-## 4. Hemeroteca de Entrevistas con Cita Literal (31)
+## 4. Hemeroteca de Entrevistas con Cita Literal (37)
 
 ### [1] Pedro Sánchez (PSOE) en elDiario.es — Entrevista con Ignacio Escolar (9 de octubre de 2026)
 - Formato: Prensa Escrita / Agencia
@@ -808,7 +808,55 @@
 - Estilo expresivo: Discurso antisistema en primera persona y autoironía
 - Fuente del medio: https://www.hoyaragon.es
 
-## 5. Test de Afinidad de 10 Escenarios (10)
+### [32] Pedro Sánchez (PSOE) en Academia de TV / RTVE — Debate Cara a Cara 29-N (19 de noviembre de 2026)
+- Formato: Radio / TV Informativa
+- Tema: Autocrítica y Balance de Legislatura
+- Contexto/Pregunta: Intervención en el cara a cara televisado sobre errores de gestión, casos de corrupción y balance económico.
+- Cita literal: "Mi Gobierno no ha sido perfecto, he cometido errores y he confiado en la gente que no debía. Lo que nos estamos jugando es que España avance, no que avance el pasado"
+- Estilo expresivo: Autocrítica acotada con contraste de futuro
+- Fuente del medio: https://www.rtve.es
+
+### [33] Alberto Núñez Feijóo (PP) en Academia de TV / RTVE — Debate Cara a Cara 29-N (19 de noviembre de 2026)
+- Formato: Radio / TV Informativa
+- Tema: Vivienda y Regeneración
+- Contexto/Pregunta: Réplica en el cara a cara televisado sobre construcción de vivienda pública y escándalos de corrupción.
+- Cita literal: "Hay más pisos en los sumarios de corrupción de los que ustedes han edificado. España merece un presidente decente y él no lo es"
+- Estilo expresivo: Contraste punzante y apelación ética directa
+- Fuente del medio: https://www.rtve.es
+
+### [34] Santiago Abascal (VOX) en EL PAÍS — Cobertura de recta final 29-N (24 de noviembre de 2026)
+- Formato: Prensa Escrita / Agencia
+- Tema: Vivienda e Inmigración
+- Contexto/Pregunta: Posicionamiento sobre el encarecimiento del mercado de la vivienda y la política migratoria del Ejecutivo.
+- Cita literal: "El principal fondo buitre es el Gobierno"
+- Estilo expresivo: Aforismo frontal de inversión del marco
+- Fuente del medio: https://elpais.com
+
+### [35] Ada Colau (Frente Amplio) en Cadena SER — Hoy por Hoy (recta final 29-N) (26 de noviembre de 2026)
+- Formato: Radio / TV Informativa
+- Tema: Vivienda y Condiciones de Pacto
+- Contexto/Pregunta: Entrevista el día del debate a cuatro sobre el balance del Ministerio de Vivienda y exigencias al PSOE.
+- Cita literal: "Es verdad que se ha fallado en algunas cuestiones clave, como es la vivienda. Yo un ministerio de Vivienda anecdótico no lo quiero, lo que quiero es un Ministerio de Vivienda con plenas competencias y también quiero un acuerdo firmado con el PSOE donde se diga que van a estar todos los recursos económicos, por ejemplo el 1% del PIB"
+- Estilo expresivo: Autocrítica explícita con exigencia presupuestaria concreta
+- Fuente del medio: https://cadenaser.com
+
+### [36] Irene Montero (Podemos) en El Periódico — Acto de recta final de campaña 29-N (22 de noviembre de 2026)
+- Formato: Prensa Escrita / Agencia
+- Tema: Movilización Post-29N
+- Contexto/Pregunta: Llamamiento a la movilización social y sindical ante el escenario posterior a las elecciones del 29-N.
+- Cita literal: "Porque pase lo que pase el día 29, vamos a necesitar gente que pelee. Vamos a necesitar gente dispuesta a poner la cara y a poner el cuerpo"
+- Estilo expresivo: Arenga militante de movilización social
+- Fuente del medio: https://www.elperiodico.com
+
+### [37] Alvise Pérez (SALF) en 21 Noticias — Campaña 29-N (Contrato Electoral de 119 medidas) (23 de noviembre de 2026)
+- Formato: Prensa Escrita / Agencia
+- Tema: Formato de Campaña y Antipolítica
+- Contexto/Pregunta: Explicación de su formato de actos callejeros frente a los mítines clásicos de los partidos tradicionales.
+- Cita literal: "Donde otros ponen un mitin, nosotros ponemos una mesa y dos sillas. Los problemas de la gente no se resuelven desde un despacho ni se conocen leyendo encuestas"
+- Estilo expresivo: Contraste populista de cercanía callejera
+- Fuente del medio: https://www.21noticias.com
+
+## 5. Test de Afinidad de 10 Escenarios
 
 ### Escenario 1: Encarecimiento brusco del alquiler en tu barrio [Vivienda y Alquiler]
 Un gran propietario compra varios edificios de tu zona y aplica una subida muy fuerte al renovar los contratos. ¿Qué respuesta pública crees que funcionaría mejor?
@@ -890,7 +938,7 @@ Tras varios casos de corrupción y fuerte tensión en redes digitales, se plante
 4. (Arco 68/100, alineado con: pp) Prohibir por ley conceder indultos por corrupción o delitos graves contra el Estado, vetar usos partidistas de recursos oficiales y revisar las leyes de autodeterminación de género sin restringir el aborto.
 5. (Arco 90/100, alineado con: vox, salf) Hacer que los delitos de corrupción no prescriban obligando a devolver mucho más de lo robado con premio a denunciantes, y sustituir leyes penales asimétricas por normas iguales sin subvenciones ideológicas.
 
-## 6. Preguntas Frecuentes Verificadas (FAQ 29-N)
+## 6. Preguntas Frecuentes Verificadas (España)
 
 ### ¿Cuándo se celebran las elecciones generales en España 2026 y cuántos escaños se eligen?
 Las elecciones generales en España están convocadas para el domingo 29 de noviembre de 2026 (29-N) mediante el Real Decreto 806/2026, de 5 de octubre. Se eligen 350 escaños al Congreso de los Diputados (mayoría absoluta en 176 escaños) y 208 escaños al Senado, con un censo electoral de 38.728.356 electores.

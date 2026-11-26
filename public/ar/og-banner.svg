@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="PolitiFácil Argentina — Test a Ciegas y Comparador Electoral Neutral">
+  <defs>
+    <radialGradient id="bgGlow" cx="78%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="28" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+  <rect x="72" y="84" width="520" height="36" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="94" y="107" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13.5" font-weight="700" letter-spacing="1.2" fill="#93c5fd">RUMBO A PRESIDENCIALES Y LEGISLATIVAS ARGENTINA · 2027</text>
+
+  <text x="72" y="222" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="70" font-weight="800" letter-spacing="-1.5" fill="#f8fafc">PolitiFácil Argentina</text>
+  <text x="72" y="284" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="26" font-weight="500" fill="#cbd5e1">Test a Ciegas y Comparador Electoral Neutral · Argentina</text>
+
+  <line x1="72" y1="326" x2="680" y2="326" stroke="#334155" stroke-width="1.5"/>
+
+  <text x="72" y="454" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="19" font-weight="600" fill="#94a3b8">6 Fuerzas Nacionales · 8 Ejes Oficiales · 0 Opinión · 10 Escenarios</text>
+  <text x="72" y="544" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="17" font-weight="600" fill="#e2e8f0">Solo fuentes oficiales · Citas literales de entrevistas · Código Electoral Nacional (Ley 19.945) · Ciclo Presidencial y Legislativo 2027</text>
+
+  <g>
+    <path d="M 785 365 A 160 160 0 0 1 1105 365" fill="none" stroke="#1e293b" stroke-width="32"/>
+    <path d="M 785.0 365.0 A 160 160 0 0 1 809.9 279.3" fill="none" stroke="#7c3aed" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 809.9 279.3 A 160 160 0 0 1 859.3 229.9" fill="none" stroke="#e11d48" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 859.3 229.9 A 160 160 0 0 1 955.0 205.3" fill="none" stroke="#dc2626" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 955.0 205.3 A 160 160 0 0 1 1068.3 263.0" fill="none" stroke="#0284c7" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 1068.3 263.0 A 160 160 0 0 1 1097.2 315.6" fill="none" stroke="#16a34a" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <path d="M 1097.2 315.6 A 160 160 0 0 1 1105.0 365.0" fill="none" stroke="#78350f" stroke-width="26" stroke-linecap="butt" opacity="0.92"/>
+    <g>
+      <circle cx="792.8" cy="315.6" r="12" fill="#dc2626" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="762.4" y="305.7" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">FIT-U</text>
+    </g>
+    <g>
+      <circle cx="851.0" cy="235.6" r="12" fill="#0284c7" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="832.1" y="209.7" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Fuerza Patria</text>
+    </g>
+    <g>
+      <circle cx="935.0" cy="205.3" r="12" fill="#e11d48" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="932.9" y="173.4" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">UCR</text>
+    </g>
+    <g>
+      <circle cx="984.8" cy="210.0" r="12" fill="#0d9488" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="992.7" y="179.0" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Provincias Unidas</text>
+    </g>
+    <g>
+      <circle cx="1054.5" cy="248.4" r="12" fill="#ca8a04" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="1076.4" y="225.0" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">PRO</text>
+    </g>
+    <g>
+      <circle cx="1100.0" cy="325.2" r="12" fill="#7c3aed" stroke="#0f172a" stroke-width="3.5"/>
+      <text x="1131.0" y="317.3" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">LLA</text>
+    </g>
+    <line x1="943.9" y1="347.0" x2="935.8" y2="219.3" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="945" cy="365" r="14" fill="#fbbf24" stroke="#0f172a" stroke-width="4"/>
+    <circle cx="935.8" cy="219.3" r="10" fill="#fbbf24" stroke="#0f172a" stroke-width="3"/>
+    <text x="785" y="401" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" fill="#94a3b8">IZQ (0)</text>
+    <text x="945" y="401" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" fill="#fbbf24">BRÚJULA</text>
+    <text x="1105" y="401" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" fill="#94a3b8">DER (100)</text>
+  </g>
+</svg>

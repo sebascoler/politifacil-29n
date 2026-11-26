@@ -4,8 +4,9 @@ const {
   SEED_COUNT,
   SEED_AVG_SCORE,
   MAX_STORED_RESULTS,
-  REDIS_KEYS,
-  fallbackState,
+  resolveCountryKey,
+  getCountryStoreConfig,
+  getFallbackState,
   buildPublicStats,
   sendJson,
   readJsonBody,
@@ -16,6 +17,7 @@ const {
 
 async function handler(req, res) {
   const method = (req.method || 'GET').toUpperCase();
+  const reqUrl = new URL(req.url || '/api/stats', 'http://localhost');
 
   if (method === 'OPTIONS') {
     res.writeHead(204, {
@@ -28,37 +30,46 @@ async function handler(req, res) {
   }
 
   if (method === 'GET') {
+    const countryKey = resolveCountryKey(reqUrl.searchParams.get('country'));
+    const cfg = getCountryStoreConfig(countryKey);
+    const fallback = getFallbackState(countryKey);
+
     try {
       const results = await runRedisPipeline([
-        ['GET', REDIS_KEYS.count],
-        ['GET', REDIS_KEYS.scoreSum],
-        ['HGETALL', REDIS_KEYS.partyCounts],
+        ['GET', cfg.redisKeys.count],
+        ['GET', cfg.redisKeys.scoreSum],
+        ['HGETALL', cfg.redisKeys.partyCounts],
       ]);
       if (Array.isArray(results)) {
         const realCount = Math.max(0, parseInt(results[0]?.result ?? '0', 10) || 0);
         const realSum = Math.max(0, parseInt(results[1]?.result ?? '0', 10) || 0);
-        const partyCounts = parseRedisHashArray(results[2]?.result);
-        return sendJson(res, 200, buildPublicStats(realCount, realSum, 'redis', partyCounts));
+        const partyCounts = parseRedisHashArray(results[2]?.result, countryKey);
+        return sendJson(res, 200, buildPublicStats(realCount, realSum, 'redis', partyCounts, countryKey));
       }
     } catch (err) {
-      console.error('Error leyendo estadísticas en Upstash Redis:', err.message);
+      console.error(`Error leyendo estadísticas (${countryKey}) en Upstash Redis:`, err.message);
     }
 
     return sendJson(
       res,
       200,
       buildPublicStats(
-        fallbackState.count,
-        fallbackState.scoreSum,
+        fallback.count,
+        fallback.scoreSum,
         'seed',
-        parseRedisHashArray(fallbackState.partyCounts)
+        parseRedisHashArray(fallback.partyCounts, countryKey),
+        countryKey
       )
     );
   }
 
   if (method === 'POST') {
     const body = await readJsonBody(req);
-    const entry = sanitizeQuizEntry(body);
+    const countryKey = resolveCountryKey(body?.country || reqUrl.searchParams.get('country'));
+    const cfg = getCountryStoreConfig(countryKey);
+    const fallback = getFallbackState(countryKey);
+
+    const entry = sanitizeQuizEntry(body, countryKey);
     if (!entry) {
       return sendJson(res, 400, {
         ok: false,
@@ -68,47 +79,48 @@ async function handler(req, res) {
 
     try {
       const commands = [
-        ['INCR', REDIS_KEYS.count],
-        ['INCRBY', REDIS_KEYS.scoreSum, entry.score],
+        ['INCR', cfg.redisKeys.count],
+        ['INCRBY', cfg.redisKeys.scoreSum, entry.score],
       ];
       if (entry.topPartyId) {
-        commands.push(['HINCRBY', REDIS_KEYS.partyCounts, entry.topPartyId, 1]);
+        commands.push(['HINCRBY', cfg.redisKeys.partyCounts, entry.topPartyId, 1]);
       }
-      commands.push(['LPUSH', REDIS_KEYS.resultsList, JSON.stringify(entry)]);
-      commands.push(['LTRIM', REDIS_KEYS.resultsList, 0, MAX_STORED_RESULTS - 1]);
-      commands.push(['HGETALL', REDIS_KEYS.partyCounts]);
+      commands.push(['LPUSH', cfg.redisKeys.resultsList, JSON.stringify(entry)]);
+      commands.push(['LTRIM', cfg.redisKeys.resultsList, 0, MAX_STORED_RESULTS - 1]);
+      commands.push(['HGETALL', cfg.redisKeys.partyCounts]);
 
       const results = await runRedisPipeline(commands);
       if (Array.isArray(results)) {
         const realCount = Math.max(0, parseInt(results[0]?.result ?? '0', 10) || 0);
         const realSum = Math.max(0, parseInt(results[1]?.result ?? '0', 10) || 0);
         const hashResult = results[results.length - 1]?.result;
-        const partyCounts = parseRedisHashArray(hashResult);
-        return sendJson(res, 200, buildPublicStats(realCount, realSum, 'redis', partyCounts));
+        const partyCounts = parseRedisHashArray(hashResult, countryKey);
+        return sendJson(res, 200, buildPublicStats(realCount, realSum, 'redis', partyCounts, countryKey));
       }
     } catch (err) {
-      console.error('Error actualizando estadísticas en Upstash Redis:', err.message);
+      console.error(`Error actualizando estadísticas (${countryKey}) en Upstash Redis:`, err.message);
     }
 
-    fallbackState.count += 1;
-    fallbackState.scoreSum += entry.score;
+    fallback.count += 1;
+    fallback.scoreSum += entry.score;
     if (entry.topPartyId) {
-      fallbackState.partyCounts[entry.topPartyId] =
-        (fallbackState.partyCounts[entry.topPartyId] || 0) + 1;
+      fallback.partyCounts[entry.topPartyId] =
+        (fallback.partyCounts[entry.topPartyId] || 0) + 1;
     }
-    fallbackState.results.unshift(entry);
-    if (fallbackState.results.length > MAX_STORED_RESULTS) {
-      fallbackState.results.length = MAX_STORED_RESULTS;
+    fallback.results.unshift(entry);
+    if (fallback.results.length > MAX_STORED_RESULTS) {
+      fallback.results.length = MAX_STORED_RESULTS;
     }
 
     return sendJson(
       res,
       200,
       buildPublicStats(
-        fallbackState.count,
-        fallbackState.scoreSum,
+        fallback.count,
+        fallback.scoreSum,
         'seed',
-        parseRedisHashArray(fallbackState.partyCounts)
+        parseRedisHashArray(fallback.partyCounts, countryKey),
+        countryKey
       )
     );
   }
