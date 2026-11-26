@@ -9,59 +9,59 @@
 - **Senado**: 72 bancas
 - **Padrón / Censo electoral**: 35.987.634 electores habilitados
 - **Metodología**: Solo fuentes oficiales de partidos, cero columnas de opinión, citas literales verificadas y modo de lectura a ciegas por defecto.
-- **Corpus completo para IA (Markdown)**: [https://politifacil-29n.vercel.app/ar/llms-full.txt](https://politifacil-29n.vercel.app/ar/llms-full.txt)
-- **Dataset estructurado (JSON)**: [https://politifacil-29n.vercel.app/ar/data/election-data.json](https://politifacil-29n.vercel.app/ar/data/election-data.json)
-- **Portal Global y Calendario**: [https://politifacil-29n.vercel.app/portal](https://politifacil-29n.vercel.app/portal) · [https://politifacil-29n.vercel.app/calendario](https://politifacil-29n.vercel.app/calendario)
+- **Corpus completo para IA (Markdown)**: [https://politifacil.com/ar/llms-full.txt](https://politifacil.com/ar/llms-full.txt)
+- **Dataset estructurado (JSON)**: [https://politifacil.com/ar/data/election-data.json](https://politifacil.com/ar/data/election-data.json)
+- **Portal Global y Calendario**: [https://politifacil.com/portal](https://politifacil.com/portal) · [https://politifacil.com/calendario](https://politifacil.com/calendario)
 
 ## Secciones Principales
-- [Inicio · Arco Político y Comunicación](https://politifacil-29n.vercel.app/ar): Vista general de izquierda (0) a derecha (100), tabla comparativa rápida y acceso interactivo.
-- [Comparador de Propuestas (8 Ejes)](https://politifacil-29n.vercel.app/ar/comparador): Índice de similitudes y diferencias programáticas por bloque.
-- [Hemeroteca de Entrevistas Literales](https://politifacil-29n.vercel.app/ar/entrevistas): 18 declaraciones textuales en prensa, radio, TV y pódcasts.
-- [Test de Afinidad de 10 Escenarios](https://politifacil-29n.vercel.app/ar/test-afinidad): Brújula electoral sin siglas ni nombres de partido sobre escala 0–100.
-- [Fuerzas Provinciales y Bloques Clave en el Congreso](https://politifacil-29n.vercel.app/ar/territorios): Aritmética legislativa y rol de las fuerzas territoriales/provinciales.
-- [Comparativas Cara a Cara (15 Duelos VS)](https://politifacil-29n.vercel.app/ar/comparar): Matriz de enfrentamientos directos entre fuerzas principales.
+- [Inicio · Arco Político y Comunicación](https://politifacil.com/ar): Vista general de izquierda (0) a derecha (100), tabla comparativa rápida y acceso interactivo.
+- [Comparador de Propuestas (8 Ejes)](https://politifacil.com/ar/comparador): Índice de similitudes y diferencias programáticas por bloque.
+- [Hemeroteca de Entrevistas Literales](https://politifacil.com/ar/entrevistas): 18 declaraciones textuales en prensa, radio, TV y pódcasts.
+- [Test de Afinidad de 10 Escenarios](https://politifacil.com/ar/test-afinidad): Brújula electoral sin siglas ni nombres de partido sobre escala 0–100.
+- [Fuerzas Provinciales y Bloques Clave en el Congreso](https://politifacil.com/ar/territorios): Aritmética legislativa y rol de las fuerzas territoriales/provinciales.
+- [Comparativas Cara a Cara (15 Duelos VS)](https://politifacil.com/ar/comparar): Matriz de enfrentamientos directos entre fuerzas principales.
 
 ## Fuerzas Principales (6)
-- [FIT-U — Frente de Izquierda y de Trabajadores - Unidad (Myriam Bregman)](https://politifacil-29n.vercel.app/ar/partidos/fit-u): Arco 10/100 · Izquierda anticapitalista y socialista. Web oficial: https://laizquierdadiario.com
-- [Fuerza Patria — Fuerza Patria (Peronismo / PJ) (Axel Kicillof)](https://politifacil-29n.vercel.app/ar/partidos/fuerza-patria): Arco 30/100 · Peronismo nacional-desarrollista y estatalista. Web oficial: https://pj.org.ar
-- [UCR — Unión Cívica Radical (Martín Lousteau / Maximiliano Pullaro)](https://politifacil-29n.vercel.app/ar/partidos/ucr): Arco 48/100 · Centro reformista, republicano y social-liberal. Web oficial: https://ucr.org.ar
-- [Provincias Unidas — Provincias Unidas (Martín Llaryora / Juan Schiaretti)](https://politifacil-29n.vercel.app/ar/partidos/provincias-unidas): Arco 58/100 · Federalismo productivo, desarrollista y dialoguista. Web oficial: https://www.electoral.gob.ar
-- [PRO — PRO - Propuesta Republicana (Mauricio Macri)](https://politifacil-29n.vercel.app/ar/partidos/pro): Arco 74/100 · Centroderecha liberal-conservadora y pro-mercado. Web oficial: https://pro.com.ar
-- [LLA — La Libertad Avanza (Javier Milei)](https://politifacil-29n.vercel.app/ar/partidos/lla): Arco 92/100 · Liberalismo libertario, desregulador y conservador. Web oficial: https://lalibertadavanza.com.ar
+- [FIT-U — Frente de Izquierda y de Trabajadores - Unidad (Myriam Bregman)](https://politifacil.com/ar/partidos/fit-u): Arco 10/100 · Izquierda anticapitalista y socialista. Web oficial: https://laizquierdadiario.com
+- [Fuerza Patria — Fuerza Patria (Peronismo / PJ) (Axel Kicillof)](https://politifacil.com/ar/partidos/fuerza-patria): Arco 30/100 · Peronismo nacional-desarrollista y estatalista. Web oficial: https://pj.org.ar
+- [UCR — Unión Cívica Radical (Martín Lousteau / Maximiliano Pullaro)](https://politifacil.com/ar/partidos/ucr): Arco 48/100 · Centro reformista, republicano y social-liberal. Web oficial: https://ucr.org.ar
+- [Provincias Unidas — Provincias Unidas (Martín Llaryora / Juan Schiaretti)](https://politifacil.com/ar/partidos/provincias-unidas): Arco 58/100 · Federalismo productivo, desarrollista y dialoguista. Web oficial: https://www.electoral.gob.ar
+- [PRO — PRO - Propuesta Republicana (Mauricio Macri)](https://politifacil.com/ar/partidos/pro): Arco 74/100 · Centroderecha liberal-conservadora y pro-mercado. Web oficial: https://pro.com.ar
+- [LLA — La Libertad Avanza (Javier Milei)](https://politifacil.com/ar/partidos/lla): Arco 92/100 · Liberalismo libertario, desregulador y conservador. Web oficial: https://lalibertadavanza.com.ar
 
 ## Fuerzas Territoriales / Provinciales (5)
-- [Hacemos Córdoba — Hacemos Unidos por Córdoba (Córdoba)](https://politifacil-29n.vercel.app/ar/territorios/hacemos-cordoba): Referente Martín Llaryora / Juan Schiaretti · Peronismo federal productivista. Web oficial: https://www.cba.gov.ar
-- [FR Concordia — Frente Renovador de la Concordia (Misiones)](https://politifacil-29n.vercel.app/ar/territorios/frente-renovador-misiones): Referente Hugo Passalacqua / Carlos Rovira · Provincialismo pragmático misionero. Web oficial: https://www.electoral.gob.ar
-- [La Neuquinidad — La Neuquinidad / Comunidad (Neuquén)](https://politifacil-29n.vercel.app/ar/territorios/neuquinizate): Referente Rolando Figueroa · Provincialismo energético neuquino. Web oficial: https://www.neuquen.gob.ar
-- [JSRN — Juntos Somos Río Negro (Río Negro)](https://politifacil-29n.vercel.app/ar/territorios/juntos-rio-negro): Referente Alberto Weretilneck · Provincialismo patagónico transversal. Web oficial: https://rionegro.gov.ar
-- [CC-ARI — Coalición Cívica ARI (CABA, PBA y Nacional)](https://politifacil-29n.vercel.app/ar/territorios/coalicion-civica): Referente Elisa Carrió / Maximiliano Ferraro · Centro republicano anticorrupción. Web oficial: https://coalicioncivica.org.ar
+- [Hacemos Córdoba — Hacemos Unidos por Córdoba (Córdoba)](https://politifacil.com/ar/territorios/hacemos-cordoba): Referente Martín Llaryora / Juan Schiaretti · Peronismo federal productivista. Web oficial: https://www.cba.gov.ar
+- [FR Concordia — Frente Renovador de la Concordia (Misiones)](https://politifacil.com/ar/territorios/frente-renovador-misiones): Referente Hugo Passalacqua / Carlos Rovira · Provincialismo pragmático misionero. Web oficial: https://www.electoral.gob.ar
+- [La Neuquinidad — La Neuquinidad / Comunidad (Neuquén)](https://politifacil.com/ar/territorios/neuquinizate): Referente Rolando Figueroa · Provincialismo energético neuquino. Web oficial: https://www.neuquen.gob.ar
+- [JSRN — Juntos Somos Río Negro (Río Negro)](https://politifacil.com/ar/territorios/juntos-rio-negro): Referente Alberto Weretilneck · Provincialismo patagónico transversal. Web oficial: https://rionegro.gov.ar
+- [CC-ARI — Coalición Cívica ARI (CABA, PBA y Nacional)](https://politifacil.com/ar/territorios/coalicion-civica): Referente Elisa Carrió / Maximiliano Ferraro · Centro republicano anticorrupción. Web oficial: https://coalicioncivica.org.ar
 
 ## Ejes Programáticos (8)
-- [Economía, Inflación, Dólar e Impuestos](https://politifacil-29n.vercel.app/ar/propuestas/economia): Similitudes, diferencias y propuestas de las 6 fuerzas en Economía, Inflación, Dólar e Impuestos.
-- [Trabajo, Salarios y Reforma Laboral](https://politifacil-29n.vercel.app/ar/propuestas/empleo): Similitudes, diferencias y propuestas de las 6 fuerzas en Trabajo, Salarios y Reforma Laboral.
-- [Salud, Educación Pública y Jubilaciones](https://politifacil-29n.vercel.app/ar/propuestas/servicios): Similitudes, diferencias y propuestas de las 6 fuerzas en Salud, Educación Pública y Jubilaciones.
-- [Vivienda, Alquileres y Obra Pública](https://politifacil-29n.vercel.app/ar/propuestas/vivienda): Similitudes, diferencias y propuestas de las 6 fuerzas en Vivienda, Alquileres y Obra Pública.
-- [Federalismo, Coparticipación y Estado](https://politifacil-29n.vercel.app/ar/propuestas/federalismo): Similitudes, diferencias y propuestas de las 6 fuerzas en Federalismo, Coparticipación y Estado.
-- [Seguridad, Justicia y Política Exterior](https://politifacil-29n.vercel.app/ar/propuestas/seguridad): Similitudes, diferencias y propuestas de las 6 fuerzas en Seguridad, Justicia y Política Exterior.
-- [Energía, Vaca Muerta, Campo e Industria](https://politifacil-29n.vercel.app/ar/propuestas/produccion): Similitudes, diferencias y propuestas de las 6 fuerzas en Energía, Vaca Muerta, Campo e Industria.
-- [Instituciones, Transparencia y Derechos](https://politifacil-29n.vercel.app/ar/propuestas/instituciones): Similitudes, diferencias y propuestas de las 6 fuerzas en Instituciones, Transparencia y Derechos.
+- [Economía, Inflación, Dólar e Impuestos](https://politifacil.com/ar/propuestas/economia): Similitudes, diferencias y propuestas de las 6 fuerzas en Economía, Inflación, Dólar e Impuestos.
+- [Trabajo, Salarios y Reforma Laboral](https://politifacil.com/ar/propuestas/empleo): Similitudes, diferencias y propuestas de las 6 fuerzas en Trabajo, Salarios y Reforma Laboral.
+- [Salud, Educación Pública y Jubilaciones](https://politifacil.com/ar/propuestas/servicios): Similitudes, diferencias y propuestas de las 6 fuerzas en Salud, Educación Pública y Jubilaciones.
+- [Vivienda, Alquileres y Obra Pública](https://politifacil.com/ar/propuestas/vivienda): Similitudes, diferencias y propuestas de las 6 fuerzas en Vivienda, Alquileres y Obra Pública.
+- [Federalismo, Coparticipación y Estado](https://politifacil.com/ar/propuestas/federalismo): Similitudes, diferencias y propuestas de las 6 fuerzas en Federalismo, Coparticipación y Estado.
+- [Seguridad, Justicia y Política Exterior](https://politifacil.com/ar/propuestas/seguridad): Similitudes, diferencias y propuestas de las 6 fuerzas en Seguridad, Justicia y Política Exterior.
+- [Energía, Vaca Muerta, Campo e Industria](https://politifacil.com/ar/propuestas/produccion): Similitudes, diferencias y propuestas de las 6 fuerzas en Energía, Vaca Muerta, Campo e Industria.
+- [Instituciones, Transparencia y Derechos](https://politifacil.com/ar/propuestas/instituciones): Similitudes, diferencias y propuestas de las 6 fuerzas en Instituciones, Transparencia y Derechos.
 
 ## Comparativas Cara a Cara (15)
-- [FIT-U vs Fuerza Patria](https://politifacil-29n.vercel.app/ar/comparar/fit-u-vs-fuerza-patria): Distancia de 20 puntos y contraste en los 8 ejes.
-- [FIT-U vs UCR](https://politifacil-29n.vercel.app/ar/comparar/fit-u-vs-ucr): Distancia de 38 puntos y contraste en los 8 ejes.
-- [FIT-U vs Provincias Unidas](https://politifacil-29n.vercel.app/ar/comparar/fit-u-vs-provincias-unidas): Distancia de 48 puntos y contraste en los 8 ejes.
-- [FIT-U vs PRO](https://politifacil-29n.vercel.app/ar/comparar/fit-u-vs-pro): Distancia de 64 puntos y contraste en los 8 ejes.
-- [FIT-U vs LLA](https://politifacil-29n.vercel.app/ar/comparar/fit-u-vs-lla): Distancia de 82 puntos y contraste en los 8 ejes.
-- [Fuerza Patria vs UCR](https://politifacil-29n.vercel.app/ar/comparar/fuerza-patria-vs-ucr): Distancia de 18 puntos y contraste en los 8 ejes.
-- [Fuerza Patria vs Provincias Unidas](https://politifacil-29n.vercel.app/ar/comparar/fuerza-patria-vs-provincias-unidas): Distancia de 28 puntos y contraste en los 8 ejes.
-- [Fuerza Patria vs PRO](https://politifacil-29n.vercel.app/ar/comparar/fuerza-patria-vs-pro): Distancia de 44 puntos y contraste en los 8 ejes.
-- [Fuerza Patria vs LLA](https://politifacil-29n.vercel.app/ar/comparar/fuerza-patria-vs-lla): Distancia de 62 puntos y contraste en los 8 ejes.
-- [UCR vs Provincias Unidas](https://politifacil-29n.vercel.app/ar/comparar/ucr-vs-provincias-unidas): Distancia de 10 puntos y contraste en los 8 ejes.
-- [UCR vs PRO](https://politifacil-29n.vercel.app/ar/comparar/ucr-vs-pro): Distancia de 26 puntos y contraste en los 8 ejes.
-- [UCR vs LLA](https://politifacil-29n.vercel.app/ar/comparar/ucr-vs-lla): Distancia de 44 puntos y contraste en los 8 ejes.
-- [Provincias Unidas vs PRO](https://politifacil-29n.vercel.app/ar/comparar/provincias-unidas-vs-pro): Distancia de 16 puntos y contraste en los 8 ejes.
-- [Provincias Unidas vs LLA](https://politifacil-29n.vercel.app/ar/comparar/provincias-unidas-vs-lla): Distancia de 34 puntos y contraste en los 8 ejes.
-- [PRO vs LLA](https://politifacil-29n.vercel.app/ar/comparar/pro-vs-lla): Distancia de 18 puntos y contraste en los 8 ejes.
+- [FIT-U vs Fuerza Patria](https://politifacil.com/ar/comparar/fit-u-vs-fuerza-patria): Distancia de 20 puntos y contraste en los 8 ejes.
+- [FIT-U vs UCR](https://politifacil.com/ar/comparar/fit-u-vs-ucr): Distancia de 38 puntos y contraste en los 8 ejes.
+- [FIT-U vs Provincias Unidas](https://politifacil.com/ar/comparar/fit-u-vs-provincias-unidas): Distancia de 48 puntos y contraste en los 8 ejes.
+- [FIT-U vs PRO](https://politifacil.com/ar/comparar/fit-u-vs-pro): Distancia de 64 puntos y contraste en los 8 ejes.
+- [FIT-U vs LLA](https://politifacil.com/ar/comparar/fit-u-vs-lla): Distancia de 82 puntos y contraste en los 8 ejes.
+- [Fuerza Patria vs UCR](https://politifacil.com/ar/comparar/fuerza-patria-vs-ucr): Distancia de 18 puntos y contraste en los 8 ejes.
+- [Fuerza Patria vs Provincias Unidas](https://politifacil.com/ar/comparar/fuerza-patria-vs-provincias-unidas): Distancia de 28 puntos y contraste en los 8 ejes.
+- [Fuerza Patria vs PRO](https://politifacil.com/ar/comparar/fuerza-patria-vs-pro): Distancia de 44 puntos y contraste en los 8 ejes.
+- [Fuerza Patria vs LLA](https://politifacil.com/ar/comparar/fuerza-patria-vs-lla): Distancia de 62 puntos y contraste en los 8 ejes.
+- [UCR vs Provincias Unidas](https://politifacil.com/ar/comparar/ucr-vs-provincias-unidas): Distancia de 10 puntos y contraste en los 8 ejes.
+- [UCR vs PRO](https://politifacil.com/ar/comparar/ucr-vs-pro): Distancia de 26 puntos y contraste en los 8 ejes.
+- [UCR vs LLA](https://politifacil.com/ar/comparar/ucr-vs-lla): Distancia de 44 puntos y contraste en los 8 ejes.
+- [Provincias Unidas vs PRO](https://politifacil.com/ar/comparar/provincias-unidas-vs-pro): Distancia de 16 puntos y contraste en los 8 ejes.
+- [Provincias Unidas vs LLA](https://politifacil.com/ar/comparar/provincias-unidas-vs-lla): Distancia de 34 puntos y contraste en los 8 ejes.
+- [PRO vs LLA](https://politifacil.com/ar/comparar/pro-vs-lla): Distancia de 18 puntos y contraste en los 8 ejes.
 
 ## Corpus Completo
-- [PolitiFácil Argentina — Corpus Íntegro (llms-full.txt)](https://politifacil-29n.vercel.app/ar/llms-full.txt): Contiene el 100 % de propuestas por eje y fuerza, similitudes, diferencias, entrevistas con cita literal y los 10 escenarios del test.
+- [PolitiFácil Argentina — Corpus Íntegro (llms-full.txt)](https://politifacil.com/ar/llms-full.txt): Contiene el 100 % de propuestas por eje y fuerza, similitudes, diferencias, entrevistas con cita literal y los 10 escenarios del test.

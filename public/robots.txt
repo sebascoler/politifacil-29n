@@ -38,4 +38,4 @@ User-agent: Applebot-Extended
 Allow: /
 Disallow: /api/
 
-Sitemap: https://politifacil-29n.vercel.app/sitemap.xml
+Sitemap: https://politifacil.com/sitemap.xml

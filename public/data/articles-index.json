@@ -2,12 +2,12 @@
   "meta": {
     "updatedAt": "2026-11-26",
     "count": 3,
-    "url": "https://politifacil-29n.vercel.app/articulos"
+    "url": "https://politifacil.com/articulos"
   },
   "articles": [
     {
       "slug": "como-funcionan-elecciones-argentina-2027-guia-completa",
-      "url": "https://politifacil-29n.vercel.app/articulos/como-funcionan-elecciones-argentina-2027-guia-completa",
+      "url": "https://politifacil.com/articulos/como-funcionan-elecciones-argentina-2027-guia-completa",
       "path": "/articulos/como-funcionan-elecciones-argentina-2027-guia-completa",
       "title": "Cómo funcionan las elecciones de Argentina 2027: cargos, balotaje y fuerzas principales",
       "description": "Guía neutral rumbo a las elecciones presidenciales y legislativas de Argentina 2027: Ley 19.945, bancas en juego, umbral de balotaje y fuerzas nacionales.",
@@ -63,7 +63,7 @@
     },
     {
       "slug": "guia-practica-elecciones-29n-espana-2026",
-      "url": "https://politifacil-29n.vercel.app/articulos/guia-practica-elecciones-29n-espana-2026",
+      "url": "https://politifacil.com/articulos/guia-practica-elecciones-29n-espana-2026",
       "path": "/articulos/guia-practica-elecciones-29n-espana-2026",
       "title": "Guía práctica de las elecciones generales en España (29-N 2026): escaños, censo y candidaturas",
       "description": "Resumen neutral de las elecciones generales del 29 de noviembre de 2026 en España: 350 escaños al Congreso, 208 al Senado, censo oficial y fuerzas principales.",
@@ -123,7 +123,7 @@
     },
     {
       "slug": "vivienda-29n-que-propone-cada-partido-sin-siglas",
-      "url": "https://politifacil-29n.vercel.app/articulos/vivienda-29n-que-propone-cada-partido-sin-siglas",
+      "url": "https://politifacil.com/articulos/vivienda-29n-que-propone-cada-partido-sin-siglas",
       "path": "/articulos/vivienda-29n-que-propone-cada-partido-sin-siglas",
       "title": "Vivienda en el 29-N: qué propone exactamente cada partido en su programa oficial",
       "description": "Comparativa objetiva de las propuestas de vivienda y alquiler de Podemos, Frente Amplio, PSOE, PP, VOX y SALF para las elecciones del 29-N en España.",

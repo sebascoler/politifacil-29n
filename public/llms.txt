@@ -9,71 +9,71 @@
 - **Senado**: 208 escaños
 - **Padrón / Censo electoral**: 38.728.356 electores
 - **Metodología**: Solo fuentes oficiales de partidos, cero columnas de opinión, citas literales verificadas y modo de lectura a ciegas por defecto.
-- **Corpus completo para IA (Markdown)**: [https://politifacil-29n.vercel.app/llms-full.txt](https://politifacil-29n.vercel.app/llms-full.txt)
-- **Dataset estructurado (JSON)**: [https://politifacil-29n.vercel.app/data/election-data.json](https://politifacil-29n.vercel.app/data/election-data.json)
-- **Portal Global y Calendario**: [https://politifacil-29n.vercel.app/portal](https://politifacil-29n.vercel.app/portal) · [https://politifacil-29n.vercel.app/calendario](https://politifacil-29n.vercel.app/calendario)
+- **Corpus completo para IA (Markdown)**: [https://politifacil.com/llms-full.txt](https://politifacil.com/llms-full.txt)
+- **Dataset estructurado (JSON)**: [https://politifacil.com/data/election-data.json](https://politifacil.com/data/election-data.json)
+- **Portal Global y Calendario**: [https://politifacil.com/portal](https://politifacil.com/portal) · [https://politifacil.com/calendario](https://politifacil.com/calendario)
 
 ## Secciones Principales
-- [Inicio · Arco Político y Comunicación](https://politifacil-29n.vercel.app/): Vista general de izquierda (0) a derecha (100), tabla comparativa rápida y acceso interactivo.
-- [Comparador de Propuestas (8 Ejes)](https://politifacil-29n.vercel.app/comparador): Índice de similitudes y diferencias programáticas por bloque.
-- [Hemeroteca de Entrevistas Literales](https://politifacil-29n.vercel.app/entrevistas): 37 declaraciones textuales en prensa, radio, TV y pódcasts.
-- [Test de Afinidad de 10 Escenarios](https://politifacil-29n.vercel.app/test-afinidad): Brújula electoral sin siglas ni nombres de partido sobre escala 0–100.
-- [Fuerzas Territoriales Clave en el Congreso](https://politifacil-29n.vercel.app/territorios): Aritmética legislativa y rol de las fuerzas territoriales/provinciales.
-- [Comparativas Cara a Cara (15 Duelos VS)](https://politifacil-29n.vercel.app/comparar): Matriz de enfrentamientos directos entre fuerzas principales.
+- [Inicio · Arco Político y Comunicación](https://politifacil.com/): Vista general de izquierda (0) a derecha (100), tabla comparativa rápida y acceso interactivo.
+- [Comparador de Propuestas (8 Ejes)](https://politifacil.com/comparador): Índice de similitudes y diferencias programáticas por bloque.
+- [Hemeroteca de Entrevistas Literales](https://politifacil.com/entrevistas): 37 declaraciones textuales en prensa, radio, TV y pódcasts.
+- [Test de Afinidad de 10 Escenarios](https://politifacil.com/test-afinidad): Brújula electoral sin siglas ni nombres de partido sobre escala 0–100.
+- [Fuerzas Territoriales Clave en el Congreso](https://politifacil.com/territorios): Aritmética legislativa y rol de las fuerzas territoriales/provinciales.
+- [Comparativas Cara a Cara (15 Duelos VS)](https://politifacil.com/comparar): Matriz de enfrentamientos directos entre fuerzas principales.
 
 ## Fuerzas Principales (6)
-- [Podemos — Podemos (Irene Montero)](https://politifacil-29n.vercel.app/partidos/podemos): Arco 10/100 · Izquierda transformadora y antimilitarista. Web oficial: https://pazcasaytrabajo.es
-- [Frente Amplio — Frente Amplio (Sumar / IU / Más Madrid / Comuns) (Ada Colau)](https://politifacil-29n.vercel.app/partidos/frente-amplio): Arco 22/100 · Izquierda progresista, ecologista y plurinacional. Web oficial: https://www.frenteamplio.info
-- [PSOE — Partido Socialista Obrero Español (Pedro Sánchez)](https://politifacil-29n.vercel.app/partidos/psoe): Arco 38/100 · Centro-izquierda socialdemócrata y europeísta. Web oficial: https://lafuerzadelagente.es
-- [PP — Partido Popular (Alberto Núñez Feijóo)](https://politifacil-29n.vercel.app/partidos/pp): Arco 68/100 · Centro-derecha liberal-conservador y reformista. Web oficial: https://www.pp.es
-- [VOX — VOX (Santiago Abascal)](https://politifacil-29n.vercel.app/partidos/vox): Arco 88/100 · Derecha nacional-conservadora y soberanista. Web oficial: https://votasentidocomun.es
-- [SALF — Se Acabó La Fiesta (Alvise Pérez)](https://politifacil-29n.vercel.app/partidos/salf): Arco 92/100 · Derecha populista antisistema y desreguladora. Web oficial: https://www.seacabolafiesta.com
+- [Podemos — Podemos (Irene Montero)](https://politifacil.com/partidos/podemos): Arco 10/100 · Izquierda transformadora y antimilitarista. Web oficial: https://pazcasaytrabajo.es
+- [Frente Amplio — Frente Amplio (Sumar / IU / Más Madrid / Comuns) (Ada Colau)](https://politifacil.com/partidos/frente-amplio): Arco 22/100 · Izquierda progresista, ecologista y plurinacional. Web oficial: https://www.frenteamplio.info
+- [PSOE — Partido Socialista Obrero Español (Pedro Sánchez)](https://politifacil.com/partidos/psoe): Arco 38/100 · Centro-izquierda socialdemócrata y europeísta. Web oficial: https://lafuerzadelagente.es
+- [PP — Partido Popular (Alberto Núñez Feijóo)](https://politifacil.com/partidos/pp): Arco 68/100 · Centro-derecha liberal-conservador y reformista. Web oficial: https://www.pp.es
+- [VOX — VOX (Santiago Abascal)](https://politifacil.com/partidos/vox): Arco 88/100 · Derecha nacional-conservadora y soberanista. Web oficial: https://votasentidocomun.es
+- [SALF — Se Acabó La Fiesta (Alvise Pérez)](https://politifacil.com/partidos/salf): Arco 92/100 · Derecha populista antisistema y desreguladora. Web oficial: https://www.seacabolafiesta.com
 
 ## Fuerzas Territoriales / Provinciales (5)
-- [ERC — Esquerra Republicana de Catalunya (Cataluña)](https://politifacil-29n.vercel.app/territorios/erc): Referente Gabriel Rufián · Izquierda soberanista. Web oficial: https://www.esquerra.cat
-- [Junts — Junts per Catalunya (Cataluña)](https://politifacil-29n.vercel.app/territorios/junts): Referente Míriam Nogueras / Carles Puigdemont · Centroderecha independentista. Web oficial: https://www.junts.cat
-- [EAJ-PNV — Partido Nacionalista Vasco (Euskadi)](https://politifacil-29n.vercel.app/territorios/eaj-pnv): Referente Aitor Esteban / Idoia Sagastizabal / Maribel Vaquero · Centro / centroderecha foral. Web oficial: https://www.eaj-pnv.eus
-- [EH Bildu — Euskal Herria Bildu (Euskadi y Navarra)](https://politifacil-29n.vercel.app/territorios/eh-bildu): Referente Oskar Matute / Arnaldo Otegi · Izquierda soberanista. Web oficial: https://www.ehbildu.eus
-- [BNG — Bloque Nacionalista Galego (Galicia)](https://politifacil-29n.vercel.app/territorios/bng): Referente Néstor Rego / Ana Pontón · Izquierda nacionalista gallega. Web oficial: https://www.bng.gal
+- [ERC — Esquerra Republicana de Catalunya (Cataluña)](https://politifacil.com/territorios/erc): Referente Gabriel Rufián · Izquierda soberanista. Web oficial: https://www.esquerra.cat
+- [Junts — Junts per Catalunya (Cataluña)](https://politifacil.com/territorios/junts): Referente Míriam Nogueras / Carles Puigdemont · Centroderecha independentista. Web oficial: https://www.junts.cat
+- [EAJ-PNV — Partido Nacionalista Vasco (Euskadi)](https://politifacil.com/territorios/eaj-pnv): Referente Aitor Esteban / Idoia Sagastizabal / Maribel Vaquero · Centro / centroderecha foral. Web oficial: https://www.eaj-pnv.eus
+- [EH Bildu — Euskal Herria Bildu (Euskadi y Navarra)](https://politifacil.com/territorios/eh-bildu): Referente Oskar Matute / Arnaldo Otegi · Izquierda soberanista. Web oficial: https://www.ehbildu.eus
+- [BNG — Bloque Nacionalista Galego (Galicia)](https://politifacil.com/territorios/bng): Referente Néstor Rego / Ana Pontón · Izquierda nacionalista gallega. Web oficial: https://www.bng.gal
 
 ## Ejes Programáticos (8)
-- [Vivienda y Alquiler](https://politifacil-29n.vercel.app/propuestas/vivienda): Similitudes, diferencias y propuestas de las 6 fuerzas en Vivienda y Alquiler.
-- [Economía, Impuestos y Coste de la Vida](https://politifacil-29n.vercel.app/propuestas/economia): Similitudes, diferencias y propuestas de las 6 fuerzas en Economía, Impuestos y Coste de la Vida.
-- [Empleo, Salarios y Jornada Laboral](https://politifacil-29n.vercel.app/propuestas/empleo): Similitudes, diferencias y propuestas de las 6 fuerzas en Empleo, Salarios y Jornada Laboral.
-- [Sanidad, Educación y Pensiones](https://politifacil-29n.vercel.app/propuestas/servicios): Similitudes, diferencias y propuestas de las 6 fuerzas en Sanidad, Educación y Pensiones.
-- [Modelo Territorial y Financiación](https://politifacil-29n.vercel.app/propuestas/territorial): Similitudes, diferencias y propuestas de las 6 fuerzas en Modelo Territorial y Financiación.
-- [Inmigración, Seguridad, Defensa y Justicia](https://politifacil-29n.vercel.app/propuestas/seguridad): Similitudes, diferencias y propuestas de las 6 fuerzas en Inmigración, Seguridad, Defensa y Justicia.
-- [Transición Ecológica, Energía y Campo](https://politifacil-29n.vercel.app/propuestas/ecologia): Similitudes, diferencias y propuestas de las 6 fuerzas en Transición Ecológica, Energía y Campo.
-- [Regeneración Democrática y Derechos Civiles](https://politifacil-29n.vercel.app/propuestas/regeneracion): Similitudes, diferencias y propuestas de las 6 fuerzas en Regeneración Democrática y Derechos Civiles.
+- [Vivienda y Alquiler](https://politifacil.com/propuestas/vivienda): Similitudes, diferencias y propuestas de las 6 fuerzas en Vivienda y Alquiler.
+- [Economía, Impuestos y Coste de la Vida](https://politifacil.com/propuestas/economia): Similitudes, diferencias y propuestas de las 6 fuerzas en Economía, Impuestos y Coste de la Vida.
+- [Empleo, Salarios y Jornada Laboral](https://politifacil.com/propuestas/empleo): Similitudes, diferencias y propuestas de las 6 fuerzas en Empleo, Salarios y Jornada Laboral.
+- [Sanidad, Educación y Pensiones](https://politifacil.com/propuestas/servicios): Similitudes, diferencias y propuestas de las 6 fuerzas en Sanidad, Educación y Pensiones.
+- [Modelo Territorial y Financiación](https://politifacil.com/propuestas/territorial): Similitudes, diferencias y propuestas de las 6 fuerzas en Modelo Territorial y Financiación.
+- [Inmigración, Seguridad, Defensa y Justicia](https://politifacil.com/propuestas/seguridad): Similitudes, diferencias y propuestas de las 6 fuerzas en Inmigración, Seguridad, Defensa y Justicia.
+- [Transición Ecológica, Energía y Campo](https://politifacil.com/propuestas/ecologia): Similitudes, diferencias y propuestas de las 6 fuerzas en Transición Ecológica, Energía y Campo.
+- [Regeneración Democrática y Derechos Civiles](https://politifacil.com/propuestas/regeneracion): Similitudes, diferencias y propuestas de las 6 fuerzas en Regeneración Democrática y Derechos Civiles.
 
 ## Comparativas Cara a Cara (15)
-- [Podemos vs Frente Amplio](https://politifacil-29n.vercel.app/comparar/podemos-vs-frente-amplio): Distancia de 12 puntos y contraste en los 8 ejes.
-- [Podemos vs PSOE](https://politifacil-29n.vercel.app/comparar/podemos-vs-psoe): Distancia de 28 puntos y contraste en los 8 ejes.
-- [Podemos vs PP](https://politifacil-29n.vercel.app/comparar/podemos-vs-pp): Distancia de 58 puntos y contraste en los 8 ejes.
-- [Podemos vs VOX](https://politifacil-29n.vercel.app/comparar/podemos-vs-vox): Distancia de 78 puntos y contraste en los 8 ejes.
-- [Podemos vs SALF](https://politifacil-29n.vercel.app/comparar/podemos-vs-salf): Distancia de 82 puntos y contraste en los 8 ejes.
-- [Frente Amplio vs PSOE](https://politifacil-29n.vercel.app/comparar/frente-amplio-vs-psoe): Distancia de 16 puntos y contraste en los 8 ejes.
-- [Frente Amplio vs PP](https://politifacil-29n.vercel.app/comparar/frente-amplio-vs-pp): Distancia de 46 puntos y contraste en los 8 ejes.
-- [Frente Amplio vs VOX](https://politifacil-29n.vercel.app/comparar/frente-amplio-vs-vox): Distancia de 66 puntos y contraste en los 8 ejes.
-- [Frente Amplio vs SALF](https://politifacil-29n.vercel.app/comparar/frente-amplio-vs-salf): Distancia de 70 puntos y contraste en los 8 ejes.
-- [PSOE vs PP](https://politifacil-29n.vercel.app/comparar/psoe-vs-pp): Distancia de 30 puntos y contraste en los 8 ejes.
-- [PSOE vs VOX](https://politifacil-29n.vercel.app/comparar/psoe-vs-vox): Distancia de 50 puntos y contraste en los 8 ejes.
-- [PSOE vs SALF](https://politifacil-29n.vercel.app/comparar/psoe-vs-salf): Distancia de 54 puntos y contraste en los 8 ejes.
-- [PP vs VOX](https://politifacil-29n.vercel.app/comparar/pp-vs-vox): Distancia de 20 puntos y contraste en los 8 ejes.
-- [PP vs SALF](https://politifacil-29n.vercel.app/comparar/pp-vs-salf): Distancia de 24 puntos y contraste en los 8 ejes.
-- [VOX vs SALF](https://politifacil-29n.vercel.app/comparar/vox-vs-salf): Distancia de 4 puntos y contraste en los 8 ejes.
+- [Podemos vs Frente Amplio](https://politifacil.com/comparar/podemos-vs-frente-amplio): Distancia de 12 puntos y contraste en los 8 ejes.
+- [Podemos vs PSOE](https://politifacil.com/comparar/podemos-vs-psoe): Distancia de 28 puntos y contraste en los 8 ejes.
+- [Podemos vs PP](https://politifacil.com/comparar/podemos-vs-pp): Distancia de 58 puntos y contraste en los 8 ejes.
+- [Podemos vs VOX](https://politifacil.com/comparar/podemos-vs-vox): Distancia de 78 puntos y contraste en los 8 ejes.
+- [Podemos vs SALF](https://politifacil.com/comparar/podemos-vs-salf): Distancia de 82 puntos y contraste en los 8 ejes.
+- [Frente Amplio vs PSOE](https://politifacil.com/comparar/frente-amplio-vs-psoe): Distancia de 16 puntos y contraste en los 8 ejes.
+- [Frente Amplio vs PP](https://politifacil.com/comparar/frente-amplio-vs-pp): Distancia de 46 puntos y contraste en los 8 ejes.
+- [Frente Amplio vs VOX](https://politifacil.com/comparar/frente-amplio-vs-vox): Distancia de 66 puntos y contraste en los 8 ejes.
+- [Frente Amplio vs SALF](https://politifacil.com/comparar/frente-amplio-vs-salf): Distancia de 70 puntos y contraste en los 8 ejes.
+- [PSOE vs PP](https://politifacil.com/comparar/psoe-vs-pp): Distancia de 30 puntos y contraste en los 8 ejes.
+- [PSOE vs VOX](https://politifacil.com/comparar/psoe-vs-vox): Distancia de 50 puntos y contraste en los 8 ejes.
+- [PSOE vs SALF](https://politifacil.com/comparar/psoe-vs-salf): Distancia de 54 puntos y contraste en los 8 ejes.
+- [PP vs VOX](https://politifacil.com/comparar/pp-vs-vox): Distancia de 20 puntos y contraste en los 8 ejes.
+- [PP vs SALF](https://politifacil.com/comparar/pp-vs-salf): Distancia de 24 puntos y contraste en los 8 ejes.
+- [VOX vs SALF](https://politifacil.com/comparar/vox-vs-salf): Distancia de 4 puntos y contraste en los 8 ejes.
 
 ## Corpus Completo
-- [PolitiFácil 29-N — Corpus Íntegro (llms-full.txt)](https://politifacil-29n.vercel.app/llms-full.txt): Contiene el 100 % de propuestas por eje y fuerza, similitudes, diferencias, entrevistas con cita literal y los 10 escenarios del test.
+- [PolitiFácil 29-N — Corpus Íntegro (llms-full.txt)](https://politifacil.com/llms-full.txt): Contiene el 100 % de propuestas por eje y fuerza, similitudes, diferencias, entrevistas con cita literal y los 10 escenarios del test.
 
 
 ## Red Internacional PolitiFácil (Nuevo)
-- [PolitiFácil — Portal Global Multi-País](https://politifacil-29n.vercel.app/portal): Misión del observatorio, mercados activos (España y Argentina) y próximos lanzamientos (EE. UU., Brasil, México, Colombia, Chile, Guatemala).
-- [Calendario Electoral 2026–2028 (España, Latam y EE. UU.)](https://politifacil-29n.vercel.app/calendario): 21 citas electorales verificadas ([JSON](https://politifacil-29n.vercel.app/data/calendar-data.json)).
-- [PolitiFácil Argentina (Rumbo 2027)](https://politifacil-29n.vercel.app/ar): Fuerzas nacionales, bloques provinciales, entrevistas literales y test de 10 escenarios ([llms.txt](https://politifacil-29n.vercel.app/ar/llms.txt), [llms-full.txt](https://politifacil-29n.vercel.app/ar/llms-full.txt), [JSON](https://politifacil-29n.vercel.app/ar/data/election-data.json)).
+- [PolitiFácil — Portal Global Multi-País](https://politifacil.com/portal): Misión del observatorio, mercados activos (España y Argentina) y próximos lanzamientos (EE. UU., Brasil, México, Colombia, Chile, Guatemala).
+- [Calendario Electoral 2026–2028 (España, Latam y EE. UU.)](https://politifacil.com/calendario): 21 citas electorales verificadas ([JSON](https://politifacil.com/data/calendar-data.json)).
+- [PolitiFácil Argentina (Rumbo 2027)](https://politifacil.com/ar): Fuerzas nacionales, bloques provinciales, entrevistas literales y test de 10 escenarios ([llms.txt](https://politifacil.com/ar/llms.txt), [llms-full.txt](https://politifacil.com/ar/llms-full.txt), [JSON](https://politifacil.com/ar/data/election-data.json)).
 
 ## Artículos y Guías Electorales (SEO/GEO)
-- [PolitiFácil Artículos — Índice completo](https://politifacil-29n.vercel.app/articulos): 3 guías verificadas ([llms.txt](https://politifacil-29n.vercel.app/articulos/llms.txt), [JSON](https://politifacil-29n.vercel.app/data/articles-index.json)).
-- [🇦🇷 Cómo funcionan las elecciones de Argentina 2027: cargos, balotaje y fuerzas principales](https://politifacil-29n.vercel.app/articulos/como-funcionan-elecciones-argentina-2027-guia-completa): Guía neutral rumbo a las elecciones presidenciales y legislativas de Argentina 2027: Ley 19.945, bancas en juego, umbral de balotaje y fuerzas nacionales.
-- [🇪🇸 Guía práctica de las elecciones generales en España (29-N 2026): escaños, censo y candidaturas](https://politifacil-29n.vercel.app/articulos/guia-practica-elecciones-29n-espana-2026): Resumen neutral de las elecciones generales del 29 de noviembre de 2026 en España: 350 escaños al Congreso, 208 al Senado, censo oficial y fuerzas principales.
-- [🇪🇸 Vivienda en el 29-N: qué propone exactamente cada partido en su programa oficial](https://politifacil-29n.vercel.app/articulos/vivienda-29n-que-propone-cada-partido-sin-siglas): Comparativa objetiva de las propuestas de vivienda y alquiler de Podemos, Frente Amplio, PSOE, PP, VOX y SALF para las elecciones del 29-N en España.
+- [PolitiFácil Artículos — Índice completo](https://politifacil.com/articulos): 3 guías verificadas ([llms.txt](https://politifacil.com/articulos/llms.txt), [JSON](https://politifacil.com/data/articles-index.json)).
+- [🇦🇷 Cómo funcionan las elecciones de Argentina 2027: cargos, balotaje y fuerzas principales](https://politifacil.com/articulos/como-funcionan-elecciones-argentina-2027-guia-completa): Guía neutral rumbo a las elecciones presidenciales y legislativas de Argentina 2027: Ley 19.945, bancas en juego, umbral de balotaje y fuerzas nacionales.
+- [🇪🇸 Guía práctica de las elecciones generales en España (29-N 2026): escaños, censo y candidaturas](https://politifacil.com/articulos/guia-practica-elecciones-29n-espana-2026): Resumen neutral de las elecciones generales del 29 de noviembre de 2026 en España: 350 escaños al Congreso, 208 al Senado, censo oficial y fuerzas principales.
+- [🇪🇸 Vivienda en el 29-N: qué propone exactamente cada partido en su programa oficial](https://politifacil.com/articulos/vivienda-29n-que-propone-cada-partido-sin-siglas): Comparativa objetiva de las propuestas de vivienda y alquiler de Podemos, Frente Amplio, PSOE, PP, VOX y SALF para las elecciones del 29-N en España.

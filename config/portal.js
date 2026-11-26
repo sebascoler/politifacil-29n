@@ -5,10 +5,7 @@ const ROOT_MODE = process.env.PORTAL_ROOT_MODE === 'global' ? 'global' : 'spain-
 function getSiteUrl() {
   const rawUrl =
     process.env.SITE_URL ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : '') ||
-    'https://politifacil-29n.vercel.app';
+    'https://politifacil.com';
   return rawUrl.replace(/\/$/, '');
 }
 

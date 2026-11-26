@@ -943,7 +943,7 @@ async function main() {
   }
 
   const propertyId = process.env.GA4_PROPERTY_ID || project.ga4PropertyId || '564800083';
-  const siteUrl = process.env.GSC_SITE_URL || project.gscProperty || 'https://politifacil-29n.vercel.app/';
+  const siteUrl = process.env.GSC_SITE_URL || project.gscProperty || 'https://politifacil.com/';
 
   const creds = loadServiceAccountCredentials();
   const token = await getGoogleAccessToken(creds);

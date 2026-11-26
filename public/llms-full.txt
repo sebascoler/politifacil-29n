@@ -1,6 +1,6 @@
 # PolitiFácil 29-N — Corpus Electoral Completo (España)
 
-- URL canónica: https://politifacil-29n.vercel.app/
+- URL canónica: https://politifacil.com/
 - Fecha electoral: 2026-11-29
 - Marco: Real Decreto 806/2026, de 5 de octubre
 - Congreso: 350 escaños (mayoría: 176)
@@ -12,7 +12,7 @@
 ## 1. Fuerzas Principales (6) y Propuestas por 8 Ejes
 
 ### Podemos (Podemos) — Referente: Irene Montero
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/podemos
+- URL en PolitiFácil: https://politifacil.com/partidos/podemos
 - Web oficial: https://pazcasaytrabajo.es · https://podemos.info
 - Etiqueta ideológica: Izquierda transformadora y antimilitarista
 - Puntuación en arco (0 izq - 100 der): 10/100 (Eje económico: 8/100, Social-territorial: 12/100)
@@ -24,56 +24,56 @@
 - Palabras clave: Paz, casa y trabajo, Fondos buitre, Bajar alquileres 40 %, Cultura de la exigencia, Rearme, Banca pública
 - Estilo en entrevistas: Rápida y contundente; contrapone cifras concretas (alquileres -40 %, SMI 1.800 €) al gasto militar y reencuadra preguntas incómodas hacia la defensa cerrada de su gestión o el eje vivienda. (Registro: Directo, asertivo y de confrontación programática con símiles populares.)
 
-#### Vivienda y Alquiler (https://politifacil-29n.vercel.app/propuestas/vivienda)
+#### Vivienda y Alquiler (https://politifacil.com/propuestas/vivienda)
 - **Titular**: Bajada forzosa del 40 % en alquileres y expropiación de uso a grandes tenedores
 - Bajada obligatoria por ley del 40 % en todos los alquileres actuales y tope máximo del 30 % de los ingresos familiares.
 - Expropiación del uso de en torno al 50 % de las viviendas en manos de grandes tenedores y fondos buitre para alquiler social.
 - Nuevo impuesto a la vivienda vacía del 400 % (amparado en el art. 128 CE), veto a la compra especulativa por no residentes y moratoria de 5 años a pisos turísticos.
 - **Fuente**: pazcasaytrabajo.es / Programa 29-N Podemos (https://pazcasaytrabajo.es)
 
-#### Economía, Impuestos y Coste de la Vida (https://politifacil-29n.vercel.app/propuestas/economia)
+#### Economía, Impuestos y Coste de la Vida (https://politifacil.com/propuestas/economia)
 - **Titular**: Banca y supermercado públicos, topes a la cesta básica y 50 % a beneficios extraordinarios
 - Gravamen extraordinario del 50 % sobre beneficios extraordinarios de IBEX 35, banca y energéticas e igualación fiscal de rentas del capital y del trabajo.
 - Creación de una banca pública, un supermercado público y topes máximos de precios en alimentos básicos.
 - Nacionalización de empresas energéticas (como Repsol) y reasignación del gasto militar (~24.000 M€ desde 2023) a políticas sociales.
 - **Fuente**: pazcasaytrabajo.es — Bloque Precios Justos (https://pazcasaytrabajo.es)
 
-#### Empleo, Salarios y Jornada Laboral (https://politifacil-29n.vercel.app/propuestas/empleo)
+#### Empleo, Salarios y Jornada Laboral (https://politifacil.com/propuestas/empleo)
 - **Titular**: SMI de 1.800 € mensuales, jornada de 30 horas y persecución penal de horas extra
 - Subida legal del Salario Mínimo Interprofesional (SMI) hasta los 1.800 euros mensuales en 14 pagas.
 - Jornada laboral máxima de 30 horas semanales (6 horas diarias) sin reducción salarial.
 - Persecución por vía penal de empresas que impongan horas extraordinarias ilegales no remuneradas y remuneración íntegra de las 8 semanas del permiso parental.
 - **Fuente**: pazcasaytrabajo.es — Bloque Trabajo (https://pazcasaytrabajo.es)
 
-#### Sanidad, Educación y Pensiones (https://politifacil-29n.vercel.app/propuestas/servicios)
+#### Sanidad, Educación y Pensiones (https://politifacil.com/propuestas/servicios)
 - **Titular**: Jubilación a los 63 años, fin de conciertos y 80.000 nuevas plazas públicas
 - Contratación de 40.000 nuevos profesionales sanitarios y 40.000 nuevos docentes financiados con el recorte del gasto militar.
 - Sanidad y educación 100 % públicas eliminando conciertos privados, y gratuidad educativa de 0 a 18 años.
 - Rebaja de la edad ordinaria de jubilación a los 63 años, subida de pensiones mínimas y revalorización ligada al IPC real.
 - **Fuente**: podemos.info / pazcasaytrabajo.es (https://podemos.info)
 
-#### Modelo Territorial y Financiación (https://politifacil-29n.vercel.app/propuestas/territorial)
+#### Modelo Territorial y Financiación (https://politifacil.com/propuestas/territorial)
 - **Titular**: República plurinacional confederal, derecho a decidir y pactos territoriales
 - Modelo de Estado republicano, plurinacional y confederal basado en soberanías compartidas y reconocimiento del derecho a decidir.
 - Equidad territorial con consideración específica de la despoblación en la financiación autonómica.
 - Alianzas territoriales del 29-N integradas con ERC en Cataluña, Compromís: Front Valencià y Unidad del Pueblo Canario.
 - **Fuente**: podemos.info (https://podemos.info)
 
-#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil-29n.vercel.app/propuestas/seguridad)
+#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil.com/propuestas/seguridad)
 - **Titular**: Salida de la OTAN, cierre de Rota y Morón, embargo a Israel y derogación de Ley Mordaza
 - Consigna «ni un euro más para armas»: salida de España de la OTAN, cierre de las bases de Rota y Morón y embargo total de armas a Israel.
 - Respaldo a la regularización de personas migrantes con igualdad plena de derechos y rechazo a vincular migración con inseguridad.
 - Derogación íntegra de la Ley Mordaza, prohibición de empresas de desokupación extrajudicial y democratización del CGPJ.
 - **Fuente**: pazcasaytrabajo.es — Bloque Paz y Derechos (https://pazcasaytrabajo.es)
 
-#### Transición Ecológica, Energía y Campo (https://politifacil-29n.vercel.app/propuestas/ecologia)
+#### Transición Ecológica, Energía y Campo (https://politifacil.com/propuestas/ecologia)
 - **Titular**: Empresa pública de energía, cierre nuclear acelerado y freno a fondos en el campo
 - Empresa pública eléctrica a coste real, cierre acelerado de centrales nucleares y sistema 100 % renovable en 2040.
 - Impuestos punitivos a jets privados, yates, campos de golf y vehículos de lujo contaminantes.
 - Prohibición de compra de tierras agrarias por fondos de inversión, prohibición de venta a pérdidas y control de precios agroalimentarios.
 - **Fuente**: pazcasaytrabajo.es — Bloque Planeta (https://pazcasaytrabajo.es)
 
-#### Regeneración Democrática y Derechos Civiles (https://politifacil-29n.vercel.app/propuestas/regeneracion)
+#### Regeneración Democrática y Derechos Civiles (https://politifacil.com/propuestas/regeneracion)
 - **Titular**: 1.000 M€ contra violencias machistas, defensa de Ley Trans y medidas antilawfare
 - Dotación de 1.000 millones de euros anuales contra las violencias machistas y ley marco conforme al Convenio de Estambul.
 - Defensa íntegra de la Ley del solo sí es sí y de la Ley Trans (autodeterminación registral sin informes médicos).
@@ -81,7 +81,7 @@
 - **Fuente**: podemos.info (https://podemos.info)
 
 ### Frente Amplio (Sumar / IU / Más Madrid / Comuns) (Frente Amplio) — Referente: Ada Colau
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/frente-amplio
+- URL en PolitiFácil: https://politifacil.com/partidos/frente-amplio
 - Web oficial: https://www.frenteamplio.info
 - Etiqueta ideológica: Izquierda progresista, ecologista y plurinacional
 - Puntuación en arco (0 izq - 100 der): 22/100 (Eje económico: 20/100, Social-territorial: 18/100)
@@ -93,56 +93,56 @@
 - Palabras clave: Especulación, Parque público 1,5M, Tax the rich, País de países, Jornada 32h, Izquierda útil
 - Estilo en entrevistas: Conversacional y didáctica; evita el moralismo, combina la crítica concreta a los retrasos del PSOE en alquileres con salidas pragmáticas en casos de pequeños propietarios. (Registro: Cercano y programático, con guiños culturales de redes y autocrítica discursiva.)
 
-#### Vivienda y Alquiler (https://politifacil-29n.vercel.app/propuestas/vivienda)
+#### Vivienda y Alquiler (https://politifacil.com/propuestas/vivienda)
 - **Titular**: 1 % del PIB anual para 1,5 millones de pisos públicos y límite al 25 % de la renta
 - Destinar el 1 % del PIB anual (~17.000 M€) durante 12 años para crear 1,5 millones de viviendas públicas en alquiler (20 % del parque en 2035).
 - Topes en zonas tensionadas al 25 % de los ingresos medios del hogar (referencia 600 €/mes) y contratos de alquiler indefinidos por defecto.
 - Expropiación progresiva a grandes tenedores corporativos, veto a compra especulativa por fondos/SOCIMIs y extinción de pisos turísticos en 3 años.
 - **Fuente**: Programa «Un programa como una casa» — frenteamplio.info (https://www.frenteamplio.info)
 
-#### Economía, Impuestos y Coste de la Vida (https://politifacil-29n.vercel.app/propuestas/economia)
+#### Economía, Impuestos y Coste de la Vida (https://politifacil.com/propuestas/economia)
 - **Titular**: Sociedades mínimo al 20 %, impuesto al 3 % a fortunas y 3 horas de luz gratis
 - Tipo mínimo efectivo del 20 % en Sociedades (hasta 30 % si suben beneficios sin subir salarios) e impuesto de hasta el 3 % a patrimonios >50 M€.
 - Tipo marginal del 100 % en sucesiones para herencias que superen los 10 millones de euros por heredero.
 - Topes a una cesta básica de alimentos ante abusos, IVA progresivo eléctrico y 3 horas diarias de electricidad gratuita en franja solar.
 - **Fuente**: frenteamplio.info — Bloque Fiscalidad y Economía (https://www.frenteamplio.info)
 
-#### Empleo, Salarios y Jornada Laboral (https://politifacil-29n.vercel.app/propuestas/empleo)
+#### Empleo, Salarios y Jornada Laboral (https://politifacil.com/propuestas/empleo)
 - **Titular**: Jornada de 32 horas, reparto del 10 % de beneficios y empleo garantizado
 - Reducción de la jornada laboral desde 37,5 h (35 h en sector público) hasta 32 horas semanales sin recorte salarial.
 - Obligación en empresas de 50+ empleados de repartir el 10 % de beneficios entre la plantilla y presencia laboral en consejos.
 - Plan de Empleo Garantizado para bajar el paro estructural al 7 %, SMI al 60 % del salario medio neto y extensión del IMV a jóvenes.
 - **Fuente**: frenteamplio.info — Bloque Trabajo (https://www.frenteamplio.info)
 
-#### Sanidad, Educación y Pensiones (https://politifacil-29n.vercel.app/propuestas/servicios)
+#### Sanidad, Educación y Pensiones (https://politifacil.com/propuestas/servicios)
 - **Titular**: Sanidad al 8 % del PIB con dentista y gafas, crianza 200 € y jubilación a los 65
 - Elevar la sanidad pública al 8 % del PIB incluyendo dentista público, gafas, audífonos y salud mental universal.
 - Educación al 7 % del PIB, comedores gratuitos y prestación universal por crianza de 200 €/mes por cada hijo menor de 18 años.
 - Revertir la reforma de 2011 para fijar la jubilación ordinaria en 65 años (60 años en trabajos penosos) y equiparar la pensión mínima al SMI.
 - **Fuente**: frenteamplio.info — Servicios Públicos y Pensiones (https://www.frenteamplio.info)
 
-#### Modelo Territorial y Financiación (https://politifacil-29n.vercel.app/propuestas/territorial)
+#### Modelo Territorial y Financiación (https://politifacil.com/propuestas/territorial)
 - **Titular**: Estado republicano federal-plurinacional y suelo fiscal común autonómico
 - Tránsito hacia un Estado republicano, federal y plurinacional («país de países») con reconocimiento del derecho a decidir mediante referéndum regulado.
 - Reforma de financiación autonómica condicionada a un suelo fiscal común que impida el dumping tributario entre comunidades.
 - Plan de empleo verde, infraestructuras y servicios rurales para la España vaciada.
 - **Fuente**: frenteamplio.info — Modelo Territorial (https://www.frenteamplio.info)
 
-#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil-29n.vercel.app/propuestas/seguridad)
+#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil.com/propuestas/seguridad)
 - **Titular**: Acogida solidaria de menores, rechazo al 5 % OTAN y embargo de armas a Israel
 - Regularización y reparto solidario obligatorio de menores migrantes financiado por el Estado; recurso ante el TJUE contra externalizaciones.
 - Oposición a subir el gasto militar, reconversión civil de las bases de Rota y Morón, 0,7 % a cooperación y embargo total a Israel.
 - Derogación de aspectos restrictivos de la Ley Mordaza, prohibición de pelotas de goma y mediación comunitaria.
 - **Fuente**: frenteamplio.info — Derechos, Paz y Seguridad (https://www.frenteamplio.info)
 
-#### Transición Ecológica, Energía y Campo (https://politifacil-29n.vercel.app/propuestas/ecologia)
+#### Transición Ecológica, Energía y Campo (https://politifacil.com/propuestas/ecologia)
 - **Titular**: 3,5 % del PIB a transición verde, 100 % renovable en 2040 y fin a vuelos cortos
 - Inversión legal del 3,5 % del PIB anual en transición ecológica justa con Vicepresidencia Ejecutiva y Fondo Generacional de Energía.
 - Electricidad 100 % renovable en 2040 manteniendo el cierre nuclear y prohibición de vuelos nacionales con tren alternativo <2h30.
 - Abono único de transporte estatal, restricción a megacruceros, apoyo a ganadería extensiva y freno a macrogranjas.
 - **Fuente**: frenteamplio.info — Transición Ecológica (https://www.frenteamplio.info)
 
-#### Regeneración Democrática y Derechos Civiles (https://politifacil-29n.vercel.app/propuestas/regeneracion)
+#### Regeneración Democrática y Derechos Civiles (https://politifacil.com/propuestas/regeneracion)
 - **Titular**: Blindaje del aborto, ley contra el racismo y pacto contra deepfakes con IA
 - Blindaje constitucional del aborto, suspensión de visitas a investigados por violencia machista y refuerzo LGTBI+.
 - Ley integral contra el racismo, delitos de odio y aporofobia.
@@ -150,7 +150,7 @@
 - **Fuente**: frenteamplio.info — Calidad Democrática (https://www.frenteamplio.info)
 
 ### Partido Socialista Obrero Español (PSOE) — Referente: Pedro Sánchez
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/psoe
+- URL en PolitiFácil: https://politifacil.com/partidos/psoe
 - Web oficial: https://lafuerzadelagente.es · https://www.psoe.es
 - Etiqueta ideológica: Centro-izquierda socialdemócrata y europeísta
 - Puntuación en arco (0 izq - 100 der): 38/100 (Eje económico: 36/100, Social-territorial: 35/100)
@@ -162,56 +162,56 @@
 - Palabras clave: La fuerza de la gente, Seguir avanzando, Blindar derechos, CASA 47, Tecno-oligarcas, Aliados, no vasallos
 - Estilo en entrevistas: Pausado e institucional en prensa y radio, pero asertivo y combativo cuando cuestionan sus datos; en formatos largos apela a anécdotas personales y balances de gestión. (Registro: Institucional-pedagógico con marcos binarios y réplica firme ante interrupciones.)
 
-#### Vivienda y Alquiler (https://politifacil-29n.vercel.app/propuestas/vivienda)
+#### Vivienda y Alquiler (https://politifacil.com/propuestas/vivienda)
 - **Titular**: 1 % del PIB en vivienda, 100.000 pisos en CASA 47 y préstamos TUCASA de 50.000 €
 - Reforma constitucional para blindar la vivienda como derecho fundamental exigible e inversión anual mínima del 1 % del PIB.
 - Consolidación de la entidad estatal CASA 47 para alcanzar 100.000 viviendas protegidas permanentes y límites al alquiler en zonas tensionadas.
 - Préstamos públicos sin intereses (TUCASA) de hasta 50.000 € para jóvenes en la entrada de su primera vivienda y recargos a fondos especulativos.
 - **Fuente**: Programa «La fuerza de seguir avanzando» — lafuerzadelagente.es (https://lafuerzadelagente.es)
 
-#### Economía, Impuestos y Coste de la Vida (https://politifacil-29n.vercel.app/propuestas/economia)
+#### Economía, Impuestos y Coste de la Vida (https://politifacil.com/propuestas/economia)
 - **Titular**: Crianza 200 €/mes, impuestos a jets y megayates y mínimo del 15 % en Sociedades
 - Consolidación permanente de gravámenes a banca y energéticas, tipo mínimo del 15 % en Sociedades y tributos sobre jets privados, clase business y megayates.
 - Exención en IRPF a subidas del SMI y creación de una prestación universal por crianza de 200 euros mensuales por cada hijo menor de edad.
 - Estrategia España Crece e inversión de 19.000 millones de euros hasta 2030 en modernización y seguridad ferroviaria.
 - **Fuente**: lafuerzadelagente.es — Bloque Economía (https://lafuerzadelagente.es)
 
-#### Empleo, Salarios y Jornada Laboral (https://politifacil-29n.vercel.app/propuestas/empleo)
+#### Empleo, Salarios y Jornada Laboral (https://politifacil.com/propuestas/empleo)
 - **Titular**: Jornada de 37,5 horas por ley, SMI al 60 % del salario medio y reforma del despido
 - Reducción legal de la jornada máxima a 37,5 horas semanales sin pérdida salarial (vía abierta en convenios hacia 35 h) y registro horario digital.
 - Blindaje legal del SMI por encima del 60 % del salario medio y reforma del despido improcedente para hacerlo disuasorio según la Carta Social Europea.
 - Permiso retribuido al 100 % por cuidado de menores de 8 años y creación jurídica de la «Unión de amistad» para permisos de convivencia.
 - **Fuente**: lafuerzadelagente.es — Bloque Empleo (https://lafuerzadelagente.es)
 
-#### Sanidad, Educación y Pensiones (https://politifacil-29n.vercel.app/propuestas/servicios)
+#### Sanidad, Educación y Pensiones (https://politifacil.com/propuestas/servicios)
 - **Titular**: Sanidad al 7 % del PIB, psicólogo en 30 días, Plan Sonríe y 1.er año de grado gratis
 - Financiación sanitaria en torno al 7 % del PIB, Ley de Buen Gobierno para frenar privatizaciones, consulta psicológica en máximo 30 días y Plan Sonríe bucodental.
 - Gratuidad de la matrícula del primer curso universitario público, Estatuto del Docente e impulso a la FP y escuelas 0-3 años.
 - Blindaje constitucional del sistema público de pensiones y de su revalorización anual automática conforme al IPC.
 - **Fuente**: lafuerzadelagente.es — Estado del Bienestar (https://lafuerzadelagente.es)
 
-#### Modelo Territorial y Financiación (https://politifacil-29n.vercel.app/propuestas/territorial)
+#### Modelo Territorial y Financiación (https://politifacil.com/propuestas/territorial)
 - **Titular**: 21.000 M€ extra en financiación autonómica y quita estatal de 83.252 M€ de deuda
 - Nuevo modelo de financiación autonómica con ~21.000 millones € adicionales anuales hacia 2027 para servicios esenciales.
 - Asunción por el Estado de 83.252 millones de euros de deuda autonómica (FLA) para las comunidades de régimen común.
 - Defensa del Estado autonómico y la cogobernanza multilateral, integrando acuerdos con ERC sobre singularidad y ordinalidad y fondos contra despoblación.
 - **Fuente**: lafuerzadelagente.es / psoe.es (https://www.psoe.es)
 
-#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil-29n.vercel.app/propuestas/seguridad)
+#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil.com/propuestas/seguridad)
 - **Titular**: Plan de Integración (500 M€), gasto militar en el 2 % (no 5 %) y nueva LeCrim
 - Sin nueva regularización extraordinaria tras el decreto de 2026: foco en vías legales en origen, reparto solidario de menores y Plan de Integración de 500 M€.
 - Defensa en torno al 2 %–2,1 % del PIB y autonomía estratégica europea, rechazando llegar al 5 % exigido por sectores de la OTAN («aliados, no vasallos»).
 - Nueva Ley de Enjuiciamiento Criminal (instrucción por Fiscalía), refuerzo policial contra narcotráfico y ciberseguridad.
 - **Fuente**: lafuerzadelagente.es — Seguridad, Defensa y Justicia (https://lafuerzadelagente.es)
 
-#### Transición Ecológica, Energía y Campo (https://politifacil-29n.vercel.app/propuestas/ecologia)
+#### Transición Ecológica, Energía y Campo (https://politifacil.com/propuestas/ecologia)
 - **Titular**: Cierre nuclear a 2035, Ley de Adaptación Climática y centros de datos verdes
 - Mantenimiento del calendario de cierre nuclear hasta 2035 y obligación de que los centros de datos funcionen con energía renovable y uso hídrico responsable.
 - Ley de Adaptación al Cambio Climático, Centro Estatal de Fenómenos Extremos y modernización de regadíos y reutilización de agua.
 - Ley de Agricultura Familiar y Profesional, bancos de tierras y Estrategia Nacional de Alimentación Ecológica.
 - **Fuente**: lafuerzadelagente.es — Transición Ecológica (https://lafuerzadelagente.es)
 
-#### Regeneración Democrática y Derechos Civiles (https://politifacil-29n.vercel.app/propuestas/regeneracion)
+#### Regeneración Democrática y Derechos Civiles (https://politifacil.com/propuestas/regeneracion)
 - **Titular**: Blindar el aborto en la Constitución, abolición de prostitución y límite a redes en menores
 - Reforma del art. 43 de la Constitución para blindar el derecho al aborto, ley contra violencia vicaria y abolición penal de la prostitución.
 - Plan de Acción por la Democracia (transparencia mediática y de publicidad institucional), registro de lobbies y actualización de Secretos Oficiales.
@@ -219,7 +219,7 @@
 - **Fuente**: lafuerzadelagente.es — Democracia e Igualdad (https://lafuerzadelagente.es)
 
 ### Partido Popular (PP) — Referente: Alberto Núñez Feijóo
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/pp
+- URL en PolitiFácil: https://politifacil.com/partidos/pp
 - Web oficial: https://www.pp.es
 - Etiqueta ideológica: Centro-derecha liberal-conservador y reformista
 - Puntuación en arco (0 izq - 100 der): 68/100 (Eje económico: 72/100, Social-territorial: 70/100)
@@ -231,56 +231,56 @@
 - Palabras clave: El cambio necesario, Gestión, Estabilidad, Fallo sistémico, Libertad fiscal, Desalojo 48h
 - Estilo en entrevistas: Prudente e institucional en prensa y radio, apoyándose en sus 33 años de gestión; en pódcasts y TV usa humor autodefensivo y evita comprometer fórmulas cerradas de coalición. (Registro: Administrativo-sentencioso con ironía controlada y respuestas condicionales sobre pactos.)
 
-#### Vivienda y Alquiler (https://politifacil-29n.vercel.app/propuestas/vivienda)
+#### Vivienda y Alquiler (https://politifacil.com/propuestas/vivienda)
 - **Titular**: 1 millón de viviendas, derogar topes de alquiler, Hucha Hogar Joven y desalojo en 48h
 - Objetivo de 1.000.000 de viviendas mediante nueva Ley del Suelo (licencias en máximo 3 meses con silencio administrativo positivo).
 - Derogación de la Ley de Vivienda estatal eliminando zonas tensionadas e índices de precios del alquiler.
 - Avales del 20 % para hipoteca joven, «Hucha Hogar Joven» (desgravación del 20 % hasta 2.000 €/año), incentivos fiscales a propietarios y desalojo exprés de okupas en 48 horas.
 - **Fuente**: Programa PP 2026 «La Reconstrucción Nacional» — pp.es (https://www.pp.es/wp-content/uploads/2026/11/PROGRAMA-ELECTORAL-PP-2026-LA-RECONSTRUCCION-NACIONAL.pdf)
 
-#### Economía, Impuestos y Coste de la Vida (https://politifacil-29n.vercel.app/propuestas/economia)
+#### Economía, Impuestos y Coste de la Vida (https://politifacil.com/propuestas/economia)
 - **Titular**: Deflactar IRPF, exención 4 años a jóvenes, IVA 0 % en básicos y cuota cero a autónomos
 - Deflactación del IRPF, exención automática al SMI y rebaja de IRPF a jóvenes de 18 a 35 años (100 %, 75 %, 50 % y 25 % en cuatro años).
 - IVA del 0 % en alimentos básicos (incluyendo carne, pescado y conservas) mientras persista la subida de precios y libertad de amortización en digitalización/IA.
 - Cuota cero el primer año a nuevos autónomos, exención de liquidar IVA por debajo de 85.000 € de facturación, auditoría en 100 días y regla normativa 1x3.
 - **Fuente**: Programa Electoral PP 2026 — pp.es (https://www.pp.es)
 
-#### Empleo, Salarios y Jornada Laboral (https://politifacil-29n.vercel.app/propuestas/empleo)
+#### Empleo, Salarios y Jornada Laboral (https://politifacil.com/propuestas/empleo)
 - **Titular**: Flexibilidad horaria frente a las 37,5h, mochila austriaca voluntaria y renta única
 - Rechazo a imponer por ley la jornada de 37,5 horas; impulso a bancos de horas flexibles, negociación colectiva y ampliación del límite de horas extra.
 - Implantación de una «mochila austriaca» voluntaria (cuenta individual trasladable entre empleos).
 - Renta única de activación compatible con el empleo que integre IMV y subsidios, SMI pactado por productividad y plan contra el absentismo fraudulento.
 - **Fuente**: Programa Electoral PP 2026 — pp.es (https://www.pp.es)
 
-#### Sanidad, Educación y Pensiones (https://politifacil-29n.vercel.app/propuestas/servicios)
+#### Sanidad, Educación y Pensiones (https://politifacil.com/propuestas/servicios)
 - **Titular**: 4.500 médicos en Primaria, EBAU común, castellano vehicular y pensiones con IPC
 - Pacto de Estado por la Sanidad, 4.500 médicos más en Atención Primaria, Plan de Salud Mental 2027-2037 e historial sanitario único nacional.
 - Sustitución de la LOMLOE, EBAU común en toda España, libertad de elección de centro, castellano vehicular y bonos de escolarización 0-3 años.
 - Compromiso legal de revalorizar las pensiones conforme al IPC y recuperación del Pacto de Toledo.
 - **Fuente**: Programa Electoral PP 2026 — pp.es (https://www.pp.es)
 
-#### Modelo Territorial y Financiación (https://politifacil-29n.vercel.app/propuestas/territorial)
+#### Modelo Territorial y Financiación (https://politifacil.com/propuestas/territorial)
 - **Titular**: Rechazo al cupo catalán, reforma multilateral en CPFF y derogar la Amnistía
 - Rechazo a financiaciones singulares y condonaciones unilaterales; reforma multilateral en el CPFF con criterios técnicos de la AIReF y cohesión sanitaria.
 - Derogación de la Ley de Amnistía, oposición a pinganillos en las Cámaras y cumplimiento de sentencias sobre bilingüismo escolar.
 - Plan Nacional de Infraestructuras de más de 300.000 M€ a 15 años y Plan de Presencia del Estado en la España vaciada.
 - **Fuente**: Programa Electoral PP 2026 — pp.es (https://www.pp.es)
 
-#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil-29n.vercel.app/propuestas/seguridad)
+#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil.com/propuestas/seguridad)
 - **Titular**: Veto a regularizaciones masivas, 12 vocales del CGPJ por jueces y prisión permanente
 - Prohibición legal de regularizaciones masivas, identificación en 7 días de entradas irregulares, agilización de expulsiones y cupos laborales anuales.
 - Elección directa de los 12 vocales judiciales del CGPJ por jueces y veto de 5 años a puertas giratorias entre política y judicatura.
 - Prisión permanente revisable a reincidentes en violencia sexual/machista y gestión de pulseras telemáticas en el Ministerio del Interior.
 - **Fuente**: Programa Electoral PP 2026 — pp.es (https://www.pp.es)
 
-#### Transición Ecológica, Energía y Campo (https://politifacil-29n.vercel.app/propuestas/ecologia)
+#### Transición Ecológica, Energía y Campo (https://politifacil.com/propuestas/ecologia)
 - **Titular**: Prórroga de centrales nucleares en 100 días y Pacto Nacional del Agua (40.000 M€)
 - Frenar en los primeros 100 días el cierre de las centrales nucleares (Almaraz, Ascó, Vandellós, Cofrentes y Trillo) y suprimir el impuesto del 7 % a la generación eléctrica.
 - Pacto Nacional del Agua de hasta 40.000 millones € hasta 2030 (embalses, interconexiones, regadíos y desalación) y Tarifa Social Única.
 - Pacto Nacional para el Campo, el Mar y el Monte, defensa de la PAC sin recortes y seguro agrario de rentas.
 - **Fuente**: Programa Electoral PP 2026 — pp.es (https://www.pp.es)
 
-#### Regeneración Democrática y Derechos Civiles (https://politifacil-29n.vercel.app/propuestas/regeneracion)
+#### Regeneración Democrática y Derechos Civiles (https://politifacil.com/propuestas/regeneracion)
 - **Titular**: Prohibir indultos por corrupción, revisión de Ley Trans y ley de violencia vicaria
 - Reforma legal para prohibir indultos en delitos de corrupción, sedición o terrorismo y veto al uso partidista de medios oficiales (Falcon).
 - Ley específica contra la violencia vicaria, endurecimiento de penas y planes de empleo femenino rural.
@@ -288,7 +288,7 @@
 - **Fuente**: Programa Electoral PP 2026 — pp.es (https://www.pp.es)
 
 ### VOX (VOX) — Referente: Santiago Abascal
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/vox
+- URL en PolitiFácil: https://politifacil.com/partidos/vox
 - Web oficial: https://votasentidocomun.es · https://www.voxespana.es
 - Etiqueta ideológica: Derecha nacional-conservadora y soberanista
 - Puntuación en arco (0 izq - 100 der): 88/100 (Eje económico: 85/100, Social-territorial: 94/100)
@@ -300,56 +300,56 @@
 - Palabras clave: Sentido común, Prioridad nacional, Remigración, Desregulación, Estado unitario, Seguridad jurídica
 - Estilo en entrevistas: Enfático, asertivo y de frases breves; vincula de forma directa vivienda e inseguridad con la acción del Gobierno y mantiene un registro grave incluso en formatos de entretenimiento. (Registro: Directo, categórico y de contraataque ante premisas del entrevistador.)
 
-#### Vivienda y Alquiler (https://politifacil-29n.vercel.app/propuestas/vivienda)
+#### Vivienda y Alquiler (https://politifacil.com/propuestas/vivienda)
 - **Titular**: IVA 0 % e ITP bonificado al 100 % en 1.ª vivienda, prioridad nacional y desalojo en 24h
 - Derogación de la Ley de Vivienda estatal y reforma de la Ley del Suelo para liberalizar suelo edificable y acelerar licencias.
 - IVA al 0 % en primera vivienda habitual de nueva construcción y bonificación del 100 % del ITP en segunda mano.
 - Exigencia de residencia legal para alquilar, prioridad nacional en vivienda pública, desalojo de okupas en <24 horas y tipificación de la «inquiokupación» como estafa.
 - **Fuente**: Programa «Es sentido común» (115 medidas) — votasentidocomun.es (https://votasentidocomun.es)
 
-#### Economía, Impuestos y Coste de la Vida (https://politifacil-29n.vercel.app/propuestas/economia)
+#### Economía, Impuestos y Coste de la Vida (https://politifacil.com/propuestas/economia)
 - **Titular**: Rebaja drástica de IRPF por hijos, cuota cero al SMI para autónomos y tasa a remesas
 - Simplificación y rebaja de IRPF ajustada por número de hijos, supresión del Impuesto de Patrimonio y reducción del IVA (4 % en productos infantiles y geriátricos).
 - Cuota cero para autónomos con ingresos por debajo del SMI (y progresiva desde 50 € al superarlo) junto a regla desreguladora 1x3.
 - Recorte de gasto político, subvenciones ideológicas y duplicidades autonómicas, más creación de un impuesto sobre remesas enviadas al exterior.
 - **Fuente**: votasentidocomun.es / voxespana.es (https://www.voxespana.es)
 
-#### Empleo, Salarios y Jornada Laboral (https://politifacil-29n.vercel.app/propuestas/empleo)
+#### Empleo, Salarios y Jornada Laboral (https://politifacil.com/propuestas/empleo)
 - **Titular**: Oposición a las 37,5h, fin del control horario y supresión de subvenciones sindicales
 - Voto en contra de reducir por ley la jornada a 37,5 horas para no encarecer costes a las pymes ni dañar la competitividad.
 - Derogación de la reforma laboral y supresión del control horario obligatorio y de planes de igualdad impuestos a las empresas.
 - Sustituir las subidas del SMI por rebajas de IRPF/IVA, fin de subvenciones a patronal y sindicatos y planes de retorno de talento español.
 - **Fuente**: voxespana.es — Programa 29-N (https://www.voxespana.es)
 
-#### Sanidad, Educación y Pensiones (https://politifacil-29n.vercel.app/propuestas/servicios)
+#### Sanidad, Educación y Pensiones (https://politifacil.com/propuestas/servicios)
 - **Titular**: Devolver Sanidad y Educación al Estado, tarjeta única y urgencias a irregulares
 - Devolución al Estado de Sanidad y Educación, tarjeta sanitaria única y limitación de la sanidad gratuita a inmigrantes irregulares solo a urgencias graves.
 - Derogación de la LOMLOE, EBAU única, español vehicular en todo el país y eliminación del requisito de lengua cooficial en oposiciones.
 - Sostenibilidad de las pensiones apoyada en crecimiento económico, natalidad y ahorro del recorte político-autonómico.
 - **Fuente**: votasentidocomun.es — Servicios Públicos (https://votasentidocomun.es)
 
-#### Modelo Territorial y Financiación (https://politifacil-29n.vercel.app/propuestas/territorial)
+#### Modelo Territorial y Financiación (https://politifacil.com/propuestas/territorial)
 - **Titular**: Estado unitario descentralizado administrativamente, sin policías ni cámaras regionales
 - Transformación del Estado autonómico en un Estado unitario administrativamente descentralizado, eliminando parlamentos y privilegios fiscales regionales.
 - Devolución inmediata al Estado de Sanidad, Educación, Seguridad y Justicia, y supresión de las policías autonómicas.
 - Suspensión de la autonomía ante desafíos separatistas y plan estratégico de soberanía y defensa fronteriza para Ceuta y Melilla.
 - **Fuente**: voxespana.es — Bloque Unidad Nacional (https://www.voxespana.es)
 
-#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil-29n.vercel.app/propuestas/seguridad)
+#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil.com/propuestas/seguridad)
 - **Titular**: Remigración, fin del arraigo, expulsión de delincuentes extranjeros y CGPJ judicial
 - Prohibición de regularizaciones, supresión del arraigo, exclusión de ayudas sociales a no nacionales, repatriación de irregulares y expulsión de extranjeros que delincan.
 - Elección directa de los 12 vocales judiciales del CGPJ por jueces, apartar al TC del control político y recuperar el delito de sedición.
 - Endurecimiento general de penas, prohibición de indultos por corrupción y refuerzo de medios y respaldo jurídico a las FF.CC.SS.EE.
 - **Fuente**: votasentidocomun.es — Inmigración y Justicia (https://votasentidocomun.es)
 
-#### Transición Ecológica, Energía y Campo (https://politifacil-29n.vercel.app/propuestas/ecologia)
+#### Transición Ecológica, Energía y Campo (https://politifacil.com/propuestas/ecologia)
 - **Titular**: Derogar Pacto Verde y Agenda 2030, nuevas nucleares, veto a Mercosur y trasvases
 - Derogación de las restricciones del Pacto Verde Europeo y la Agenda 2030 en España y rebaja de impuestos en la factura eléctrica.
 - Anulación del cierre nuclear y estudio para instalar nuevas centrales nucleares junto a las existentes.
 - Oposición frontal al acuerdo UE-Mercosur para proteger el campo español y nuevo Plan Hidrológico Nacional con interconexión de cuencas y trasvases.
 - **Fuente**: votasentidocomun.es — Energía y Campo (https://votasentidocomun.es)
 
-#### Regeneración Democrática y Derechos Civiles (https://politifacil-29n.vercel.app/propuestas/regeneracion)
+#### Regeneración Democrática y Derechos Civiles (https://politifacil.com/propuestas/regeneracion)
 - **Titular**: Ley de violencia intrafamiliar, sin cuotas de género y giro pragmático en aborto
 - Sustitución de la Ley de Violencia de Género por una ley de violencia intrafamiliar y eliminación de cuotas por sexo o identidad en oposiciones.
 - En 2026 omite pedir la derogación expresa del aborto o la eutanasia (priorizando defensa general de la vida, paliativos y objeción de conciencia).
@@ -357,7 +357,7 @@
 - **Fuente**: votasentidocomun.es (https://votasentidocomun.es)
 
 ### Se Acabó La Fiesta (SALF) — Referente: Alvise Pérez
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/partidos/salf
+- URL en PolitiFácil: https://politifacil.com/partidos/salf
 - Web oficial: https://www.seacabolafiesta.com
 - Etiqueta ideológica: Derecha populista antisistema y desreguladora
 - Puntuación en arco (0 izq - 100 der): 92/100 (Eje económico: 92/100, Social-territorial: 90/100)
@@ -369,56 +369,56 @@
 - Palabras clave: Contrato Electoral, Partitocracia, Macrocárcel, Cuña fiscal 29 %, Chiringuitos, Auditoría 2030
 - Estilo en entrevistas: Relato dicotómico anti-sistema («anti-autónomos, anti-trabajadores») con tono coloquial y autoirónico en lo personal; evita el circuito de prensa y TV tradicional en campaña. (Registro: Confrontativo, populista-digital y centrado en la denuncia judicial ciudadana.)
 
-#### Vivienda y Alquiler (https://politifacil-29n.vercel.app/propuestas/vivienda)
+#### Vivienda y Alquiler (https://politifacil.com/propuestas/vivienda)
 - **Titular**: Abaratar 35 % primera vivienda, ITP/AJD al 0 %, suelo libre y desalojo en 48h
 - Eliminación de ITP y AJD en compra de primera vivienda habitual y devolución del IVA en la renta para abaratarla un 35 %.
 - Liberalización masiva del suelo (edificable salvo causa justificada), créditos específicos a menores de 45 años y veto a fondos extranjeros en vivienda urbana.
 - Rechazo a topes de alquiler, desalojo exprés de okupas en 48 horas y juicios rápidos por impago en 30 días.
 - **Fuente**: SALF Contrato Electoral Simplificado — Bloque 1 (https://www.seacabolafiesta.com)
 
-#### Economía, Impuestos y Coste de la Vida (https://politifacil-29n.vercel.app/propuestas/economia)
+#### Economía, Impuestos y Coste de la Vida (https://politifacil.com/propuestas/economia)
 - **Titular**: IRPF exento hasta 35.000 €, fin de cuota de autónomos y 10 ministerios
 - Exención total del IRPF en los primeros 35.000 € de ingresos y bajada de Sociedades del 25 % al 20 % (15 % si se reinvierte).
 - Reducción de la cuña fiscal del 41 % al 29 % y eliminación total de la cuota mensual de autónomos.
 - Recorte del Gobierno de 22 a 10 ministerios, cierre de organismos duplicados y blindaje legal del pago en dinero en efectivo.
 - **Fuente**: SALF Contrato Electoral Simplificado — Bloque 3 (https://www.seacabolafiesta.com)
 
-#### Empleo, Salarios y Jornada Laboral (https://politifacil-29n.vercel.app/propuestas/empleo)
+#### Empleo, Salarios y Jornada Laboral (https://politifacil.com/propuestas/empleo)
 - **Titular**: Contrato único con mochila austriaca y supresión de cuotas autónomas
 - Implantación de un contrato laboral único vinculado a una «mochila austriaca».
 - Recorte de la cuña fiscal del 41 % al 29 % sobre salarios y cotizaciones para ampliar renta neta.
 - Supresión íntegra de las cuotas fijas mensuales para trabajadores autónomos.
 - **Fuente**: SALF Contrato Electoral Simplificado — Bloque 8 (https://www.seacabolafiesta.com)
 
-#### Sanidad, Educación y Pensiones (https://politifacil-29n.vercel.app/propuestas/servicios)
+#### Sanidad, Educación y Pensiones (https://politifacil.com/propuestas/servicios)
 - **Titular**: Central única sanitaria, cheque escolar con PIN parental y cuentas individuales
 - Central única nacional de compras sanitarias, plazos máximos (60 días cirugía, 30 especialista, 7 pruebas) con derivación pública a privada si se superan.
 - Currículo educativo único en toda España, castellano vehicular, cheque escolar («el dinero sigue al alumno») y PIN parental.
 - Mantenimiento inicial del IPC en pensiones actuales mientras se crean cuentas individuales de ahorro para menores de 45 años.
 - **Fuente**: SALF Contrato Electoral Simplificado — Bloques 5, 6 y 9 (https://www.seacabolafiesta.com)
 
-#### Modelo Territorial y Financiación (https://politifacil-29n.vercel.app/propuestas/territorial)
+#### Modelo Territorial y Financiación (https://politifacil.com/propuestas/territorial)
 - **Titular**: Recentralización funcional, fin de «taifas» y referéndum sobre la relación con la UE
 - Oposición frontal a modelos de financiación singular, nacionalismos periféricos y autonomías asimétricas en favor de igualdad fiscal única.
 - Centralización de compras sanitarias, currículo educativo y reducción ministerial.
 - Referéndum nacional para renegociar las condiciones de España con la Unión Europea y bloqueo comercial ante conflictos portuarios con Marruecos.
 - **Fuente**: SALF Contrato Electoral Simplificado — Bloque 10 (https://www.seacabolafiesta.com)
 
-#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil-29n.vercel.app/propuestas/seguridad)
+#### Inmigración, Seguridad, Defensa y Justicia (https://politifacil.com/propuestas/seguridad)
 - **Titular**: Macrocárcel (3.000 M€), expulsión en 48h, Ejército en el Estrecho y legítima defensa
 - Macrocárcel de máxima seguridad (3.000 M€) con cumplimiento íntegro sin permisos para delitos graves y corruptos que no devuelvan lo robado.
 - Presunción legal de legítima defensa dentro de viviendas y negocios frente a asaltos.
 - Expulsión en 48 horas de infractores e irregulares y despliegue permanente de Armada y Ejército del Aire en el Estrecho.
 - **Fuente**: SALF Contrato Electoral Simplificado — Bloques 2 y 4 (https://www.seacabolafiesta.com)
 
-#### Transición Ecológica, Energía y Campo (https://politifacil-29n.vercel.app/propuestas/ecologia)
+#### Transición Ecológica, Energía y Campo (https://politifacil.com/propuestas/ecologia)
 - **Titular**: Rechazo a la Agenda Verde europea, energía nuclear y menos burocracia agraria
 - Oposición a las normativas de la Agenda Verde europea y bajada de impuestos sobre energía y carburantes.
 - Apuesta por mantener y aprovechar la energía nuclear para reducir la factura eléctrica dentro de un ministerio unificado de Energía e Industria.
 - Controles fitosanitarios y barreras a importaciones extracomunitarias junto a simplificación de la PAC para agricultores.
 - **Fuente**: SALF Contrato Electoral Simplificado (https://www.seacabolafiesta.com)
 
-#### Regeneración Democrática y Derechos Civiles (https://politifacil-29n.vercel.app/propuestas/regeneracion)
+#### Regeneración Democrática y Derechos Civiles (https://politifacil.com/propuestas/regeneracion)
 - **Titular**: Corrupción imprescriptible (devolver el triple y 15 % al denunciante) y fin de asimetría penal
 - Delitos de corrupción imprescriptibles, devolución del triple de lo sustraído y recompensa del 15 % de lo recuperado a ciudadanos informantes.
 - Bloqueo del 100 % del sueldo público del candidato en el Banco de España hasta auditoría ciudadana en junio de 2030.
@@ -428,7 +428,7 @@
 ## 2. Fuerzas Territoriales / Provinciales Clave (5)
 
 ### ERC — Esquerra Republicana de Catalunya (Cataluña)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/erc
+- URL en PolitiFácil: https://politifacil.com/territorios/erc
 - Referente: Gabriel Rufián
 - Espectro: Izquierda soberanista
 - Web oficial: https://www.esquerra.cat
@@ -436,7 +436,7 @@
 - Rol parlamentario: Veto frontal a PP y Vox; busca condicionar externamente a un Gobierno progresista al cumplimiento estricto de pactos (con acuerdo territorial con Podemos en Cataluña).
 
 ### Junts — Junts per Catalunya (Cataluña)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/junts
+- URL en PolitiFácil: https://politifacil.com/territorios/junts
 - Referente: Míriam Nogueras / Carles Puigdemont
 - Espectro: Centroderecha independentista
 - Web oficial: https://www.junts.cat
@@ -444,7 +444,7 @@
 - Rol parlamentario: Actor bisagra imprevisible tras romper acuerdos previos con el PSOE a finales de 2025; advierte que no dará cheques en blanco en la investidura.
 
 ### EAJ-PNV — Partido Nacionalista Vasco (Euskadi)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/eaj-pnv
+- URL en PolitiFácil: https://politifacil.com/territorios/eaj-pnv
 - Referente: Aitor Esteban / Idoia Sagastizabal / Maribel Vaquero
 - Espectro: Centro / centroderecha foral
 - Web oficial: https://www.eaj-pnv.eus
@@ -452,7 +452,7 @@
 - Rol parlamentario: Dique explícito contra mayorías con Vox y socio pragmático de estabilidad condicionado a transferencias pendientes.
 
 ### EH Bildu — Euskal Herria Bildu (Euskadi y Navarra)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/eh-bildu
+- URL en PolitiFácil: https://politifacil.com/territorios/eh-bildu
 - Referente: Oskar Matute / Arnaldo Otegi
 - Espectro: Izquierda soberanista
 - Web oficial: https://www.ehbildu.eus
@@ -460,7 +460,7 @@
 - Rol parlamentario: Disposición declarada a frenar a PP y Vox facilitando una investidura progresista sin entrar en el Consejo de Ministros, exigiendo avances sociales en cada ley.
 
 ### BNG — Bloque Nacionalista Galego (Galicia)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/territorios/bng
+- URL en PolitiFácil: https://politifacil.com/territorios/bng
 - Referente: Néstor Rego / Ana Pontón
 - Espectro: Izquierda nacionalista gallega
 - Web oficial: https://www.bng.gal
@@ -469,7 +469,7 @@
 
 ## 3. Similitudes y Diferencias por Eje Temático (8)
 
-### Vivienda y Alquiler (https://politifacil-29n.vercel.app/propuestas/vivienda)
+### Vivienda y Alquiler (https://politifacil.com/propuestas/vivienda)
 **Similitudes:**
 - Todos los partidos coinciden en que el acceso a la vivienda es el principal problema social de la campaña 29-N, especialmente para los jóvenes.
 - Existe consenso en que hace falta aumentar la oferta residencial, aunque discrepan en cómo lograrlo.
@@ -481,7 +481,7 @@
 - Propiedad y grandes tenedores: Podemos y Frente Amplio plantean expropiación de uso o de carteras a fondos; PP, VOX y SALF priorizan incentivos fiscales a propietarios y seguridad jurídica.
 - Fiscalidad a la compra: PSOE da préstamos sin intereses (TUCASA), PP avales del 20 % y Hucha Joven, y VOX/SALF proponen IVA 0 % o ITP 0 % en primera vivienda.
 
-### Economía, Impuestos y Coste de la Vida (https://politifacil-29n.vercel.app/propuestas/economia)
+### Economía, Impuestos y Coste de la Vida (https://politifacil.com/propuestas/economia)
 **Similitudes:**
 - Todas las fuerzas estatales prometen proteger el poder adquisitivo frente al coste de la vida, bien mediante bonificaciones fiscales o vía precios y rentas.
 - PP y PSOE coinciden en evitar que los perceptores del Salario Mínimo tributen en el IRPF por las subidas del SMI.
@@ -492,7 +492,7 @@
 - Intervención en cesta de la compra: Podemos (supermercado público) y Frente Amplio (topes ante abusos) regulan precios; PP propone IVA 0 % en básicos y VOX/SALF rebajas generalizadas de impuestos.
 - Tamaño de la Administración: PP audita en 100 días, VOX suprime duplicidades autonómicas y SALF recorta de 22 a 10 ministerios; el bloque progresista amplía prestaciones universales (200 €/mes por hijo).
 
-### Empleo, Salarios y Jornada Laboral (https://politifacil-29n.vercel.app/propuestas/empleo)
+### Empleo, Salarios y Jornada Laboral (https://politifacil.com/propuestas/empleo)
 **Similitudes:**
 - PSOE, Frente Amplio y Podemos comparten la reducción legal de la jornada laboral semanal sin bajada salarial y el refuerzo de la inspección sobre horas extra.
 - PP y SALF coinciden en implantar cuentas individuales portables de despido/cotización («mochila austriaca»).
@@ -503,7 +503,7 @@
 - Salario Mínimo (SMI): Podemos propone 1.800 €/mes, Frente Amplio y PSOE blindarlo al 60 % del salario medio; PP lo vincula a productividad y VOX prefiere rebajar IRPF e IVA.
 - Organización empresarial: Frente Amplio plantea repartir el 10 % de beneficios en plantillas >50 trabajadores; VOX suprime control horario y planes de igualdad obligatorios.
 
-### Sanidad, Educación y Pensiones (https://politifacil-29n.vercel.app/propuestas/servicios)
+### Sanidad, Educación y Pensiones (https://politifacil.com/propuestas/servicios)
 **Similitudes:**
 - PSOE, PP, VOX y SALF declaran mantener el poder adquisitivo de las pensiones existentes mediante su actualización con el IPC (con distintos mecanismos de sostenibilidad).
 - Todas las formaciones proponen reducir listas de espera en Atención Primaria y reforzar la salud mental.
@@ -514,7 +514,7 @@
 - Edad de jubilación y modelo: Podemos pide bajarla a 63 años, Frente Amplio volver a 65, PSOE y PP mantienen el marco vigente con IPC y SALF introduce cuentas individuales para <45 años.
 - Lenguas y acceso sanitario: VOX limita la sanidad a irregulares a urgencias y quita el requisito de lengua cooficial; el bloque progresista defiende cobertura universal y plurinacionalidad.
 
-### Modelo Territorial y Financiación (https://politifacil-29n.vercel.app/propuestas/territorial)
+### Modelo Territorial y Financiación (https://politifacil.com/propuestas/territorial)
 **Similitudes:**
 - PSOE, Frente Amplio, PP y los grupos territoriales reconocen la necesidad de abordar la despoblación rural («España vaciada»).
 - PP, VOX y SALF comparten el rechazo a la financiación singular de Cataluña («cupo catalán») y a la Ley de Amnistía.
@@ -525,7 +525,7 @@
 - Financiación autonómica: PSOE incluye quita de 83.252 M€ y 21.000 M€ extra; Frente Amplio exige un suelo fiscal común; PP remite todo al CPFF multilateral.
 - Relación con partidos territoriales: PSOE y la izquierda pactan investiduras con ERC, EH Bildu, PNV y BNG; PP rechaza cesiones bilaterales y VOX propone ilegalizar fuerzas separatistas.
 
-### Inmigración, Seguridad, Defensa y Justicia (https://politifacil-29n.vercel.app/propuestas/seguridad)
+### Inmigración, Seguridad, Defensa y Justicia (https://politifacil.com/propuestas/seguridad)
 **Similitudes:**
 - PP, VOX y SALF coinciden en prohibir regularizaciones masivas y agilizar expulsiones de inmigrantes en situación irregular.
 - PP y VOX coinciden en que los 12 vocales judiciales del CGPJ sean elegidos directamente por los jueces.
@@ -536,7 +536,7 @@
 - Gasto en Defensa: Podemos pide salir de la OTAN, Frente Amplio bajar gasto militar, PSOE mantenerse en el 2 % rechazando el 5 %, y PP/VOX refuerzan el compromiso de defensa y fronteras.
 - Modelo penal y prisiones: SALF plantea macrocárcel de 3.000 M€ y legítima defensa armada; PP y VOX endurecen penas y prisión permanente; la izquierda deroga la Ley Mordaza.
 
-### Transición Ecológica, Energía y Campo (https://politifacil-29n.vercel.app/propuestas/ecologia)
+### Transición Ecológica, Energía y Campo (https://politifacil.com/propuestas/ecologia)
 **Similitudes:**
 - PP, VOX y SALF coinciden en prorrogar o impulsar la energía nuclear para reducir la factura eléctrica y frenar restricciones climáticas europeas.
 - PSOE, Frente Amplio y Podemos coinciden en mantener el calendario de cierre nuclear y acelerar la electrificación 100 % renovable.
@@ -547,7 +547,7 @@
 - Gestión del agua: PP (40.000 M€) y VOX (Plan Hidrológico con trasvases) apuestan por grandes obras hidráulicas; PSOE, Frente Amplio y Podemos priorizan adaptación climática, reutilización y ahorro.
 - Agenda Verde y Mercosur: VOX y SALF piden derogar el Pacto Verde europeo y frenar Mercosur; el bloque progresista refuerza objetivos climáticos y restringe macrogranjas o vuelos cortos.
 
-### Regeneración Democrática y Derechos Civiles (https://politifacil-29n.vercel.app/propuestas/regeneracion)
+### Regeneración Democrática y Derechos Civiles (https://politifacil.com/propuestas/regeneracion)
 **Similitudes:**
 - Todos los programas incluyen propuestas explícitas contra la corrupción (desde prohibir indultos en PP/VOX hasta incentivos del 15 % a denunciantes en SALF o regulación de lobbies en PSOE/Frente Amplio/Podemos).
 - PSOE y PP coinciden en aprobar una ley específica contra la violencia vicaria.

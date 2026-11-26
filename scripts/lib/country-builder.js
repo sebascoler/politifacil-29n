@@ -2490,8 +2490,8 @@ ${safeJsonLd(jsonLd)}
         path.join(compararDir, `${slug}.html`),
         renderStaticPage({
           subpath: `/comparar/${slug}`,
-          title: `${p1.shortName} vs ${p2.shortName}: Comparativa de Propuestas (${campaignTag}) | ${meta.title}`,
-          description: `Comparativa cara a cara entre ${p1.name} (${p1.candidate}) y ${p2.name} (${p2.candidate}) en los ${data.axes.length} ejes oficiales, tono comunicativo y distancia de ${dist} puntos en el arco político de ${countryConfig.name}.`,
+          title: `Programa Electoral ${p1.shortName} vs ${p2.shortName} (${campaignTag}): Comparativa | ${meta.title}`,
+          description: `Compara el programa electoral oficial de ${p1.name} (${p1.candidate}) vs ${p2.name} (${p2.candidate}) en los ${data.axes.length} ejes clave, tono comunicativo y distancia de ${dist} puntos en ${countryConfig.name}.`,
           activeNav: 'comparador',
           breadcrumbs: [
             { name: 'Inicio', subpath: '/' },

@@ -5,6 +5,30 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "politifacil-29n.vercel.app"
+        }
+      ],
+      "destination": "https://politifacil.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.politifacil.com"
+        }
+      ],
+      "destination": "https://politifacil.com/:path*",
+      "permanent": true
+    }
+  ],
   "functions": {
     "api/trigger-seo-report.mjs": {
       "experimentalTriggers": [

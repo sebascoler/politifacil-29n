@@ -1,6 +1,6 @@
 # PolitiFácil Argentina — Corpus Electoral Completo (Argentina)
 
-- URL canónica: https://politifacil-29n.vercel.app/ar
+- URL canónica: https://politifacil.com/ar
 - Fecha electoral: 2027-10-24
 - Marco: Código Electoral Nacional (Ley 19.945) · Ciclo Presidencial y Legislativo 2027
 - Cámara de Diputados: 257 bancas (mayoría: 129)
@@ -12,7 +12,7 @@
 ## 1. Fuerzas Principales (6) y Propuestas por 8 Ejes
 
 ### Frente de Izquierda y de Trabajadores - Unidad (FIT-U) — Referente: Myriam Bregman
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/partidos/fit-u
+- URL en PolitiFácil: https://politifacil.com/ar/partidos/fit-u
 - Web oficial: https://laizquierdadiario.com · https://pts.org.ar
 - Etiqueta ideológica: Izquierda anticapitalista y socialista
 - Puntuación en arco (0 izq - 100 der): 10/100 (Eje económico: 6/100, Social-territorial: 12/100)
@@ -24,56 +24,56 @@
 - Palabras clave: Ruptura con el FMI, No pago de la deuda, Salario igual a canasta familiar, Banca estatal única, Jornada de 6 horas, Control obrero
 - Estilo en entrevistas: Firme, rápida y polémica en debates televisivos y radiales; contrasta leyes laborales y presupuestos con casos concretos de fábricas, hospitales y jubilaciones. (Registro: Asertivo, sindical-clasista y de refutación directa al oficialismo y al peronismo.)
 
-#### Economía, Inflación, Dólar e Impuestos (https://politifacil-29n.vercel.app/ar/propuestas/economia)
+#### Economía, Inflación, Dólar e Impuestos (https://politifacil.com/ar/propuestas/economia)
 - **Titular**: No pago de la deuda externa, ruptura con el FMI y banca estatal única
 - Desconocimiento soberano de la deuda externa fraudulenta y ruptura inmediata de los acuerdos y metas fiscales con el FMI.
 - Nacionalización integral del sistema bancario y monopolio estatal del comercio exterior para frenar la fuga de capitales y la especulación cambiaria.
 - Impuesto extraordinario y progresivo a las grandes fortunas, bancos y corporaciones agroexportadoras, y eliminación del IVA a la canasta básica.
 - **Fuente**: Plataforma Electoral FIT-U / CNE (https://www.electoral.gob.ar)
 
-#### Trabajo, Salarios y Reforma Laboral (https://politifacil-29n.vercel.app/ar/propuestas/empleo)
+#### Trabajo, Salarios y Reforma Laboral (https://politifacil.com/ar/propuestas/empleo)
 - **Titular**: Jornada de 6 horas sin rebaja salarial, salario mínimo vital y fin de la tercerización
 - Reducción de la jornada laboral a 6 horas diarias y 5 días semanales sin recorte de sueldo para repartir las horas de trabajo disponibles.
 - Salario mínimo igual al costo real de la canasta familiar, indexado automáticamente por inflación mensual.
 - Derogación de reformas de flexibilización laboral, pase a planta de contratados/plataformas y prohibición de despidos y suspensiones.
 - **Fuente**: Programa FIT-U / pts.org.ar (https://pts.org.ar)
 
-#### Salud, Educación Pública y Jubilaciones (https://politifacil-29n.vercel.app/ar/propuestas/servicios)
+#### Salud, Educación Pública y Jubilaciones (https://politifacil.com/ar/propuestas/servicios)
 - **Titular**: Presupuesto de emergencia en salud y universidades, jubilación al 82 % móvil
 - Triplicación inmediata del presupuesto de educación pública, ciencia y universidades nacionales, y eliminación de subsidios a la enseñanza privada.
 - Sistema único estatal, gratuito y universal de salud con producción pública de medicamentos.
 - Restitución inmediata del 82 % móvil para las jubilaciones, con haberes mínimos iguales a la canasta básica del adulto mayor y restitución de moratorias.
 - **Fuente**: Plataforma FIT-U / laizquierdadiario.com (https://laizquierdadiario.com)
 
-#### Vivienda, Alquileres y Obra Pública (https://politifacil-29n.vercel.app/ar/propuestas/vivienda)
+#### Vivienda, Alquileres y Obra Pública (https://politifacil.com/ar/propuestas/vivienda)
 - **Titular**: Créditos a tasa cero, impuesto a viviendas ociosas y urbanización integral
 - Impuesto fuertemente progresivo a viviendas ociosas en manos de grandes tenedores y fondos inmobiliarios para volcarlas al alquiler social.
 - Plan estatal masivo de obra pública y urbanización de barrios populares bajo control de vecinos y comisiones de trabajadores.
 - Suspensión de desalojos por mora salarial y regulación estatal de los alquileres atada a la evolución de los ingresos.
 - **Fuente**: Plataforma Electoral FIT-U / CNE (https://www.electoral.gob.ar)
 
-#### Federalismo, Coparticipación y Estado (https://politifacil-29n.vercel.app/ar/propuestas/federalismo)
+#### Federalismo, Coparticipación y Estado (https://politifacil.com/ar/propuestas/federalismo)
 - **Titular**: Planificación federal de recursos sin pactos de ajuste con gobernadores
 - Rechazo a los pactos fiscales que transfieren recortes nacionales a las administraciones provinciales y municipales.
 - Financiamiento nacional directo de infraestructura básica en el norte y la Patagonia con fondos recuperados del pago de deuda.
 - Abolición de regímenes fiscales especiales y exenciones impositivas otorgadas a grandes corporaciones extractivas en las provincias.
 - **Fuente**: pts.org.ar — Programa Nacional (https://pts.org.ar)
 
-#### Seguridad, Justicia y Política Exterior (https://politifacil-29n.vercel.app/ar/propuestas/seguridad)
+#### Seguridad, Justicia y Política Exterior (https://politifacil.com/ar/propuestas/seguridad)
 - **Titular**: Derogación de protocolos represivos, juicio político al abuso policial y no alineamiento
 - Derogación del protocolo antipiquetes y rechazo a la intervención de las Fuerzas Armadas en tareas de seguridad interior.
 - Desmantelamiento de las fuerzas de inteligencia interna, apertura de archivos y control popular sobre las cúpulas policiales.
 - Política exterior antiimperialista: rechazo al alineamiento automático con Washington o el FMI e integración solidaria latinoamericana.
 - **Fuente**: laizquierdadiario.com / Plataforma FIT-U (https://laizquierdadiario.com)
 
-#### Energía, Vaca Muerta, Campo e Industria (https://politifacil-29n.vercel.app/ar/propuestas/produccion)
+#### Energía, Vaca Muerta, Campo e Industria (https://politifacil.com/ar/propuestas/produccion)
 - **Titular**: Estatización de energía, litio y puertos bajo control de trabajadores y comunidades
 - Renacionalización total de YPF, el litio, las empresas de energía eléctrica, gas y los puertos exportadores bajo gestión de trabajadores y usuarios.
 - Prohibición de desmontes y control ambiental vinculante por asambleas locales en minería e hidrocarburos.
 - Reforma agraria democrática con expropiación de grandes latifundios improductivos y fomento a la agricultura familiar sin agrotóxicos.
 - **Fuente**: Plataforma FIT-U / CNE (https://www.electoral.gob.ar)
 
-#### Instituciones, Transparencia y Derechos (https://politifacil-29n.vercel.app/ar/propuestas/instituciones)
+#### Instituciones, Transparencia y Derechos (https://politifacil.com/ar/propuestas/instituciones)
 - **Titular**: Elección popular de jueces, revocabilidad de cargos y dieta igual a un docente
 - Todo diputado, senador, funcionario y juez debe cobrar exactamente lo mismo que una maestra de escuela o trabajador calificado, con mandatos revocables.
 - Elección directa por voto popular de jueces y fiscales, y disolución del Senado hacia una Asamblea Única representativa.
@@ -81,7 +81,7 @@
 - **Fuente**: pts.org.ar — Reforma Política (https://pts.org.ar)
 
 ### Fuerza Patria (Peronismo / PJ) (Fuerza Patria) — Referente: Axel Kicillof
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/partidos/fuerza-patria
+- URL en PolitiFácil: https://politifacil.com/ar/partidos/fuerza-patria
 - Web oficial: https://pj.org.ar · https://www.electoral.gob.ar
 - Etiqueta ideológica: Peronismo nacional-desarrollista y estatalista
 - Puntuación en arco (0 izq - 100 der): 30/100 (Eje económico: 26/100, Social-territorial: 32/100)
@@ -93,56 +93,56 @@
 - Palabras clave: Mercado interno, Industria nacional, Paritarias libres, Obra pública, Soberanía energética, Universidad pública
 - Estilo en entrevistas: Explicativo y detallista en cifras macroeconómicas; cuestiona la "falsa antinomia entre Estado y mercado" y vincula la baja inflacionaria oficialista con la recesión industrial y el cierre de pymes. (Registro: Didáctico-académico combinado con tono político de barricada territorial.)
 
-#### Economía, Inflación, Dólar e Impuestos (https://politifacil-29n.vercel.app/ar/propuestas/economia)
+#### Economía, Inflación, Dólar e Impuestos (https://politifacil.com/ar/propuestas/economia)
 - **Titular**: Reindustrialización, administración del comercio exterior y alivio tributario a pymes
 - Política macroeconómica orientada al crecimiento, el consumo interno y la defensa de pymes industriales frente a la apertura indiscriminada de importaciones.
 - Segmentación y alivio de impuestos regresivos al consumo y a las economías regionales, compensado con mayor progresividad sobre rentas financieras y grandes patrimonios.
 - Administración inteligente de divisas para priorizar insumos productivos, tecnología e infraestructura, y renegociación soberana de los vencimientos externos.
 - **Fuente**: Plataforma Electoral Fuerza Patria / CNE (https://www.electoral.gob.ar)
 
-#### Trabajo, Salarios y Reforma Laboral (https://politifacil-29n.vercel.app/ar/propuestas/empleo)
+#### Trabajo, Salarios y Reforma Laboral (https://politifacil.com/ar/propuestas/empleo)
 - **Titular**: Defensa de paritarias libres, indemnizaciones vigentes y crédito productivo para pymes
 - Rechazo frontal a la flexibilización laboral que recorta indemnizaciones, debilita convenios colectivos o desregula la jornada.
 - Fortalecimiento de la negociación paritaria colectiva para recuperar el poder adquisitivo salarial perdido y combate a la informalidad mediante incentivos a pymes.
 - Líneas de crédito blando de la banca pública para sostener el empleo formal en industria, comercio y construcción.
 - **Fuente**: pj.org.ar — Eje Trabajo y Producción (https://pj.org.ar)
 
-#### Salud, Educación Pública y Jubilaciones (https://politifacil-29n.vercel.app/ar/propuestas/servicios)
+#### Salud, Educación Pública y Jubilaciones (https://politifacil.com/ar/propuestas/servicios)
 - **Titular**: Blindaje financiero a universidades nacionales, salud pública y moratoria previsional
 - Ley de financiamiento garantizado para universidades nacionales, CONICET y escuelas técnicas con actualización automática por inflación.
 - Reconstrucción de la red pública de hospitales, provisión gratuita de medicamentos esenciales y programas de salud mental comunitaria.
 - Actualización previsional por encima de la inflación, restitución de medicamentos gratuitos para jubilados y continuidad de esquemas de inclusión previsional.
 - **Fuente**: Plataforma Fuerza Patria / CNE (https://www.electoral.gob.ar)
 
-#### Vivienda, Alquileres y Obra Pública (https://politifacil-29n.vercel.app/ar/propuestas/vivienda)
+#### Vivienda, Alquileres y Obra Pública (https://politifacil.com/ar/propuestas/vivienda)
 - **Titular**: Reactivación de obra pública nacional, programas tipo Procrear y regulación de alquileres
 - Reanudación inmediata de la obra pública nacional paralizada en rutas, agua potable, cloacas y complejos habitacionales.
 - Relanzamiento de créditos hipotecarios estatales accesibles y programas de lotes con servicios para primera vivienda.
 - Marco equilibrado para alquileres urbanos con protección al inquilino frente a abusos e incentivos fiscales para propietarios que ofrezcan contratos estables en pesos.
 - **Fuente**: pj.org.ar / Gobierno PBA (https://pj.org.ar)
 
-#### Federalismo, Coparticipación y Estado (https://politifacil-29n.vercel.app/ar/propuestas/federalismo)
+#### Federalismo, Coparticipación y Estado (https://politifacil.com/ar/propuestas/federalismo)
 - **Titular**: Restitución de fondos coparticipables y subsidios al transporte y energía del interior
 - Devolución de transferencias nacionales retenidas a las provincias y respeto estricto de los acuerdos de coparticipación federal.
 - Restablecimiento del Fondo de Incentivo Docente y de subsidios federales coordinados para el transporte público y tarifas sociales.
 - Plan federal de logística ferroviaria y rutas nacionales para reducir asimetrías entre el AMBA y las provincias.
 - **Fuente**: Plataforma Fuerza Patria / CNE (https://www.electoral.gob.ar)
 
-#### Seguridad, Justicia y Política Exterior (https://politifacil-29n.vercel.app/ar/propuestas/seguridad)
+#### Seguridad, Justicia y Política Exterior (https://politifacil.com/ar/propuestas/seguridad)
 - **Titular**: Inversión provincial en fuerzas policiales, prevención social y narcotráfico federal
 - Fortalecimiento coordinado de policías locales con equipamiento, patrulleros, tecnología de vigilancia y despliegue federal contra el narcotráfico y lavado.
 - Respeto irrestricto al derecho constitucional a la protesta social y rechazo a la militarización de conflictos internos.
 - Política exterior multilateral que preserve el Mercosur, los BRICS ampliados como socios comerciales y el reclamo soberano por Malvinas.
 - **Fuente**: pj.org.ar — Seguridad y Política Exterior (https://pj.org.ar)
 
-#### Energía, Vaca Muerta, Campo e Industria (https://politifacil-29n.vercel.app/ar/propuestas/produccion)
+#### Energía, Vaca Muerta, Campo e Industria (https://politifacil.com/ar/propuestas/produccion)
 - **Titular**: YPF estatal como motor energético, valor agregado en origen y transición soberana
 - Centralidad estratégica de YPF bajo mayoría estatal para financiar gasoductos, industrialización petroquímica y tarifas energéticas competitivas para la industria.
 - Industrialización en origen del litio, minerales críticos y agroalimentos con transferencia tecnológica de universidades públicas.
 - Segmentación de retenciones agropecuarias para proteger a pequeños y medianos productores cooperativos frente a grandes concentradores.
 - **Fuente**: Plataforma Fuerza Patria / CNE (https://www.electoral.gob.ar)
 
-#### Instituciones, Transparencia y Derechos (https://politifacil-29n.vercel.app/ar/propuestas/instituciones)
+#### Instituciones, Transparencia y Derechos (https://politifacil.com/ar/propuestas/instituciones)
 - **Titular**: Ampliación de la Corte, paridad de género y regulación contra discursos de odio
 - Reforma del Poder Judicial y ampliación federal de la Corte Suprema para garantizar independencia frente a presiones corporativas y mediáticas.
 - Sostenimiento de políticas públicas de género, prevención de violencias, Memoria, Verdad y Justicia y cupos de inclusión.
@@ -150,7 +150,7 @@
 - **Fuente**: pj.org.ar (https://pj.org.ar)
 
 ### Unión Cívica Radical (UCR) — Referente: Martín Lousteau / Maximiliano Pullaro
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/partidos/ucr
+- URL en PolitiFácil: https://politifacil.com/ar/partidos/ucr
 - Web oficial: https://ucr.org.ar · https://www.electoral.gob.ar
 - Etiqueta ideológica: Centro reformista, republicano y social-liberal
 - Puntuación en arco (0 izq - 100 der): 48/100 (Eje económico: 46/100, Social-territorial: 44/100)
@@ -162,56 +162,56 @@
 - Palabras clave: Equilibrio con justicia, Universidad pública, Capacidad de gestión, República e instituciones, Superávit productivo, Federalismo fiscal
 - Estilo en entrevistas: Argumentación estructurada en datos presupuestarios y comparaciones internacionales; combina respaldo a reformas económicas racionales con críticas firmes al estilo confrontativo del Ejecutivo. (Registro: Técnico-republicano, dialoguista y orientado a propuestas de política pública.)
 
-#### Economía, Inflación, Dólar e Impuestos (https://politifacil-29n.vercel.app/ar/propuestas/economia)
+#### Economía, Inflación, Dólar e Impuestos (https://politifacil.com/ar/propuestas/economia)
 - **Titular**: Equilibrio fiscal sostenible con reforma tributaria progresiva y baja de carga productiva
 - Consolidación de cuentas fiscales equilibradas mediante eficiencia en el gasto y eliminación de privilegios tributarios corporativos.
 - Reforma tributaria integral para reemplazar impuestos distorsivos (Ingresos Brutos, impuesto al cheque y retenciones) por un sistema simple que incentive la inversión.
 - Unificación cambiaria ordenada y fortalecimiento de reservas del Banco Central con independencia técnica de su directorio.
 - **Fuente**: Plataforma UCR / ucr.org.ar (https://ucr.org.ar)
 
-#### Trabajo, Salarios y Reforma Laboral (https://politifacil-29n.vercel.app/ar/propuestas/empleo)
+#### Trabajo, Salarios y Reforma Laboral (https://politifacil.com/ar/propuestas/empleo)
 - **Titular**: Modernización laboral consensuada para pymes sin perder derechos esenciales
 - Régimen laboral específico para micro y pequeñas empresas que reduzca litigiosidad judicial y cargas patronales para nuevas contrataciones formales.
 - Capacitación técnica continua articulada entre sindicatos, cámaras empresarias y universidades para reconvertir oficios.
 - Regularización progresiva del empleo informal mediante incentivos fiscales temporales al blanqueo laboral.
 - **Fuente**: ucr.org.ar — Agenda Productiva (https://ucr.org.ar)
 
-#### Salud, Educación Pública y Jubilaciones (https://politifacil-29n.vercel.app/ar/propuestas/servicios)
+#### Salud, Educación Pública y Jubilaciones (https://politifacil.com/ar/propuestas/servicios)
 - **Titular**: Pacto educativo nacional, presupuesto universitario blindado y reforma previsional
 - Defensa irrestricta de la universidad pública gratuita, el sistema científico (CONICET) y evaluación transparente de calidad en escuela primaria y secundaria.
 - Integración y coordinación entre el sistema público, obras sociales y sector privado para reducir tiempos de espera sanitaria.
 - Fórmula previsional transparente ajustada por inflación más un componente de crecimiento económico, eliminando regímenes de privilegio.
 - **Fuente**: ucr.org.ar / Congreso Nacional (https://ucr.org.ar)
 
-#### Vivienda, Alquileres y Obra Pública (https://politifacil-29n.vercel.app/ar/propuestas/vivienda)
+#### Vivienda, Alquileres y Obra Pública (https://politifacil.com/ar/propuestas/vivienda)
 - **Titular**: Créditos UVA con tope salarial, obra pública transparente y suelo urbano planificado
 - Fomento al crédito hipotecario de largo plazo con fondos compensadores que protejan la cuota frente a saltos bruscos de inflación.
 - Mantenimiento de obra pública estratégica de agua, saneamiento y conectividad mediante licitaciones abiertas y auditoría ciudadana.
 - Incentivos municipales y fiscales a la construcción de vivienda media para ampliar la oferta en alquiler.
 - **Fuente**: Plataforma UCR / CNE (https://www.electoral.gob.ar)
 
-#### Federalismo, Coparticipación y Estado (https://politifacil-29n.vercel.app/ar/propuestas/federalismo)
+#### Federalismo, Coparticipación y Estado (https://politifacil.com/ar/propuestas/federalismo)
 - **Titular**: Nueva ley de coparticipación federal y autonomía fiscal real para las provincias
 - Discusión de una nueva Ley de Coparticipación Federal que premie la eficiencia recaudatoria provincial y garantice servicios básicos en todo el país.
 - Prohibición de los recortes discrecionales o discrecionalidad en Aportes del Tesoro Nacional (ATN) como herramienta de presión política.
 - Fortalecimiento de regiones metropolitanas y consorcios municipales para gestionar transporte, residuos y seguridad.
 - **Fuente**: ucr.org.ar — Federalismo (https://ucr.org.ar)
 
-#### Seguridad, Justicia y Política Exterior (https://politifacil-29n.vercel.app/ar/propuestas/seguridad)
+#### Seguridad, Justicia y Política Exterior (https://politifacil.com/ar/propuestas/seguridad)
 - **Titular**: Sistema acusatorio federal contra el narcotráfico y fuerzas profesionales con control civil
 - Implementación en todo el país del Código Procesal Penal acusatorio, agencias antinarco federales y persecución de la ruta del dinero.
 - Modernización y profesionalización de las fuerzas de seguridad con equipamiento, inteligencia criminal y respeto a los derechos humanos.
 - Política exterior anclada en la democracia, los derechos humanos, el acuerdo Mercosur-UE y el multilateralismo equilibrado.
 - **Fuente**: ucr.org.ar / Gestión Santa Fe (https://ucr.org.ar)
 
-#### Energía, Vaca Muerta, Campo e Industria (https://politifacil-29n.vercel.app/ar/propuestas/produccion)
+#### Energía, Vaca Muerta, Campo e Industria (https://politifacil.com/ar/propuestas/produccion)
 - **Titular**: Baja gradual de retenciones al campo, transición energética y bioeconomía
 - Sendero previsible de reducción y eliminación de derechos de exportación agropecuarios, sustituidos por imposición a la renta.
 - Impulso a la bioeconomía, energías renovables, gas de Vaca Muerta y minería sustentable con estándares ambientales internacionales.
 - Inversión en hidrovía, puertos y corredores bioceánicos para bajar costos logísticos del interior productivo.
 - **Fuente**: ucr.org.ar — Desarrollo Sustentable (https://ucr.org.ar)
 
-#### Instituciones, Transparencia y Derechos (https://politifacil-29n.vercel.app/ar/propuestas/instituciones)
+#### Instituciones, Transparencia y Derechos (https://politifacil.com/ar/propuestas/instituciones)
 - **Titular**: Boleta Única, Ficha Limpia, independencia judicial y presupuesto aprobado por ley
 - Consolidación de la Boleta Única de Papel en todas las jurisdicciones, sanción efectiva de Ficha Limpia y ley de financiamiento transparente de campañas.
 - Prohibición de gobernar sin Presupuesto aprobado por el Congreso y límites estrictos al abuso de Decretos de Necesidad y Urgencia (DNU).
@@ -219,7 +219,7 @@
 - **Fuente**: ucr.org.ar — Calidad Institucional (https://ucr.org.ar)
 
 ### Provincias Unidas (Provincias Unidas) — Referente: Martín Llaryora / Juan Schiaretti
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/partidos/provincias-unidas
+- URL en PolitiFácil: https://politifacil.com/ar/partidos/provincias-unidas
 - Web oficial: https://www.electoral.gob.ar · https://www.cba.gov.ar
 - Etiqueta ideológica: Federalismo productivo, desarrollista y dialoguista
 - Puntuación en arco (0 izq - 100 der): 58/100 (Eje económico: 58/100, Social-territorial: 56/100)
@@ -231,56 +231,56 @@
 - Palabras clave: Shock productivo, Superávit con obra pública, Fin de las retenciones, Federalismo real, Banca de desarrollo, Tercera vía
 - Estilo en entrevistas: Calmado y enfocado en casos concretos de gestión provincial ("tener superávit sin dejar de hacer rutas ni escuelas"); marca distancia tanto del estatismo sin control como del ajuste recesivo. (Registro: Ejecutivo-gestor, conciliador y reivindicativo del interior productivo.)
 
-#### Economía, Inflación, Dólar e Impuestos (https://politifacil-29n.vercel.app/ar/propuestas/economia)
+#### Economía, Inflación, Dólar e Impuestos (https://politifacil.com/ar/propuestas/economia)
 - **Titular**: Superávit fiscal compatible con obra pública y eliminación de impuestos distorsivos
 - Regla de déficit cero en gastos corrientes combinada con inversión estratégica de capital en infraestructura productiva.
 - Eliminación gradual de retenciones a las exportaciones y del impuesto a los débitos y créditos bancarios ("impuesto al cheque").
 - Política cambiaria competitiva y crédito productivo para pymes industriales, tecnológicas y agroalimentarias del interior.
 - **Fuente**: Documentos Programáticos Provincias Unidas / CNE (https://www.electoral.gob.ar)
 
-#### Trabajo, Salarios y Reforma Laboral (https://politifacil-29n.vercel.app/ar/propuestas/empleo)
+#### Trabajo, Salarios y Reforma Laboral (https://politifacil.com/ar/propuestas/empleo)
 - **Titular**: Incentivos al primer empleo, baja de costos no salariales para pymes y formación técnica
 - Programas federales de primer empleo y entrenamiento laboral en empresas con incentivos fiscales compartidos (modelo PPP).
 - Actualización laboral enfocada en reducir la industria del juicio en pequeñas y medianas empresas preservando derechos básicos.
 - Articulación entre escuelas técnicas, clústeres tecnológicos e industrias regionales.
 - **Fuente**: Plataforma Provincias Unidas / CNE (https://www.electoral.gob.ar)
 
-#### Salud, Educación Pública y Jubilaciones (https://politifacil-29n.vercel.app/ar/propuestas/servicios)
+#### Salud, Educación Pública y Jubilaciones (https://politifacil.com/ar/propuestas/servicios)
 - **Titular**: Gestión eficiente de salud y educación con responsabilidad provincial y fondos garantizados
 - Mantenimiento de la educación pública y técnica como motor de ascenso social, sumando conectividad, programación e inglés desde nivel inicial.
 - Sostenimiento del sistema sanitario descentralizado con compras conjuntas de medicamentos de alto costo entre provincias.
 - Cumplimiento efectivo de las transferencias nacionales adeudadas a las cajas previsionales provinciales no transferidas.
 - **Fuente**: Bloque Provincias Unidas — Congreso (https://www.electoral.gob.ar)
 
-#### Vivienda, Alquileres y Obra Pública (https://politifacil-29n.vercel.app/ar/propuestas/vivienda)
+#### Vivienda, Alquileres y Obra Pública (https://politifacil.com/ar/propuestas/vivienda)
 - **Titular**: Infraestructura logística, gasoductos, rutas y acceso al crédito en cada provincia
 - Continuidad de obras de infraestructura vial, hídrica y energética mediante esquemas transparentes público-privados y presupuesto plurianual.
 - Bancos provinciales impulsando créditos hipotecarios y programas de loteo con servicios en ciudades intermedias.
 - Desregulación ágil de permisos locales para atraer inversión privada en vivienda sin abandonar la urbanización básica.
 - **Fuente**: Plataforma Provincias Unidas / CNE (https://www.electoral.gob.ar)
 
-#### Federalismo, Coparticipación y Estado (https://politifacil-29n.vercel.app/ar/propuestas/federalismo)
+#### Federalismo, Coparticipación y Estado (https://politifacil.com/ar/propuestas/federalismo)
 - **Titular**: Reparto federal automático de impuestos nacionales y fin del centralismo del AMBA
 - Coparticipación automática de los impuestos que hoy recauda exclusivamente Nación (como parte de combustibles y retenciones) hacia todas las provincias.
 - Eliminación de asimetrías históricas en subsidios al transporte y tarifas eléctricas que favorecen al área metropolitana de Buenos Aires.
 - Autonomía de los distritos para definir calendarios, esquemas productivos y acuerdos comerciales subnacionales.
 - **Fuente**: Documentos de Gobernadores — Provincias Unidas (https://www.electoral.gob.ar)
 
-#### Seguridad, Justicia y Política Exterior (https://politifacil-29n.vercel.app/ar/propuestas/seguridad)
+#### Seguridad, Justicia y Política Exterior (https://politifacil.com/ar/propuestas/seguridad)
 - **Titular**: Justicia federal ágil, persecución del narcotráfico en rutas y coordinación provincial
 - Despliegue coordinado de fuerzas federales y policías provinciales en fronteras, rutas nacionales y zonas críticas del narcotráfico.
 - Transferencia de competencias de narcomenudeo con financiamiento nacional efectivo a las justicias provinciales.
 - Inserción internacional pragmática enfocada en abrir mercados exportadores (UE, Asia, EE. UU. y Mercosur) para la producción regional.
 - **Fuente**: Plataforma Provincias Unidas / CNE (https://www.electoral.gob.ar)
 
-#### Energía, Vaca Muerta, Campo e Industria (https://politifacil-29n.vercel.app/ar/propuestas/produccion)
+#### Energía, Vaca Muerta, Campo e Industria (https://politifacil.com/ar/propuestas/produccion)
 - **Titular**: Retenciones cero al campo, biocombustibles, economía del conocimiento y minería moderna
 - Reducción a cero de las retenciones agropecuarias para liberar inversión en maquinaria, tecnología agrícola y agregado de valor en origen.
 - Impulso legislativo a biocombustibles (bioetanol y biodiésel), gas natural, energía eólica/solar y clústeres de economía del conocimiento.
 - Seguridad jurídica para inversiones mineras y energéticas con regalías justas para las provincias productoras.
 - **Fuente**: Plataforma Provincias Unidas / CNE (https://www.electoral.gob.ar)
 
-#### Instituciones, Transparencia y Derechos (https://politifacil-29n.vercel.app/ar/propuestas/instituciones)
+#### Instituciones, Transparencia y Derechos (https://politifacil.com/ar/propuestas/instituciones)
 - **Titular**: Consenso parlamentario, respeto a la división de poderes y reforma electoral moderna
 - Construcción de mayorías parlamentarias basadas en acuerdos programáticos por ley en lugar de decretos unilaterales o bloqueos totales.
 - Implementación integral de la Boleta Única de Papel, transparencia digital en compras públicas y Ficha Limpia.
@@ -288,7 +288,7 @@
 - **Fuente**: Bloque Provincias Unidas / CNE (https://www.electoral.gob.ar)
 
 ### PRO - Propuesta Republicana (PRO) — Referente: Mauricio Macri
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/partidos/pro
+- URL en PolitiFácil: https://politifacil.com/ar/partidos/pro
 - Web oficial: https://pro.com.ar · https://www.electoral.gob.ar
 - Etiqueta ideológica: Centroderecha liberal-conservadora y pro-mercado
 - Puntuación en arco (0 izq - 100 der): 74/100 (Eje económico: 76/100, Social-territorial: 70/100)
@@ -300,56 +300,56 @@
 - Palabras clave: Seguridad jurídica, Modernización estatal, Baja de impuestos, Apertura comercial, Ley y orden, Inversión privada
 - Estilo en entrevistas: Coloquial y directo en pódcasts y televisión; defiende el levantamiento del cepo cambiario, la disciplina presupuestaria y la cultura del mérito empresarial frente al asistencialismo. (Registro: Empresarial-pragmático con apelación a experiencias de gestión en Ciudad de Buenos Aires y Nación.)
 
-#### Economía, Inflación, Dólar e Impuestos (https://politifacil-29n.vercel.app/ar/propuestas/economia)
+#### Economía, Inflación, Dólar e Impuestos (https://politifacil.com/ar/propuestas/economia)
 - **Titular**: Eliminación total de restricciones cambiarias, baja de impuestos y equilibrio fiscal
 - Mantenimiento estricto del equilibrio fiscal combinado con una reducción progresiva de Ganancias, Bienes Personales y retenciones.
 - Consolidación de un mercado cambiario único y libre sin cepo para atraer inversión extranjera directa en infraestructura y tecnología.
 - Privatización o concesión eficiente de empresas estatales deficitarias y simplificación regulatoria para nuevas sociedades.
 - **Fuente**: Plataforma Electoral PRO / pro.com.ar (https://pro.com.ar)
 
-#### Trabajo, Salarios y Reforma Laboral (https://politifacil-29n.vercel.app/ar/propuestas/empleo)
+#### Trabajo, Salarios y Reforma Laboral (https://politifacil.com/ar/propuestas/empleo)
 - **Titular**: Modernización de convenios por empresa, fin de la litigiosidad y fondo de cese
 - Actualización de los convenios colectivos permitiendo acuerdos por empresa o región, y habilitación de fondos de cese laboral optativos.
 - Eliminación de multas y topes claros a honorarios en juicios laborales para dar previsibilidad de contratación a pymes.
 - Incentivos impositivos a la formalización de trabajadores independientes y plataformas digitales.
 - **Fuente**: pro.com.ar — Modernización Laboral (https://pro.com.ar)
 
-#### Salud, Educación Pública y Jubilaciones (https://politifacil-29n.vercel.app/ar/propuestas/servicios)
+#### Salud, Educación Pública y Jubilaciones (https://politifacil.com/ar/propuestas/servicios)
 - **Titular**: Evaluación educativa obligatoria, historia clínica digital y sustentabilidad previsional
 - Pruebas censales periódicas de aprendizaje en escuelas públicas y privadas, esencialidad educativa y formación docente continua.
 - Digitalización total del sistema sanitario público, historia clínica interoperable y alianzas público-privadas para alta complejidad.
 - Saneamiento del sistema previsional incentivando el ahorro voluntario complementario y eliminando jubilaciones de privilegio.
 - **Fuente**: Plataforma PRO / CNE (https://www.electoral.gob.ar)
 
-#### Vivienda, Alquileres y Obra Pública (https://politifacil-29n.vercel.app/ar/propuestas/vivienda)
+#### Vivienda, Alquileres y Obra Pública (https://politifacil.com/ar/propuestas/vivienda)
 - **Titular**: Mercado libre de alquileres, crédito hipotecario privado y concesiones de infraestructura
 - Libertad contractual plena en alquileres en moneda acordada para multiplicar la oferta disponible y bajar precios reales.
 - Expansión de créditos hipotecarios bancarios respaldados por estabilidad macroeconómica y seguridad jurídica sobre contratos.
 - Infraestructura estratégica de transporte, aeropuertos y puertos bajo esquemas de concesión privada competitiva.
 - **Fuente**: pro.com.ar / CNE (https://pro.com.ar)
 
-#### Federalismo, Coparticipación y Estado (https://politifacil-29n.vercel.app/ar/propuestas/federalismo)
+#### Federalismo, Coparticipación y Estado (https://politifacil.com/ar/propuestas/federalismo)
 - **Titular**: Pacto de responsabilidad fiscal con provincias y transparencia en gasto subnacional
 - Acuerdos fiscales federales que condicionen transferencias extraordinarias al cumplimiento de metas de equilibrio en cada provincia.
 - Reducción de estructuras políticas y legislaturas provinciales sobredimensionadas para bajar Ingresos Brutos locales.
 - Defensa de la autonomía y los recursos propios de la Ciudad Autónoma de Buenos Aires y de los distritos productivos.
 - **Fuente**: Plataforma PRO / CNE (https://www.electoral.gob.ar)
 
-#### Seguridad, Justicia y Política Exterior (https://politifacil-29n.vercel.app/ar/propuestas/seguridad)
+#### Seguridad, Justicia y Política Exterior (https://politifacil.com/ar/propuestas/seguridad)
 - **Titular**: Respaldo firme a las fuerzas de seguridad, baja de edad de imputabilidad y orden público
 - Reforma penal integral con endurecimiento de penas para narcotráfico y delitos violentos, y baja de la edad de imputabilidad.
 - Protección legal al accionar policial, uso de tecnología (cámaras, anillos digitales, pistolas Taser) y erradicación de cortes ilegales de vías.
 - Alineamiento con democracias occidentales, impulso rápido al acuerdo Mercosur-UE y ingreso pleno a la OCDE.
 - **Fuente**: pro.com.ar — Orden y Libertad (https://pro.com.ar)
 
-#### Energía, Vaca Muerta, Campo e Industria (https://politifacil-29n.vercel.app/ar/propuestas/produccion)
+#### Energía, Vaca Muerta, Campo e Industria (https://politifacil.com/ar/propuestas/produccion)
 - **Titular**: Régimen de grandes inversiones (RIGI), apertura exportadora y campo sin retenciones
 - Estabilidad fiscal y cambiaria de largo plazo para megaproyectos de energía, minería de cobre y litio, y exportación de GNL.
 - Cronograma firme para eliminar retenciones al agro y liberar cupos y trabas burocráticas de exportación.
 - Fomento a la economía del conocimiento, inteligencia artificial y servicios basados en el talento argentino.
 - **Fuente**: Plataforma PRO / CNE (https://www.electoral.gob.ar)
 
-#### Instituciones, Transparencia y Derechos (https://politifacil-29n.vercel.app/ar/propuestas/instituciones)
+#### Instituciones, Transparencia y Derechos (https://politifacil.com/ar/propuestas/instituciones)
 - **Titular**: Ficha Limpia, gobierno digital abierto, respeto a la Corte y transparencia estatal
 - Sanción definitiva de Ficha Limpia para impedir candidaturas de condenados por corrupción en segunda instancia.
 - Digitalización de trámites, expedientes electrónicos y licitaciones públicas transparentes en tiempo real.
@@ -357,7 +357,7 @@
 - **Fuente**: pro.com.ar — República (https://pro.com.ar)
 
 ### La Libertad Avanza (LLA) — Referente: Javier Milei
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/partidos/lla
+- URL en PolitiFácil: https://politifacil.com/ar/partidos/lla
 - Web oficial: https://lalibertadavanza.com.ar · https://www.argentina.gob.ar
 - Etiqueta ideológica: Liberalismo libertario, desregulador y conservador
 - Puntuación en arco (0 izq - 100 der): 92/100 (Eje económico: 96/100, Social-territorial: 86/100)
@@ -369,56 +369,56 @@
 - Palabras clave: Déficit cero, Motosierra, Desregulación, Competencia de monedas, RIGI, Propiedad privada
 - Estilo en entrevistas: Enfático y rápido en cifras macroeconómicas (inflación mayorista, base monetaria, riesgo país); confronta premisas críticas defendiendo que la modernización laboral y el ajuste devuelven crecimiento real. (Registro: Vehemente, técnico-doctrinario y de ataque frontal al consenso político previo.)
 
-#### Economía, Inflación, Dólar e Impuestos (https://politifacil-29n.vercel.app/ar/propuestas/economia)
+#### Economía, Inflación, Dólar e Impuestos (https://politifacil.com/ar/propuestas/economia)
 - **Titular**: Déficit cero constitucional, competencia de monedas, cierre del BCRA y baja drástica de impuestos
 - Regla estricta de déficit cero innegociable y reducción sostenida del gasto público nacional como única vía para extinguir la inflación.
 - Avance hacia la competencia de monedas y reforma monetaria definitiva que impida la emisión sin respaldo para financiar al Tesoro.
 - Eliminación gradual del 90 % de los impuestos nacionales vigentes una vez consolidado el superávit fiscal, junto con privatización de empresas públicas.
 - **Fuente**: lalibertadavanza.com.ar / Plataforma Oficial CNE (https://lalibertadavanza.com.ar)
 
-#### Trabajo, Salarios y Reforma Laboral (https://politifacil-29n.vercel.app/ar/propuestas/empleo)
+#### Trabajo, Salarios y Reforma Laboral (https://politifacil.com/ar/propuestas/empleo)
 - **Titular**: Modernización laboral profunda, libertad de contratación y fin de la industria del juicio
 - Reforma laboral integral para eliminar trabas de contratación, extender períodos de prueba y sustituir indemnizaciones litigiosas por fondos de cese voluntarios.
 - Reducción de cargas patronales y aportes obligatorios para bajar el costo laboral formal y absorber empleo en blanco.
 - Libertad de afiliación sindical, eliminación de cuotas solidarias compulsivas y acuerdos salariales flexibles por empresa.
 - **Fuente**: argentina.gob.ar / Plataforma LLA (https://www.argentina.gob.ar)
 
-#### Salud, Educación Pública y Jubilaciones (https://politifacil-29n.vercel.app/ar/propuestas/servicios)
+#### Salud, Educación Pública y Jubilaciones (https://politifacil.com/ar/propuestas/servicios)
 - **Titular**: Sistema de vouchers educativos a la demanda, libre elección sanitaria y reforma previsional
 - Transición hacia esquemas de financiamiento a la demanda (vouchers o becas directas a familias) con auditoría estricta de fondos universitarios.
 - Desregulación total del sistema de salud y obras sociales permitiendo libre elección de prestadores privados sin intermediación sindical.
 - Reforma previsional de largo plazo orientada a la capitalización individual voluntaria y saneamiento actuarial tras la baja del gasto público.
 - **Fuente**: Plataforma Oficial LLA / CNE (https://www.electoral.gob.ar)
 
-#### Vivienda, Alquileres y Obra Pública (https://politifacil-29n.vercel.app/ar/propuestas/vivienda)
+#### Vivienda, Alquileres y Obra Pública (https://politifacil.com/ar/propuestas/vivienda)
 - **Titular**: Desregulación absoluta de alquileres, obra pública por iniciativa privada y crédito bancario
 - Libertad contractual total en alquileres (plazo, moneda y ajuste) sin intervención estatal, multiplicando la oferta privada de inmuebles.
 - Eliminación de la obra pública financiada con emisión o impuestos, reemplazada por concesiones e iniciativa 100 % privada a riesgo empresarial.
 - Desarrollo del crédito hipotecario privado a partir de la estabilidad monetaria y la baja de tasas de interés.
 - **Fuente**: lalibertadavanza.com.ar (https://lalibertadavanza.com.ar)
 
-#### Federalismo, Coparticipación y Estado (https://politifacil-29n.vercel.app/ar/propuestas/federalismo)
+#### Federalismo, Coparticipación y Estado (https://politifacil.com/ar/propuestas/federalismo)
 - **Titular**: Competencia fiscal entre provincias, fin de transferencias discrecionales y ajuste subnacional
 - Eliminación total de transferencias discrecionales de Nación a provincias para forzar el equilibrio fiscal en gobernaciones e intendencias.
 - Reforma del esquema de coparticipación hacia la correspondencia fiscal donde cada provincia recaude y gaste lo propio.
 - Competencia impositiva entre jurisdicciones para atraer inversiones privadas con menores tasas locales.
 - **Fuente**: Plataforma LLA / CNE (https://www.electoral.gob.ar)
 
-#### Seguridad, Justicia y Política Exterior (https://politifacil-29n.vercel.app/ar/propuestas/seguridad)
+#### Seguridad, Justicia y Política Exterior (https://politifacil.com/ar/propuestas/seguridad)
 - **Titular**: Doctrina "el que las hace las paga", baja de imputabilidad y alineamiento con EE. UU. e Israel
 - Aplicación estricta del protocolo de orden público en rutas y calles, respaldo total a fuerzas federales y reforma penal de cumplimiento efectivo.
 - Baja de la edad de imputabilidad penal y ampliación de las facultades de legítima defensa frente a delitos violentos.
 - Alineamiento geopolítico estratégico con Estados Unidos, Israel y las democracias occidentales, y apertura comercial bilateral.
 - **Fuente**: lalibertadavanza.com.ar / Seguridad Nacional (https://lalibertadavanza.com.ar)
 
-#### Energía, Vaca Muerta, Campo e Industria (https://politifacil-29n.vercel.app/ar/propuestas/produccion)
+#### Energía, Vaca Muerta, Campo e Industria (https://politifacil.com/ar/propuestas/produccion)
 - **Titular**: Desregulación energética total, expansión del RIGI y retenciones cero al consolidar superávit
 - Libre exportación de hidrocarburos, energía eléctrica y minería a precios internacionales sin cupos ni restricciones cuantitativas.
 - Profundización del Régimen de Incentivo para Grandes Inversiones (RIGI) en Vaca Muerta, litio, cobre y GNL.
 - Eliminación definitiva de los derechos de exportación al campo y de registros de exportadores en la medida en que lo permita el superávit fiscal.
 - **Fuente**: Plataforma Oficial LLA / CNE (https://www.electoral.gob.ar)
 
-#### Instituciones, Transparencia y Derechos (https://politifacil-29n.vercel.app/ar/propuestas/instituciones)
+#### Instituciones, Transparencia y Derechos (https://politifacil.com/ar/propuestas/instituciones)
 - **Titular**: Achicamiento radical del Estado, cierre de organismos públicos y desburocratización
 - Reducción permanente de ministerios, secretarías, pauta oficial y organismos considerados ideológicos o duplicados.
 - Revisión y derogación masiva de regulaciones, licencias y trámites mediante facultades delegadas y leyes de desregulación.
@@ -428,7 +428,7 @@
 ## 2. Fuerzas Territoriales / Provinciales Clave (5)
 
 ### Hacemos Córdoba — Hacemos Unidos por Córdoba (Córdoba)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/territorios/hacemos-cordoba
+- URL en PolitiFácil: https://politifacil.com/ar/territorios/hacemos-cordoba
 - Referente: Martín Llaryora / Juan Schiaretti
 - Espectro: Peronismo federal productivista
 - Web oficial: https://www.cba.gov.ar
@@ -436,7 +436,7 @@
 - Rol parlamentario: Núcleo vertebrador del bloque federal Provincias Unidas en Diputados; su voto define quórum, leyes económicas y el margen de negociación con gobernadores.
 
 ### FR Concordia — Frente Renovador de la Concordia (Misiones)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/territorios/frente-renovador-misiones
+- URL en PolitiFácil: https://politifacil.com/ar/territorios/frente-renovador-misiones
 - Referente: Hugo Passalacqua / Carlos Rovira
 - Espectro: Provincialismo pragmático misionero
 - Web oficial: https://www.electoral.gob.ar
@@ -444,7 +444,7 @@
 - Rol parlamentario: Bloque provincial con bancas clave en Diputados y Senado; negocia de manera pragmática votación por votación a cambio de agenda productiva misionera.
 
 ### La Neuquinidad — La Neuquinidad / Comunidad (Neuquén)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/territorios/neuquinizate
+- URL en PolitiFácil: https://politifacil.com/ar/territorios/neuquinizate
 - Referente: Rolando Figueroa
 - Espectro: Provincialismo energético neuquino
 - Web oficial: https://www.neuquen.gob.ar
@@ -452,7 +452,7 @@
 - Rol parlamentario: Actor relevante en la Cámara Baja y Alta en toda discusión sobre leyes de hidrocarburos, gasoductos, RIGI y coparticipación energética.
 
 ### JSRN — Juntos Somos Río Negro (Río Negro)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/territorios/juntos-rio-negro
+- URL en PolitiFácil: https://politifacil.com/ar/territorios/juntos-rio-negro
 - Referente: Alberto Weretilneck
 - Espectro: Provincialismo patagónico transversal
 - Web oficial: https://rionegro.gov.ar
@@ -460,7 +460,7 @@
 - Rol parlamentario: Voto clave en el Senado y Diputados en debates sobre energía patagónica, tarifas diferenciales de zona fría e infraestructura federal.
 
 ### CC-ARI — Coalición Cívica ARI (CABA, PBA y Nacional)
-- URL en PolitiFácil: https://politifacil-29n.vercel.app/ar/territorios/coalicion-civica
+- URL en PolitiFácil: https://politifacil.com/ar/territorios/coalicion-civica
 - Referente: Elisa Carrió / Maximiliano Ferraro
 - Espectro: Centro republicano anticorrupción
 - Web oficial: https://coalicioncivica.org.ar
@@ -469,7 +469,7 @@
 
 ## 3. Similitudes y Diferencias por Eje Temático (8)
 
-### Economía, Inflación, Dólar e Impuestos (https://politifacil-29n.vercel.app/ar/propuestas/economia)
+### Economía, Inflación, Dólar e Impuestos (https://politifacil.com/ar/propuestas/economia)
 **Similitudes:**
 - Todos los espacios reconocen que controlar la inflación de manera estable y recuperar el crédito son prioridades económicas centrales.
 - UCR, Provincias Unidas, PRO y LLA coinciden en la necesidad de mantener equilibrio en las cuentas públicas y simplificar impuestos distorsivos.
@@ -480,7 +480,7 @@
 - Deuda y moneda: FIT-U propone romper con el FMI y estatizar la banca; LLA impulsa competencia de monedas y superávit financiero; UCR y Provincias Unidas abogan por Banco Central independiente y reservas.
 - Obra pública e impuestos: Provincias Unidas y Fuerza Patria defienden invertir en infraestructura productiva; LLA la traslada a iniciativa privada.
 
-### Trabajo, Salarios y Reforma Laboral (https://politifacil-29n.vercel.app/ar/propuestas/empleo)
+### Trabajo, Salarios y Reforma Laboral (https://politifacil.com/ar/propuestas/empleo)
 **Similitudes:**
 - Existe diagnóstico compartido sobre el problema estructural de la informalidad laboral en Argentina (superior al 40 %).
 - UCR, Provincias Unidas, PRO y LLA coinciden en revisar la alta litigiosidad judicial que afecta a pymes al contratar o desvincular personal.
@@ -491,7 +491,7 @@
 - Negociación salarial: Fuerza Patria y FIT-U defienden paritarias nacionales centralizadas; LLA promueve libertad de contratación y acuerdos descentralizados.
 - Pymes del interior: UCR y Provincias Unidas proponen regímenes diferenciados y alivio de cargas específico para micro y pequeñas empresas.
 
-### Salud, Educación Pública y Jubilaciones (https://politifacil-29n.vercel.app/ar/propuestas/servicios)
+### Salud, Educación Pública y Jubilaciones (https://politifacil.com/ar/propuestas/servicios)
 **Similitudes:**
 - Amplio arco legislativo (FIT-U, Fuerza Patria, UCR y Provincias Unidas) coincide en preservar la gratuidad y financiamiento de las universidades nacionales.
 - Todos los espacios identifican la crisis del sistema previsional y la caída del poder de compra de jubilaciones como un desafío urgente.
@@ -501,7 +501,7 @@
 - Jubilaciones y moratorias: FIT-U reclama el 82 % móvil inmediato; Fuerza Patria defiende moratorias previsionales; PRO y LLA impulsan capitalización voluntaria y saneamiento fiscal.
 - Auditorías y gestión: UCR, Provincias Unidas y PRO enfatizan evaluaciones educativas censales y eficiencia administrativa en hospitales.
 
-### Vivienda, Alquileres y Obra Pública (https://politifacil-29n.vercel.app/ar/propuestas/vivienda)
+### Vivienda, Alquileres y Obra Pública (https://politifacil.com/ar/propuestas/vivienda)
 **Similitudes:**
 - Todos los espacios reconocen que el acceso a la primera vivienda propia está bloqueado sin estabilidad macroeconómica ni crédito hipotecario.
 - Fuerza Patria, UCR y Provincias Unidas coinciden en la necesidad de infraestructura básica (agua, cloacas, rutas) como soporte urbano.
@@ -510,7 +510,7 @@
 - Ley de Alquileres: LLA y PRO defienden la libertad contractual absoluta sin topes ni plazos impuestos; FIT-U y sectores de Fuerza Patria proponen regulación e impuestos a viviendas ociosas.
 - Obra pública: Fuerza Patria y Provincias Unidas impulsan planes nacionales y provinciales de vivienda e infraestructura; LLA suprime la obra pública estatal en favor de inversión privada.
 
-### Federalismo, Coparticipación y Estado (https://politifacil-29n.vercel.app/ar/propuestas/federalismo)
+### Federalismo, Coparticipación y Estado (https://politifacil.com/ar/propuestas/federalismo)
 **Similitudes:**
 - Fuerza Patria, UCR y Provincias Unidas coinciden en rechazar la discrecionalidad de Nación en el envío de fondos y en reclamar previsibilidad para las provincias.
 - La mayoría de las fuerzas reconocen que el esquema de coparticipación vigente desde 1988 requiere actualización.
@@ -519,7 +519,7 @@
 - Correspondencia vs. solidaridad: LLA propone competencia fiscal entre provincias eliminando giros discrecionales; Fuerza Patria prioriza fondos compensadores y subsidios coordinados.
 - Agenda del interior: Provincias Unidas exige coparticipar impuestos hoy concentrados en Nación y eliminar asimetrías de subsidios respecto al AMBA.
 
-### Seguridad, Justicia y Política Exterior (https://politifacil-29n.vercel.app/ar/propuestas/seguridad)
+### Seguridad, Justicia y Política Exterior (https://politifacil.com/ar/propuestas/seguridad)
 **Similitudes:**
 - Casi todo el arco parlamentario (salvo enfoques propios de seguridad interior en FIT-U) coincide en la prioridad de combatir el narcotráfico federal y el crimen organizado en Rosario y fronteras.
 - UCR, Provincias Unidas, PRO y LLA respaldan el sistema penal acusatorio federal y mayor equipamiento tecnológico para fuerzas.
@@ -528,7 +528,7 @@
 - Protocolo de protestas y edad penal: LLA y PRO defienden protocolo antipiquetes estricto y baja de imputabilidad; FIT-U y Fuerza Patria rechazan la criminalización de la protesta y la militarización.
 - Política exterior: LLA y PRO impulsan alineamiento estrecho con EE. UU., Israel y OCDE; Fuerza Patria defiende multipolaridad y BRICS; FIT-U plantea ruptura antiimperialista.
 
-### Energía, Vaca Muerta, Campo e Industria (https://politifacil-29n.vercel.app/ar/propuestas/produccion)
+### Energía, Vaca Muerta, Campo e Industria (https://politifacil.com/ar/propuestas/produccion)
 **Similitudes:**
 - Fuerza Patria, UCR, Provincias Unidas, PRO y LLA coinciden en que Vaca Muerta, la minería de litio/cobre y la agroindustria son motores esenciales de divisas.
 - UCR, Provincias Unidas, PRO y LLA proponen reducir o eliminar las retenciones a las exportaciones agropecuarias.
@@ -537,7 +537,7 @@
 - Propiedad de recursos: FIT-U propone estatización integral de YPF, litio y puertos bajo control obrero; LLA y PRO priorizan desregulación privada y RIGI; Fuerza Patria defiende YPF con mayoría estatal.
 - Valor agregado vs. exportación libre: Fuerza Patria y Provincias Unidas impulsan biocombustibles e industrialización en origen; LLA prioriza libre exportación sin cupos.
 
-### Instituciones, Transparencia y Derechos (https://politifacil-29n.vercel.app/ar/propuestas/instituciones)
+### Instituciones, Transparencia y Derechos (https://politifacil.com/ar/propuestas/instituciones)
 **Similitudes:**
 - UCR, Provincias Unidas, PRO y LLA han confluido en respaldar la Boleta Única de Papel para modernizar el sistema de votación nacional.
 - Todos los espacios expresan discursos de combate a la corrupción, aunque discrepan en mecanismos y alcances.

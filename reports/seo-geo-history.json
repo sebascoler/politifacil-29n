@@ -1,14 +1,14 @@
 {
   "project": {
     "name": "PolitiFácil 29-N",
-    "siteUrl": "https://politifacil-29n.vercel.app/",
+    "siteUrl": "https://politifacil.com/",
     "electionDate": "2026-11-29",
     "ga4AccountId": "416678566",
     "ga4PropertyId": "564800083",
     "ga4StreamId": "16360556273",
     "gtmContainerId": "GTM-N2V3Q8RQ",
-    "gscProperty": "https://politifacil-29n.vercel.app/",
-    "expectedSitemapUrls": 40
+    "gscProperty": "https://politifacil.com/",
+    "expectedSitemapUrls": 86
   },
   "instrumentedEvents": [
     {
