@@ -730,6 +730,24 @@ function buildCountrySite(context) {
       })),
     ];
 
+    const organizerMap = {
+      es: {
+        '@type': 'Organization',
+        name: 'Junta Electoral Central (JEC)',
+        url: 'https://www.juntaelectoralcentral.es/',
+      },
+      ar: {
+        '@type': 'Organization',
+        name: 'Cámara Nacional Electoral (CNE)',
+        url: 'https://www.electoral.gob.ar/',
+      },
+    };
+    const electoralOrganizer = organizerMap[countryConfig.id] || {
+      '@type': 'Organization',
+      name: 'PolitiFácil',
+      url: siteUrl,
+    };
+
     const jsonLd = {
       '@context': 'https://schema.org',
       '@graph': [
@@ -760,10 +778,23 @@ function buildCountrySite(context) {
             '@type': 'Event',
             name: countryConfig.electionName,
             startDate: meta.electionDate,
+            endDate: meta.electionDate,
+            eventStatus: 'https://schema.org/EventScheduled',
+            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+            image: [ogImageUrl],
             location: {
-              '@type': 'Country',
+              '@type': 'Place',
               name: countryConfig.name,
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: (countryConfig.geoRegion || countryConfig.id || 'ES').toUpperCase(),
+              },
             },
+            organizer: electoralOrganizer,
+            performer: data.parties.map((p) => ({
+              '@type': 'Organization',
+              name: p.name,
+            })),
             description: `${meta.decree}. ${meta.seatsCongress} ${strings.vocab.seatUnit} en cámara baja y ${meta.seatsSenate} en Senado.`,
           },
         },
@@ -773,6 +804,11 @@ function buildCountrySite(context) {
           name: `Programas y Entrevistas — ${countryConfig.name} (${badgeText})`,
           description: `Base de datos estructurada y neutral sobre ${strings.vocab.programsWord}, estilo comunicativo y declaraciones literales en entrevistas para ${countryConfig.name} (${meta.decree}).`,
           url: canonicalHome,
+          creator: {
+            '@type': 'Organization',
+            name: 'PolitiFácil',
+            url: siteUrl,
+          },
           spatialCoverage: countryConfig.name,
           temporalCoverage: meta.electionDate,
           license: 'https://creativecommons.org/licenses/by/4.0/',

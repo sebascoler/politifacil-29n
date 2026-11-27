@@ -853,9 +853,26 @@ function buildCalendarPage(context) {
             '@type': 'Event',
             name: ev.title,
             startDate: ev.date,
+            endDate: ev.date,
+            eventStatus: 'https://schema.org/EventScheduled',
+            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+            image: [ogImage],
             location: {
-              '@type': 'Country',
+              '@type': 'Place',
               name: ev.countryName,
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: String(ev.countryCode || '').toUpperCase(),
+              },
+            },
+            organizer: {
+              '@type': 'Organization',
+              name: ev.officialSourceLabel || 'PolitiFácil',
+              url: ev.officialSourceUrl || siteUrl,
+            },
+            performer: {
+              '@type': 'Organization',
+              name: `Candidaturas oficiales — ${ev.countryName}`,
             },
             description: `${ev.offices}. ${ev.summary}`,
           },
