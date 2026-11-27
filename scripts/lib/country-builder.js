@@ -795,6 +795,13 @@ function buildCountrySite(context) {
               '@type': 'Organization',
               name: p.name,
             })),
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: countryConfig.currency || 'EUR',
+              availability: 'https://schema.org/InStock',
+              url: canonicalHome,
+            },
             description: `${meta.decree}. ${meta.seatsCongress} ${strings.vocab.seatUnit} en cámara baja y ${meta.seatsSenate} en Senado.`,
           },
         },

@@ -874,6 +874,15 @@ function buildCalendarPage(context) {
               '@type': 'Organization',
               name: `Candidaturas oficiales — ${ev.countryName}`,
             },
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+              availability: 'https://schema.org/InStock',
+              url: ev.portalCountryId
+                ? `${siteUrl}${getCountryBasePath(ev.portalCountryId, rootMode) || '/'}`
+                : canonicalUrl,
+            },
             description: `${ev.offices}. ${ev.summary}`,
           },
         })),
