@@ -4694,6 +4694,520 @@
           }
         ]
       }
+    },
+    {
+      "date": "2026-11-28",
+      "checkedAt": "2026-11-28T08:02:47",
+      "dateRangeNote": "24h (Últimas 24 horas) · Acumulado (2026-11-17 – 2026-11-28)",
+      "ga4": {
+        "activeUsers": 462,
+        "newUsers": 462,
+        "sessions": 636,
+        "engagedSessions": 353,
+        "engagementRatePct": 55.5,
+        "views": 1128,
+        "viewsPerUser": 2.44,
+        "avgEngagementTimeLabel": "4 min 49 s",
+        "avgEngagementTimeSec": 289,
+        "totalEvents": 5214,
+        "keyEvents": 153,
+        "organicSearchSessions": 13,
+        "aiReferralSessions": 0,
+        "aiSources": [],
+        "channels": [
+          {
+            "channel": "Direct",
+            "sourceMedium": "(direct) / (none)",
+            "sessions": 551,
+            "sharePct": 86.64,
+            "engagedSessions": 299,
+            "engagementRatePct": 54.26,
+            "avgEngagementTime": "3 min 07 s",
+            "events": 4306
+          },
+          {
+            "channel": "Organic Social",
+            "sourceMedium": "reddit.com / referral",
+            "sessions": 53,
+            "sharePct": 8.33,
+            "engagedSessions": 33,
+            "engagementRatePct": 62.26,
+            "avgEngagementTime": "5 min 37 s",
+            "events": 599
+          },
+          {
+            "channel": "Organic Search",
+            "sourceMedium": "google / organic",
+            "sessions": 13,
+            "sharePct": 2.04,
+            "engagedSessions": 10,
+            "engagementRatePct": 76.92,
+            "avgEngagementTime": "3 min 14 s",
+            "events": 84
+          },
+          {
+            "channel": "Organic Social",
+            "sourceMedium": "linkedin.com / referral",
+            "sessions": 8,
+            "sharePct": 1.26,
+            "engagedSessions": 5,
+            "engagementRatePct": 62.5,
+            "avgEngagementTime": "3 min 39 s",
+            "events": 78
+          },
+          {
+            "channel": "Unassigned",
+            "sourceMedium": "(not set)",
+            "sessions": 8,
+            "sharePct": 1.26,
+            "engagedSessions": 0,
+            "engagementRatePct": 0,
+            "avgEngagementTime": "5 min 51 s",
+            "events": 60
+          },
+          {
+            "channel": "Referral",
+            "sourceMedium": "teams.public.onecdn.static.microsoft / referral",
+            "sessions": 5,
+            "sharePct": 0.79,
+            "engagedSessions": 5,
+            "engagementRatePct": 100,
+            "avgEngagementTime": "16 min 01 s",
+            "events": 81
+          },
+          {
+            "channel": "Organic Social",
+            "sourceMedium": "old.reddit.com / referral",
+            "sessions": 1,
+            "sharePct": 0.16,
+            "engagedSessions": 1,
+            "engagementRatePct": 100,
+            "avgEngagementTime": "10 min 46 s",
+            "events": 6
+          },
+          {
+            "channel": "GEO / Motores de IA",
+            "sourceMedium": "chatgpt / perplexity / gemini / claude",
+            "sessions": 0,
+            "sharePct": 0,
+            "engagedSessions": 0,
+            "engagementRatePct": 0,
+            "avgEngagementTime": "0 s",
+            "events": 0
+          }
+        ],
+        "landingPages": [
+          {
+            "path": "/",
+            "sessions": 307,
+            "activeUsers": 226,
+            "newUsers": 200,
+            "avgEngagementTime": "3 min 37 s"
+          },
+          {
+            "path": "/test-afinidad",
+            "sessions": 256,
+            "activeUsers": 238,
+            "newUsers": 237,
+            "avgEngagementTime": "5 min 33 s"
+          },
+          {
+            "path": "(not set)",
+            "sessions": 31,
+            "activeUsers": 24,
+            "newUsers": 0,
+            "avgEngagementTime": "22 s"
+          },
+          {
+            "path": "/comparador",
+            "sessions": 6,
+            "activeUsers": 6,
+            "newUsers": 6,
+            "avgEngagementTime": "43 s"
+          },
+          {
+            "path": "/propuestas/empleo",
+            "sessions": 6,
+            "activeUsers": 1,
+            "newUsers": 0,
+            "avgEngagementTime": "2 s"
+          },
+          {
+            "path": "/comparar/podemos-vs-frente-amplio",
+            "sessions": 5,
+            "activeUsers": 5,
+            "newUsers": 5,
+            "avgEngagementTime": "3 min 29 s"
+          },
+          {
+            "path": "(not set)",
+            "sessions": 4,
+            "activeUsers": 2,
+            "newUsers": 0,
+            "avgEngagementTime": "2 min 53 s"
+          },
+          {
+            "path": "/comparar/frente-amplio-vs-psoe",
+            "sessions": 2,
+            "activeUsers": 2,
+            "newUsers": 2,
+            "avgEngagementTime": "6 min 26 s"
+          },
+          {
+            "path": "/comparar/pp-vs-vox",
+            "sessions": 2,
+            "activeUsers": 2,
+            "newUsers": 2,
+            "avgEngagementTime": "1 min 18 s"
+          },
+          {
+            "path": "/comparar/psoe-vs-pp",
+            "sessions": 2,
+            "activeUsers": 2,
+            "newUsers": 2,
+            "avgEngagementTime": "1 s"
+          }
+        ],
+        "pagesAndScreens": [
+          {
+            "path": "/",
+            "views": 648,
+            "activeUsers": 365,
+            "avgEngagementTime": "5 min 40 s",
+            "events": 3619
+          },
+          {
+            "path": "/test-afinidad",
+            "views": 370,
+            "activeUsers": 243,
+            "avgEngagementTime": "22 s",
+            "events": 1270
+          },
+          {
+            "path": "/comparador",
+            "views": 14,
+            "activeUsers": 12,
+            "avgEngagementTime": "20 s",
+            "events": 39
+          },
+          {
+            "path": "/propuestas/vivienda",
+            "views": 11,
+            "activeUsers": 8,
+            "avgEngagementTime": "20 s",
+            "events": 27
+          },
+          {
+            "path": "/comparar/podemos-vs-frente-amplio",
+            "views": 7,
+            "activeUsers": 6,
+            "avgEngagementTime": "3 min 02 s",
+            "events": 25
+          },
+          {
+            "path": "/portal/v5",
+            "views": 7,
+            "activeUsers": 1,
+            "avgEngagementTime": "1 min 05 s",
+            "events": 25
+          },
+          {
+            "path": "/propuestas/empleo",
+            "views": 7,
+            "activeUsers": 1,
+            "avgEngagementTime": "4 s",
+            "events": 19
+          },
+          {
+            "path": "/portal/v1",
+            "views": 6,
+            "activeUsers": 1,
+            "avgEngagementTime": "33 s",
+            "events": 13
+          },
+          {
+            "path": "/ar",
+            "views": 5,
+            "activeUsers": 3,
+            "avgEngagementTime": "3 min 55 s",
+            "events": 27
+          },
+          {
+            "path": "/portal",
+            "views": 5,
+            "activeUsers": 4,
+            "avgEngagementTime": "12 s",
+            "events": 16
+          }
+        ],
+        "keyEventBreakdown": {
+          "quiz_complete": 116,
+          "quiz_start": 141,
+          "quiz_step_answer": 1587,
+          "blind_reveal": 22,
+          "blind_pick_toggle": 49,
+          "share_result": 15,
+          "ai_referral_visit": 0,
+          "section_view": 84,
+          "comparator_interaction": 94,
+          "party_inspect": 36,
+          "interview_filter": 2,
+          "static_cta_click": 113,
+          "official_source_click": 8
+        }
+      },
+      "ga4Last24h": {
+        "activeUsers": 31,
+        "newUsers": 31,
+        "sessions": 34,
+        "engagedSessions": 7,
+        "engagementRatePct": 20.59,
+        "views": 50,
+        "viewsPerUser": 1.61,
+        "avgEngagementTimeLabel": "2 min 02 s",
+        "avgEngagementTimeSec": 122,
+        "totalEvents": 208,
+        "keyEvents": 6,
+        "organicSearchSessions": 1,
+        "aiReferralSessions": 0,
+        "aiSources": [],
+        "channels": [
+          {
+            "channel": "Direct",
+            "sourceMedium": "(direct) / (none)",
+            "sessions": 28,
+            "sharePct": 82.35,
+            "engagedSessions": 3,
+            "engagementRatePct": 10.71,
+            "avgEngagementTime": "2 s",
+            "events": 91
+          },
+          {
+            "channel": "Organic Social",
+            "sourceMedium": "linkedin.com / referral",
+            "sessions": 5,
+            "sharePct": 14.71,
+            "engagedSessions": 4,
+            "engagementRatePct": 80,
+            "avgEngagementTime": "5 min 13 s",
+            "events": 67
+          },
+          {
+            "channel": "Unassigned",
+            "sourceMedium": "(not set)",
+            "sessions": 3,
+            "sharePct": 8.82,
+            "engagedSessions": 0,
+            "engagementRatePct": 0,
+            "avgEngagementTime": "12 min 07 s",
+            "events": 48
+          },
+          {
+            "channel": "Organic Search",
+            "sourceMedium": "google / organic",
+            "sessions": 1,
+            "sharePct": 2.94,
+            "engagedSessions": 0,
+            "engagementRatePct": 0,
+            "avgEngagementTime": "0 s",
+            "events": 2
+          },
+          {
+            "channel": "GEO / Motores de IA",
+            "sourceMedium": "chatgpt / perplexity / gemini / claude",
+            "sessions": 0,
+            "sharePct": 0,
+            "engagedSessions": 0,
+            "engagementRatePct": 0,
+            "avgEngagementTime": "0 s",
+            "events": 0
+          }
+        ],
+        "landingPages": [
+          {
+            "path": "/",
+            "sessions": 28,
+            "activeUsers": 27,
+            "newUsers": 27,
+            "avgEngagementTime": "1 min 42 s"
+          },
+          {
+            "path": "(not set)",
+            "sessions": 3,
+            "activeUsers": 1,
+            "newUsers": 0,
+            "avgEngagementTime": "3 min 29 s"
+          },
+          {
+            "path": "/calendario",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 0,
+            "avgEngagementTime": "13 min 41 s"
+          },
+          {
+            "path": "/comparar/frente-amplio-vs-salf",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 1,
+            "avgEngagementTime": "0 s"
+          },
+          {
+            "path": "/comparar/pp-vs-vox",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 1,
+            "avgEngagementTime": "1 s"
+          },
+          {
+            "path": "/territorios/junts",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 1,
+            "avgEngagementTime": "0 s"
+          },
+          {
+            "path": "/test-afinidad",
+            "sessions": 1,
+            "activeUsers": 1,
+            "newUsers": 1,
+            "avgEngagementTime": "5 s"
+          }
+        ],
+        "pagesAndScreens": [
+          {
+            "path": "/",
+            "views": 42,
+            "activeUsers": 28,
+            "avgEngagementTime": "2 min 11 s",
+            "events": 182
+          },
+          {
+            "path": "/calendario",
+            "views": 2,
+            "activeUsers": 2,
+            "avgEngagementTime": "54 s",
+            "events": 5
+          },
+          {
+            "path": "/ar",
+            "views": 1,
+            "activeUsers": 1,
+            "avgEngagementTime": "1 s",
+            "events": 2
+          },
+          {
+            "path": "/comparar/frente-amplio-vs-salf",
+            "views": 1,
+            "activeUsers": 1,
+            "avgEngagementTime": "0 s",
+            "events": 3
+          },
+          {
+            "path": "/comparar/pp-vs-vox",
+            "views": 1,
+            "activeUsers": 1,
+            "avgEngagementTime": "1 s",
+            "events": 5
+          },
+          {
+            "path": "/portal",
+            "views": 1,
+            "activeUsers": 1,
+            "avgEngagementTime": "2 s",
+            "events": 2
+          },
+          {
+            "path": "/territorios/junts",
+            "views": 1,
+            "activeUsers": 1,
+            "avgEngagementTime": "0 s",
+            "events": 3
+          },
+          {
+            "path": "/test-afinidad",
+            "views": 1,
+            "activeUsers": 1,
+            "avgEngagementTime": "5 s",
+            "events": 4
+          },
+          {
+            "path": "/comparar/frente-amplio-vs-pp",
+            "views": 0,
+            "activeUsers": 0,
+            "avgEngagementTime": "0 s",
+            "events": 2
+          }
+        ],
+        "keyEventBreakdown": {
+          "quiz_complete": 3,
+          "quiz_start": 3,
+          "quiz_step_answer": 30,
+          "blind_reveal": 2,
+          "blind_pick_toggle": 2,
+          "share_result": 1,
+          "ai_referral_visit": 0,
+          "section_view": 10,
+          "comparator_interaction": 6,
+          "party_inspect": 11,
+          "interview_filter": 0,
+          "static_cta_click": 0,
+          "official_source_click": 0
+        },
+        "windowLabel": "Últimas 24 horas",
+        "windowRange": "2026112709 – 2026112808"
+      },
+      "gsc": {
+        "status": "ready",
+        "statusMessage": "Datos consolidados desde Google Search Console API",
+        "clicks": 0,
+        "impressions": 1,
+        "ctrPct": 0,
+        "avgPosition": 10,
+        "indexedPages": 0,
+        "notIndexedPages": 86,
+        "indexingReasons": [],
+        "sitemap": {
+          "url": "/sitemap.xml",
+          "status": "Correcto",
+          "submittedDate": "2026-11-26",
+          "lastReadDate": "2026-11-26",
+          "discoveredUrls": 86
+        },
+        "robotsTxtStatus": "Válidas",
+        "topQueries": [],
+        "topPages": [
+          {
+            "page": "/",
+            "clicks": 0,
+            "impressions": 1,
+            "ctrPct": 0,
+            "position": 10
+          }
+        ]
+      },
+      "gscLast24h": {
+        "date": "2026-11-26",
+        "clicks": 0,
+        "impressions": 1,
+        "ctrPct": 0,
+        "avgPosition": 10,
+        "hasData": true,
+        "windowLabel": "Último día con datos (2026-11-26)"
+      },
+      "decision": {
+        "status": "mejoras_propuestas",
+        "statusLabel": "Mejoras propuestas",
+        "summary": "Faltan 2 días para el 29-N. Últimas 24 h: 34 sesiones (20.59 % interacción, 1 SEO, 0 IA). Acumulado desde 2026-11-17: 636 sesiones (55.5 % interacción), 13 de SEO y 0 de IA. Hay 1 recomendación(es) prioritaria(s).",
+        "recommendations": [
+          {
+            "priority": "alta",
+            "area": "SEO / Cobertura",
+            "title": "Faltan 86 páginas por indexar (0/86)",
+            "detail": "Revisar en Search Console las URLs pendientes del sitemap (especialmente /propuestas/* y /comparar/*) y reforzar enlaces internos o indexación manual."
+          }
+        ]
+      }
     }
   ]
 }
